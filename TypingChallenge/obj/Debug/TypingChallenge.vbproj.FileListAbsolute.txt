@@ -1,0 +1,11 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.xml
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.vbprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.Form1.resources
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.Resources.resources
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.vbproj.GenerateResource.Cache
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.xml
+c:\users\lenovo\documents\visual studio 2015\Projects\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.pdb
