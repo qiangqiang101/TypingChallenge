@@ -1,10 +1,13 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Runtime.InteropServices
+Imports System.Text.RegularExpressions
 
 Public Class MyGame
-    Inherits Control
+    Inherits BaseControl
 
     'Properties
+    Public Property Title() As String
+    Public Property Author() As String
     Public Property Level() As Integer = 1
     Public Property Phrase() As String
     Public Property Life() As Integer = 5
@@ -25,52 +28,26 @@ Public Class MyGame
     Private WrongCount As Integer = 0
 
     Public WithEvents elapsedTimer As New Timer() With {.Interval = 500}
-    Private timerStart As DateTime = Nothing
-    Private timerEnded As DateTime = Nothing
-    Public WithEvents bgTimer As New Timer() With {.Interval = 100, .Enabled = True}
+    Private timerStart As Date = Nothing
+    Private timerEnded As Date = Nothing
 
-    'Circles
-    Private MainRect As Rectangle
-    Private Shared rd As New Random
-    Private Shared Circles(130) As cCircle
-    Private Shared PointDistance As Decimal = 100
-    Private Shared ea As MouseEventArgs
+    'Tracking Mouse
+    Private _mousePos As Point = Point.Empty
+    Private _mouseButtonBack, _mouseButtonNext As Rectangle
+    Private _mouseButtonBackHovered As Boolean = False, _mouseButtonNextHovered As Boolean = False
 
     Public Sub New()
         DoubleBuffered = True
 
         If Phrase = Nothing Then Phrase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         _PhraseBackup = Phrase
+        If Title = Nothing Then Title = "Demo"
+        If Author = Nothing Then Author = "I'm Not MentaL"
 
         GrayText = ""
         GoldText = Phrase.First
         WhiteText = Phrase.Remove(0, 1)
         LifeLeft = Life
-
-        'Circles
-        PrepareCircles()
-    End Sub
-
-    Private Sub PrepareCircles()
-        'get form rectangle
-        MainRect = DisplayRectangle
-
-        'prepare circles
-        For i As Integer = 0 To Circles.Count - 1
-            Circles(i) = New cCircle(MainRect)
-        Next
-    End Sub
-
-    Private Sub DrawGDIPlusText(graphics As Graphics, text As String, font As Font, bounds As RectangleF, color As Color, Optional alignment As StringAlignment = StringAlignment.Center, Optional offset As Point = Nothing)
-        Dim format As New StringFormat()
-        format.Alignment = alignment
-
-        Using myBrush As New SolidBrush(color)
-            If Not offset = Nothing Then bounds.Offset(offset)
-            graphics.DrawString(text, font, myBrush, bounds, format)
-        End Using
-
-        graphics.ResetTransform()
     End Sub
 
     Private Function HeartsLeft(h As Integer) As String
@@ -95,7 +72,11 @@ Public Class MyGame
     End Function
 
     Private Function Progression() As Integer
-        Return CInt((WhiteText.Length / _PhraseBackup.Length) * 100)
+        Try
+            Return CInt((_PhraseBackup.Length / WhiteText.Length) * 100) - 100
+        Catch ex As Exception
+            Return 100
+        End Try
     End Function
 
     Private Sub DrawGameText(graphics As Graphics, pastText As String, highlightText As String, nextText As String, font As Font, bounds As RectangleF, brushP As Brush, brushH As Brush, brushN As Brush, Optional offset As Point = Nothing)
@@ -126,83 +107,74 @@ Public Class MyGame
     Protected Overrides Sub OnMouseLeave(e As EventArgs)
         MyBase.OnMouseLeave(e)
 
-        ea = Nothing
+        _mouseButtonBackHovered = False
+        _mouseButtonNextHovered = False
     End Sub
 
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 
-        ea = e
-    End Sub
-
-    Private Sub PaintBackground(graphics As Graphics)
-        For i As Integer = 0 To Circles.Count - 1
-
-            If Not IsNothing(ea) Then
-                Dim msx As Integer = ea.X
-                Dim msy As Integer = ea.Y
-                Dim osx As Integer = Circles(i).x
-                Dim osy As Integer = Circles(i).y
-
-                'detect the mouse location. if a circle is within the range (100px) of mouse pointer
-                'then push back the circle
-                If (msx - osx) ^ 2 + (msy - osy) ^ 2 < 100 ^ 2 Then
-                    Dim pTarget As Point = New Point(osx, osy)
-                    Dim pOrigin As Point = New Point(msx, msy)
-
-                    'get the angle of cricle from mouse pointer location
-                    Dim getAngle As Integer
-                    getAngle = (((Math.Atan2(osx - msx, msy - osy) * (180 / Math.PI)) + 360.0) Mod 360.0)
-
-                    'get the distance of circle from mouse pointer location
-                    Dim getDist As Integer = DistanceBetween(New Point(msx, msy), New Point(osx, osy))
-
-                    'get the new point where the circle should be pushed back 
-                    Dim newPoint As Point = New Point(GetX(osx, 100 - getDist, getAngle), GetY(osy, 100 - getDist, getAngle))
-
-                    'set the new point to the circle
-                    Circles(i).x = newPoint.X
-                    Circles(i).y = newPoint.Y
-                End If
-            End If
-
-            'update circles
-            Circles(i).Show(graphics)
-            Circles(i).Update()
-        Next
+        _mousePos = New Point(e.X, e.Y)
+        _mouseButtonBackHovered = _mouseButtonBack.Contains(_mousePos)
+        _mouseButtonNextHovered = _mouseButtonNext.Contains(_mousePos)
     End Sub
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
         MyBase.OnPaint(e)
 
         Dim g As Graphics = e.Graphics
-        g.SmoothingMode = SmoothingMode.HighQuality
-
-        PaintBackground(g)
+        g.SmoothingMode = SmoothingMode.AntiAlias
+        g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
 
         Dim cr = ClientRectangle
 
         If GameStatus = eGameStatus.GameOver Then
-            Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
+            Dim textRect As New RectangleF(0, 100, cr.Width, 210)
             DrawGDIPlusText(g, "GAME OVER", Font, textRect, Color.White, StringAlignment.Center)
-            Dim res1Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 100)
-            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 100)
-            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 100)
+            Dim res1Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
+            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 80)
+            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 80)
+            Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 80)
+            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, res4Rect.Y + res4Rect.Height + 40, 300, 80)
+            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, res4Rect.Y + res4Rect.Height + 40, 300, 80)
             Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
                 DrawGDIPlusText(g, $"{CorrectCount} Correct letters ", resFont, res1Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"{WrongCount} Wrong letters ", resFont, res2Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"Time Elapsed {timerEnded.Subtract(timerStart.AddSeconds(CInt($"-{TimeLimit}"))).ToString("mm\:ss")}", resFont, res3Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{GrayText.WordCount} words typed", resFont, res4Rect, Color.White, StringAlignment.Center)
+
+                Using br As New SolidBrush(If(_mouseButtonBackHovered, Color.White, Color.Gray))
+                    g.FillRectangle(br, _mouseButtonBack)
+                End Using
+                Using br As New SolidBrush(If(_mouseButtonNextHovered, Color.White, Color.Gray))
+                    g.FillRectangle(br, _mouseButtonNext)
+                End Using
+                DrawGDIPlusText(g, "Back", resFont, _mouseButtonBack, If(_mouseButtonBackHovered, Color.Red, Color.White), StringAlignment.Center)
+                DrawGDIPlusText(g, "Try Again", resFont, _mouseButtonNext, If(_mouseButtonNextHovered, Color.Red, Color.White), StringAlignment.Center)
             End Using
         ElseIf GameStatus = eGameStatus.YouWon Then
-            Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
+            Dim textRect As New RectangleF(0, 100, cr.Width, 210)
             DrawGDIPlusText(g, "LEVEL COMPLETED", Font, textRect, Color.Gold, StringAlignment.Center)
-            Dim res1Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 100)
-            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 100)
-            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 100)
+            Dim res1Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
+            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 80)
+            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 80)
+            Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 80)
+            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, res4Rect.Y + res4Rect.Height + 40, 300, 80)
+            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, res4Rect.Y + res4Rect.Height + 40, 300, 80)
             Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
                 DrawGDIPlusText(g, $"{CorrectCount} Correct letters ", resFont, res1Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"{WrongCount} Wrong letters ", resFont, res2Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"Time Elapsed {timerEnded.Subtract(timerStart.AddSeconds(CInt($"-{TimeLimit}"))).ToString("mm\:ss")}", resFont, res3Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{GrayText.WordCount} words typed", resFont, res4Rect, Color.White, StringAlignment.Center)
+
+                Using br As New SolidBrush(If(_mouseButtonBackHovered, Color.White, Color.Gray))
+                    g.FillRectangle(br, _mouseButtonBack)
+                End Using
+                Using br As New SolidBrush(If(_mouseButtonNextHovered, Color.White, Color.Gray))
+                    g.FillRectangle(br, _mouseButtonNext)
+                End Using
+                DrawGDIPlusText(g, "Back", resFont, _mouseButtonBack, If(_mouseButtonBackHovered, Color.Red, Color.White), StringAlignment.Center)
+                DrawGDIPlusText(g, "Next Level", resFont, _mouseButtonNext, If(_mouseButtonNextHovered, Color.Red, Color.White), StringAlignment.Center)
             End Using
         ElseIf GameStatus = eGameStatus.Ready Then
             Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
@@ -275,10 +247,28 @@ Public Class MyGame
         End If
     End Sub
 
+    Protected Overrides Sub OnMouseClick(e As MouseEventArgs)
+        MyBase.OnMouseClick(e)
+
+        If _mouseButtonBackHovered Then
+            frmGame.MainMenu.Show()
+            Parent.Controls.Remove(Me)
+        End If
+        If _mouseButtonNextHovered Then
+            If GameStatus = eGameStatus.YouWon Then
+                'todo
+            Else
+                Dim newGame As New MyGame() With {.Phrase = Phrase, .Level = Level, .Life = Life, .TimeLimit = TimeLimit, .Dock = DockStyle.Fill, .Font = Font}
+                Parent.Controls.Add(newGame)
+                newGame.Refresh()
+                Parent.Controls.Remove(Me)
+            End If
+        End If
+    End Sub
+
     Protected Overrides Sub OnResize(e As EventArgs)
         MyBase.OnResize(e)
 
-        PrepareCircles()
         Invalidate()
     End Sub
 
@@ -295,78 +285,6 @@ Public Class MyGame
         End If
     End Sub
 
-    Private Sub bgTimer_Tick(sender As Object, e As EventArgs) Handles bgTimer.Tick
-        Invalidate()
-    End Sub
-
-    Friend Class cCircle
-        Public movementAngle As Decimal
-        Public speed As Decimal
-        Public size As Decimal
-        Public x As Decimal
-        Public y As Decimal
-        Private MainRect As Rectangle
-
-        Sub New(MainRect As Rectangle)
-            Me.MainRect = MainRect
-            ResetVars()
-        End Sub
-
-        Private Sub ResetVars()
-            'reset variables
-            movementAngle = rd.Next(0, 360)
-            speed = rd.Next(2, 7)
-            size = rd.Next(2, 10)
-            x = rd.Next(0, MainRect.Width)
-            y = rd.Next(0, MainRect.Height)
-        End Sub
-
-        Public Sub Show(G As Graphics)
-            Dim mypoint As Point = New Point(x, y)
-
-            'loop to all circles to identify nearby circles 
-            For i As Integer = 0 To Circles.Count - 1
-                Dim cpoint As Point = New Point(Circles(i).x, Circles(i).y)
-
-                If Circles(i).x <> x And Circles(i).y <> y Then
-                    'get the distance between 2 circles
-                    Dim iDis As Integer = DistanceBetween(mypoint, cpoint)
-                    If iDis < PointDistance Then
-                        'set the alpha of the line based on the distance
-                        'fade when far and more visible when near
-                        Dim a As Integer = (iDis / PointDistance) * 50
-                        G.DrawLine(New Pen(Color.FromArgb(50 - a, 200, 200, 200), 0.5), mypoint, cpoint)
-                    End If
-                End If
-            Next
-
-            G.FillEllipse(New SolidBrush(Color.FromArgb(100, 250, 250, 250)), New Rectangle(x - (size / 2), y - (size / 2), size, size))
-        End Sub
-
-        Public Sub Update()
-            'move the position of the circle based on the given speed and angle
-            x = GetX(x, speed, movementAngle)
-            y = GetY(y, speed, movementAngle)
-
-            'reset variables when the circle reaches the edge
-            If x < -20 Or y < -20 Or x > MainRect.Width + 20 Or y > MainRect.Height + 20 Then
-                ResetVars()
-            End If
-        End Sub
-
-    End Class
-
-    Public Shared Function DistanceBetween(p1 As Point, p2 As Point) As Single
-        Return Math.Sqrt((Math.Abs(p2.X - p1.X) ^ 2) + (Math.Abs(p2.Y - p1.Y) ^ 2))
-    End Function
-
-    Private Shared Function GetX(FromX As Decimal, toAdd As Decimal, Angle As Integer) As Decimal
-        Return FromX + toAdd * Math.Cos(If(Angle - 90 < 0, 360 + (Angle - 90), Angle - 90) * Math.PI / 180)
-    End Function
-
-    Private Shared Function GetY(FromY As Decimal, toAdd As Decimal, Angle As Integer) As Decimal
-        Return FromY + toAdd * Math.Sin(If(Angle - 90 < 0, 360 + (Angle - 90), Angle - 90) * Math.PI / 180)
-    End Function
 End Class
 
 Public Enum eGameStatus

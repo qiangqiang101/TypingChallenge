@@ -1,0 +1,10 @@
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.exe.config
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.exe
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.pdb
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.xml
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmGame.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.Resources.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbproj.GenerateResource.Cache
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.exe
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.xml
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.pdb

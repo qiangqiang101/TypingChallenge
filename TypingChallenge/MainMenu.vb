@@ -1,0 +1,79 @@
+﻿Public Class MainMenu
+    Inherits BaseControl
+
+    'Tracking Mouse
+    Private _mousePos As Point = Point.Empty
+    Private btnPlay, btnSetting, btnExit As Rectangle
+    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnExitH As Boolean = False
+
+    Protected Overrides Sub OnMouseLeave(e As EventArgs)
+        MyBase.OnMouseLeave(e)
+
+        btnPlayH = False
+        btnSettingH = False
+        btnExitH = False
+    End Sub
+
+    Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
+        MyBase.OnMouseMove(e)
+
+        _mousePos = New Point(e.X, e.Y)
+        btnPlayH = btnPlay.Contains(_mousePos)
+        btnSettingH = btnSetting.Contains(_mousePos)
+        btnExitH = btnExit.Contains(_mousePos)
+    End Sub
+
+    Protected Overrides Sub OnPaint(e As PaintEventArgs)
+        MyBase.OnPaint(e)
+
+        Dim g As Graphics = e.Graphics
+        g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
+        Dim cr = ClientRectangle
+
+        Dim hero As New Rectangle(10, 10, cr.Width - 20, (cr.Height / 2) - 20)
+        Dim botLeft As New Rectangle(0, cr.Height - 20, cr.Width / 2, 20)
+        Dim botRight As New Rectangle(cr.Width / 2, cr.Height - 20, cr.Width / 2, 20)
+        g.DrawGDIPlusText($"{vbNewLine}Typing Challenge", Font, hero, Color.Gold, StringAlignment.Center)
+
+        Using subFont As New Font(Font.FontFamily, 10.0F, FontStyle.Regular)
+            g.DrawGDIPlusText("Copyright © 2021 Zettabyte Technology, No Rights Reserved.", subFont, botLeft, Color.White, StringAlignment.Near)
+            g.DrawGDIPlusText("Demo version 1.0.524.0", subFont, botRight, Color.White, StringAlignment.Far)
+        End Using
+
+        btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height, 300, 80)
+        btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 300, 80)
+        btnExit = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
+
+        Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
+
+            g.DrawGDIPlusText("Play", resFont, btnPlay, If(btnPlayH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIPlusText("Settings", resFont, btnSetting, If(btnSettingH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIPlusText("Exit", resFont, btnExit, If(btnExitH, Color.Red, Color.White), StringAlignment.Center)
+        End Using
+    End Sub
+
+    Protected Overrides Sub OnMouseClick(e As MouseEventArgs)
+        MyBase.OnMouseClick(e)
+
+        If btnPlayH Then
+            'level select todo
+            Dim newGame As New MyGame() With {.Level = 1, .Life = 5, .TimeLimit = 300, .Dock = DockStyle.Fill, .Font = Font}
+            Parent.Controls.Add(newGame)
+            newGame.Refresh()
+            Me.Hide()
+        End If
+        If btnSettingH Then
+            'todo
+        End If
+        If btnExitH Then
+            frmGame.Close()
+        End If
+    End Sub
+
+    Protected Overrides Sub OnResize(e As EventArgs)
+        MyBase.OnResize(e)
+
+        Invalidate()
+    End Sub
+
+End Class

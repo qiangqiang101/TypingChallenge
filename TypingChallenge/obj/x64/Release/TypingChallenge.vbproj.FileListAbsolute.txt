@@ -1,0 +1,11 @@
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\x64\Release\TypingChallenge.exe.config
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\x64\Release\TypingChallenge.exe
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\x64\Release\TypingChallenge.pdb
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\bin\x64\Release\TypingChallenge.xml
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.vbprojResolveAssemblyReference.cache
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.frmGame.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.Resources.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.vbproj.GenerateResource.Cache
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.exe
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.xml
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\x64\Release\TypingChallenge.pdb

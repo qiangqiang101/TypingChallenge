@@ -1,0 +1,129 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TypingChallenge
+</name>
+</assembly>
+<members>
+<member name="M:TypingChallenge.AudioFile.#ctor(System.String)">
+ <summary>
+ Constructor:  Location is the filename of the media to play.  Wave files and Mp3 files are the supported formats.
+ </summary>
+ <param name="Location"></param>
+ <remarks></remarks>
+</member>
+<member name="M:TypingChallenge.AudioFile.Play">
+ <summary>
+ Plays the file that is specified as the filename.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:TypingChallenge.AudioFile.Pause">
+ <summary>
+ Pause the current play back.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:TypingChallenge.AudioFile.Resume">
+ <summary>
+ Resume the current play back if it is currently paused.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:TypingChallenge.AudioFile.Stop">
+ <summary>
+ Stop the current file if it's playing.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:TypingChallenge.AudioFile.Close">
+ <summary>
+ Close the file.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.Wait">
+ <summary>
+ Halt the program until the .wav file is done playing.  Be careful, this will lock the entire program up until the
+ file is done playing.  It behaves as if the Windows Sleep API is called while the file is playing (and maybe it is, I don't
+ actually know, I'm just theorizing).  :P
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.Milleseconds">
+ <summary>
+ Sets the audio file's time format via the mciSendString API.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.Status">
+ <summary>
+ Gets the status of the current playback file via the mciSendString API.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.FileSize">
+ <summary>
+ Gets the file size of the current audio file.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.Channels">
+ <summary>
+ Gets the channels of the file via the mciSendString API.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.Debug">
+ <summary>
+ Used for debugging purposes.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.IsPaused">
+ <summary>
+ Whether or not the current playback is paused.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:TypingChallenge.AudioFile.Filename">
+ <summary>
+ The current filename of the file that is to be played back.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:TypingChallenge.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TypingChallenge.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TypingChallenge.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+</members>
+</doc>
