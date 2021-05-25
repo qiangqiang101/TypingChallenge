@@ -9,3 +9,15 @@ E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Releas
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.xml
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.pdb
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.exe.config
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.exe
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.xml
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.pdb
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.exe
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.pdb
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.xml
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmGame.resources
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmLevelEdit.resources
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbproj.GenerateResource.Cache

@@ -95,8 +95,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudioFile.vb" />
-    <Compile Include="BaseControl.vb">
+    <Compile Include="Class\AudioFile.vb" />
+    <Compile Include="Database\SettingData.vb" />
+    <Compile Include="frmLevelEdit.Designer.vb">
+      <DependentUpon>frmLevelEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLevelEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logic\BaseControl.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="frmGame.vb">
@@ -106,8 +113,9 @@
       <DependentUpon>frmGame.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Helper.vb" />
-    <Compile Include="MainMenu.vb">
+    <Compile Include="Class\Helper.vb" />
+    <Compile Include="Database\LevelData.vb" />
+    <Compile Include="Logic\MainMenu.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -125,13 +133,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="MyGame.vb">
+    <Compile Include="Logic\MyGame.vb">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmGame.resx">
       <DependentUpon>frmGame.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLevelEdit.resx">
+      <DependentUpon>frmLevelEdit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

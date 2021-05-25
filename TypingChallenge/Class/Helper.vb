@@ -3,6 +3,11 @@ Imports System.Text.RegularExpressions
 
 Module Helper
 
+    Public lvlXmlPath As String = ".\data\level.xml"
+    Public setXmlPath As String = ".\data\setting.xml"
+    Public levels As LevelData = New LevelData(lvlXmlPath).Instance
+    Public setting As SettingData = New SettingData(setXmlPath).Instance
+
     <Extension>
     Public Sub DrawGDIPlusText(graphics As Graphics, text As String, font As Font, bounds As RectangleF, color As Color, Optional alignment As StringAlignment = StringAlignment.Center, Optional offset As Point = Nothing)
         Dim format As New StringFormat()

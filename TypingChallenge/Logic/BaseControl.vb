@@ -16,9 +16,21 @@ Public Class BaseControl
     Private player As AudioFile
 
     Public Sub New()
+        Select Case setting.Quality
+            Case 0
+                Array.Resize(Circles, 60)
+            Case 1
+                Array.Resize(Circles, 120)
+            Case 2
+                Array.Resize(Circles, 240)
+            Case 3
+                Array.Resize(Circles, 360)
+        End Select
+
         If System.ComponentModel.LicenseManager.UsageMode = System.ComponentModel.LicenseUsageMode.Runtime Then
             bgTimer.Start()
             player = New AudioFile(".\audio\bgm.mp3")
+            player.SetVolume(setting.MusicVolume)
             player.Play()
         End If
 
@@ -74,11 +86,13 @@ Public Class BaseControl
         g.SmoothingMode = SmoothingMode.AntiAlias
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
 
-        Dim fps As New Rectangle(ClientRectangle.Width - 200, 0, 200, 50)
-        Using fpsFont As New Font("Verdana", 30, FontStyle.Regular, GraphicsUnit.Pixel)
-            Call advanceFrameRate()
-            g.DrawGDIPlusText(currentFrameRate * 2, fpsFont, fps, Color.LimeGreen, StringAlignment.Far)
-        End Using
+        If setting.ShowFPS Then
+            Dim fps As New Rectangle(ClientRectangle.Width - 200, 0, 200, 50)
+            Using fpsFont As New Font("Verdana", 30, FontStyle.Regular, GraphicsUnit.Pixel)
+                Call advanceFrameRate()
+                g.DrawGDIPlusText(currentFrameRate, fpsFont, fps, Color.LimeGreen, StringAlignment.Far)
+            End Using
+        End If
 
         For i As Integer = 0 To Circles.Count - 1
 

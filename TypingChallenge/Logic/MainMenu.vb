@@ -39,7 +39,7 @@
 
         Using subFont As New Font(Font.FontFamily, 10.0F, FontStyle.Regular)
             g.DrawGDIPlusText("Copyright © 2021 Zettabyte Technology, No Rights Reserved.", subFont, botLeft, Color.White, StringAlignment.Near)
-            g.DrawGDIPlusText("Demo version 1.0.524.0", subFont, botRight, Color.White, StringAlignment.Far)
+            g.DrawGDIPlusText($"Demo version {My.Application.Info.Version}", subFont, botRight, Color.White, StringAlignment.Far)
         End Using
 
         btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height + 100, 300, 80)
