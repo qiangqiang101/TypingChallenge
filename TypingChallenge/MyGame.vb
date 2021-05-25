@@ -21,11 +21,12 @@ Public Class MyGame
 
     'Data
     Private LifeLeft As Integer
-    Private ElapsedTime As Integer
+    Private SecondsLeft As Integer
     Private GameStatus As eGameStatus = eGameStatus.Ready
     Private CorrectCount As Integer = 0
     Private CorrectStreak As Integer = 0
     Private WrongCount As Integer = 0
+    Private Score As Integer = 0
 
     Public WithEvents elapsedTimer As New Timer() With {.Interval = 500}
     Private timerStart As Date = Nothing
@@ -71,11 +72,12 @@ Public Class MyGame
         End Select
     End Function
 
-    Private Function Progression() As Integer
+    Private Function Progression() As String
         Try
-            Return CInt((_PhraseBackup.Length / WhiteText.Length) * 100) - 100
+            Dim result = CSng((WhiteText.Length / _PhraseBackup.Length) * 100) - 100
+            Return result.ToString("N").Replace("-", "")
         Catch ex As Exception
-            Return 100
+            Return "100"
         End Try
     End Function
 
@@ -90,15 +92,27 @@ Public Class MyGame
         'Draw Past Text
         For Each letter As Char In pastText
             graphics.DrawString(letter, font, brushP, drawAt)
-            drawAt.X += graphics.MeasureString(letter, font).Width / 1.5F
+            If letter = " " Then
+                drawAt.X += graphics.MeasureString("_", font).Width / 1.6F
+            Else
+                drawAt.X += graphics.MeasureString(letter, font).Width / 1.6F
+            End If
         Next
         'Draw Current Text
         graphics.DrawString(If(highlightText = " ", "_", highlightText), font, brushH, drawAt)
-        drawAt.X += graphics.MeasureString(highlightText, font).Width / 1.5F
+        If highlightText = " " Then
+            drawAt.X += graphics.MeasureString("_", font).Width / 1.6F
+        Else
+            drawAt.X += graphics.MeasureString(highlightText, font).Width / 1.6F
+        End If
         'Draw Future Text
         For Each letter As Char In nextText
             graphics.DrawString(letter, font, brushN, drawAt)
-            drawAt.X += graphics.MeasureString(letter, font).Width / 1.5F
+            If letter = " " Then
+                drawAt.X += graphics.MeasureString("_", font).Width / 1.6F
+            Else
+                drawAt.X += graphics.MeasureString(letter, font).Width / 1.6F
+            End If
         Next
 
         graphics.ResetTransform()
@@ -131,15 +145,17 @@ Public Class MyGame
         If GameStatus = eGameStatus.GameOver Then
             Dim textRect As New RectangleF(0, 100, cr.Width, 210)
             DrawGDIPlusText(g, "GAME OVER", Font, textRect, Color.White, StringAlignment.Center)
-            Dim res1Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
+            Dim res0Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
+            Dim res1Rect As New RectangleF(0, res0Rect.Y + res0Rect.Height, cr.Width, 80)
             Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 80)
             Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 80)
             Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 80)
-            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, res4Rect.Y + res4Rect.Height + 40, 300, 80)
-            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, res4Rect.Y + res4Rect.Height + 40, 300, 80)
+            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 80)
+            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 80)
             Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
-                DrawGDIPlusText(g, $"{CorrectCount} Correct letters ", resFont, res1Rect, Color.White, StringAlignment.Center)
-                DrawGDIPlusText(g, $"{WrongCount} Wrong letters ", resFont, res2Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{Score} Score", resFont, res0Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{CorrectCount} Correct letters", resFont, res1Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{WrongCount} Wrong letters", resFont, res2Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"Time Elapsed {timerEnded.Subtract(timerStart.AddSeconds(CInt($"-{TimeLimit}"))).ToString("mm\:ss")}", resFont, res3Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"{GrayText.WordCount} words typed", resFont, res4Rect, Color.White, StringAlignment.Center)
 
@@ -155,15 +171,17 @@ Public Class MyGame
         ElseIf GameStatus = eGameStatus.YouWon Then
             Dim textRect As New RectangleF(0, 100, cr.Width, 210)
             DrawGDIPlusText(g, "LEVEL COMPLETED", Font, textRect, Color.Gold, StringAlignment.Center)
-            Dim res1Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
+            Dim res0Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
+            Dim res1Rect As New RectangleF(0, res0Rect.Y + res0Rect.Height, cr.Width, 80)
             Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 80)
             Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 80)
             Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 80)
-            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, res4Rect.Y + res4Rect.Height + 40, 300, 80)
-            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, res4Rect.Y + res4Rect.Height + 40, 300, 80)
+            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 80)
+            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 80)
             Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
-                DrawGDIPlusText(g, $"{CorrectCount} Correct letters ", resFont, res1Rect, Color.White, StringAlignment.Center)
-                DrawGDIPlusText(g, $"{WrongCount} Wrong letters ", resFont, res2Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{Score} Score", resFont, res0Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{CorrectCount} Correct letters", resFont, res1Rect, Color.White, StringAlignment.Center)
+                DrawGDIPlusText(g, $"{WrongCount} Wrong letters", resFont, res2Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"Time Elapsed {timerEnded.Subtract(timerStart.AddSeconds(CInt($"-{TimeLimit}"))).ToString("mm\:ss")}", resFont, res3Rect, Color.White, StringAlignment.Center)
                 DrawGDIPlusText(g, $"{GrayText.WordCount} words typed", resFont, res4Rect, Color.White, StringAlignment.Center)
 
@@ -199,9 +217,13 @@ Public Class MyGame
 
             Dim timeElapseRect As New RectangleF(10, cr.Height - 120, (cr.Width / 2) - 10, 100)
             Dim progressRect As New RectangleF((cr.Width / 2) + 10, cr.Height - 120, (cr.Width / 2) - 10, 100)
+
             Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
-                DrawGDIPlusText(g, $"⏲ {ElapsedTime}", timeFont, timeElapseRect, If(ElapsedTime <= 10, Color.Red, Color.White), StringAlignment.Near)
+                DrawGDIPlusText(g, $"⏲ {SecondsLeft.SecondsToTime}", timeFont, timeElapseRect, If(SecondsLeft <= 10, Color.Red, Color.White), StringAlignment.Near)
                 DrawGDIPlusText(g, $"⚔ {Progression()}%", timeFont, progressRect, Color.White, StringAlignment.Far)
+                Dim scoreWidth As Single = g.MeasureString($"★ {Score}", timeFont).Width * 1.5
+                Dim scoreRect As New RectangleF((cr.Width / 2) - (scoreWidth / 2), cr.Height - 120, scoreWidth, 100)
+                DrawGDIPlusText(g, $"★ {Score}", timeFont, scoreRect, Color.Gold, StringAlignment.Center)
             End Using
         End If
     End Sub
@@ -223,26 +245,36 @@ Public Class MyGame
     Protected Overrides Sub OnKeyPress(e As KeyPressEventArgs)
         MyBase.OnKeyPress(e)
 
+        Dim allowedChar As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-=_+[]{};':<>,.?/\|`~"" "
+
         If GameStatus = eGameStatus.Running Then
-            If e.KeyChar = GoldText Then
-                GrayText &= GoldText
-                GoldText = WhiteText.FirstOrDefault
-                Try
-                    WhiteText = WhiteText.Remove(0, 1)
-                Catch ex As Exception
-                    GameStatus = eGameStatus.YouWon
-                    timerEnded = Now
-                    If elapsedTimer.Enabled Then elapsedTimer.Stop()
-                End Try
-                CorrectCount += 1
-                CorrectStreak += 1
-                If CorrectStreak >= 50 Then LifeLeft += 1 : CorrectStreak = 0
-                Invalidate()
-            Else
-                LifeLeft -= 1
-                WrongCount += 1
-                CorrectStreak = 0
-                Invalidate()
+            If allowedChar.Contains(e.KeyChar) Then
+                If e.KeyChar = GoldText Then
+                    GrayText &= GoldText
+                    GoldText = WhiteText.FirstOrDefault
+                    Try
+                        WhiteText = WhiteText.Remove(0, 1)
+                    Catch ex As Exception
+                        GameStatus = eGameStatus.YouWon
+                        timerEnded = Now
+                        If elapsedTimer.Enabled Then elapsedTimer.Stop()
+                    End Try
+                    CorrectCount += 1
+                    CorrectStreak += 1
+                    Score += 1
+                    If CorrectStreak >= 50 Then
+                        LifeLeft += 1
+                        CorrectStreak = 0
+                        Score += 100
+                    End If
+                    Invalidate()
+                Else
+                    LifeLeft -= 1
+                    WrongCount += 1
+                    CorrectStreak = 0
+                    Score -= 1
+                    Invalidate()
+                End If
             End If
         End If
     End Sub
@@ -276,12 +308,10 @@ Public Class MyGame
         If LifeLeft < 1 Then
             GameStatus = eGameStatus.GameOver
             timerEnded = Now
-            'Invalidate()
             elapsedTimer.Stop()
         Else
-            ElapsedTime = CInt(Now.Subtract(timerStart).TotalSeconds)
-            ElapsedTime = CInt(ElapsedTime.ToString.Replace("-", ""))
-            'Invalidate()
+            SecondsLeft = CInt(Now.Subtract(timerStart).TotalSeconds)
+            SecondsLeft = CInt(SecondsLeft.ToString.Replace("-", ""))
         End If
     End Sub
 

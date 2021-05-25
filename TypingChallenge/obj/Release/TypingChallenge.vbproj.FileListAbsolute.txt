@@ -8,3 +8,4 @@ E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Releas
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.exe
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.xml
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.pdb
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbprojResolveAssemblyReference.cache

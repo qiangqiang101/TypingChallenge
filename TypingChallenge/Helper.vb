@@ -17,9 +17,22 @@ Module Helper
     End Sub
 
     <Extension>
+    Public Sub DrawGDIText(graphics As Graphics, text As String, font As Font, bounds As Rectangle, color As Color, Optional flags As TextFormatFlags = TextFormatFlags.VerticalCenter, Optional offset As Point = Nothing)
+        TextRenderer.DrawText(graphics, text, font, bounds, color, flags)
+    End Sub
+
+    <Extension>
     Public Function WordCount(text As String) As Integer
         Dim collection As MatchCollection = Regex.Matches(text, "\S+")
         Return collection.Count
+    End Function
+
+    <Extension>
+    Public Function SecondsToTime(sec As Integer) As String
+        Dim ts As TimeSpan = TimeSpan.FromSeconds(sec)
+
+        Dim mydate As Date = New Date(ts.Ticks)
+        Return mydate.ToString(("mm:ss"))
     End Function
 
 End Module

@@ -3,14 +3,15 @@
 
     'Tracking Mouse
     Private _mousePos As Point = Point.Empty
-    Private btnPlay, btnSetting, btnExit As Rectangle
-    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnExitH As Boolean = False
+    Private btnPlay, btnSetting, btnCredits, btnExit As Rectangle
+    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnCreditsH As Boolean = False, btnExitH As Boolean = False
 
     Protected Overrides Sub OnMouseLeave(e As EventArgs)
         MyBase.OnMouseLeave(e)
 
         btnPlayH = False
         btnSettingH = False
+        btnCreditsH = False
         btnExitH = False
     End Sub
 
@@ -20,6 +21,7 @@
         _mousePos = New Point(e.X, e.Y)
         btnPlayH = btnPlay.Contains(_mousePos)
         btnSettingH = btnSetting.Contains(_mousePos)
+        btnCreditsH = btnCredits.Contains(_mousePos)
         btnExitH = btnExit.Contains(_mousePos)
     End Sub
 
@@ -30,25 +32,33 @@
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
         Dim cr = ClientRectangle
 
-        Dim hero As New Rectangle(10, 10, cr.Width - 20, (cr.Height / 2) - 20)
+        Dim hero As New Rectangle(10, 10, cr.Width - 20, (cr.Height / 2) - 120)
         Dim botLeft As New Rectangle(0, cr.Height - 20, cr.Width / 2, 20)
         Dim botRight As New Rectangle(cr.Width / 2, cr.Height - 20, cr.Width / 2, 20)
-        g.DrawGDIPlusText($"{vbNewLine}Typing Challenge", Font, hero, Color.Gold, StringAlignment.Center)
+        g.DrawGDIText($"Typing Challenge", Font, hero, Color.Gold, TextFormatFlags.Bottom Or TextFormatFlags.HorizontalCenter)
 
         Using subFont As New Font(Font.FontFamily, 10.0F, FontStyle.Regular)
             g.DrawGDIPlusText("Copyright © 2021 Zettabyte Technology, No Rights Reserved.", subFont, botLeft, Color.White, StringAlignment.Near)
             g.DrawGDIPlusText("Demo version 1.0.524.0", subFont, botRight, Color.White, StringAlignment.Far)
         End Using
 
-        btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height, 300, 80)
+        btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height + 100, 300, 80)
         btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 300, 80)
-        btnExit = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
+        btnCredits = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
+        btnExit = New Rectangle((cr.Width / 2) - 150, btnCredits.Y + btnCredits.Height, 300, 80)
 
         Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
-
             g.DrawGDIPlusText("Play", resFont, btnPlay, If(btnPlayH, Color.Red, Color.White), StringAlignment.Center)
-            g.DrawGDIPlusText("Settings", resFont, btnSetting, If(btnSettingH, Color.Red, Color.White), StringAlignment.Center)
-            g.DrawGDIPlusText("Exit", resFont, btnExit, If(btnExitH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIPlusText("Options", resFont, btnSetting, If(btnSettingH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIPlusText("Credits", resFont, btnCredits, If(btnCreditsH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIPlusText("Quit", resFont, btnExit, If(btnExitH, Color.Red, Color.White), StringAlignment.Center)
+        End Using
+
+        Using pen As New Pen(Color.White, 0.5F)
+            If btnPlayH Then g.DrawRectangle(pen, btnPlay)
+            If btnSettingH Then g.DrawRectangle(pen, btnSetting)
+            If btnCreditsH Then g.DrawRectangle(pen, btnCredits)
+            If btnExitH Then g.DrawRectangle(pen, btnExit)
         End Using
     End Sub
 
@@ -63,6 +73,9 @@
             Me.Hide()
         End If
         If btnSettingH Then
+            'todo
+        End If
+        If btnCreditsH Then
             'todo
         End If
         If btnExitH Then
