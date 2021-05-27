@@ -25,17 +25,40 @@ Public Class BaseControl
                 Array.Resize(Circles, 240)
             Case 3
                 Array.Resize(Circles, 360)
+            Case 4
+                Array.Resize(Circles, 480)
         End Select
 
         If System.ComponentModel.LicenseManager.UsageMode = System.ComponentModel.LicenseUsageMode.Runtime Then
             bgTimer.Start()
             player = New AudioFile(".\audio\bgm.mp3")
-            player.SetVolume(setting.MusicVolume)
             player.Play()
+            player.SetVolume(setting.MusicVolume)
         End If
 
         DoubleBuffered = True
         PrepareCircles()
+    End Sub
+
+    Public Sub RefreshSettings()
+        setting = New SettingData(setXmlPath).Instance
+
+        Select Case setting.Quality
+            Case 0
+                Array.Resize(Circles, 60)
+            Case 1
+                Array.Resize(Circles, 120)
+            Case 2
+                Array.Resize(Circles, 240)
+            Case 3
+                Array.Resize(Circles, 360)
+            Case 4
+                Array.Resize(Circles, 480)
+        End Select
+
+        player.SetVolume(setting.MusicVolume)
+        PrepareCircles()
+        Invalidate()
     End Sub
 
     Private Sub PrepareCircles()

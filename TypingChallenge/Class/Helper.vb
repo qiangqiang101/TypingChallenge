@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.CompilerServices
+﻿Imports System.Drawing.Drawing2D
+Imports System.Runtime.CompilerServices
 Imports System.Text.RegularExpressions
 
 Module Helper
@@ -38,6 +39,50 @@ Module Helper
 
         Dim mydate As Date = New Date(ts.Ticks)
         Return mydate.ToString(("mm:ss"))
+    End Function
+
+    <Extension>
+    Public Sub DrawRoundedRectangle(ByVal g As Graphics, ByVal r As Rectangle, ByVal d As Integer, ByVal p As Pen)
+        Dim mode As SmoothingMode = g.SmoothingMode
+        Dim iMode As InterpolationMode = g.InterpolationMode
+        g.SmoothingMode = SmoothingMode.AntiAlias
+        g.InterpolationMode = InterpolationMode.High
+        g.DrawArc(p, r.X, r.Y, d, d, 180, 90)
+        g.DrawLine(p, CInt(r.X + d / 2), r.Y, CInt(r.X + r.Width - d / 2), r.Y)
+        g.DrawArc(p, r.X + r.Width - d, r.Y, d, d, 270, 90)
+        g.DrawLine(p, r.X, CInt(r.Y + d / 2), r.X, CInt(r.Y + r.Height - d / 2))
+        g.DrawLine(p, CInt(r.X + r.Width), CInt(r.Y + d / 2), CInt(r.X + r.Width), CInt(r.Y + r.Height - d / 2))
+        g.DrawLine(p, CInt(r.X + d / 2), CInt(r.Y + r.Height), CInt(r.X + r.Width - d / 2), CInt(r.Y + r.Height))
+        g.DrawArc(p, r.X, r.Y + r.Height - d, d, d, 90, 90)
+        g.DrawArc(p, r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90)
+        g.SmoothingMode = mode
+        g.InterpolationMode = iMode
+    End Sub
+
+    <Extension>
+    Public Sub FillRoundedRectangle(ByVal g As Graphics, ByVal r As Rectangle, ByVal d As Integer, ByVal b As Brush, corner As RoundedRectCorners)
+        Dim mode As SmoothingMode = g.SmoothingMode
+        Dim iMode As InterpolationMode = g.InterpolationMode
+        g.SmoothingMode = SmoothingMode.AntiAlias
+        g.InterpolationMode = InterpolationMode.High
+        If corner.TopLeft Then g.FillPie(b, r.X, r.Y, d, d, 180, 90)
+        If corner.TopRight Then g.FillPie(b, r.X + r.Width - d, r.Y, d, d, 270, 90)
+        If corner.BottomLeft Then g.FillPie(b, r.X, r.Y + r.Height - d, d, d, 90, 90)
+        If corner.BottomRight Then g.FillPie(b, r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90)
+        If Not corner.TopLeft Then g.FillRectangle(b, r.X, r.Y, d, d)
+        If Not corner.TopRight Then g.FillRectangle(b, r.X + r.Width - d, r.Y, d, d)
+        If Not corner.BottomLeft Then g.FillRectangle(b, r.X, r.Y + r.Height - d, d, d)
+        If Not corner.BottomRight Then g.FillRectangle(b, r.X + r.Width - d, r.Y + r.Height - d, d, d)
+        g.FillRectangle(b, CInt(r.X - 1 + d / 2), r.Y, r.Width + 2 - d, CInt(d / 2))
+        g.FillRectangle(b, r.X, CInt(r.Y - 1 + d / 2), r.Width, CInt(r.Height + 2 - d))
+        g.FillRectangle(b, CInt(r.X - 1 + d / 2), CInt(r.Y + r.Height - d / 2), CInt(r.Width + 2 - d), CInt(d / 2))
+        g.SmoothingMode = mode
+        g.InterpolationMode = iMode
+    End Sub
+
+    <Extension>
+    Public Function ToRectangle(rectF As RectangleF) As Rectangle
+        Return New Rectangle(CInt(rectF.X), CInt(rectF.Y), CInt(rectF.Width), CInt(rectF.Height))
     End Function
 
 End Module

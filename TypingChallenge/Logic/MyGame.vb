@@ -160,10 +160,10 @@ Public Class MyGame
                 DrawGDIPlusText(g, $"{GrayText.WordCount} words typed", resFont, res4Rect, Color.White, StringAlignment.Center)
 
                 Using br As New SolidBrush(If(_mouseButtonBackHovered, Color.White, Color.Gray))
-                    g.FillRectangle(br, _mouseButtonBack)
+                    g.FillRoundedRectangle(_mouseButtonBack, 10, br, New RoundedRectCorners(True))
                 End Using
                 Using br As New SolidBrush(If(_mouseButtonNextHovered, Color.White, Color.Gray))
-                    g.FillRectangle(br, _mouseButtonNext)
+                    g.FillRoundedRectangle(_mouseButtonNext, 10, br, New RoundedRectCorners(True))
                 End Using
                 DrawGDIPlusText(g, "Back", resFont, _mouseButtonBack, If(_mouseButtonBackHovered, Color.Red, Color.White), StringAlignment.Center)
                 DrawGDIPlusText(g, "Try Again", resFont, _mouseButtonNext, If(_mouseButtonNextHovered, Color.Red, Color.White), StringAlignment.Center)
@@ -186,10 +186,10 @@ Public Class MyGame
                 DrawGDIPlusText(g, $"{GrayText.WordCount} words typed", resFont, res4Rect, Color.White, StringAlignment.Center)
 
                 Using br As New SolidBrush(If(_mouseButtonBackHovered, Color.White, Color.Gray))
-                    g.FillRectangle(br, _mouseButtonBack)
+                    g.FillRoundedRectangle(_mouseButtonBack, 10, br, New RoundedRectCorners(True))
                 End Using
                 Using br As New SolidBrush(If(_mouseButtonNextHovered, Color.White, Color.Gray))
-                    g.FillRectangle(br, _mouseButtonNext)
+                    g.FillRoundedRectangle(_mouseButtonNext, 10, br, New RoundedRectCorners(True))
                 End Using
                 DrawGDIPlusText(g, "Back", resFont, _mouseButtonBack, If(_mouseButtonBackHovered, Color.Red, Color.White), StringAlignment.Center)
                 DrawGDIPlusText(g, "Next Level", resFont, _mouseButtonNext, If(_mouseButtonNextHovered, Color.Red, Color.White), StringAlignment.Center)

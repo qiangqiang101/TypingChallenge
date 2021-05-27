@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AudioFile.vb" />
+    <Compile Include="Class\RoundedRectCorners.vb" />
     <Compile Include="Database\SettingData.vb" />
     <Compile Include="frmLevelEdit.Designer.vb">
       <DependentUpon>frmLevelEdit.vb</DependentUpon>
@@ -115,6 +116,15 @@
     </Compile>
     <Compile Include="Class\Helper.vb" />
     <Compile Include="Database\LevelData.vb" />
+    <Compile Include="frmTest.Designer.vb">
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logic\GameOption.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Logic\MainMenu.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -143,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLevelEdit.resx">
       <DependentUpon>frmLevelEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

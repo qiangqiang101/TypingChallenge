@@ -55,10 +55,10 @@
         End Using
 
         Using pen As New Pen(Color.White, 0.5F)
-            If btnPlayH Then g.DrawRectangle(pen, btnPlay)
-            If btnSettingH Then g.DrawRectangle(pen, btnSetting)
-            If btnCreditsH Then g.DrawRectangle(pen, btnCredits)
-            If btnExitH Then g.DrawRectangle(pen, btnExit)
+            If btnPlayH Then g.DrawRoundedRectangle(btnPlay, 10, pen)
+            If btnSettingH Then g.DrawRoundedRectangle(btnSetting, 10, pen)
+            If btnCreditsH Then g.DrawRoundedRectangle(btnCredits, 10, pen)
+            If btnExitH Then g.DrawRoundedRectangle(btnExit, 10, pen)
         End Using
     End Sub
 
@@ -73,7 +73,11 @@
             Me.Hide()
         End If
         If btnSettingH Then
-            'todo
+            Dim opt As New GameOption() With {.Dock = DockStyle.Fill, .Font = New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold, Font.Unit),
+                .MusicVolume = setting.MusicVolume, .SoundVolume = setting.SoundVolume, .GraphicsQuality = setting.Quality, .FullScreen = setting.FullScreen, .ShowFPS = setting.ShowFPS}
+            Parent.Controls.Add(opt)
+            opt.Refresh()
+            Me.Hide()
         End If
         If btnCreditsH Then
             'todo
