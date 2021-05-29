@@ -125,6 +125,9 @@
     <Compile Include="Logic\GameOption.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Logic\LevelSelection.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Logic\MainMenu.vb">
       <SubType>Component</SubType>
     </Compile>

@@ -7,8 +7,8 @@ Public Class GameOption
     Private _mousePos As Point = Point.Empty
 
     'Controls
-    Private musicL, musicR, soundL, soundR, graphicL, graphicR, fullScreenCb, fpsCb, saveBtn, cancelBtn As RectangleF
-    Private musicLH, musicRH, soundLH, soundRH, graphicLH, graphicRH, fullScreenCbH, fpsCbH, saveBtnH, cancelBtnH As Boolean
+    Private musicL, musicR, soundL, soundR, graphicL, graphicR, fullscreenL, fullscreenR, fpsL, fpsR, saveBtn, cancelBtn As RectangleF 'fullScreenCb, fpsCb
+    Private musicLH, musicRH, soundLH, soundRH, graphicLH, graphicRH, fullscreenLH, fullscreenRH, fpsLH, fpsRH, saveBtnH, cancelBtnH As Boolean 'fullScreenCbH, fpsCbH
 
     Public Property MusicVolume() As Integer
     Public Property SoundVolume() As Integer
@@ -29,8 +29,12 @@ Public Class GameOption
         soundRH = False
         graphicLH = False
         graphicRH = False
-        fullScreenCbH = False
-        fpsCbH = False
+        fullscreenLH = False
+        fullscreenRH = False
+        fpsLH = False
+        fpsRH = False
+        'fullScreenCbH = False
+        'fpsCbH = False
         saveBtnH = False
         cancelBtnH = False
     End Sub
@@ -45,118 +49,50 @@ Public Class GameOption
         soundRH = soundR.Contains(_mousePos)
         graphicLH = graphicL.Contains(_mousePos)
         graphicRH = graphicR.Contains(_mousePos)
-        fullScreenCbH = fullScreenCb.Contains(_mousePos)
-        fpsCbH = fpsCb.Contains(_mousePos)
+        'fullScreenCbH = fullScreenCb.Contains(_mousePos)
+        'fpsCbH = fpsCb.Contains(_mousePos)
+        fullscreenLH = fullscreenL.Contains(_mousePos)
+        fullscreenRH = fullscreenR.Contains(_mousePos)
+        fpsLH = fpsL.Contains(_mousePos)
+        fpsRH = fpsR.Contains(_mousePos)
         saveBtnH = saveBtn.Contains(_mousePos)
         cancelBtnH = cancelBtn.Contains(_mousePos)
     End Sub
 
-    Protected Overrides Sub OnPaintBackground(pevent As PaintEventArgs)
-        MyBase.OnPaintBackground(pevent)
+    Protected Overrides Sub OnPaint(e As PaintEventArgs)
+        MyBase.OnPaint(e)
 
-        Dim g As Graphics = pevent.Graphics
+        Dim g As Graphics = e.Graphics
         g.SmoothingMode = SmoothingMode.AntiAlias
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
 
-        Dim cr = ClientRectangle
-        Dim rWidth As Single = (cr.Width / 2) - 150
-        Dim cbWidth As Single = (rWidth / 2)
+        Dim cr = ClientRectangle.GetSafeZone
+        Dim rWidth As Single = cr.GetColumnSizef(2).Width
+        Dim rHeight As Single = cr.GetRowSizef(6).Height
+        Dim rHeight2 As Single = (rHeight * 4) / 6
+        'Dim rWidth As Single = (cr.Width / 2) '- 150
         Dim sz As Integer = 75
 
+        Dim optTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
+        g.DrawGDIText("OPTIONS", Font, optTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
+
         'Music
-        Dim mvRect1 As New RectangleF(100, 100, rWidth, sz)
-        g.DrawGDIPlusText("Music Volume", Font, mvRect1, Color.White, StringAlignment.Near)
-        Dim mvRect2 As New RectangleF(rWidth + 150, 100, rWidth, sz)
-        musicL = New RectangleF(mvRect2.Location, New Size(sz, sz))
-        If musicLH Then
-            g.FillRoundedRectangle(musicL.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("◀", Font, musicL, Color.Red, StringAlignment.Center)
-        Else
-            g.DrawGDIPlusText("◀", Font, musicL, Color.White, StringAlignment.Center)
-        End If
-        g.DrawGDIPlusText(MusicVolume, Font, mvRect2, Color.White, StringAlignment.Center)
-        musicR = New RectangleF(mvRect2.X + mvRect2.Width - sz, mvRect2.Y, sz, sz)
-        If musicRH Then
-            g.FillRoundedRectangle(musicR.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("▶", Font, musicR, Color.Red, StringAlignment.Center)
-        Else
-            g.DrawGDIPlusText("▶", Font, musicR, Color.White, StringAlignment.Center)
-        End If
+        g.DrawSliderControl(Font, musicL, musicR, musicLH, musicRH, New PointF(cr.X, cr.Y + rHeight), New Size(rWidth, rHeight2), "Music Volume", MusicVolume)
 
         'Sound
-        Dim svRect1 As New RectangleF(100, 200, rWidth, sz)
-        g.DrawGDIPlusText("Sound Volume", Font, svRect1, Color.White, StringAlignment.Near)
-        Dim svRect2 As New RectangleF(rWidth + 150, 200, rWidth, sz)
-        soundL = New RectangleF(svRect2.Location, New Size(sz, sz))
-        If soundLH Then
-            g.FillRoundedRectangle(soundL.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("◀", Font, soundL, Color.Red, StringAlignment.Center)
-        Else
-            g.DrawGDIPlusText("◀", Font, soundL, Color.White, StringAlignment.Center)
-        End If
-        g.DrawGDIPlusText(SoundVolume, Font, svRect2, Color.White, StringAlignment.Center)
-        soundR = New RectangleF(svRect2.X + svRect2.Width - sz, svRect2.Y, sz, sz)
-        If soundRH Then
-            g.FillRoundedRectangle(soundR.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("▶", Font, soundR, Color.Red, StringAlignment.Center)
-        Else
-            g.DrawGDIPlusText("▶", Font, soundR, Color.White, StringAlignment.Center)
-        End If
+        g.DrawSliderControl(Font, soundL, soundR, soundLH, soundRH, New PointF(cr.X, cr.Y + rHeight + rHeight2), New Size(rWidth, rHeight2), "Sound Volume", SoundVolume)
 
         'Graphics
-        Dim gqRect1 As New RectangleF(100, 400, rWidth, sz)
-        g.DrawGDIPlusText("Graphics Quality", Font, gqRect1, Color.White, StringAlignment.Near)
-        Dim gqRect2 As New RectangleF(rWidth + 150, 400, rWidth, sz)
-        graphicL = New RectangleF(gqRect2.Location, New Size(sz, sz))
-        If graphicLH Then
-            g.FillRoundedRectangle(graphicL.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("◀", Font, graphicL, Color.Red, StringAlignment.Center)
-        Else
-            g.DrawGDIPlusText("◀", Font, graphicL, Color.White, StringAlignment.Center)
-        End If
-        g.DrawGDIPlusText(GraphicsQualityText(GraphicsQuality), Font, gqRect2, Color.White, StringAlignment.Center)
-        graphicR = New RectangleF(gqRect2.X + gqRect2.Width - sz, gqRect2.Y, sz, sz)
-        If graphicRH Then
-            g.FillRoundedRectangle(graphicR.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("▶", Font, graphicR, Color.Red, StringAlignment.Center)
-        Else
-            g.DrawGDIPlusText("▶", Font, graphicR, Color.White, StringAlignment.Center)
-        End If
+        g.DrawSliderControl(Font, graphicL, graphicR, graphicLH, graphicRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 3)), New SizeF(rWidth, rHeight2), "Graphics Quality", GraphicsQualityText(GraphicsQuality))
 
         'Fullscreen
-        Dim cbRect2 As New RectangleF(rWidth + 150, 500, rWidth, sz)
-        Dim cbRect3 As New RectangleF(rWidth + 150 + sz + 20, 500, rWidth - sz, sz)
-        fullScreenCb = New RectangleF(cbRect2.Location, New Size(sz, sz))
-        If fullScreenCbH Then
-            Using p As New Pen(Brushes.Red, 5.0F)
-                g.DrawRoundedRectangle(fullScreenCb.ToRectangle, 10, p)
-            End Using
-        Else
-            Using p As New Pen(Brushes.White, 5.0F)
-                g.DrawRoundedRectangle(fullScreenCb.ToRectangle, 10, p)
-            End Using
-        End If
-        If FullScreen Then g.FillRoundedRectangle(fullScreenCb.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-        g.DrawGDIPlusText("Full Screen", Font, cbRect3, Color.White, StringAlignment.Near)
+        g.DrawSliderControl(Font, fullscreenL, fullscreenR, fullscreenLH, fullscreenRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Window Mode", FullscreenToString(FullScreen))
 
         'FPS
-        Dim cbRect5 As New RectangleF(rWidth + 150, 600, rWidth, sz)
-        Dim cbRect6 As New RectangleF(rWidth + 150 + sz + 20, 600, rWidth - sz, sz)
-        fpsCb = New RectangleF(cbRect5.Location, New Size(sz, sz))
-        If fpsCbH Then
-            Using p As New Pen(Brushes.Red, 5.0F)
-                g.DrawRoundedRectangle(fpsCb.ToRectangle, 10, p)
-            End Using
-        Else
-            Using p As New Pen(Brushes.White, 5.0F)
-                g.DrawRoundedRectangle(fpsCb.ToRectangle, 10, p)
-            End Using
-        End If
-        If ShowFPS Then g.FillRoundedRectangle(fpsCb.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-        g.DrawGDIPlusText("Display FPS", Font, cbRect6, Color.White, StringAlignment.Near)
+        g.DrawSliderControl(Font, fpsL, fpsR, fpsLH, fpsRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 5)), New SizeF(rWidth, rHeight2), "Show FPS", BoolToString(ShowFPS))
 
-        saveBtn = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 80)
-        cancelBtn = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 80)
+        saveBtn = New Rectangle(cr.X + (cr.Width / 2) - 310, cr.Height - 100, 300, 80)
+        cancelBtn = New Rectangle(cr.X + (cr.Width / 2) + 0, cr.Height - 100, 300, 80)
         Using br As New SolidBrush(If(saveBtnH, Color.White, Color.Gray))
             g.FillRoundedRectangle(saveBtn.ToRectangle, 10, br, New RoundedRectCorners(True))
             g.DrawGDIPlusText("Save", Font, saveBtn, If(saveBtnH, Color.Red, Color.White), StringAlignment.Center)
@@ -165,7 +101,6 @@ Public Class GameOption
             g.FillRoundedRectangle(cancelBtn.ToRectangle, 10, br, New RoundedRectCorners(True))
             g.DrawGDIPlusText("Cancel", Font, cancelBtn, If(cancelBtnH, Color.Red, Color.White), StringAlignment.Center)
         End Using
-
     End Sub
 
     Private Function GraphicsQualityText(id As Integer) As String
@@ -183,6 +118,18 @@ Public Class GameOption
         End Select
     End Function
 
+    Private Function BoolToString(bool As Boolean, Optional onoff As Boolean = False) As String
+        If onoff Then
+            If bool Then Return "On" Else Return "Off"
+        Else
+            If bool Then Return "Yes" Else Return "No"
+        End If
+    End Function
+
+    Private Function FullscreenToString(bool As Boolean) As String
+        If bool Then Return "Fullscreen" Else Return "Windowed"
+    End Function
+
     Protected Overrides Sub OnMouseClick(e As MouseEventArgs)
         MyBase.OnMouseClick(e)
 
@@ -192,8 +139,12 @@ Public Class GameOption
         If soundRH Then If Not SoundVolume >= 100 Then SoundVolume += 10
         If graphicLH Then If Not GraphicsQuality <= 0 Then GraphicsQuality -= 1
         If graphicRH Then If Not GraphicsQuality >= 4 Then GraphicsQuality += 1
-        If fullScreenCbH Then FullScreen = Not FullScreen
-        If fpsCbH Then ShowFPS = Not ShowFPS
+        If fullscreenLH Then FullScreen = Not FullScreen
+        If fullscreenRH Then FullScreen = Not FullScreen
+        If fpsLH Then ShowFPS = Not ShowFPS
+        If fpsRH Then ShowFPS = Not ShowFPS
+        'If fullScreenCbH Then FullScreen = Not FullScreen
+        'If fpsCbH Then ShowFPS = Not ShowFPS
 
         If saveBtnH Then
             Dim newSetting As New SettingData(setXmlPath)

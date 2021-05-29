@@ -23,31 +23,26 @@ Partial Class frmTest
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.GameOption1 = New TypingChallenge.GameOption()
+        Me.LevelSelection1 = New TypingChallenge.LevelSelection()
         Me.SuspendLayout()
         '
-        'GameOption1
+        'LevelSelection1
         '
-        Me.GameOption1.BackColor = System.Drawing.Color.Black
-        Me.GameOption1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GameOption1.Font = New System.Drawing.Font("Segoe UI", 40.0!)
-        Me.GameOption1.FullScreen = False
-        Me.GameOption1.GraphicsQuality = 0
-        Me.GameOption1.Location = New System.Drawing.Point(0, 0)
-        Me.GameOption1.MusicVolume = 0
-        Me.GameOption1.Name = "GameOption1"
-        Me.GameOption1.ShowFPS = False
-        Me.GameOption1.Size = New System.Drawing.Size(1344, 729)
-        Me.GameOption1.SoundVolume = 0
-        Me.GameOption1.TabIndex = 0
-        Me.GameOption1.Text = "GameOption1"
+        Me.LevelSelection1.BackColor = System.Drawing.Color.Black
+        Me.LevelSelection1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LevelSelection1.Font = New System.Drawing.Font("Segoe UI", 40.0!)
+        Me.LevelSelection1.Location = New System.Drawing.Point(0, 0)
+        Me.LevelSelection1.Name = "LevelSelection1"
+        Me.LevelSelection1.Size = New System.Drawing.Size(1344, 729)
+        Me.LevelSelection1.TabIndex = 0
+        Me.LevelSelection1.Text = "LevelSelection1"
         '
         'frmTest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(15.0!, 37.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1344, 729)
-        Me.Controls.Add(Me.GameOption1)
+        Me.Controls.Add(Me.LevelSelection1)
         Me.Font = New System.Drawing.Font("Segoe UI", 20.0!)
         Me.Margin = New System.Windows.Forms.Padding(8, 9, 8, 9)
         Me.Name = "frmTest"
@@ -57,5 +52,5 @@ Partial Class frmTest
 
     End Sub
 
-    Friend WithEvents GameOption1 As GameOption
+    Friend WithEvents LevelSelection1 As LevelSelection
 End Class
