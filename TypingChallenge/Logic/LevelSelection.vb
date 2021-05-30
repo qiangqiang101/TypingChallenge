@@ -91,22 +91,24 @@ Public Class LevelSelection
 
         Dim lvlTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
         g.DrawGDIText("LEVEL SELECTION", Font, lvlTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
-        g.DrawGDIText($"Page {Page} of {levels.LevelList.Count.GetPagesFromNum}", Font, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
+        Using small As New Font(Font.FontFamily, Font.Size / 3, FontStyle.Regular)
+            g.DrawGDIText($"Page {Page} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
 
-        'Row1
-        g.DrawLevelSelectionControl(Font, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), A1)
-        g.DrawLevelSelectionControl(Font, lvlB1, lvlB1H, New PointF(cr.X + 5 + rWidth, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), B1)
-        g.DrawLevelSelectionControl(Font, lvlC1, lvlC1H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), C1)
+            'Row1
+            g.DrawLevelSelectionControl(small, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), A1)
+            g.DrawLevelSelectionControl(small, lvlB1, lvlB1H, New PointF(cr.X + 5 + rWidth, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), B1)
+            g.DrawLevelSelectionControl(small, lvlC1, lvlC1H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), C1)
 
-        'Row2
-        g.DrawLevelSelectionControl(Font, lvlA2, lvlA2H, New PointF(cr.X + 5, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), A2)
-        g.DrawLevelSelectionControl(Font, lvlB2, lvlB2H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), B2)
-        g.DrawLevelSelectionControl(Font, lvlC2, lvlC2H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), C2)
+            'Row2
+            g.DrawLevelSelectionControl(small, lvlA2, lvlA2H, New PointF(cr.X + 5, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), A2)
+            g.DrawLevelSelectionControl(small, lvlB2, lvlB2H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), B2)
+            g.DrawLevelSelectionControl(small, lvlC2, lvlC2H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), C2)
 
-        'Row3
-        g.DrawLevelSelectionControl(Font, lvlA3, lvlA3H, New PointF(cr.X + 5, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), A3)
-        g.DrawLevelSelectionControl(Font, lvlB3, lvlB3H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), B3)
-        g.DrawLevelSelectionControl(Font, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), C3)
+            'Row3
+            g.DrawLevelSelectionControl(small, lvlA3, lvlA3H, New PointF(cr.X + 5, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), A3)
+            g.DrawLevelSelectionControl(small, lvlB3, lvlB3H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), B3)
+            g.DrawLevelSelectionControl(small, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), C3)
+        End Using
 
         btnNext = New Rectangle(cr.X + cr.Width - 200, cr.Height - rHeight, 200, 80)
         btnPrev = New Rectangle(btnNext.X - 205, cr.Height - rHeight, 200, 80)

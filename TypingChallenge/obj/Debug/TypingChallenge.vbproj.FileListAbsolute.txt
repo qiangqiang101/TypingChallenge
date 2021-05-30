@@ -33,3 +33,5 @@ C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\Typin
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.Resources.resources
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.vbproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.frmTest.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.frmLevelEdit.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.frmTest.resources

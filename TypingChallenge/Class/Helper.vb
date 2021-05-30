@@ -152,7 +152,7 @@ Module Helper
             End If
             If image IsNot Nothing Then graphics.DrawImageBestFit(refRect, image)
             Dim textSize As SizeF = graphics.MeasureString(level.Title, font)
-            Dim rect2 As New RectangleF(location.X + 10, location.Y + 10, refRect.Width - 20, textSize.Height + 10)
+            Dim rect2 As New RectangleF(location.X + 10, location.Y + 10, refRect.Width - 20, refRect.Height - textSize.Height)
             graphics.DrawGDIPlusText(level.Title, font, rect2, If(refBool, color2, color), StringAlignment.Near)
             Dim rect3 As New RectangleF(location.X, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
             graphics.DrawGDIPlusText($"Level {level.Level}", font, rect3, If(refBool, color2, color), StringAlignment.Far)
@@ -240,7 +240,13 @@ Module Helper
 
     <Extension>
     Public Function GetPagesFromNum(totalLevels As Integer) As Integer
-        Return CInt(totalLevels / 9)
+        Dim result = totalLevels / 9
+        Dim modResult As Double = result Mod 1
+        If modResult = 0 Then
+            Return CInt(result)
+        Else
+            Return CInt(result) + 1
+        End If
     End Function
 
 End Module
