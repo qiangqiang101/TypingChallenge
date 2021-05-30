@@ -9,6 +9,7 @@ Public Class LevelSelection
     'Controls
     Private lvlA1, lvlB1, lvlC1, lvlA2, lvlB2, lvlC2, lvlA3, lvlB3, lvlC3, btnPrev, btnNext, btnBack As RectangleF
     Private lvlA1H, lvlB1H, lvlC1H, lvlA2H, lvlB2H, lvlC2H, lvlA3H, lvlB3H, lvlC3H, btnPrevH, btnNextH, btnBackH As Boolean
+    Private btnNextEnabled, btnPrevEnabled As Boolean
 
     Public Property A1() As Level
     Public Property B1() As Level
@@ -23,24 +24,29 @@ Public Class LevelSelection
 
     Public Sub New()
         DoubleBuffered = True
-
-        GotoPage(1)
     End Sub
 
     Public Sub GotoPage(pg As Integer)
-        Dim first As Integer = levels.LevelList(pg).Level - 1
-        A1 = levels.LevelList.Find(Function(x) x.Level = first)
-        B1 = levels.LevelList.Find(Function(x) x.Level = first + 1)
-        C1 = levels.LevelList.Find(Function(x) x.Level = first + 2)
-        A2 = levels.LevelList.Find(Function(x) x.Level = first + 3)
-        B2 = levels.LevelList.Find(Function(x) x.Level = first + 4)
-        C2 = levels.LevelList.Find(Function(x) x.Level = first + 5)
-        A3 = levels.LevelList.Find(Function(x) x.Level = first + 6)
-        B3 = levels.LevelList.Find(Function(x) x.Level = first + 7)
-        C3 = levels.LevelList.Find(Function(x) x.Level = first + 8)
-        Page = pg
+        Try
+            Dim first As Integer = levels.LevelList(pg).Level - 1
+            A1 = levels.LevelList.Find(Function(x) x.Level = first)
+            B1 = levels.LevelList.Find(Function(x) x.Level = first + 1)
+            C1 = levels.LevelList.Find(Function(x) x.Level = first + 2)
+            A2 = levels.LevelList.Find(Function(x) x.Level = first + 3)
+            B2 = levels.LevelList.Find(Function(x) x.Level = first + 4)
+            C2 = levels.LevelList.Find(Function(x) x.Level = first + 5)
+            A3 = levels.LevelList.Find(Function(x) x.Level = first + 6)
+            B3 = levels.LevelList.Find(Function(x) x.Level = first + 7)
+            C3 = levels.LevelList.Find(Function(x) x.Level = first + 8)
+            Page = pg
 
-        Invalidate()
+            If Page < levels.LevelList.Count.GetPagesFromNum Then btnNextEnabled = True
+            If Page > 1 Then btnPrevEnabled = True
+
+            Invalidate()
+        Catch ex As Exception
+            Exit Sub
+        End Try
     End Sub
 
     Protected Overrides Sub OnMouseLeave(e As EventArgs)
@@ -95,19 +101,19 @@ Public Class LevelSelection
             g.DrawGDIText($"Page {Page} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
 
             'Row1
-            g.DrawLevelSelectionControl(small, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), A1)
-            g.DrawLevelSelectionControl(small, lvlB1, lvlB1H, New PointF(cr.X + 5 + rWidth, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), B1)
-            g.DrawLevelSelectionControl(small, lvlC1, lvlC1H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), C1)
+            If Not A1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), A1)
+            If Not B1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB1, lvlB1H, New PointF(cr.X + 5 + rWidth, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), B1)
+            If Not C1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC1, lvlC1H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), C1)
 
             'Row2
-            g.DrawLevelSelectionControl(small, lvlA2, lvlA2H, New PointF(cr.X + 5, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), A2)
-            g.DrawLevelSelectionControl(small, lvlB2, lvlB2H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), B2)
-            g.DrawLevelSelectionControl(small, lvlC2, lvlC2H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), C2)
+            If Not A2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA2, lvlA2H, New PointF(cr.X + 5, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), A2)
+            If Not B2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB2, lvlB2H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), B2)
+            If Not C2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC2, lvlC2H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), C2)
 
             'Row3
-            g.DrawLevelSelectionControl(small, lvlA3, lvlA3H, New PointF(cr.X + 5, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), A3)
-            g.DrawLevelSelectionControl(small, lvlB3, lvlB3H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), B3)
-            g.DrawLevelSelectionControl(small, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), C3)
+            If Not A3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA3, lvlA3H, New PointF(cr.X + 5, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), A3)
+            If Not B3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB3, lvlB3H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), B3)
+            If Not C3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), C3)
         End Using
 
         btnNext = New Rectangle(cr.X + cr.Width - 200, cr.Height - rHeight, 200, 80)
@@ -130,8 +136,43 @@ Public Class LevelSelection
     Protected Overrides Sub OnMouseClick(e As MouseEventArgs)
         MyBase.OnMouseClick(e)
 
-        If lvlA1H Then
+        If btnBackH Then
+            frmGame.MainMenu.Show()
+            frmGame.Controls.Remove(Me)
+        End If
+        If btnPrevEnabled AndAlso btnPrevH Then
+            GotoPage(Page - 9)
+        End If
+        If btnNextEnabled AndAlso btnNextH Then
+            GotoPage(Page + 9)
+        End If
 
+        If lvlA1H Then
+            Me.StartGame(A1, Font)
+        End If
+        If lvlB1H Then
+            Me.StartGame(B1, Font)
+        End If
+        If lvlC1H Then
+            Me.StartGame(C1, Font)
+        End If
+        If lvlA2H Then
+            Me.StartGame(A2, Font)
+        End If
+        If lvlB2H Then
+            Me.StartGame(B2, Font)
+        End If
+        If lvlC2H Then
+            Me.StartGame(C2, Font)
+        End If
+        If lvlA3H Then
+            Me.StartGame(A3, Font)
+        End If
+        If lvlB3H Then
+            Me.StartGame(B3, Font)
+        End If
+        If lvlC3H Then
+            Me.StartGame(C3, Font)
         End If
     End Sub
 

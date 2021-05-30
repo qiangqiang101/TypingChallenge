@@ -12,6 +12,7 @@ Public Class MyGame
     Public Property Phrase() As String
     Public Property Life() As Integer = 5
     Public Property TimeLimit() As Integer = 300
+    Public Property LevelSel() As Control
 
     'Texts
     Private GrayText As String
@@ -37,11 +38,12 @@ Public Class MyGame
     Private _mouseButtonBack, _mouseButtonNext As Rectangle
     Private _mouseButtonBackHovered As Boolean = False, _mouseButtonNextHovered As Boolean = False
 
-    Public Sub New()
+    Public Sub New(ph As String)
         DoubleBuffered = True
+        Phrase = ph
 
-        If Phrase = Nothing Then Phrase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        _PhraseBackup = Phrase
+        'If Phrase = Nothing Then Phrase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        _PhraseBackup = ph
         If Title = Nothing Then Title = "Demo"
         If Author = Nothing Then Author = "I'm Not MentaL"
 
@@ -283,14 +285,18 @@ Public Class MyGame
         MyBase.OnMouseClick(e)
 
         If _mouseButtonBackHovered Then
-            frmGame.MainMenu.Show()
+            LevelSel.Show()
             Parent.Controls.Remove(Me)
         End If
         If _mouseButtonNextHovered Then
             If GameStatus = eGameStatus.YouWon Then
-                'todo
+                Dim nextlevel As Level = levels.LevelList.Find(Function(x) x.Level = Level + 1)
+                Dim newGame As New MyGame(nextlevel.Phrase) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .Life = nextlevel.Life, .TimeLimit = nextlevel.TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                Parent.Controls.Add(newGame)
+                newGame.Refresh()
+                Parent.Controls.Remove(Me)
             Else
-                Dim newGame As New MyGame() With {.Phrase = Phrase, .Level = Level, .Life = Life, .TimeLimit = TimeLimit, .Dock = DockStyle.Fill, .Font = Font}
+                Dim newGame As New MyGame(Phrase) With {.Title = Title, .Author = Author, .Level = Level, .Life = Life, .TimeLimit = TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                 Parent.Controls.Add(newGame)
                 newGame.Refresh()
                 Parent.Controls.Remove(Me)

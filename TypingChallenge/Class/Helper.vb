@@ -249,4 +249,13 @@ Module Helper
         End If
     End Function
 
+    <Extension>
+    Public Sub StartGame(ctrl As Control, level As Level, font As Font)
+        Dim newGame As New MyGame(level.Phrase) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .Life = level.Life, .TimeLimit = level.TimeLimit, .LevelSel = ctrl, .Dock = DockStyle.Fill,
+            .Font = New Font(font.FontFamily, font.Size * 2, FontStyle.Bold, font.Unit)}
+        frmGame.Controls.Add(newGame)
+        newGame.Refresh()
+        ctrl.Hide()
+    End Sub
+
 End Module
