@@ -1,4 +1,7 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports System.Drawing.Imaging
+Imports System.IO
+Imports System.Net
 Imports System.Runtime.CompilerServices
 Imports System.Text.RegularExpressions
 
@@ -257,5 +260,80 @@ Module Helper
         newGame.Refresh()
         ctrl.Hide()
     End Sub
+
+    <Extension>
+    Public Sub Striped(listview As ListView, Optional color1 As Color = Nothing, Optional color2 As Color = Nothing)
+        If color2 = Nothing Then color2 = SystemColors.ButtonFace
+        If color1 = Nothing Then color1 = SystemColors.Window
+
+        Dim alternator As Integer = 0
+        For Each lvi As ListViewItem In listview.Items
+            If lvi.Group Is Nothing Then
+                If alternator Mod 2 = 0 Then
+                    For i As Integer = 0 To lvi.SubItems.Count - 1
+                        If Not lvi.SubItems(i).BackColor = Color.LightSalmon Then lvi.SubItems(i).BackColor = color1
+                    Next
+                Else
+                    For i As Integer = 0 To lvi.SubItems.Count - 1
+                        If Not lvi.SubItems(i).BackColor = Color.LightSalmon Then lvi.SubItems(i).BackColor = color2
+                    Next
+                End If
+                alternator += 1
+            End If
+        Next
+        For Each gp As ListViewGroup In listview.Groups
+            For Each lvi As ListViewItem In gp.Items
+                If alternator Mod 2 = 0 Then
+                    For i As Integer = 0 To lvi.SubItems.Count - 1
+                        If Not lvi.SubItems(i).BackColor = Color.LightSalmon Then lvi.SubItems(i).BackColor = color1
+                    Next
+                Else
+                    For i As Integer = 0 To lvi.SubItems.Count - 1
+                        If Not lvi.SubItems(i).BackColor = Color.LightSalmon Then lvi.SubItems(i).BackColor = color2
+                    Next
+                End If
+                alternator += 1
+            Next
+        Next
+    End Sub
+
+    <Extension>
+    Public Sub AddGroupFooter(listviewx As ListViewX)
+        For Each lvg As ListViewGroup In listviewx.Groups
+            listviewx.SetGroupFooter(lvg, $"Contain {lvg.Items.Count} models.")
+        Next
+        listviewx.SetGroupState(ListViewX.ListViewGroupState.Collapsible Or ListViewX.ListViewGroupState.Collapsed)
+    End Sub
+
+    <Extension>
+    Public Function Base64ToImage(Image As String) As Image
+        Dim b64 As String = Image.Replace(" ", "+")
+        Dim bite() As Byte = Convert.FromBase64String(b64)
+        Dim stream As New MemoryStream(bite)
+        Return Drawing.Image.FromStream(stream)
+    End Function
+
+    <Extension>
+    Public Function ImageToBase64(img As Image) As String
+        Dim stream As New MemoryStream
+        Dim bmp As Bitmap = New Bitmap(img)
+        bmp.Save(stream, ImageFormat.Png)
+        Return Convert.ToBase64String(stream.ToArray)
+    End Function
+
+    <Extension>
+    Public Function InternetImageToBase64(url As String) As String
+        Try
+            Dim request = WebRequest.Create(url)
+            Using response = request.GetResponse
+                Using stream = response.GetResponseStream()
+                    Dim img = Bitmap.FromStream(stream)
+                    Return img.ImageToBase64
+                End Using
+            End Using
+        Catch ex As Exception
+            Return "error"
+        End Try
+    End Function
 
 End Module

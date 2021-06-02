@@ -8,9 +8,10 @@
         levels = New LevelData(lvlXmlPath).Instance
 
         For Each lvl In levels.LevelList
-            Dim item As New ListViewItem({lvl.Level, lvl.Title, lvl.Author, lvl.TimeLimit, lvl.Life, lvl.Phrase.Length, lvl.Phrase.WordCount}) With {.Tag = lvl}
+            Dim item As New ListViewItem({lvl.Level, lvl.Page, lvl.Title, lvl.Author, lvl.TimeLimit, lvl.Life, lvl.Phrase.Length, lvl.Phrase.WordCount}) With {.Tag = lvl}
             lvLevels.Items.Add(item)
         Next
+        lvLevels.Striped
 
         NewItem()
     End Sub
@@ -25,12 +26,18 @@
             LastEditingItem = lvLevels.SelectedItems.Item(0)
             Mode = eMode.Edit
 
+            gbPreview.Visible = True
             nudLevel.Value = CurrentLevel.Level
             txtTitle.Text = CurrentLevel.Title
             txtAuthor.Text = CurrentLevel.Author
             nudTime.Value = CurrentLevel.TimeLimit
             nudLives.Value = CurrentLevel.Life
             txtPhrase.Text = CurrentLevel.Phrase
+            nudPage.Value = CurrentLevel.Page
+            If CurrentLevel.Image.Length <> 0 Then
+                pbImage.Tag = CurrentLevel.Image
+                pbImage.BackgroundImage = CurrentLevel.Image.Base64ToImage
+            End If
 
             btnSave.Text = "Edit"
         End If
@@ -40,11 +47,14 @@
         CurrentLevel = New Level()
         Mode = eMode.Add
 
+        gbPreview.Visible = False
         nudLevel.Value = 1
         txtTitle.Clear()
         txtAuthor.Clear()
         nudTime.Value = 60
         nudLives.Value = 5
+        nudPage.Value = 1
+        txtImageURL.Clear()
         txtPhrase.Clear()
 
         btnSave.Text = "Add"
@@ -91,17 +101,30 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Select Case Mode
             Case eMode.Add
-                CurrentLevel = New Level(txtTitle.Text, txtPhrase.Text, txtAuthor.Text, nudLevel.Value, nudLives.Value, nudTime.Value)
+                Dim imageBase64 As String = Nothing
+                If txtImageURL.Text.Length <> 0 Then
+                    imageBase64 = txtImageURL.Text.InternetImageToBase64()
+                End If
+
+                CurrentLevel = New Level(txtTitle.Text, txtPhrase.Text, imageBase64, nudPage.Value, txtAuthor.Text, nudLevel.Value, nudLives.Value, nudTime.Value)
                 Dim item As New ListViewItem({nudLevel.Value, txtTitle.Text, txtAuthor.Text, nudTime.Value, nudLives.Value, txtPhrase.Text.Length, txtPhrase.Text.WordCount}) With {.Tag = CurrentLevel}
                 lvLevels.Items.Add(item)
             Case eMode.Edit
-                CurrentLevel = New Level(txtTitle.Text, txtPhrase.Text, txtAuthor.Text, nudLevel.Value, nudLives.Value, nudTime.Value)
+                Dim imageBase64 As String = Nothing
+                If txtImageURL.Text.Length = 0 Then
+                    imageBase64 = pbImage.Tag
+                Else
+                    imageBase64 = txtImageURL.Text.InternetImageToBase64()
+                End If
+
+                CurrentLevel = New Level(txtTitle.Text, txtPhrase.Text, imageBase64, nudPage.Value, txtAuthor.Text, nudLevel.Value, nudLives.Value, nudTime.Value)
                 With LastEditingItem
                     .SubItems(0).Text = nudLevel.Value
-                    .SubItems(1).Text = txtTitle.Text
-                    .SubItems(2).Text = txtAuthor.Text
-                    .SubItems(3).Text = nudTime.Value
-                    .SubItems(4).Text = nudLives.Value
+                    .SubItems(1).Text = nudPage.Value
+                    .SubItems(2).Text = txtTitle.Text
+                    .SubItems(3).Text = txtAuthor.Text
+                    .SubItems(4).Text = nudTime.Value
+                    .SubItems(5).Text = nudLives.Value
                     .Tag = CurrentLevel
                 End With
         End Select

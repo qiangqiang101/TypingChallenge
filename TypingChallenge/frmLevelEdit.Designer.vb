@@ -23,17 +23,18 @@ Partial Class frmLevelEdit
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.lvLevels = New System.Windows.Forms.ListView()
-        Me.chLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTitle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chAuthor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chTimeLimit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.chLife = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtImageURL = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.nudPage = New System.Windows.Forms.NumericUpDown()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.tsslChars = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslWordCount = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -48,20 +49,29 @@ Partial Class frmLevelEdit
         Me.Label1 = New System.Windows.Forms.Label()
         Me.nudLevel = New System.Windows.Forms.NumericUpDown()
         Me.txtTitle = New System.Windows.Forms.TextBox()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.tsslChars = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.tsslWordCount = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lvLevels = New TypingChallenge.ListViewX()
+        Me.chLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chTitle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chAuthor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chTimeLimit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chLife = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCharCount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chWordCount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.gbPreview = New System.Windows.Forms.GroupBox()
+        Me.pbImage = New System.Windows.Forms.PictureBox()
+        Me.chPage = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.nudPage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         CType(Me.nudLives, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTime, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudLevel, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout()
+        Me.gbPreview.SuspendLayout()
+        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -77,6 +87,11 @@ Partial Class frmLevelEdit
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.gbPreview)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label8)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.txtImageURL)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label7)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.nudPage)
         Me.SplitContainer1.Panel2.Controls.Add(Me.StatusStrip1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.btnCancel)
         Me.SplitContainer1.Panel2.Controls.Add(Me.btnSave)
@@ -94,55 +109,15 @@ Partial Class frmLevelEdit
         Me.SplitContainer1.Panel2.Controls.Add(Me.txtTitle)
         Me.SplitContainer1.Panel2.Padding = New System.Windows.Forms.Padding(3)
         Me.SplitContainer1.Size = New System.Drawing.Size(1344, 729)
-        Me.SplitContainer1.SplitterDistance = 635
+        Me.SplitContainer1.SplitterDistance = 678
         Me.SplitContainer1.TabIndex = 0
-        '
-        'lvLevels
-        '
-        Me.lvLevels.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chLevel, Me.chTitle, Me.chAuthor, Me.chTimeLimit, Me.chLife, Me.chCharCount, Me.chWordCount})
-        Me.lvLevels.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lvLevels.FullRowSelect = True
-        Me.lvLevels.GridLines = True
-        Me.lvLevels.Location = New System.Drawing.Point(0, 24)
-        Me.lvLevels.MultiSelect = False
-        Me.lvLevels.Name = "lvLevels"
-        Me.lvLevels.Size = New System.Drawing.Size(635, 705)
-        Me.lvLevels.TabIndex = 0
-        Me.lvLevels.UseCompatibleStateImageBehavior = False
-        Me.lvLevels.View = System.Windows.Forms.View.Details
-        '
-        'chLevel
-        '
-        Me.chLevel.Text = "Level"
-        Me.chLevel.Width = 40
-        '
-        'chTitle
-        '
-        Me.chTitle.Text = "Title"
-        Me.chTitle.Width = 200
-        '
-        'chAuthor
-        '
-        Me.chAuthor.Text = "Author"
-        Me.chAuthor.Width = 100
-        '
-        'chTimeLimit
-        '
-        Me.chTimeLimit.Text = "Time Limit"
-        Me.chTimeLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.chTimeLimit.Width = 70
-        '
-        'chLife
-        '
-        Me.chLife.Text = "Life"
-        Me.chLife.Width = 40
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem1, Me.SaveToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(635, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(678, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -170,30 +145,87 @@ Partial Class frmLevelEdit
         Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(8, 189)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(64, 15)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Image URL"
+        '
+        'txtImageURL
+        '
+        Me.txtImageURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtImageURL.Location = New System.Drawing.Point(130, 186)
+        Me.txtImageURL.Name = "txtImageURL"
+        Me.txtImageURL.Size = New System.Drawing.Size(520, 23)
+        Me.txtImageURL.TabIndex = 6
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 159)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(33, 15)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Page"
+        '
+        'nudPage
+        '
+        Me.nudPage.Location = New System.Drawing.Point(130, 157)
+        Me.nudPage.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
+        Me.nudPage.Name = "nudPage"
+        Me.nudPage.Size = New System.Drawing.Size(122, 23)
+        Me.nudPage.TabIndex = 5
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsslChars, Me.tsslWordCount})
+        Me.StatusStrip1.Location = New System.Drawing.Point(3, 702)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(656, 24)
+        Me.StatusStrip1.TabIndex = 12
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'tsslChars
+        '
+        Me.tsslChars.Name = "tsslChars"
+        Me.tsslChars.Size = New System.Drawing.Size(106, 19)
+        Me.tsslChars.Text = "Character Count: 0"
+        '
+        'tsslWordCount
+        '
+        Me.tsslWordCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
+        Me.tsslWordCount.Name = "tsslWordCount"
+        Me.tsslWordCount.Size = New System.Drawing.Size(88, 19)
+        Me.tsslWordCount.Text = "Word Count: 0"
+        '
         'btnCancel
         '
         Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancel.Location = New System.Drawing.Point(618, 678)
+        Me.btnCancel.Location = New System.Drawing.Point(575, 678)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 7
+        Me.btnCancel.TabIndex = 9
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(537, 678)
+        Me.btnSave.Location = New System.Drawing.Point(494, 678)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 6
+        Me.btnSave.TabIndex = 8
         Me.btnSave.Text = "Add"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 160)
+        Me.Label6.Location = New System.Drawing.Point(6, 218)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 15)
         Me.Label6.TabIndex = 11
@@ -204,11 +236,11 @@ Partial Class frmLevelEdit
         Me.txtPhrase.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPhrase.Location = New System.Drawing.Point(130, 157)
+        Me.txtPhrase.Location = New System.Drawing.Point(130, 215)
         Me.txtPhrase.Multiline = True
         Me.txtPhrase.Name = "txtPhrase"
-        Me.txtPhrase.Size = New System.Drawing.Size(563, 515)
-        Me.txtPhrase.TabIndex = 5
+        Me.txtPhrase.Size = New System.Drawing.Size(520, 457)
+        Me.txtPhrase.TabIndex = 7
         '
         'Label5
         '
@@ -246,7 +278,7 @@ Partial Class frmLevelEdit
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 73)
+        Me.Label3.Location = New System.Drawing.Point(6, 44)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(44, 15)
         Me.Label3.TabIndex = 5
@@ -254,15 +286,15 @@ Partial Class frmLevelEdit
         '
         'txtAuthor
         '
-        Me.txtAuthor.Location = New System.Drawing.Point(130, 70)
+        Me.txtAuthor.Location = New System.Drawing.Point(130, 41)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(402, 23)
+        Me.txtAuthor.Size = New System.Drawing.Size(308, 23)
         Me.txtAuthor.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 44)
+        Me.Label2.Location = New System.Drawing.Point(6, 15)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 15)
         Me.Label2.TabIndex = 3
@@ -271,7 +303,7 @@ Partial Class frmLevelEdit
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 14)
+        Me.Label1.Location = New System.Drawing.Point(6, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 15)
         Me.Label1.TabIndex = 2
@@ -279,7 +311,7 @@ Partial Class frmLevelEdit
         '
         'nudLevel
         '
-        Me.nudLevel.Location = New System.Drawing.Point(130, 12)
+        Me.nudLevel.Location = New System.Drawing.Point(130, 70)
         Me.nudLevel.Maximum = New Decimal(New Integer() {300, 0, 0, 0})
         Me.nudLevel.Name = "nudLevel"
         Me.nudLevel.Size = New System.Drawing.Size(122, 23)
@@ -288,32 +320,50 @@ Partial Class frmLevelEdit
         '
         'txtTitle
         '
-        Me.txtTitle.Location = New System.Drawing.Point(130, 41)
+        Me.txtTitle.Location = New System.Drawing.Point(130, 12)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(402, 23)
+        Me.txtTitle.Size = New System.Drawing.Size(308, 23)
         Me.txtTitle.TabIndex = 1
         '
-        'StatusStrip1
+        'lvLevels
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsslChars, Me.tsslWordCount})
-        Me.StatusStrip1.Location = New System.Drawing.Point(3, 702)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(699, 24)
-        Me.StatusStrip1.TabIndex = 12
-        Me.StatusStrip1.Text = "StatusStrip1"
+        Me.lvLevels.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chLevel, Me.chPage, Me.chTitle, Me.chAuthor, Me.chTimeLimit, Me.chLife, Me.chCharCount, Me.chWordCount})
+        Me.lvLevels.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lvLevels.FullRowSelect = True
+        Me.lvLevels.GridLines = True
+        Me.lvLevels.Location = New System.Drawing.Point(0, 24)
+        Me.lvLevels.MultiSelect = False
+        Me.lvLevels.Name = "lvLevels"
+        Me.lvLevels.Size = New System.Drawing.Size(678, 705)
+        Me.lvLevels.TabIndex = 0
+        Me.lvLevels.UseCompatibleStateImageBehavior = False
+        Me.lvLevels.View = System.Windows.Forms.View.Details
         '
-        'tsslChars
+        'chLevel
         '
-        Me.tsslChars.Name = "tsslChars"
-        Me.tsslChars.Size = New System.Drawing.Size(106, 19)
-        Me.tsslChars.Text = "Character Count: 0"
+        Me.chLevel.Text = "Level"
+        Me.chLevel.Width = 40
         '
-        'tsslWordCount
+        'chTitle
         '
-        Me.tsslWordCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
-        Me.tsslWordCount.Name = "tsslWordCount"
-        Me.tsslWordCount.Size = New System.Drawing.Size(88, 19)
-        Me.tsslWordCount.Text = "Word Count: 0"
+        Me.chTitle.Text = "Title"
+        Me.chTitle.Width = 200
+        '
+        'chAuthor
+        '
+        Me.chAuthor.Text = "Author"
+        Me.chAuthor.Width = 100
+        '
+        'chTimeLimit
+        '
+        Me.chTimeLimit.Text = "Time Limit"
+        Me.chTimeLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.chTimeLimit.Width = 70
+        '
+        'chLife
+        '
+        Me.chLife.Text = "Life"
+        Me.chLife.Width = 40
         '
         'chCharCount
         '
@@ -326,6 +376,33 @@ Partial Class frmLevelEdit
         Me.chWordCount.Text = "Word Count"
         Me.chWordCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.chWordCount.Width = 80
+        '
+        'gbPreview
+        '
+        Me.gbPreview.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbPreview.Controls.Add(Me.pbImage)
+        Me.gbPreview.Location = New System.Drawing.Point(444, 12)
+        Me.gbPreview.Name = "gbPreview"
+        Me.gbPreview.Size = New System.Drawing.Size(206, 168)
+        Me.gbPreview.TabIndex = 17
+        Me.gbPreview.TabStop = False
+        Me.gbPreview.Text = "Image Preview"
+        '
+        'pbImage
+        '
+        Me.pbImage.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbImage.Location = New System.Drawing.Point(3, 19)
+        Me.pbImage.Name = "pbImage"
+        Me.pbImage.Size = New System.Drawing.Size(200, 146)
+        Me.pbImage.TabIndex = 0
+        Me.pbImage.TabStop = False
+        '
+        'chPage
+        '
+        Me.chPage.Text = "Page"
+        Me.chPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.chPage.Width = 40
         '
         'frmLevelEdit
         '
@@ -346,17 +423,20 @@ Partial Class frmLevelEdit
         Me.SplitContainer1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.nudPage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         CType(Me.nudLives, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudTime, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudLevel, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        Me.gbPreview.ResumeLayout(False)
+        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents lvLevels As ListView
+    Friend WithEvents lvLevels As ListViewX
     Friend WithEvents chLevel As ColumnHeader
     Friend WithEvents chTitle As ColumnHeader
     Friend WithEvents chAuthor As ColumnHeader
@@ -386,4 +466,11 @@ Partial Class frmLevelEdit
     Friend WithEvents tsslWordCount As ToolStripStatusLabel
     Friend WithEvents chCharCount As ColumnHeader
     Friend WithEvents chWordCount As ColumnHeader
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtImageURL As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents nudPage As NumericUpDown
+    Friend WithEvents gbPreview As GroupBox
+    Friend WithEvents pbImage As PictureBox
+    Friend WithEvents chPage As ColumnHeader
 End Class

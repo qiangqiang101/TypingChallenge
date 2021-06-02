@@ -52,12 +52,16 @@ Public Structure Level
     Public Phrase As String
     Public Life As Integer
     Public TimeLimit As Integer
+    Public Image As String
+    Public Page As Integer
 
-    Public Sub New(_title As String, _phrase As String, Optional _author As String = "Zettabyte Technology", Optional lvl As Integer = 1, Optional _life As Integer = 5, Optional time As Integer = 60)
+    Public Sub New(_title As String, _phrase As String, img As String, _page As Integer, Optional _author As String = "Zettabyte Technology", Optional lvl As Integer = 1, Optional _life As Integer = 5, Optional time As Integer = 60)
         Title = _title
         Author = _author
         Level = lvl
         Phrase = _phrase
+        Image = img
+        Page = _page
         Life = _life
         TimeLimit = time
     End Sub

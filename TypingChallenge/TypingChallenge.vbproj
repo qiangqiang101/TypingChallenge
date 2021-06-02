@@ -96,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AudioFile.vb" />
+    <Compile Include="Controls\ListViewX.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Class\RoundedRectCorners.vb" />
     <Compile Include="Database\SettingData.vb" />
     <Compile Include="frmLevelEdit.Designer.vb">
