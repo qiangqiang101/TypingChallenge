@@ -15,6 +15,32 @@ Public Class ListViewX
     Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As LVGROUP) As Integer
     End Function
 
+    <Category("Behavior")>
+    Public Property SortColumn() As Integer = 0
+
+    Public Sub New()
+        DoubleBuffered = True
+        Sorting = SortOrder.Descending
+        SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
+        Handle.SetWindowTheme
+    End Sub
+
+    Protected Overrides Sub OnColumnClick(e As ColumnClickEventArgs)
+        MyBase.OnColumnClick(e)
+
+        If Sorting = SortOrder.Ascending Then
+            Sorting = SortOrder.Descending
+        Else
+            Sorting = SortOrder.Ascending
+        End If
+
+        Sort()
+        ListViewItemSorter = New ListViewItemComparer(e.Column, Sorting)
+        Handle.SetWindowTheme
+        Me.Striped
+        SetSortIcon(e.Column, Sorting)
+    End Sub
+
     Private Shared Function GetGroupID(ByVal lstvwgrp As ListViewGroup) As Integer?
         Dim rtnval As Integer? = Nothing
         Dim GrpTp As Type = lstvwgrp.[GetType]()

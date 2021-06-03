@@ -307,10 +307,14 @@ Module Helper
 
     <Extension>
     Public Function Base64ToImage(Image As String) As Image
-        Dim b64 As String = Image.Replace(" ", "+")
-        Dim bite() As Byte = Convert.FromBase64String(b64)
-        Dim stream As New MemoryStream(bite)
-        Return Drawing.Image.FromStream(stream)
+        If Image = "error" Then
+            Return Nothing
+        Else
+            Dim b64 As String = Image.Replace(" ", "+")
+            Dim bite() As Byte = Convert.FromBase64String(b64)
+            Dim stream As New MemoryStream(bite)
+            Return Drawing.Image.FromStream(stream)
+        End If
     End Function
 
     <Extension>
@@ -324,6 +328,9 @@ Module Helper
     <Extension>
     Public Function InternetImageToBase64(url As String) As String
         Try
+            ServicePointManager.Expect100Continue = True
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
             Dim request = WebRequest.Create(url)
             Using response = request.GetResponse
                 Using stream = response.GetResponseStream()

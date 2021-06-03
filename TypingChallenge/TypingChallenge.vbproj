@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AudioFile.vb" />
+    <Compile Include="Class\ListViewItemComparer.vb" />
     <Compile Include="Controls\ListViewX.vb">
       <SubType>Component</SubType>
     </Compile>

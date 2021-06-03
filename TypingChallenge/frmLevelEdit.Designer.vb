@@ -28,6 +28,8 @@ Partial Class frmLevelEdit
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.gbPreview = New System.Windows.Forms.GroupBox()
+        Me.pbImage = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtImageURL = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -51,27 +53,25 @@ Partial Class frmLevelEdit
         Me.txtTitle = New System.Windows.Forms.TextBox()
         Me.lvLevels = New TypingChallenge.ListViewX()
         Me.chLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chPage = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTitle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chAuthor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chTimeLimit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chLife = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chCharCount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chWordCount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.gbPreview = New System.Windows.Forms.GroupBox()
-        Me.pbImage = New System.Windows.Forms.PictureBox()
-        Me.chPage = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.gbPreview.SuspendLayout()
+        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.nudLives, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTime, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudLevel, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbPreview.SuspendLayout()
-        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -144,6 +144,28 @@ Partial Class frmLevelEdit
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.SaveToolStripMenuItem.Text = "Save"
+        '
+        'gbPreview
+        '
+        Me.gbPreview.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbPreview.Controls.Add(Me.pbImage)
+        Me.gbPreview.Location = New System.Drawing.Point(413, 12)
+        Me.gbPreview.Name = "gbPreview"
+        Me.gbPreview.Size = New System.Drawing.Size(237, 168)
+        Me.gbPreview.TabIndex = 17
+        Me.gbPreview.TabStop = False
+        Me.gbPreview.Text = "Image Preview"
+        '
+        'pbImage
+        '
+        Me.pbImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pbImage.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbImage.Location = New System.Drawing.Point(3, 19)
+        Me.pbImage.Name = "pbImage"
+        Me.pbImage.Size = New System.Drawing.Size(231, 146)
+        Me.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbImage.TabIndex = 0
+        Me.pbImage.TabStop = False
         '
         'Label8
         '
@@ -237,8 +259,10 @@ Partial Class frmLevelEdit
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtPhrase.Location = New System.Drawing.Point(130, 215)
+        Me.txtPhrase.MaxLength = 65535
         Me.txtPhrase.Multiline = True
         Me.txtPhrase.Name = "txtPhrase"
+        Me.txtPhrase.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtPhrase.Size = New System.Drawing.Size(520, 457)
         Me.txtPhrase.TabIndex = 7
         '
@@ -286,9 +310,11 @@ Partial Class frmLevelEdit
         '
         'txtAuthor
         '
+        Me.txtAuthor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtAuthor.Location = New System.Drawing.Point(130, 41)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(308, 23)
+        Me.txtAuthor.Size = New System.Drawing.Size(277, 23)
         Me.txtAuthor.TabIndex = 2
         '
         'Label2
@@ -320,9 +346,11 @@ Partial Class frmLevelEdit
         '
         'txtTitle
         '
+        Me.txtTitle.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTitle.Location = New System.Drawing.Point(130, 12)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(308, 23)
+        Me.txtTitle.Size = New System.Drawing.Size(277, 23)
         Me.txtTitle.TabIndex = 1
         '
         'lvLevels
@@ -335,6 +363,8 @@ Partial Class frmLevelEdit
         Me.lvLevels.MultiSelect = False
         Me.lvLevels.Name = "lvLevels"
         Me.lvLevels.Size = New System.Drawing.Size(678, 705)
+        Me.lvLevels.SortColumn = 0
+        Me.lvLevels.Sorting = System.Windows.Forms.SortOrder.Descending
         Me.lvLevels.TabIndex = 0
         Me.lvLevels.UseCompatibleStateImageBehavior = False
         Me.lvLevels.View = System.Windows.Forms.View.Details
@@ -343,6 +373,12 @@ Partial Class frmLevelEdit
         '
         Me.chLevel.Text = "Level"
         Me.chLevel.Width = 40
+        '
+        'chPage
+        '
+        Me.chPage.Text = "Page"
+        Me.chPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.chPage.Width = 40
         '
         'chTitle
         '
@@ -377,33 +413,6 @@ Partial Class frmLevelEdit
         Me.chWordCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.chWordCount.Width = 80
         '
-        'gbPreview
-        '
-        Me.gbPreview.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gbPreview.Controls.Add(Me.pbImage)
-        Me.gbPreview.Location = New System.Drawing.Point(444, 12)
-        Me.gbPreview.Name = "gbPreview"
-        Me.gbPreview.Size = New System.Drawing.Size(206, 168)
-        Me.gbPreview.TabIndex = 17
-        Me.gbPreview.TabStop = False
-        Me.gbPreview.Text = "Image Preview"
-        '
-        'pbImage
-        '
-        Me.pbImage.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbImage.Location = New System.Drawing.Point(3, 19)
-        Me.pbImage.Name = "pbImage"
-        Me.pbImage.Size = New System.Drawing.Size(200, 146)
-        Me.pbImage.TabIndex = 0
-        Me.pbImage.TabStop = False
-        '
-        'chPage
-        '
-        Me.chPage.Text = "Page"
-        Me.chPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.chPage.Width = 40
-        '
         'frmLevelEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -423,14 +432,14 @@ Partial Class frmLevelEdit
         Me.SplitContainer1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.gbPreview.ResumeLayout(False)
+        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudPage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.nudLives, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudTime, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudLevel, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbPreview.ResumeLayout(False)
-        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

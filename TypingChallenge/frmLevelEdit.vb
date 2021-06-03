@@ -34,7 +34,7 @@
             nudLives.Value = CurrentLevel.Life
             txtPhrase.Text = CurrentLevel.Phrase
             nudPage.Value = CurrentLevel.Page
-            If CurrentLevel.Image.Length <> 0 Then
+            If CurrentLevel.Image <> Nothing Then
                 pbImage.Tag = CurrentLevel.Image
                 pbImage.BackgroundImage = CurrentLevel.Image.Base64ToImage
             End If
@@ -107,7 +107,7 @@
                 End If
 
                 CurrentLevel = New Level(txtTitle.Text, txtPhrase.Text, imageBase64, nudPage.Value, txtAuthor.Text, nudLevel.Value, nudLives.Value, nudTime.Value)
-                Dim item As New ListViewItem({nudLevel.Value, txtTitle.Text, txtAuthor.Text, nudTime.Value, nudLives.Value, txtPhrase.Text.Length, txtPhrase.Text.WordCount}) With {.Tag = CurrentLevel}
+                Dim item As New ListViewItem({nudLevel.Value, nudPage.Value, txtTitle.Text, txtAuthor.Text, nudTime.Value, nudLives.Value, txtPhrase.Text.Length, txtPhrase.Text.WordCount}) With {.Tag = CurrentLevel}
                 lvLevels.Items.Add(item)
             Case eMode.Edit
                 Dim imageBase64 As String = Nothing
