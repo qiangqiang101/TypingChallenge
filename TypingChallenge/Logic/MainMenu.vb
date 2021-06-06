@@ -66,12 +66,6 @@
         MyBase.OnMouseClick(e)
 
         If btnPlayH Then
-            'level select todo
-            'Dim newGame As New MyGame() With {.Level = 1, .Life = 5, .TimeLimit = 300, .Dock = DockStyle.Fill, .Font = Font}
-            'Parent.Controls.Add(newGame)
-            'newGame.Refresh()
-            'Me.Hide()
-
             Dim lvlSel As New LevelSelection() With {.Dock = DockStyle.Fill, .Font = New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold, Font.Unit)}
             Parent.Controls.Add(lvlSel)
             lvlSel.GotoPage(1)

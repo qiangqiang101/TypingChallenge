@@ -28,7 +28,7 @@ Public Class LevelSelection
 
     Public Sub GotoPage(pg As Integer)
         Try
-            Dim first As Integer = levels.LevelList(pg).Level - 1
+            Dim first As Integer = levels.LevelListSorted(pg).Level - 1
             A1 = levels.LevelList.Find(Function(x) x.Level = first)
             B1 = levels.LevelList.Find(Function(x) x.Level = first + 1)
             C1 = levels.LevelList.Find(Function(x) x.Level = first + 2)
@@ -98,7 +98,7 @@ Public Class LevelSelection
         Dim lvlTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
         g.DrawGDIText("LEVEL SELECTION", Font, lvlTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
         Using small As New Font(Font.FontFamily, Font.Size / 3, FontStyle.Regular)
-            g.DrawGDIText($"Page {Page} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
+            g.DrawGDIText($"Page {A1.Level.GetPagesFromNum} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
 
             'Row1
             If Not A1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), A1)

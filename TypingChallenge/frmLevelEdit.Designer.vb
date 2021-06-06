@@ -28,10 +28,6 @@ Partial Class frmLevelEdit
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.gbPreview = New System.Windows.Forms.GroupBox()
-        Me.pbImage = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtImageURL = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.nudPage = New System.Windows.Forms.NumericUpDown()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
@@ -51,6 +47,11 @@ Partial Class frmLevelEdit
         Me.Label1 = New System.Windows.Forms.Label()
         Me.nudLevel = New System.Windows.Forms.NumericUpDown()
         Me.txtTitle = New System.Windows.Forms.TextBox()
+        Me.cbAutoLevel = New System.Windows.Forms.CheckBox()
+        Me.cbAutoTime = New System.Windows.Forms.CheckBox()
+        Me.cbAutoLives = New System.Windows.Forms.CheckBox()
+        Me.cbAutoPage = New System.Windows.Forms.CheckBox()
+        Me.RearrangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lvLevels = New TypingChallenge.ListViewX()
         Me.chLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPage = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -65,8 +66,6 @@ Partial Class frmLevelEdit
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.gbPreview.SuspendLayout()
-        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.nudLives, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,9 +86,10 @@ Partial Class frmLevelEdit
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.gbPreview)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label8)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.txtImageURL)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.cbAutoPage)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.cbAutoLives)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.cbAutoTime)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.cbAutoLevel)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label7)
         Me.SplitContainer1.Panel2.Controls.Add(Me.nudPage)
         Me.SplitContainer1.Panel2.Controls.Add(Me.StatusStrip1)
@@ -114,7 +114,7 @@ Partial Class frmLevelEdit
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem1, Me.SaveToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem1, Me.SaveToolStripMenuItem, Me.RearrangeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(678, 24)
@@ -145,46 +145,6 @@ Partial Class frmLevelEdit
         Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
-        'gbPreview
-        '
-        Me.gbPreview.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gbPreview.Controls.Add(Me.pbImage)
-        Me.gbPreview.Location = New System.Drawing.Point(413, 12)
-        Me.gbPreview.Name = "gbPreview"
-        Me.gbPreview.Size = New System.Drawing.Size(237, 168)
-        Me.gbPreview.TabIndex = 17
-        Me.gbPreview.TabStop = False
-        Me.gbPreview.Text = "Image Preview"
-        '
-        'pbImage
-        '
-        Me.pbImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbImage.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbImage.Location = New System.Drawing.Point(3, 19)
-        Me.pbImage.Name = "pbImage"
-        Me.pbImage.Size = New System.Drawing.Size(231, 146)
-        Me.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbImage.TabIndex = 0
-        Me.pbImage.TabStop = False
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(8, 189)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 15)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Image URL"
-        '
-        'txtImageURL
-        '
-        Me.txtImageURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtImageURL.Location = New System.Drawing.Point(130, 186)
-        Me.txtImageURL.Name = "txtImageURL"
-        Me.txtImageURL.Size = New System.Drawing.Size(520, 23)
-        Me.txtImageURL.TabIndex = 6
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -200,7 +160,7 @@ Partial Class frmLevelEdit
         Me.nudPage.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.nudPage.Name = "nudPage"
         Me.nudPage.Size = New System.Drawing.Size(122, 23)
-        Me.nudPage.TabIndex = 5
+        Me.nudPage.TabIndex = 9
         '
         'StatusStrip1
         '
@@ -230,7 +190,7 @@ Partial Class frmLevelEdit
         Me.btnCancel.Location = New System.Drawing.Point(575, 678)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 9
+        Me.btnCancel.TabIndex = 14
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
@@ -240,14 +200,14 @@ Partial Class frmLevelEdit
         Me.btnSave.Location = New System.Drawing.Point(494, 678)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 8
+        Me.btnSave.TabIndex = 13
         Me.btnSave.Text = "Add"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 218)
+        Me.Label6.Location = New System.Drawing.Point(6, 189)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 15)
         Me.Label6.TabIndex = 11
@@ -258,13 +218,13 @@ Partial Class frmLevelEdit
         Me.txtPhrase.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPhrase.Location = New System.Drawing.Point(130, 215)
+        Me.txtPhrase.Location = New System.Drawing.Point(130, 186)
         Me.txtPhrase.MaxLength = 65535
         Me.txtPhrase.Multiline = True
         Me.txtPhrase.Name = "txtPhrase"
         Me.txtPhrase.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtPhrase.Size = New System.Drawing.Size(520, 457)
-        Me.txtPhrase.TabIndex = 7
+        Me.txtPhrase.Size = New System.Drawing.Size(520, 486)
+        Me.txtPhrase.TabIndex = 12
         '
         'Label5
         '
@@ -278,9 +238,10 @@ Partial Class frmLevelEdit
         'nudLives
         '
         Me.nudLives.Location = New System.Drawing.Point(130, 128)
+        Me.nudLives.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.nudLives.Name = "nudLives"
         Me.nudLives.Size = New System.Drawing.Size(122, 23)
-        Me.nudLives.TabIndex = 4
+        Me.nudLives.TabIndex = 7
         '
         'Label4
         '
@@ -294,10 +255,10 @@ Partial Class frmLevelEdit
         'nudTime
         '
         Me.nudTime.Location = New System.Drawing.Point(130, 99)
-        Me.nudTime.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
+        Me.nudTime.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.nudTime.Name = "nudTime"
         Me.nudTime.Size = New System.Drawing.Size(122, 23)
-        Me.nudTime.TabIndex = 3
+        Me.nudTime.TabIndex = 5
         '
         'Label3
         '
@@ -314,7 +275,7 @@ Partial Class frmLevelEdit
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtAuthor.Location = New System.Drawing.Point(130, 41)
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(277, 23)
+        Me.txtAuthor.Size = New System.Drawing.Size(520, 23)
         Me.txtAuthor.TabIndex = 2
         '
         'Label2
@@ -338,10 +299,10 @@ Partial Class frmLevelEdit
         'nudLevel
         '
         Me.nudLevel.Location = New System.Drawing.Point(130, 70)
-        Me.nudLevel.Maximum = New Decimal(New Integer() {300, 0, 0, 0})
+        Me.nudLevel.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.nudLevel.Name = "nudLevel"
         Me.nudLevel.Size = New System.Drawing.Size(122, 23)
-        Me.nudLevel.TabIndex = 0
+        Me.nudLevel.TabIndex = 3
         Me.nudLevel.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'txtTitle
@@ -350,8 +311,63 @@ Partial Class frmLevelEdit
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTitle.Location = New System.Drawing.Point(130, 12)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(277, 23)
+        Me.txtTitle.Size = New System.Drawing.Size(520, 23)
         Me.txtTitle.TabIndex = 1
+        '
+        'cbAutoLevel
+        '
+        Me.cbAutoLevel.AutoSize = True
+        Me.cbAutoLevel.Checked = True
+        Me.cbAutoLevel.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbAutoLevel.Location = New System.Drawing.Point(258, 71)
+        Me.cbAutoLevel.Name = "cbAutoLevel"
+        Me.cbAutoLevel.Size = New System.Drawing.Size(82, 19)
+        Me.cbAutoLevel.TabIndex = 4
+        Me.cbAutoLevel.Text = "Auto Level"
+        Me.cbAutoLevel.UseVisualStyleBackColor = True
+        '
+        'cbAutoTime
+        '
+        Me.cbAutoTime.AutoSize = True
+        Me.cbAutoTime.Checked = True
+        Me.cbAutoTime.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbAutoTime.Location = New System.Drawing.Point(258, 100)
+        Me.cbAutoTime.Name = "cbAutoTime"
+        Me.cbAutoTime.Size = New System.Drawing.Size(81, 19)
+        Me.cbAutoTime.TabIndex = 6
+        Me.cbAutoTime.Text = "Auto Time"
+        Me.cbAutoTime.UseVisualStyleBackColor = True
+        '
+        'cbAutoLives
+        '
+        Me.cbAutoLives.AutoSize = True
+        Me.cbAutoLives.Checked = True
+        Me.cbAutoLives.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbAutoLives.Location = New System.Drawing.Point(258, 129)
+        Me.cbAutoLives.Name = "cbAutoLives"
+        Me.cbAutoLives.Size = New System.Drawing.Size(81, 19)
+        Me.cbAutoLives.TabIndex = 8
+        Me.cbAutoLives.Text = "Auto Lives"
+        Me.cbAutoLives.UseVisualStyleBackColor = True
+        '
+        'cbAutoPage
+        '
+        Me.cbAutoPage.AutoSize = True
+        Me.cbAutoPage.Checked = True
+        Me.cbAutoPage.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbAutoPage.Location = New System.Drawing.Point(258, 158)
+        Me.cbAutoPage.Name = "cbAutoPage"
+        Me.cbAutoPage.Size = New System.Drawing.Size(81, 19)
+        Me.cbAutoPage.TabIndex = 10
+        Me.cbAutoPage.Text = "Auto Page"
+        Me.cbAutoPage.UseVisualStyleBackColor = True
+        '
+        'RearrangeToolStripMenuItem
+        '
+        Me.RearrangeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.RearrangeToolStripMenuItem.Name = "RearrangeToolStripMenuItem"
+        Me.RearrangeToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.RearrangeToolStripMenuItem.Text = "Rearrange"
         '
         'lvLevels
         '
@@ -371,11 +387,13 @@ Partial Class frmLevelEdit
         '
         'chLevel
         '
+        Me.chLevel.Tag = "Numeric"
         Me.chLevel.Text = "Level"
         Me.chLevel.Width = 40
         '
         'chPage
         '
+        Me.chPage.Tag = "Numeric"
         Me.chPage.Text = "Page"
         Me.chPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.chPage.Width = 40
@@ -392,23 +410,27 @@ Partial Class frmLevelEdit
         '
         'chTimeLimit
         '
+        Me.chTimeLimit.Tag = "Numeric"
         Me.chTimeLimit.Text = "Time Limit"
         Me.chTimeLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.chTimeLimit.Width = 70
         '
         'chLife
         '
+        Me.chLife.Tag = "Numeric"
         Me.chLife.Text = "Life"
         Me.chLife.Width = 40
         '
         'chCharCount
         '
+        Me.chCharCount.Tag = "Numeric"
         Me.chCharCount.Text = "Char Count"
         Me.chCharCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.chCharCount.Width = 80
         '
         'chWordCount
         '
+        Me.chWordCount.Tag = "Numeric"
         Me.chWordCount.Text = "Word Count"
         Me.chWordCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.chWordCount.Width = 80
@@ -432,8 +454,6 @@ Partial Class frmLevelEdit
         Me.SplitContainer1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.gbPreview.ResumeLayout(False)
-        CType(Me.pbImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudPage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
@@ -475,11 +495,12 @@ Partial Class frmLevelEdit
     Friend WithEvents tsslWordCount As ToolStripStatusLabel
     Friend WithEvents chCharCount As ColumnHeader
     Friend WithEvents chWordCount As ColumnHeader
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtImageURL As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents nudPage As NumericUpDown
-    Friend WithEvents gbPreview As GroupBox
-    Friend WithEvents pbImage As PictureBox
     Friend WithEvents chPage As ColumnHeader
+    Friend WithEvents cbAutoPage As CheckBox
+    Friend WithEvents cbAutoLives As CheckBox
+    Friend WithEvents cbAutoTime As CheckBox
+    Friend WithEvents cbAutoLevel As CheckBox
+    Friend WithEvents RearrangeToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -25,6 +25,20 @@ Public Class ListViewX
         Handle.SetWindowTheme
     End Sub
 
+    Public Sub Load()
+        If Sorting = SortOrder.Ascending Then
+            Sorting = SortOrder.Descending
+        Else
+            Sorting = SortOrder.Ascending
+        End If
+
+        Sort()
+        ListViewItemSorter = New ListViewItemComparer(0, Sorting)
+        Handle.SetWindowTheme
+        Me.Striped
+        SetSortIcon(0, Sorting)
+    End Sub
+
     Protected Overrides Sub OnColumnClick(e As ColumnClickEventArgs)
         MyBase.OnColumnClick(e)
 

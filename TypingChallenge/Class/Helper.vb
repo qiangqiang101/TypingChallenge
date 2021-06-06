@@ -32,6 +32,7 @@ Module Helper
 
     <Extension>
     Public Function WordCount(text As String) As Integer
+        text = text.Replace("\n\n", vbNewLine)
         Dim collection As MatchCollection = Regex.Matches(text, "\S+")
         Return collection.Count
     End Function
@@ -137,7 +138,7 @@ Module Helper
 
     <Extension>
     Public Sub DrawLevelSelectionControl(graphics As Graphics, font As Font, ByRef refRect As RectangleF, ByRef refBool As Boolean, location As PointF, size As SizeF,
-                                         level As Level, Optional color As Color = Nothing, Optional color2 As Color = Nothing, Optional image As Image = Nothing)
+                                         level As Level, Optional color As Color = Nothing, Optional color2 As Color = Nothing)
         If color2 = Nothing Then color2 = Color.Red
         If color = Nothing Then color = Color.White
 
@@ -153,7 +154,7 @@ Module Helper
                     graphics.DrawRoundedRectangle(refRect.ToRectangle, 10, pen)
                 End Using
             End If
-            If image IsNot Nothing Then graphics.DrawImageBestFit(refRect, image)
+
             Dim textSize As SizeF = graphics.MeasureString(level.Title, font)
             Dim rect2 As New RectangleF(location.X + 10, location.Y + 10, refRect.Width - 20, refRect.Height - textSize.Height)
             graphics.DrawGDIPlusText(level.Title, font, rect2, If(refBool, color2, color), StringAlignment.Near)
@@ -242,14 +243,8 @@ Module Helper
     End Sub
 
     <Extension>
-    Public Function GetPagesFromNum(totalLevels As Integer) As Integer
-        Dim result = totalLevels / 9
-        Dim modResult As Double = result Mod 1
-        If modResult = 0 Then
-            Return CInt(result)
-        Else
-            Return CInt(result) + 1
-        End If
+    Public Function GetPagesFromNum(level As Integer) As Integer
+        Return CInt(Math.Ceiling(level / 9))
     End Function
 
     <Extension>
