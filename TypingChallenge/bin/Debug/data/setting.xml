@@ -3,7 +3,7 @@
   <MusicVolume>0</MusicVolume>
   <SoundVolume>0</SoundVolume>
   <Quality>0</Quality>
-  <FullScreen>true</FullScreen>
+  <FullScreen>false</FullScreen>
   <ShowFPS>true</ShowFPS>
   <Version>0</Version>
 </SettingData>

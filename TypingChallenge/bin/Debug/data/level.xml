@@ -14,7 +14,7 @@
       <Title>Sea Speak</Title>
       <Author />
       <Level>2</Level>
-      <Phrase>She sells seashells on the seashore.\n\nThe shells she sells are seashells, I’m sure.\n\nAnd if she sells seashells on the seashore,\n\nThen I’m sure she sells seashore shells.</Phrase>
+      <Phrase>She sells seashells on the seashore.\n\nThe shells she sells are seashells, I'm sure.\n\nAnd if she sells seashells on the seashore,\n\nThen I'm sure she sells seashore shells.</Phrase>
       <Life>1</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
@@ -29,10 +29,10 @@
       <Page>1</Page>
     </Level>
     <Level>
-      <Title>Pete’s Pick</Title>
+      <Title>Pete's Pick</Title>
       <Author />
       <Level>4</Level>
-      <Phrase>Peter Piper picked a peck of pickled peppers\n\nA peck of pickled peppers Peter Piper picked\n\nIf Peter Piper picked a peck of pickled peppers\n\nWhere’s the peck of pickled peppers Peter Piper picked?</Phrase>
+      <Phrase>Peter Piper picked a peck of pickled peppers\n\nA peck of pickled peppers Peter Piper picked\n\nIf Peter Piper picked a peck of pickled peppers\n\nWhere's the peck of pickled peppers Peter Piper picked?</Phrase>
       <Life>1</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
@@ -50,7 +50,7 @@
       <Title>Thought</Title>
       <Author />
       <Level>6</Level>
-      <Phrase>I thought a thought.\n\nBut the thought I thought\n\nWasn’t the thought I thought I thought.\n\nIf the thought I thought I thought,\n\nHad been the thought I thought,\n\nI wouldn’t have thought I thought.</Phrase>
+      <Phrase>I thought a thought.\n\nBut the thought I thought\n\nWasn't the thought I thought I thought.\n\nIf the thought I thought I thought,\n\nHad been the thought I thought,\n\nI wouldn't have thought I thought.</Phrase>
       <Life>1</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
@@ -59,7 +59,7 @@
       <Title>Easy Fleasy</Title>
       <Author />
       <Level>7</Level>
-      <Phrase>Through three cheese trees, three free fleas flew. While these fleas flew, freezy breeze blew. Freezy breeze made these three trees freeze. Freezy trees made these trees’ cheese freeze. That’s what made these three free fleas sneeze.</Phrase>
+      <Phrase>Through three cheese trees, three free fleas flew. While these fleas flew, freezy breeze blew. Freezy breeze made these three trees freeze. Freezy trees made these trees' cheese freeze. That's what made these three free fleas sneeze.</Phrase>
       <Life>1</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
@@ -68,7 +68,7 @@
       <Title>Marriage Mumble</Title>
       <Author />
       <Level>8</Level>
-      <Phrase>Mary Mac’s mother’s making Mary Mac marry me. My mother’s making me marry Mary Mac. Will I always be so Merry when Mary’s taking care of me? Will I always be so merry when I marry Mary Mac?</Phrase>
+      <Phrase>Mary Mac's mother's making Mary Mac marry me. My mother's making me marry Mary Mac. Will I always be so Merry when Mary's taking care of me? Will I always be so merry when I marry Mary Mac?</Phrase>
       <Life>1</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
@@ -86,7 +86,7 @@
       <Title>Yellow butter, purple jelly, red jam, black bread.</Title>
       <Author />
       <Level>10</Level>
-      <Phrase>Yellow butter, purple jelly, red jam, black bread.\n\nSpread it thick, say it quick!\n\nYellow butter, purple jelly, red jam, black bread.\n\nSpread it thicker, say it quicker!\n\nYellow butter, purple jelly, red jam, black bread.\n\nDon’t eat with your mouth full!</Phrase>
+      <Phrase>Yellow butter, purple jelly, red jam, black bread.\n\nSpread it thick, say it quick!\n\nYellow butter, purple jelly, red jam, black bread.\n\nSpread it thicker, say it quicker!\n\nYellow butter, purple jelly, red jam, black bread.\n\nDon't eat with your mouth full!</Phrase>
       <Life>1</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
@@ -95,7 +95,7 @@
       <Title>Baker Blurb</Title>
       <Author />
       <Level>11</Level>
-      <Phrase>Betty Botter bought some butter\n\nBut she said the butter’s bitter\n\nIf I put it in my batter, it will make my batter bitter\n\nBut a bit of better butter will make my batter better\n\nSo ‘twas better Betty Botter bought a bit of better butter</Phrase>
+      <Phrase>Betty Botter bought some butter\n\nBut she said the butter's bitter\n\nIf I put it in my batter, it will make my batter bitter\n\nBut a bit of better butter will make my batter better\n\nSo ‘twas better Betty Botter bought a bit of better butter</Phrase>
       <Life>1</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
@@ -131,7 +131,7 @@
       <Title>Baseball Blab</Title>
       <Author />
       <Level>15</Level>
-      <Phrase>Bobby Bippy bought a bat. Bobby Bippy bought a ball. With his bat, Bob banged the ball. Banged it bump against the wall. But so boldly Bobby banged it. That he burst his rubber ball. “Boo!” cried Bobby. Bad luck ball. Bad luck Bobby, bad luck ball. Now to drown his many troubles, Bobby Bippy’s blowing bubbles.</Phrase>
+      <Phrase>Bobby Bippy bought a bat. Bobby Bippy bought a ball. With his bat, Bob banged the ball. Banged it bump against the wall. But so boldly Bobby banged it. That he burst his rubber ball. “Boo!” cried Bobby. Bad luck ball. Bad luck Bobby, bad luck ball. Now to drown his many troubles, Bobby Bippy's blowing bubbles.</Phrase>
       <Life>1</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
