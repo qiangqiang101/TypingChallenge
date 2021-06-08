@@ -74,7 +74,8 @@
         End If
         If btnSettingH Then
             Dim opt As New GameOption() With {.Dock = DockStyle.Fill, .Font = New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold, Font.Unit),
-                .MusicVolume = setting.MusicVolume, .SoundVolume = setting.SoundVolume, .GraphicsQuality = setting.Quality, .FullScreen = setting.FullScreen, .ShowFPS = setting.ShowFPS}
+                .MusicVolume = setting.MusicVolume, .SoundVolume = setting.SoundVolume, .GraphicsQuality = setting.Quality, .FullScreen = setting.FullScreen, .ShowFPS = setting.ShowFPS,
+                .KeyboardColor = Color.FromArgb(setting.KeyboardColorA, setting.KeyboardColorR, setting.KeyboardColorG, setting.KeyboardColorB), .RGBKeyboard = setting.KeyboardRGB}
             Parent.Controls.Add(opt)
             opt.Refresh()
             Me.Hide()

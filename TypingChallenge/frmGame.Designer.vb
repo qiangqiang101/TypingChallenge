@@ -29,6 +29,7 @@ Partial Class frmGame
         'MainMenu
         '
         Me.MainMenu.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainMenu.Effect = TypingChallenge.eEffect.Both
         Me.MainMenu.Font = New System.Drawing.Font("Segoe UI", 80.0!)
         Me.MainMenu.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu.Name = "MainMenu"

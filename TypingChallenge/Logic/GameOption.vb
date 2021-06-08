@@ -8,13 +8,17 @@ Public Class GameOption
 
     'Controls
     Private musicL, musicR, soundL, soundR, graphicL, graphicR, fullscreenL, fullscreenR, fpsL, fpsR, saveBtn, cancelBtn As RectangleF 'fullScreenCb, fpsCb
+    Private kbBtn, rgbL, rgbR As RectangleF
     Private musicLH, musicRH, soundLH, soundRH, graphicLH, graphicRH, fullscreenLH, fullscreenRH, fpsLH, fpsRH, saveBtnH, cancelBtnH As Boolean 'fullScreenCbH, fpsCbH
+    Private kbBtnH, rgbLH, rgbRH As Boolean
 
     Public Property MusicVolume() As Integer
     Public Property SoundVolume() As Integer
     Public Property GraphicsQuality() As Integer
     Public Property FullScreen() As Boolean
     Public Property ShowFPS() As Boolean
+    Public Property KeyboardColor() As Color
+    Public Property RGBKeyboard() As Boolean
 
     Public Sub New()
         DoubleBuffered = True
@@ -33,10 +37,12 @@ Public Class GameOption
         fullscreenRH = False
         fpsLH = False
         fpsRH = False
-        'fullScreenCbH = False
-        'fpsCbH = False
         saveBtnH = False
         cancelBtnH = False
+
+        kbBtnH = False
+        rgbLH = False
+        rgbRH = False
     End Sub
 
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
@@ -49,14 +55,16 @@ Public Class GameOption
         soundRH = soundR.Contains(_mousePos)
         graphicLH = graphicL.Contains(_mousePos)
         graphicRH = graphicR.Contains(_mousePos)
-        'fullScreenCbH = fullScreenCb.Contains(_mousePos)
-        'fpsCbH = fpsCb.Contains(_mousePos)
         fullscreenLH = fullscreenL.Contains(_mousePos)
         fullscreenRH = fullscreenR.Contains(_mousePos)
         fpsLH = fpsL.Contains(_mousePos)
         fpsRH = fpsR.Contains(_mousePos)
         saveBtnH = saveBtn.Contains(_mousePos)
         cancelBtnH = cancelBtn.Contains(_mousePos)
+
+        kbBtnH = kbBtn.Contains(_mousePos)
+        rgbLH = rgbL.Contains(_mousePos)
+        rgbRH = rgbR.Contains(_mousePos)
     End Sub
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
@@ -68,7 +76,7 @@ Public Class GameOption
 
         Dim cr = ClientRectangle.GetSafeZone
         Dim rWidth As Single = cr.GetColumnSizef(2).Width
-        Dim rHeight As Single = cr.GetRowSizef(6).Height
+        Dim rHeight As Single = cr.GetRowSizef(8).Height
         Dim rHeight2 As Single = (rHeight * 4) / 6
         'Dim rWidth As Single = (cr.Width / 2) '- 150
         Dim sz As Integer = 75
@@ -85,11 +93,15 @@ Public Class GameOption
         'Graphics
         g.DrawSliderControl(Font, graphicL, graphicR, graphicLH, graphicRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 3)), New SizeF(rWidth, rHeight2), "Graphics Quality", GraphicsQualityText(GraphicsQuality))
 
+        'Keyboard
+        g.DrawButtonControl(Font, kbBtn, kbBtnH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Keyboard Color", KeyboardColor.Name)
+        g.DrawSliderControl(Font, rgbL, rgbR, rgbLH, rgbRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 5)), New SizeF(rWidth, rHeight2), "RGB Keyboard", BoolToString(RGBKeyboard))
+
         'Fullscreen
-        g.DrawSliderControl(Font, fullscreenL, fullscreenR, fullscreenLH, fullscreenRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Window Mode", FullscreenToString(FullScreen))
+        g.DrawSliderControl(Font, fullscreenL, fullscreenR, fullscreenLH, fullscreenRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 6)), New SizeF(rWidth, rHeight2), "Window Mode", FullscreenToString(FullScreen))
 
         'FPS
-        g.DrawSliderControl(Font, fpsL, fpsR, fpsLH, fpsRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 5)), New SizeF(rWidth, rHeight2), "Show FPS", BoolToString(ShowFPS))
+        g.DrawSliderControl(Font, fpsL, fpsR, fpsLH, fpsRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 7)), New SizeF(rWidth, rHeight2), "Show FPS", BoolToString(ShowFPS))
 
         saveBtn = New Rectangle(cr.X + (cr.Width / 2) - 310, cr.Height - 100, 300, 80)
         cancelBtn = New Rectangle(cr.X + (cr.Width / 2) + 0, cr.Height - 100, 300, 80)
@@ -143,8 +155,19 @@ Public Class GameOption
         If fullscreenRH Then FullScreen = Not FullScreen
         If fpsLH Then ShowFPS = Not ShowFPS
         If fpsRH Then ShowFPS = Not ShowFPS
-        'If fullScreenCbH Then FullScreen = Not FullScreen
-        'If fpsCbH Then ShowFPS = Not ShowFPS
+        If kbBtnH Then
+            Dim cd As New ColorDialog
+            With cd
+                .Color = KeyboardColor
+                .AllowFullOpen = True
+                .FullOpen = True
+            End With
+            If cd.ShowDialog <> DialogResult.Cancel Then
+                KeyboardColor = cd.Color
+            End If
+        End If
+        If rgbLH Then RGBKeyboard = Not RGBKeyboard
+        If rgbRH Then RGBKeyboard = Not RGBKeyboard
 
         If saveBtnH Then
             Dim newSetting As New SettingData(setXmlPath)
@@ -154,6 +177,11 @@ Public Class GameOption
                 .Quality = GraphicsQuality
                 .FullScreen = FullScreen
                 .ShowFPS = ShowFPS
+                .KeyboardColorA = KeyboardColor.A
+                .KeyboardColorR = KeyboardColor.R
+                .KeyboardColorG = KeyboardColor.G
+                .KeyboardColorB = KeyboardColor.B
+                .KeyboardRGB = RGBKeyboard
                 .Version = setting.Version
             End With
             newSetting.Save()
@@ -163,12 +191,7 @@ Public Class GameOption
             frmGame.Controls.Remove(Me)
             frmGame.MainMenu.RefreshSettings()
 
-            If setting.FullScreen Then
-                frmGame.FormBorderStyle = FormBorderStyle.None
-                frmGame.WindowState = FormWindowState.Maximized
-            Else
-                frmGame.FormBorderStyle = FormBorderStyle.Sizable
-            End If
+            If setting.FullScreen Then gameFormState.Maximize(frmGame) Else gameFormState.Restore(frmGame)
         End If
         If cancelBtnH Then
             frmGame.MainMenu.Show()

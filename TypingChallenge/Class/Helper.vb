@@ -12,6 +12,8 @@ Module Helper
     Public levels As LevelData = New LevelData(lvlXmlPath).Instance
     Public setting As SettingData = New SettingData(setXmlPath).Instance
 
+    Public gameFormState As FormState = New FormState()
+
     <Extension>
     Public Sub DrawGDIPlusText(graphics As Graphics, text As String, font As Font, bounds As RectangleF, color As Color, Optional alignment As StringAlignment = StringAlignment.Center, Optional offset As Point = Nothing)
         Dim format As New StringFormat()
@@ -132,6 +134,27 @@ Module Helper
                 graphics.DrawGDIPlusText("▶", font, refRectR, color2, StringAlignment.Center)
             Else
                 graphics.DrawGDIPlusText("▶", font, refRectR, color, StringAlignment.Center)
+            End If
+        End Using
+    End Sub
+
+    <Extension>
+    Public Sub DrawButtonControl(graphics As Graphics, font As Font, ByRef refRect As RectangleF, ByRef refBool As Boolean, location As PointF, size As SizeF, title As String, optText As String, Optional color As Color = Nothing, Optional color2 As Color = Nothing, Optional maxBtnSize As Integer = 75)
+        If color2 = Nothing Then color2 = Color.Red
+        If color = Nothing Then color = Color.White
+        Dim btnSize As Integer = size.Height
+        If size.Height > maxBtnSize Then btnSize = maxBtnSize
+
+        Using brush As New SolidBrush(color)
+            Dim rect1 As New RectangleF(location.X, location.Y, size.Width, btnSize)
+            graphics.DrawGDIPlusText(title, font, rect1, color, StringAlignment.Near)
+            Dim rect2 As New RectangleF(location.X + size.Width, location.Y, size.Width, btnSize)
+            refRect = New RectangleF(rect2.Location.X, rect2.Location.Y, rect2.Width, btnSize)
+            If refBool Then
+                graphics.FillRoundedRectangle(refRect.ToRectangle, 10, brush, New RoundedRectCorners(True))
+                graphics.DrawGDIPlusText(optText, font, refRect, color2, StringAlignment.Center)
+            Else
+                graphics.DrawGDIPlusText(optText, font, refRect, color, StringAlignment.Center)
             End If
         End Using
     End Sub
