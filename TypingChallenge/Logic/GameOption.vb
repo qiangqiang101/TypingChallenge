@@ -190,8 +190,6 @@ Public Class GameOption
             frmGame.MainMenu.Show()
             frmGame.Controls.Remove(Me)
             frmGame.MainMenu.RefreshSettings()
-
-            If setting.FullScreen Then gameFormState.Maximize(frmGame) Else gameFormState.Restore(frmGame)
         End If
         If cancelBtnH Then
             frmGame.MainMenu.Show()

@@ -3,7 +3,9 @@ Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Net
 Imports System.Runtime.CompilerServices
+Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
+Imports TypingChallenge
 
 Module Helper
 
@@ -28,6 +30,17 @@ Module Helper
     End Sub
 
     <Extension>
+    Public Sub DrawGDIPlusText(graphics As Graphics, text As String, font As Font, bounds As RectangleF, brush As Brush, Optional alignment As StringAlignment = StringAlignment.Center, Optional offset As Point = Nothing)
+        Dim format As New StringFormat()
+        format.Alignment = alignment
+
+        If Not offset = Nothing Then bounds.Offset(offset)
+        graphics.DrawString(text, font, brush, bounds, format)
+
+        graphics.ResetTransform()
+    End Sub
+
+    <Extension>
     Public Sub DrawGDIText(graphics As Graphics, text As String, font As Font, bounds As Rectangle, color As Color, Optional flags As TextFormatFlags = TextFormatFlags.VerticalCenter, Optional offset As Point = Nothing)
         TextRenderer.DrawText(graphics, text, font, bounds, color, flags)
     End Sub
@@ -45,6 +58,11 @@ Module Helper
 
         Dim mydate As Date = New Date(ts.Ticks)
         Return mydate.ToString(("mm:ss"))
+    End Function
+
+    Public Function GetColor(bmp As Bitmap, x As Integer, y As Integer) As Color
+        Dim c As Color = bmp.GetPixel(x, y)
+        Return c
     End Function
 
     <Extension>

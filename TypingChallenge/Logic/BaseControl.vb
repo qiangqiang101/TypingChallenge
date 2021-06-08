@@ -19,8 +19,10 @@ Public Class BaseControl
     Private kbPosX As Integer = (ClientSize.Width / 2) - 800, kbPosY As Integer = (ClientSize.Height / 2) - 225
     Private moveStepX As Integer = 2, moveStepY As Integer = 2
     Private pressedKeys As New List(Of Keys)
-    Private rgbNum, rgbCount As Integer, rgbAngle As Single = 60.0F
+    Private rgbAngle As Single = 60.0F
     Private keyboardRect As Rectangle
+    Private keyboardSize As New Size(1600, 450)
+    Private cBlend As New ColorBlend(4)
 
     Public Property Effect() As eEffect = eEffect.Both
     Public Property KeyboardColor() As Color = Color.White
@@ -148,8 +150,11 @@ Public Class BaseControl
         MyBase.OnPaint(e)
 
         Dim g As Graphics = e.Graphics
-        g.SmoothingMode = SmoothingMode.AntiAlias
+        g.SmoothingMode = SmoothingMode.HighQuality
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
+
+        cBlend.Colors = New Color(3) {Color.Red, Color.Green, Color.Blue, Color.Red}
+        cBlend.Positions = New Single(3) {0F, 0.33F, 0.66F, 1.0F}
 
         If setting.ShowFPS Then
             Dim fps As New Rectangle(ClientRectangle.Width - 200, 0, 200, 50)
@@ -162,11 +167,9 @@ Public Class BaseControl
         If Effect = eEffect.Circles Then
             PaintCircles(g)
         ElseIf Effect = eEffect.Keyboard Then
-            'g.Clear(BackColor)
             PaintKeyboard(g, New Point(kbPosX, kbPosY))
         ElseIf Effect = eEffect.Both Then
             PaintCircles(g)
-            'g.Clear(BackColor)
             PaintKeyboard(g, New Point(kbPosX, kbPosY))
         End If
     End Sub
@@ -211,9 +214,9 @@ Public Class BaseControl
     Private Sub MoveKeyboard()
         If Me.Visible Then
             kbPosX += moveStepX
-            If kbPosX < 0 OrElse kbPosX + 1600 > ClientSize.Width Then moveStepX = -moveStepX
+            If kbPosX < 0 OrElse kbPosX + keyboardSize.Width > ClientSize.Width Then moveStepX = -moveStepX
             kbPosY += moveStepY
-            If kbPosY < 0 OrElse kbPosY + 450 > ClientSize.Height Then moveStepY = -moveStepY
+            If kbPosY < 0 OrElse kbPosY + keyboardSize.Height > ClientSize.Height Then moveStepY = -moveStepY
             Invalidate()
         End If
     End Sub
@@ -238,26 +241,14 @@ Public Class BaseControl
         Select Case Effect
             Case eEffect.Keyboard, eEffect.Both
                 MoveKeyboard()
-                rgbCount += 1
-                rgbAngle += 1.0F
-
-                Select Case rgbCount
-                    Case 0 To 99
-                        rgbNum = 0
-                    Case 100 To 199
-                        rgbNum = 1
-                    Case 200 To 299
-                        rgbNum = 2
-                End Select
-
-                If rgbCount > 299 Then rgbCount = 0
+                rgbAngle += 2.0F
         End Select
 
         Invalidate()
     End Sub
 
     Public Sub PaintKeyboard(g As Graphics, offset As Point)
-        Dim rect As New Rectangle(offset.X, offset.Y, 1600, 450)
+        Dim rect As New Rectangle(offset.X, offset.Y, keyboardSize.Width, keyboardSize.Height)
         Dim kbBorder As New Rectangle(rect.X - 10, rect.Y - 10, rect.Width, rect.Height)
         keyboardRect = kbBorder
         Dim ks = 60, lks = 131, bks = 70, tks = 100, sks = ks * 7, eks = 141
@@ -374,10 +365,10 @@ Public Class BaseControl
         Dim numperiod As New Rectangle(xy + num0.X + num0.Width, xy + lshift.Y + lshift.Height, ks, ks)
 
         Using brush As New SolidBrush(KeyboardColor)
-            Using pen As New Pen(brush, 1.5)
+            Using pen As New Pen(brush, 2.0F)
                 g.DrawRoundedRectangle(kbBorder, 10, pen)
 
-                Using kbFont As New Font("Verdana", 15.0F, FontStyle.Bold, GraphicsUnit.Pixel)
+                Using kbFont As New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Pixel)
                     DrawKeys(g, esc, pen, "ESC", kbFont, Keys.Escape)
                     DrawKeys(g, f1, pen, "F1", kbFont, Keys.F1)
                     DrawKeys(g, f2, pen, "F2", kbFont, Keys.F2)
@@ -402,7 +393,7 @@ Public Class BaseControl
                     DrawKeys(g, d4, pen, $"${vbNewLine}4", kbFont, Keys.D4)
                     DrawKeys(g, d5, pen, $"%{vbNewLine}5", kbFont, Keys.D5)
                     DrawKeys(g, d6, pen, $"^{vbNewLine}6", kbFont, Keys.D6)
-                    DrawKeys(g, d7, pen, $"&&{vbNewLine}7", kbFont, Keys.D7)
+                    DrawKeys(g, d7, pen, $"＆{vbNewLine}7", kbFont, Keys.D7)
                     DrawKeys(g, d8, pen, $"*{vbNewLine}8", kbFont, Keys.D8)
                     DrawKeys(g, d9, pen, $"({vbNewLine}9", kbFont, Keys.D9)
                     DrawKeys(g, d0, pen, $"){vbNewLine}0", kbFont, Keys.D0)
@@ -410,8 +401,8 @@ Public Class BaseControl
                     DrawKeys(g, plus, pen, $"+{vbNewLine}=", kbFont, Keys.Oemplus)
                     DrawKeys(g, bspace, pen, "Backspace", kbFont, Keys.Back)
                     DrawKeys(g, ins, pen, "Insert", kbFont, Keys.Insert, TextFormatFlags.HorizontalCenter)
-                    DrawKeys(g, home, pen, $"Home{vbNewLine}⏮", kbFont, Keys.Home, TextFormatFlags.HorizontalCenter)
-                    DrawKeys(g, pgup, pen, $"Page{vbNewLine}Up{vbNewLine}▲", kbFont, Keys.PageUp, TextFormatFlags.HorizontalCenter)
+                    DrawKeys(g, home, pen, "Home", kbFont, Keys.Home, TextFormatFlags.HorizontalCenter)
+                    DrawKeys(g, pgup, pen, $"Page{vbNewLine}Up{vbNewLine}↑", kbFont, Keys.PageUp, TextFormatFlags.HorizontalCenter)
                     DrawKeys(g, numlock, pen, $"Num{vbNewLine}Lock", kbFont, Keys.NumLock, TextFormatFlags.HorizontalCenter)
                     DrawKeys(g, numslash, pen, "/", kbFont, Keys.Divide)
                     DrawKeys(g, numstar, pen, "*", kbFont, Keys.Multiply)
@@ -432,14 +423,14 @@ Public Class BaseControl
                     DrawKeys(g, rbracket, pen, "}" & vbNewLine & "]", kbFont, Keys.Oem6)
                     DrawKeys(g, bslash, pen, $"|{vbNewLine}\", kbFont, Keys.Oem5)
                     DrawKeys(g, del, pen, "Delete", kbFont, Keys.Delete, TextFormatFlags.HorizontalCenter)
-                    DrawKeys(g, [end], pen, $"End{vbNewLine}⏭", kbFont, Keys.End, TextFormatFlags.HorizontalCenter)
-                    DrawKeys(g, pgdown, pen, $"Page{vbNewLine}Down{vbNewLine}▼", kbFont, Keys.PageDown, TextFormatFlags.HorizontalCenter)
+                    DrawKeys(g, [end], pen, "End", kbFont, Keys.End, TextFormatFlags.HorizontalCenter)
+                    DrawKeys(g, pgdown, pen, $"Page{vbNewLine}Down{vbNewLine}↓", kbFont, Keys.PageDown, TextFormatFlags.HorizontalCenter)
                     DrawKeys(g, num7, pen, $"7{vbNewLine}Home", kbFont, Keys.NumPad7)
-                    DrawKeys(g, num8, pen, $"8{vbNewLine}▲", kbFont, Keys.NumPad8)
+                    DrawKeys(g, num8, pen, $"8{vbNewLine}↑", kbFont, Keys.NumPad8)
                     DrawKeys(g, num9, pen, $"9{vbNewLine}Pg Up", kbFont, Keys.NumPad9)
                     DrawKeys(g, numplus, pen, "+", kbFont, Keys.Add)
 
-                    DrawKeys(g, capslock, pen, $"Caps Lock{vbNewLine}🄰", kbFont, Keys.CapsLock)
+                    DrawKeys(g, capslock, pen, $"Caps Lock{vbNewLine}Ⓐ", kbFont, Keys.CapsLock)
                     DrawKeys(g, a, pen, "A", kbFont, Keys.A)
                     DrawKeys(g, s, pen, "S", kbFont, Keys.S)
                     DrawKeys(g, d, pen, "D", kbFont, Keys.D)
@@ -451,10 +442,10 @@ Public Class BaseControl
                     DrawKeys(g, l, pen, "L", kbFont, Keys.L)
                     DrawKeys(g, semicolon, pen, $":{vbNewLine};", kbFont, Keys.OemSemicolon)
                     DrawKeys(g, quote, pen, $"""{vbNewLine}'", kbFont, Keys.OemQuotes)
-                    DrawKeys(g, enter, pen, $"Enter{vbNewLine}⏎", kbFont, Keys.Enter)
-                    DrawKeys(g, num4, pen, $"4{vbNewLine}◀", kbFont, Keys.NumPad4)
+                    DrawKeys(g, enter, pen, $"Enter{vbNewLine}↵", kbFont, Keys.Enter)
+                    DrawKeys(g, num4, pen, $"4{vbNewLine}←", kbFont, Keys.NumPad4)
                     DrawKeys(g, num5, pen, "5", kbFont, Keys.NumPad5)
-                    DrawKeys(g, num6, pen, $"6{vbNewLine}▶", kbFont, Keys.NumPad6)
+                    DrawKeys(g, num6, pen, $"6{vbNewLine}→", kbFont, Keys.NumPad6)
 
                     DrawKeys(g, lshift, pen, "Shift", kbFont, Keys.ShiftKey)
                     DrawKeys(g, z, pen, "Z", kbFont, Keys.Z)
@@ -468,11 +459,11 @@ Public Class BaseControl
                     DrawKeys(g, period, pen, $">{vbNewLine}.", kbFont, Keys.OemPeriod)
                     DrawKeys(g, question, pen, $"?{vbNewLine}/", kbFont, Keys.OemQuestion)
                     DrawKeys(g, rshift, pen, "Shift", kbFont, Keys.ShiftKey)
-                    DrawKeys(g, up, pen, "▲", kbFont, Keys.Up)
+                    DrawKeys(g, up, pen, "↑", kbFont, Keys.Up)
                     DrawKeys(g, num1, pen, $"1{vbNewLine}End", kbFont, Keys.NumPad1)
-                    DrawKeys(g, num2, pen, $"2{vbNewLine}▼", kbFont, Keys.NumPad2)
+                    DrawKeys(g, num2, pen, $"2{vbNewLine}↓", kbFont, Keys.NumPad2)
                     DrawKeys(g, num3, pen, $"3{vbNewLine}Pg Dn", kbFont, Keys.NumPad3)
-                    DrawKeys(g, numenter, pen, $"Enter{vbNewLine}⏎", kbFont, Keys.Return)
+                    DrawKeys(g, numenter, pen, $"Enter{vbNewLine}↵", kbFont, Keys.Return)
 
                     DrawKeys(g, lctrl, pen, "Ctrl", kbFont, Keys.ControlKey)
                     DrawKeys(g, lwin, pen, "⊞", kbFont, Keys.LWin)
@@ -482,9 +473,9 @@ Public Class BaseControl
                     DrawKeys(g, rwin, pen, "⊞", kbFont, Keys.RWin)
                     DrawKeys(g, menu, pen, "▤", kbFont, Keys.Apps)
                     DrawKeys(g, rctrl, pen, "Ctrl", kbFont, Keys.ControlKey)
-                    DrawKeys(g, left, pen, "◀", kbFont, Keys.Left)
-                    DrawKeys(g, down, pen, "▼", kbFont, Keys.Down)
-                    DrawKeys(g, right, pen, "▶", kbFont, Keys.Right)
+                    DrawKeys(g, left, pen, "←", kbFont, Keys.Left)
+                    DrawKeys(g, down, pen, "↓", kbFont, Keys.Down)
+                    DrawKeys(g, right, pen, "→", kbFont, Keys.Right)
                     DrawKeys(g, num0, pen, $"0{vbNewLine}Ins", kbFont, Keys.NumPad0)
                     DrawKeys(g, numperiod, pen, $".{vbNewLine}Del", kbFont, Keys.Decimal)
                     ' DrawKeys(g, , pen, "", kbFont)   $"{vbNewLine}"
@@ -495,13 +486,11 @@ Public Class BaseControl
 
     Private Sub DrawKeys(g As Graphics, rect As Rectangle, pen As Pen, text As String, font As Font, key As Keys, Optional tff As TextFormatFlags = TextFormatFlags.Left)
         If RGB Then
-            Using lbrush As New LinearGradientBrush(keyboardRect, Color.Red, Color.Blue, rgbAngle)
-                Dim cBlend As New ColorBlend(4)
-                cBlend.Colors = New Color(3) {Color.Red, Color.Green, Color.Blue, Color.Black}
-                cBlend.Positions = New Single(3) {0F, 0.333F, 0.666F, 1.0F}
+            Dim rgbRect As New Rectangle(keyboardRect.Location, New Size(keyboardRect.Width, keyboardRect.Width))
+            Using lbrush As New LinearGradientBrush(rgbRect, Color.Red, Color.Blue, rgbAngle)
                 lbrush.InterpolationColors = cBlend
 
-                Using newPen As New Pen(lbrush, 1.5)
+                Using newPen As New Pen(lbrush, 3.0F)
                     g.DrawRoundedRectangle(keyboardRect, 10, newPen)
                     If pressedKeys.Contains(key) Then
                         g.FillRoundedRectangle(rect, 10, lbrush, New RoundedRectCorners(True))
@@ -511,7 +500,7 @@ Public Class BaseControl
                         g.DrawRoundedRectangle(rect, 10, newPen)
                         Dim smaller As New Rectangle(rect.X + 3, rect.Y + 3, rect.Width - 6, rect.Height - 6)
                         'g.DrawGDIText(text, font, smaller, cBlend.Colors(rgbNum), tff Or TextFormatFlags.Top)
-                        g.DrawString(text, font, lbrush, smaller.X, smaller.Y)
+                        g.DrawGDIPlusText(text, font, smaller, lbrush, If(tff = TextFormatFlags.Left, StringAlignment.Near, StringAlignment.Center))
                     End If
                 End Using
             End Using
