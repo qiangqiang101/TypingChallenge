@@ -85,10 +85,10 @@ Public Class GameOption
         g.DrawGDIText("OPTIONS", Font, optTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
 
         'Music
-        g.DrawSliderControl(Font, musicL, musicR, musicLH, musicRH, New PointF(cr.X, cr.Y + rHeight), New Size(rWidth, rHeight2), "Music Volume", MusicVolume)
+        g.DrawSliderControl(Font, musicL, musicR, musicLH, musicRH, New PointF(cr.X, cr.Y + rHeight), New Size(rWidth, rHeight2), "Music Volume", $"{MusicVolume}%")
 
         'Sound
-        g.DrawSliderControl(Font, soundL, soundR, soundLH, soundRH, New PointF(cr.X, cr.Y + rHeight + rHeight2), New Size(rWidth, rHeight2), "Sound Volume", SoundVolume)
+        g.DrawSliderControl(Font, soundL, soundR, soundLH, soundRH, New PointF(cr.X, cr.Y + rHeight + rHeight2), New Size(rWidth, rHeight2), "Sound Volume", $"{SoundVolume}%")
 
         'Graphics
         g.DrawSliderControl(Font, graphicL, graphicR, graphicLH, graphicRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 3)), New SizeF(rWidth, rHeight2), "Graphics Quality", GraphicsQualityText(GraphicsQuality))
@@ -107,11 +107,11 @@ Public Class GameOption
         cancelBtn = New Rectangle(cr.X + (cr.Width / 2) + 0, cr.Height - 100, 300, 80)
         Using br As New SolidBrush(If(saveBtnH, Color.White, Color.Gray))
             g.FillRoundedRectangle(saveBtn.ToRectangle, 10, br, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("Save", Font, saveBtn, If(saveBtnH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIText("Save", Font, saveBtn.ToRectangle, If(saveBtnH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
         Using br As New SolidBrush(If(cancelBtnH, Color.White, Color.Gray))
             g.FillRoundedRectangle(cancelBtn.ToRectangle, 10, br, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("Cancel", Font, cancelBtn, If(cancelBtnH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIText("Cancel", Font, cancelBtn.ToRectangle, If(cancelBtnH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
     End Sub
 

@@ -34,20 +34,24 @@ Public Class BaseControl
 
         Select Case Effect
             Case eEffect.Circles, eEffect.Both
-                Select Case setting.Quality
-                    Case 0
-                        Array.Resize(Circles, 30)
-                    Case 1
-                        Array.Resize(Circles, 60)
-                    Case 2
-                        Array.Resize(Circles, 120)
-                    Case 3
-                        Array.Resize(Circles, 240)
-                    Case 4
-                        Array.Resize(Circles, 360)
-                End Select
+                If Not RGB Then
+                    Select Case setting.Quality
+                        Case 0
+                            Array.Resize(Circles, 30)
+                        Case 1
+                            Array.Resize(Circles, 60)
+                        Case 2
+                            Array.Resize(Circles, 120)
+                        Case 3
+                            Array.Resize(Circles, 240)
+                        Case 4
+                            Array.Resize(Circles, 360)
+                    End Select
 
-                PrepareCircles()
+                    PrepareCircles()
+                Else
+                    Array.Resize(Circles, 0)
+                End If
             Case Else
                 Array.Resize(Circles, 0)
         End Select
@@ -62,6 +66,7 @@ Public Class BaseControl
         DoubleBuffered = True
     End Sub
 
+
     Public Sub RefreshSettings()
         setting = New SettingData(setXmlPath).Instance
 
@@ -70,20 +75,24 @@ Public Class BaseControl
 
         Select Case Effect
             Case eEffect.Circles, eEffect.Both
-                Select Case setting.Quality
-                    Case 0
-                        Array.Resize(Circles, 30)
-                    Case 1
-                        Array.Resize(Circles, 60)
-                    Case 2
-                        Array.Resize(Circles, 120)
-                    Case 3
-                        Array.Resize(Circles, 240)
-                    Case 4
-                        Array.Resize(Circles, 360)
-                End Select
+                If Not RGB Then
+                    Select Case setting.Quality
+                        Case 0
+                            Array.Resize(Circles, 30)
+                        Case 1
+                            Array.Resize(Circles, 60)
+                        Case 2
+                            Array.Resize(Circles, 120)
+                        Case 3
+                            Array.Resize(Circles, 240)
+                        Case 4
+                            Array.Resize(Circles, 360)
+                    End Select
 
-                PrepareCircles()
+                    PrepareCircles()
+                Else
+                    Array.Resize(Circles, 0)
+                End If
             Case Else
                 Array.Resize(Circles, 0)
         End Select
@@ -160,7 +169,7 @@ Public Class BaseControl
             Dim fps As New Rectangle(ClientRectangle.Width - 200, 0, 200, 50)
             Using fpsFont As New Font("Verdana", 30, FontStyle.Regular, GraphicsUnit.Pixel)
                 Call advanceFrameRate()
-                g.DrawGDIPlusText(currentFrameRate, fpsFont, fps, Color.LimeGreen, StringAlignment.Far)
+                g.DrawGDIText(currentFrameRate, fpsFont, fps, Color.LimeGreen, TextFormatFlags.Right)
             End Using
         End If
 
@@ -487,7 +496,7 @@ Public Class BaseControl
     Private Sub DrawKeys(g As Graphics, rect As Rectangle, pen As Pen, text As String, font As Font, key As Keys, Optional tff As TextFormatFlags = TextFormatFlags.Left)
         If RGB Then
             Dim rgbRect As New Rectangle(keyboardRect.Location, New Size(keyboardRect.Width, keyboardRect.Width))
-            Using lbrush As New LinearGradientBrush(rgbRect, Color.Red, Color.Blue, rgbAngle)
+            Using lbrush As New Drawing2D.LinearGradientBrush(rgbRect, Color.Red, Color.Blue, rgbAngle)
                 lbrush.InterpolationColors = cBlend
 
                 Using newPen As New Pen(lbrush, 3.0F)
@@ -499,7 +508,6 @@ Public Class BaseControl
                     Else
                         g.DrawRoundedRectangle(rect, 10, newPen)
                         Dim smaller As New Rectangle(rect.X + 3, rect.Y + 3, rect.Width - 6, rect.Height - 6)
-                        'g.DrawGDIText(text, font, smaller, cBlend.Colors(rgbNum), tff Or TextFormatFlags.Top)
                         g.DrawGDIPlusText(text, font, smaller, lbrush, If(tff = TextFormatFlags.Left, StringAlignment.Near, StringAlignment.Center))
                     End If
                 End Using

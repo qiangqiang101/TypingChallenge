@@ -1,8 +1,4 @@
-﻿Imports System.IO
-
-Public Class frmGame
-
-
+﻿Public Class frmGame
 
     Private Sub frmGame_Load(sender As Object, e As EventArgs) Handles Me.Load
         levels = New LevelData(lvlXmlPath).Instance

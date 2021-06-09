@@ -136,22 +136,22 @@ Module Helper
 
         Using brush As New SolidBrush(color)
             Dim rect1 As New RectangleF(location.X, location.Y, size.Width, btnSize)
-            graphics.DrawGDIPlusText(title, font, rect1, color, StringAlignment.Near)
+            graphics.DrawGDIText(title, font, rect1.ToRectangle, color, TextFormatFlags.Left)
             Dim rect2 As New RectangleF(location.X + size.Width, location.Y, size.Width, btnSize)
             refRectL = New RectangleF(rect2.Location.X, rect2.Location.Y, btnSize, btnSize)
             If refBoolL Then
                 graphics.FillRoundedRectangle(refRectL.ToRectangle, 10, brush, New RoundedRectCorners(True))
-                graphics.DrawGDIPlusText("◀", font, refRectL, color2, StringAlignment.Center)
+                graphics.DrawGDIText("◀", font, refRectL.ToRectangle, color2)
             Else
-                graphics.DrawGDIPlusText("◀", font, refRectL, color, StringAlignment.Center)
+                graphics.DrawGDIText("◀", font, refRectL.ToRectangle, color)
             End If
-            graphics.DrawGDIPlusText(optText, font, rect2, color, StringAlignment.Center)
+            graphics.DrawGDIText(optText, font, rect2.ToRectangle, color, TextFormatFlags.HorizontalCenter)
             refRectR = New RectangleF(rect2.X + rect2.Width - btnSize, rect2.Y, btnSize, btnSize)
             If refBoolR Then
                 graphics.FillRoundedRectangle(refRectR.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-                graphics.DrawGDIPlusText("▶", font, refRectR, color2, StringAlignment.Center)
+                graphics.DrawGDIText("▶", font, refRectR.ToRectangle, color2)
             Else
-                graphics.DrawGDIPlusText("▶", font, refRectR, color, StringAlignment.Center)
+                graphics.DrawGDIText("▶", font, refRectR.ToRectangle, color)
             End If
         End Using
     End Sub
@@ -165,14 +165,14 @@ Module Helper
 
         Using brush As New SolidBrush(color)
             Dim rect1 As New RectangleF(location.X, location.Y, size.Width, btnSize)
-            graphics.DrawGDIPlusText(title, font, rect1, color, StringAlignment.Near)
+            graphics.DrawGDIText(title, font, rect1.ToRectangle, color, TextFormatFlags.Left)
             Dim rect2 As New RectangleF(location.X + size.Width, location.Y, size.Width, btnSize)
             refRect = New RectangleF(rect2.Location.X, rect2.Location.Y, rect2.Width, btnSize)
             If refBool Then
                 graphics.FillRoundedRectangle(refRect.ToRectangle, 10, brush, New RoundedRectCorners(True))
-                graphics.DrawGDIPlusText(optText, font, refRect, color2, StringAlignment.Center)
+                graphics.DrawGDIText(optText, font, refRect.ToRectangle, color2, TextFormatFlags.HorizontalCenter)
             Else
-                graphics.DrawGDIPlusText(optText, font, refRect, color, StringAlignment.Center)
+                graphics.DrawGDIText(optText, font, refRect.ToRectangle, color, TextFormatFlags.HorizontalCenter)
             End If
         End Using
     End Sub
@@ -198,9 +198,9 @@ Module Helper
 
             Dim textSize As SizeF = graphics.MeasureString(level.Title, font)
             Dim rect2 As New RectangleF(location.X + 10, location.Y + 10, refRect.Width - 20, refRect.Height - textSize.Height)
-            graphics.DrawGDIPlusText(level.Title, font, rect2, If(refBool, color2, color), StringAlignment.Near)
+            graphics.DrawGDIText(level.Title, font, rect2.ToRectangle, If(refBool, color2, color), TextFormatFlags.Left)
             Dim rect3 As New RectangleF(location.X, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
-            graphics.DrawGDIPlusText($"Level {level.Level}", font, rect3, If(refBool, color2, color), StringAlignment.Far)
+            graphics.DrawGDIText($"Level {level.Level}", font, rect3.ToRectangle, If(refBool, color2, color), TextFormatFlags.Right)
         End Using
     End Sub
 
@@ -223,7 +223,7 @@ Module Helper
             End Using
         End If
         If refValue Then graphics.FillRoundedRectangle(refRect.ToRectangle, 10, Brushes.White, New RoundedRectCorners(True))
-        graphics.DrawGDIPlusText(title, font, cbRect3, Color.White, StringAlignment.Near)
+        graphics.DrawGDIText(title, font, cbRect3.ToRectangle, Color.White, TextFormatFlags.Left)
     End Sub
 
     <Extension>

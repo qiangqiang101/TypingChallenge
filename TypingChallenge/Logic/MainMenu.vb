@@ -3,8 +3,8 @@
 
     'Tracking Mouse
     Private _mousePos As Point = Point.Empty
-    Private btnPlay, btnSetting, btnCredits, btnExit As Rectangle
-    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnCreditsH As Boolean = False, btnExitH As Boolean = False
+    Private btnPlay, btnSetting, btnProfile, btnCredits, btnExit As Rectangle
+    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnCreditsH As Boolean = False, btnExitH As Boolean = False, btnProfileH As Boolean = False
 
     Protected Overrides Sub OnMouseLeave(e As EventArgs)
         MyBase.OnMouseLeave(e)
@@ -13,6 +13,7 @@
         btnSettingH = False
         btnCreditsH = False
         btnExitH = False
+        btnProfileH = False
     End Sub
 
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
@@ -23,6 +24,7 @@
         btnSettingH = btnSetting.Contains(_mousePos)
         btnCreditsH = btnCredits.Contains(_mousePos)
         btnExitH = btnExit.Contains(_mousePos)
+        btnProfileH = btnProfile.Contains(_mousePos)
     End Sub
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
@@ -38,25 +40,28 @@
         g.DrawGDIText($"Typing Challenge", Font, hero, Color.Gold, TextFormatFlags.Bottom Or TextFormatFlags.HorizontalCenter)
 
         Using subFont As New Font(Font.FontFamily, 10.0F, FontStyle.Regular)
-            g.DrawGDIPlusText("Copyright © 2021 Zettabyte Technology, No Rights Reserved.", subFont, botLeft, Color.White, StringAlignment.Near)
-            g.DrawGDIPlusText($"Demo version {My.Application.Info.Version}", subFont, botRight, Color.White, StringAlignment.Far)
+            g.DrawGDIText("Copyright © 2021 Zettabyte Technology, No Rights Reserved.", subFont, botLeft, Color.White, TextFormatFlags.Left)
+            g.DrawGDIText($"Demo version {My.Application.Info.Version}", subFont, botRight, Color.White, TextFormatFlags.Right)
         End Using
 
         btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height + 100, 300, 80)
         btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 300, 80)
-        btnCredits = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
+        btnProfile = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
+        btnCredits = New Rectangle((cr.Width / 2) - 150, btnProfile.Y + btnProfile.Height, 300, 80)
         btnExit = New Rectangle((cr.Width / 2) - 150, btnCredits.Y + btnCredits.Height, 300, 80)
 
         Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
-            g.DrawGDIPlusText("Play", resFont, btnPlay, If(btnPlayH, Color.Red, Color.White), StringAlignment.Center)
-            g.DrawGDIPlusText("Options", resFont, btnSetting, If(btnSettingH, Color.Red, Color.White), StringAlignment.Center)
-            g.DrawGDIPlusText("Credits", resFont, btnCredits, If(btnCreditsH, Color.Red, Color.White), StringAlignment.Center)
-            g.DrawGDIPlusText("Quit", resFont, btnExit, If(btnExitH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIText("Play", resFont, btnPlay, If(btnPlayH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
+            g.DrawGDIText("Options", resFont, btnSetting, If(btnSettingH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
+            g.DrawGDIText("Profile", resFont, btnProfile, If(btnProfileH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
+            g.DrawGDIText("Credits", resFont, btnCredits, If(btnCreditsH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
+            g.DrawGDIText("Quit", resFont, btnExit, If(btnExitH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
 
         Using pen As New Pen(Color.White, 0.5F)
             If btnPlayH Then g.DrawRoundedRectangle(btnPlay, 10, pen)
             If btnSettingH Then g.DrawRoundedRectangle(btnSetting, 10, pen)
+            If btnProfileH Then g.DrawRoundedRectangle(btnProfile, 10, pen)
             If btnCreditsH Then g.DrawRoundedRectangle(btnCredits, 10, pen)
             If btnExitH Then g.DrawRoundedRectangle(btnExit, 10, pen)
         End Using
@@ -79,6 +84,9 @@
             Parent.Controls.Add(opt)
             opt.Refresh()
             Me.Hide()
+        End If
+        If btnProfileH Then
+            'todo
         End If
         If btnCreditsH Then
             'todo

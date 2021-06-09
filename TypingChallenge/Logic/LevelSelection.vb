@@ -121,15 +121,15 @@ Public Class LevelSelection
         btnBack = New RectangleF(cr.X, cr.Height - rHeight, 200, 80)
         Using br As New SolidBrush(If(btnPrevH, Color.White, Color.Gray))
             g.FillRoundedRectangle(btnPrev.ToRectangle, 10, br, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("◀ Prev", Font, btnPrev, If(btnPrevH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIText("◀ Prev", Font, btnPrev.ToRectangle, If(btnPrevH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
         Using br As New SolidBrush(If(btnNextH, Color.White, Color.Gray))
             g.FillRoundedRectangle(btnNext.ToRectangle, 10, br, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("Next ▶", Font, btnNext, If(btnNextH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIText("Next ▶", Font, btnNext.ToRectangle, If(btnNextH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
         Using br As New SolidBrush(If(btnBackH, Color.White, Color.Gray))
             g.FillRoundedRectangle(btnBack.ToRectangle, 10, br, New RoundedRectCorners(True))
-            g.DrawGDIPlusText("Back", Font, btnBack, If(btnBackH, Color.Red, Color.White), StringAlignment.Center)
+            g.DrawGDIText("Back", Font, btnBack.ToRectangle, If(btnBackH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
     End Sub
 

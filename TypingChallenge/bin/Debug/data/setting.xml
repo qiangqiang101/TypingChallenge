@@ -7,8 +7,8 @@
   <KeyboardColorR>219</KeyboardColorR>
   <KeyboardColorG>57</KeyboardColorG>
   <KeyboardColorB>215</KeyboardColorB>
-  <KeyboardRGB>true</KeyboardRGB>
-  <FullScreen>false</FullScreen>
+  <KeyboardRGB>false</KeyboardRGB>
+  <FullScreen>true</FullScreen>
   <ShowFPS>true</ShowFPS>
   <Version>0</Version>
 </SettingData>
