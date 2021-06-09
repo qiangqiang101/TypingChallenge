@@ -17,7 +17,7 @@ Public Class GameOption
     Public Property GraphicsQuality() As Integer
     Public Property FullScreen() As Boolean
     Public Property ShowFPS() As Boolean
-    Public Property KeyboardColor() As Color
+    Public Property KbColor() As Color
     Public Property RGBKeyboard() As Boolean
 
     Public Sub New()
@@ -94,7 +94,7 @@ Public Class GameOption
         g.DrawSliderControl(Font, graphicL, graphicR, graphicLH, graphicRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 3)), New SizeF(rWidth, rHeight2), "Graphics Quality", GraphicsQualityText(GraphicsQuality))
 
         'Keyboard
-        g.DrawButtonControl(Font, kbBtn, kbBtnH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Keyboard Color", KeyboardColor.Name)
+        g.DrawButtonControl(Font, kbBtn, kbBtnH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Keyboard Color", KbColor.Name)
         g.DrawSliderControl(Font, rgbL, rgbR, rgbLH, rgbRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 5)), New SizeF(rWidth, rHeight2), "RGB Keyboard", BoolToString(RGBKeyboard))
 
         'Fullscreen
@@ -158,12 +158,12 @@ Public Class GameOption
         If kbBtnH Then
             Dim cd As New ColorDialog
             With cd
-                .Color = KeyboardColor
+                .Color = KbColor
                 .AllowFullOpen = True
                 .FullOpen = True
             End With
             If cd.ShowDialog <> DialogResult.Cancel Then
-                KeyboardColor = cd.Color
+                KbColor = cd.Color
             End If
         End If
         If rgbLH Then RGBKeyboard = Not RGBKeyboard
@@ -177,10 +177,10 @@ Public Class GameOption
                 .Quality = GraphicsQuality
                 .FullScreen = FullScreen
                 .ShowFPS = ShowFPS
-                .KeyboardColorA = KeyboardColor.A
-                .KeyboardColorR = KeyboardColor.R
-                .KeyboardColorG = KeyboardColor.G
-                .KeyboardColorB = KeyboardColor.B
+                .KeyboardColorA = KbColor.A
+                .KeyboardColorR = KbColor.R
+                .KeyboardColorG = KbColor.G
+                .KeyboardColorB = KbColor.B
                 .KeyboardRGB = RGBKeyboard
                 .Version = setting.Version
             End With

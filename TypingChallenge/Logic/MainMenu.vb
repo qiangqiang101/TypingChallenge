@@ -37,12 +37,14 @@
         Dim hero As New Rectangle(10, 10, cr.Width - 20, (cr.Height / 2) - 120)
         Dim botLeft As New Rectangle(0, cr.Height - 20, cr.Width / 2, 20)
         Dim botRight As New Rectangle(cr.Width / 2, cr.Height - 20, cr.Width / 2, 20)
-        g.DrawGDIText($"Typing Challenge", Font, hero, Color.Gold, TextFormatFlags.Bottom Or TextFormatFlags.HorizontalCenter)
+        g.DrawGDIText($"Typing Challenge", Font, hero, Color.Gold, TextFormatFlags.HorizontalCenter Or TextFormatFlags.VerticalCenter)
 
         Using subFont As New Font(Font.FontFamily, 10.0F, FontStyle.Regular)
             g.DrawGDIText("Copyright © 2021 Zettabyte Technology, No Rights Reserved.", subFont, botLeft, Color.White, TextFormatFlags.Left)
             g.DrawGDIText($"Demo version {My.Application.Info.Version}", subFont, botRight, Color.White, TextFormatFlags.Right)
         End Using
+
+        Dim plyNameRect As New Rectangle(0, cr.Height - 100, cr.Width / 2, 80)
 
         btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height + 100, 300, 80)
         btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 300, 80)
@@ -50,7 +52,9 @@
         btnCredits = New Rectangle((cr.Width / 2) - 150, btnProfile.Y + btnProfile.Height, 300, 80)
         btnExit = New Rectangle((cr.Width / 2) - 150, btnCredits.Y + btnCredits.Height, 300, 80)
 
-        Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
+        Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
+            g.DrawGDIText($"Hello, {profile.Name}", resFont, plyNameRect, Color.White, TextFormatFlags.Left)
+
             g.DrawGDIText("Play", resFont, btnPlay, If(btnPlayH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
             g.DrawGDIText("Options", resFont, btnSetting, If(btnSettingH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
             g.DrawGDIText("Profile", resFont, btnProfile, If(btnProfileH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
@@ -80,7 +84,7 @@
         If btnSettingH Then
             Dim opt As New GameOption() With {.Dock = DockStyle.Fill, .Font = New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold, Font.Unit),
                 .MusicVolume = setting.MusicVolume, .SoundVolume = setting.SoundVolume, .GraphicsQuality = setting.Quality, .FullScreen = setting.FullScreen, .ShowFPS = setting.ShowFPS,
-                .KeyboardColor = Color.FromArgb(setting.KeyboardColorA, setting.KeyboardColorR, setting.KeyboardColorG, setting.KeyboardColorB), .RGBKeyboard = setting.KeyboardRGB}
+                .KbColor = Color.FromArgb(setting.KeyboardColorA, setting.KeyboardColorR, setting.KeyboardColorG, setting.KeyboardColorB), .RGBKeyboard = setting.KeyboardRGB}
             Parent.Controls.Add(opt)
             opt.Refresh()
             Me.Hide()

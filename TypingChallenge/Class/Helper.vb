@@ -11,8 +11,10 @@ Module Helper
 
     Public lvlXmlPath As String = ".\data\level.xml"
     Public setXmlPath As String = ".\data\setting.xml"
+    Public prfXmlPath As String = ".\data\profile.xml"
     Public levels As LevelData = New LevelData(lvlXmlPath).Instance
     Public setting As SettingData = New SettingData(setXmlPath).Instance
+    Public profile As ProfileData = New ProfileData(prfXmlPath).Instance
 
     Public gameFormState As FormState = New FormState()
 
@@ -186,8 +188,8 @@ Module Helper
         Using brush As New SolidBrush(color)
             refRect = New RectangleF(location, size)
             If refBool Then
-                graphics.FillRoundedRectangle(refRect.ToRectangle, 10, brush, New RoundedRectCorners(True))
-                Using pen As New Pen(color2, 2.0F)
+                'graphics.FillRoundedRectangle(refRect.ToRectangle, 10, brush, New RoundedRectCorners(True))
+                Using pen As New Pen(color2, 5.0F)
                     graphics.DrawRoundedRectangle(refRect.ToRectangle, 10, pen)
                 End Using
             Else
@@ -198,9 +200,14 @@ Module Helper
 
             Dim textSize As SizeF = graphics.MeasureString(level.Title, font)
             Dim rect2 As New RectangleF(location.X + 10, location.Y + 10, refRect.Width - 20, refRect.Height - textSize.Height)
-            graphics.DrawGDIText(level.Title, font, rect2.ToRectangle, If(refBool, color2, color), TextFormatFlags.Left)
+            graphics.DrawGDIText(level.Title, font, rect2.ToRectangle, color, TextFormatFlags.Left)
             Dim rect3 As New RectangleF(location.X, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
-            graphics.DrawGDIText($"Level {level.Level}", font, rect3.ToRectangle, If(refBool, color2, color), TextFormatFlags.Right)
+            graphics.DrawGDIText($"Level {level.Level}", font, rect3.ToRectangle, color, TextFormatFlags.Right)
+            Dim rect4 As New RectangleF(location.X + 10, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
+            If profile.ClearedLevel.Where(Function(x) x.Level = level.Level).Count <> 0 Then
+                Dim score = profile.ClearedLevel.Find(Function(x) x.Level = level.Level).Score
+                graphics.DrawGDIText($"{score.ToString("N0")} score", font, rect4.ToRectangle, Color.Gold, TextFormatFlags.Left)
+            End If
         End Using
     End Sub
 
@@ -230,10 +237,10 @@ Module Helper
     Public Function GetSafeZone(rect As Rectangle) As Rectangle
         If rect.Width > rect.Height Then
             Dim extraSpace As Integer = (rect.Height - rect.Width) / 2
-            Return New Rectangle(rect.X - extraSpace, rect.Y, rect.Height, rect.Height)
+            Return New Rectangle(rect.X - extraSpace + (extraSpace / 2), rect.Y, rect.Height - (extraSpace), rect.Height)
         ElseIf rect.Height > rect.Width Then
             Dim extraSpace As Integer = (rect.Width - rect.Height) / 2
-            Return New Rectangle(rect.X, rect.Y - extraSpace, rect.Width, rect.Width)
+            Return New Rectangle(rect.X, rect.Y - extraSpace + (extraSpace / 2), rect.Width, rect.Width - (extraSpace))
         End If
     End Function
 
@@ -290,11 +297,13 @@ Module Helper
 
     <Extension>
     Public Sub StartGame(ctrl As Control, level As Level, font As Font)
-        Dim newGame As New MyGame(level.Phrase) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .Life = level.Life, .TimeLimit = level.TimeLimit, .LevelSel = ctrl, .Dock = DockStyle.Fill,
+        If level.Level <> 0 Then
+            Dim newGame As New MyGame(level.Phrase) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .Life = level.Life, .TimeLimit = level.TimeLimit, .LevelSel = ctrl, .Dock = DockStyle.Fill,
             .Font = New Font(font.FontFamily, font.Size * 2, FontStyle.Bold, font.Unit)}
-        frmGame.Controls.Add(newGame)
-        newGame.Refresh()
-        ctrl.Hide()
+            frmGame.Controls.Add(newGame)
+            newGame.Refresh()
+            ctrl.Hide()
+        End If
     End Sub
 
     <Extension>

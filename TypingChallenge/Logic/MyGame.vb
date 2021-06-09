@@ -32,6 +32,7 @@ Public Class MyGame
     Public WithEvents elapsedTimer As New Timer() With {.Interval = 500}
     Private timerStart As Date = Nothing
     Private timerEnded As Date = Nothing
+    Private timerPaused As Date = Nothing
 
     'Tracking Mouse
     Private _mousePos As Point = Point.Empty
@@ -200,6 +201,13 @@ Public Class MyGame
         ElseIf GameStatus = eGameStatus.Ready Then
             Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
             g.DrawGDIText("Press Enter to Start", Font, textRect.ToRectangle, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+        ElseIf GameStatus = eGameStatus.Paused Then
+            Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
+            g.DrawGDIText($"PAUSED", Font, textRect.ToRectangle, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+            Dim subRect As New Rectangle(textRect.X, textRect.Y + textRect.Height, textRect.Width, textRect.Height)
+            Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
+                g.DrawGDIText("Press ESC to resume or Press Enter to Quit.", timeFont, subRect, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+            End Using
         Else
             Dim lifeRect As New RectangleF(10, 10, (cr.Width / 2) - 10, 100)
             Dim lvlRect As New RectangleF((cr.Width / 2) + 10, 10, (cr.Width / 2) - 10, 100)
@@ -241,6 +249,22 @@ Public Class MyGame
                     elapsedTimer.Start()
                     GameStatus = eGameStatus.Running
                 End If
+            End If
+        ElseIf GameStatus = eGameStatus.Running Then
+            If e.KeyCode = Keys.Escape Then
+                GameStatus = eGameStatus.Paused
+                timerPaused = Now
+                If elapsedTimer.Enabled Then elapsedTimer.Stop()
+            End If
+        ElseIf GameStatus = eGameStatus.Paused Then
+            If e.KeyCode = Keys.Escape Then
+                GameStatus = eGameStatus.Running
+                timerStart = Now.AddSeconds((timerStart - timerPaused).TotalSeconds)
+                If Not elapsedTimer.Enabled Then elapsedTimer.Start()
+            End If
+            If e.KeyCode = Keys.Enter Then
+                LevelSel.Show()
+                Parent.Controls.Remove(Me)
             End If
         End If
     End Sub
@@ -286,11 +310,15 @@ Public Class MyGame
         MyBase.OnMouseClick(e)
 
         If _mouseButtonBackHovered Then
+            SaveUserProgress()
+
             LevelSel.Show()
             Parent.Controls.Remove(Me)
         End If
         If _mouseButtonNextHovered Then
             If GameStatus = eGameStatus.YouWon Then
+                SaveUserProgress()
+
                 Dim nextlevel As Level = levels.LevelList.Find(Function(x) x.Level = Level + 1)
                 Dim newGame As New MyGame(nextlevel.Phrase) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .Life = nextlevel.Life, .TimeLimit = nextlevel.TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                 Parent.Controls.Add(newGame)
@@ -303,6 +331,19 @@ Public Class MyGame
                 Parent.Controls.Remove(Me)
             End If
         End If
+    End Sub
+
+    Private Sub SaveUserProgress()
+        profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
+
+        Dim newProfile As New ProfileData(prfXmlPath)
+        With newProfile
+            .Name = profile.Name
+            .ClearedLevel = profile.ClearedLevel
+            .Credits = profile.Credits + (Score / 100)
+        End With
+        newProfile.Save()
+        profile = newProfile
     End Sub
 
     Protected Overrides Sub OnResize(e As EventArgs)
@@ -329,4 +370,5 @@ Public Enum eGameStatus
     Running
     YouWon
     GameOver
+    Paused
 End Enum

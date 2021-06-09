@@ -104,6 +104,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\RoundedRectCorners.vb" />
+    <Compile Include="Database\ProfileData.vb" />
     <Compile Include="Database\SettingData.vb" />
     <Compile Include="frmLevelEdit.Designer.vb">
       <DependentUpon>frmLevelEdit.vb</DependentUpon>
@@ -136,6 +137,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Logic\MainMenu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logic\NewProfile.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

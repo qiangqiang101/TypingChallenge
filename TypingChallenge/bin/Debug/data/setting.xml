@@ -4,11 +4,11 @@
   <SoundVolume>0</SoundVolume>
   <Quality>0</Quality>
   <KeyboardColorA>255</KeyboardColorA>
-  <KeyboardColorR>219</KeyboardColorR>
-  <KeyboardColorG>57</KeyboardColorG>
-  <KeyboardColorB>215</KeyboardColorB>
-  <KeyboardRGB>false</KeyboardRGB>
-  <FullScreen>true</FullScreen>
+  <KeyboardColorR>255</KeyboardColorR>
+  <KeyboardColorG>0</KeyboardColorG>
+  <KeyboardColorB>255</KeyboardColorB>
+  <KeyboardRGB>true</KeyboardRGB>
+  <FullScreen>false</FullScreen>
   <ShowFPS>true</ShowFPS>
   <Version>0</Version>
 </SettingData>

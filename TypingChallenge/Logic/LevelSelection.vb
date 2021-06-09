@@ -97,7 +97,7 @@ Public Class LevelSelection
 
         Dim lvlTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
         g.DrawGDIText("LEVEL SELECTION", Font, lvlTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
-        Using small As New Font(Font.FontFamily, Font.Size / 3, FontStyle.Regular)
+        Using small As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
             g.DrawGDIText($"Page {A1.Level.GetPagesFromNum} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
 
             'Row1
