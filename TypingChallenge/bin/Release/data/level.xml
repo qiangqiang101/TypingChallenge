@@ -2,60 +2,310 @@
 <LevelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <LevelList>
     <Level>
-      <Title>US athletes likely to be in safest position to travel to Tokyo Olympics, expert says</Title>
-      <Author>Julian Ryall</Author>
+      <Title>Woodchuck Cousin</Title>
+      <Author />
       <Level>1</Level>
-      <Phrase>As Japan on Tuesday sought to play down the impact of a US travel warning on the Tokyo Olympics, one expert has warned it could “cause concern” for athletes from nations which lack resources to conduct pre-departure tests for their delegations. The US State Department on Monday raised its travel alert for Japan to the highest level of 4, telling citizens “even fully vaccinated travellers may be at risk of getting and spreading Covid-19 variants”. The notice came amid growing domestic opposition to the Games. Olympics organisers reiterated a vow to “ensure the safe and secure participation of all athletes” after the alert, while Japanese officials said they still had the US government’s support for the event, which is scheduled to commence on July 23.</Phrase>
-      <Life>5</Life>
-      <TimeLimit>300</TimeLimit>
+      <Phrase>How much ground would a groundhog hog, if a groundhog could hog ground? A groundhog would hog all the ground he could hog, if a groundhog could hog ground.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
     </Level>
     <Level>
-      <Title>Apple employees are going public about workplace issues — and there’s no going back</Title>
-      <Author>Zoe Schiffer</Author>
+      <Title>Sea Speak</Title>
+      <Author />
       <Level>2</Level>
-      <Phrase>EvenEven to the workers who wrote the letter, the leaks came as a shock. Apple employees rarely speak to the media, particularly about the company culture. In Silicon Valley, Apple operates with an unprecedented level of secrecy, managing personnel issues and product launches with complete authority. The culture has benefits for employees. People work at Apple because they are design fanatics. The elegant hardware products are seen by many as unmatched in the tech industry. Fewer leaks mean fewer distractions and more time to focus on the work. The company also has an aura of prestige. Working at Apple is widely seen as the pinnacle of success in the tech industry, even more than the company’s biggest rivals. If Google is a sprawl of creativity and ideas, Apple represents a workplace of organization and vision. People don’t go there for a few months or a year; they stay for decades. The tenure makes employees loyal.</Phrase>
-      <Life>5</Life>
-      <TimeLimit>300</TimeLimit>
+      <Phrase>She sells seashells on the seashore.\n\nThe shells she sells are seashells, I'm sure.\n\nAnd if she sells seashells on the seashore,\n\nThen I'm sure she sells seashore shells.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
     </Level>
     <Level>
-      <Title>Knockout City’s virtual dodgeball is even more chaotic than the real thing</Title>
-      <Author>Jay Peters</Author>
+      <Title>Dreams</Title>
+      <Author>Langston Hughes</Author>
       <Level>3</Level>
-      <Phrase>Knockout City took me back to childhood games of dodgeball with a single sound: “whumphf!” That one noise, which you’ll hear a lot as dodgeballs bounce every which way, represents just how well the game’s virtual version of dodgeball mimics the real thing - including all of the chaos you might remember from games on the playground. Knockout City is made by EA and Mario Kart Live: Home Circuit developer Velan Studios, and its primary mode involves three-on-three matches against online opponents. In each match, you’ll scoop up dodgeballs littered around the city-themed maps and launch them at your unsuspecting targets. When you charge up a throw, the game automatically locks onto a target, meaning you don’t have to worry about precise aim. Knockout City is more about timing your shots to try to catch your opponent off-guard, which the game encourages by letting you do things like curve or feint a shot to mix up your tactics.</Phrase>
-      <Life>5</Life>
-      <TimeLimit>300</TimeLimit>
+      <Phrase>Hold fast to dreams\n\n\n\nFor if dreams die\n\n\n\nLife is a broken-winged bird\n\n\n\nThat cannot fly.\n\n\n\nHold fast to dreams\n\n\n\nFor when dreams go\n\n\n\nLife is a barren field\n\n\n\nFrozen with snow.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
     </Level>
     <Level>
-      <Title>EV startups stumble in the quest to be the next Tesla</Title>
-      <Author>Sean O'Kane</Author>
+      <Title>Pete's Pick</Title>
+      <Author />
       <Level>4</Level>
-      <Phrase>Electric vehicle startups have raised an absurd amount of money in the last year by merging with special purpose acquisition companies, or SPACs. That money - billions of dollars, collectively - was supposed to be enough to help each of them start fighting for space in a market dominated by Tesla. But many of these startups are still having trouble getting rolling. EV startup struggles are not new. Most of the ones focused on passenger vehicles that are still around spent years grappling with the inherent, unavoidable difficulties of automotive manufacturing. Now, though, the bruises of that fight are developing in broad daylight - all while they try to beat deep-pocketed legacy automakers to the punch. Ohio-based Lordstown Motors raised nearly $700 million when it went public late last year and has backing from America’s largest automaker, General Motors. But it’s spending faster than expected - it lost $125 million in the first quarter - and on Tuesday, the company said it needs more cash in order to hit its goal of making its first 2,200 electric pickup trucks by the end of 2021.</Phrase>
-      <Life>5</Life>
-      <TimeLimit>300</TimeLimit>
+      <Phrase>Peter Piper picked a peck of pickled peppers\n\nA peck of pickled peppers Peter Piper picked\n\nIf Peter Piper picked a peck of pickled peppers\n\nWhere's the peck of pickled peppers Peter Piper picked?</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
     </Level>
     <Level>
-      <Title>Microsoft teases a ‘next generation of Windows’ announcement ‘very soon’</Title>
-      <Author>Tom Warren</Author>
+      <Title>Medical Mayhem</Title>
+      <Author />
       <Level>5</Level>
-      <Phrase>Microsoft isn’t talking about its big Windows plans at Build 2021 this week, and that’s because the company is preparing to detail what’s next for its PC operating system separately. Microsoft CEO Satya Nadella teased this announcement during his Build keynote this morning, revealing he has been testing “the next generation of Windows” in recent months. “Soon we will share one of the most significant updates to Windows of the past decade to unlock greater economic opportunity for developers and creators. I’ve been self-hosting it over the past several months, and I’m incredibly excited about the next generation of Windows. Our promise to you is this: we will create more opportunity for every Windows developer today and welcome every creator who is looking for the most innovative, new, open platform to build and distribute and monetize applications. We look forward to sharing more very soon.” Microsoft has been working on a new app store for Windows in recent months, alongside some significant UI changes to the operating system. Nadella appears to reference the store changes here, with a promise to unlock a better economy for developers and creators within Windows itself.</Phrase>
-      <Life>5</Life>
-      <TimeLimit>300</TimeLimit>
+      <Phrase>When a doctor doctors a doctor, does the doctor doing the doctoring doctor as the doctor being doctored wants to be doctored or does the doctor doing the doctoring doctor as he wants to doctor?</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
     </Level>
     <Level>
-      <Title>How Apple’s 2015 negotiations for Time Warner bundling deal briefly led to acquisition talks</Title>
-      <Author>Alex Sherman</Author>
+      <Title>Thought</Title>
+      <Author />
       <Level>6</Level>
-      <Phrase>As AT&amp;T and Discovery discussed putting together their content assets, they specifically structured a deal to give the combined company flexibility to merge or sell down the road - perhaps to Apple. Apple is one of the few companies that has the balance sheet to buy WarnerMedia-Discovery, a company that will likely have a market capitalization of more than $100 billion when it begins trading publicly next year, assuming regulatory approval. But it’s not clear whether Apple has any interest in a major media acquisition. The company’s history suggests Chief Executive Officer Tim Cook would shy away from a huge deal. Apple’s biggest deal ever was a mere $3 billion - for headphones maker Beats Electronics in 2014. To put that in perspective, Apple has a market valuation of more than $2.1 trillion. Apple’s growing market power is also under increasing scrutiny by regulators and has been the subject of a recently concluded court trial brought by Fortnite maker Epic. Shelling out $100 billion or more for an external company may sound alarm bells with politicians that Cook would rather not ring.</Phrase>
-      <Life>5</Life>
-      <TimeLimit>300</TimeLimit>
+      <Phrase>I thought a thought.\n\nBut the thought I thought\n\nWasn't the thought I thought I thought.\n\nIf the thought I thought I thought,\n\nHad been the thought I thought,\n\nI wouldn't have thought I thought.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
     </Level>
     <Level>
-      <Title>Discord CEO on reported Microsoft bid: ‘We did receive a lot of offers.’</Title>
-      <Author>Eric Rosenbaum</Author>
+      <Title>Easy Fleasy</Title>
+      <Author />
       <Level>7</Level>
-      <Phrase>It’s been reported that a $10 billion bid made by Microsoft for gaming platform Discord fell apart. Discord CEO and co-founder Jason Citron can’t talk about it - he’s under non-disclosure agreements - but he did tell CNBC on Tuesday that there was more than a single offer for his internet chat start-up, which is turning into a much bigger communications phenomen for voice, video and text. “We did receive a lot of offers,” Citron said. “Our business is doing really well and we believe we are positioned to build a next-generation communications service.” Citron and his Discord co-founder Stanislav Vishnevskiy started the business as a platform for gamers, like Citron himself, frustrated by internet communications technology that he says wasn’t keeping up with the pace of change. Many used services like Microsoft’s Skype to communicate and six years ago, the company was focused on creating a way for people who played video games to hang out and talk to each other in a better way. But a lot has changed. “We’ve seen people take our service and begin using it in all these new ways,” Citron said of the company, which ranked No. 3 on the 2021 CNBC Disruptor 50 list.</Phrase>
-      <Life>5</Life>
+      <Phrase>Through three cheese trees, three free fleas flew. While these fleas flew, freezy breeze blew. Freezy breeze made these three trees freeze. Freezy trees made these trees' cheese freeze. That's what made these three free fleas sneeze.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
+    </Level>
+    <Level>
+      <Title>Marriage Mumble</Title>
+      <Author />
+      <Level>8</Level>
+      <Phrase>Mary Mac's mother's making Mary Mac marry me. My mother's making me marry Mary Mac. Will I always be so Merry when Mary's taking care of me? Will I always be so merry when I marry Mary Mac?</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
+    </Level>
+    <Level>
+      <Title>Wordy Woodchuck</Title>
+      <Author />
+      <Level>9</Level>
+      <Phrase>How much wood would a woodchuck chuck if a woodchuck could chuck wood?\n\nHe would chuck, he would, as much as he could, and chuck as much wood\n\nAs a woodchuck would if a woodchuck could chuck wood</Phrase>
+      <Life>1</Life>
+      <TimeLimit>60</TimeLimit>
+      <Page>1</Page>
+    </Level>
+    <Level>
+      <Title>Yellow butter, purple jelly, red jam, black bread.</Title>
+      <Author />
+      <Level>10</Level>
+      <Phrase>Yellow butter, purple jelly, red jam, black bread.\n\nSpread it thick, say it quick!\n\nYellow butter, purple jelly, red jam, black bread.\n\nSpread it thicker, say it quicker!\n\nYellow butter, purple jelly, red jam, black bread.\n\nDon't eat with your mouth full!</Phrase>
+      <Life>1</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Baker Blurb</Title>
+      <Author />
+      <Level>11</Level>
+      <Phrase>Betty Botter bought some butter\n\nBut she said the butter's bitter\n\nIf I put it in my batter, it will make my batter bitter\n\nBut a bit of better butter will make my batter better\n\nSo ‘twas better Betty Botter bought a bit of better butter</Phrase>
+      <Life>1</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Spooky Story</Title>
+      <Author />
+      <Level>12</Level>
+      <Phrase>Something in a thirty-acre thermal thicket of thorns and thistles thumped and thundered threatening the 3-D thoughts of Matthew the thug – although, theatrically, it was only the thirteen-thousand thistles and thorns through the underneath of his thigh that the thirty-year-old thug thought of that morning.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Th...</Title>
+      <Author />
+      <Level>13</Level>
+      <Phrase>Something in a thirty-acre thermal thicket of thorns and thistles thumped and thundered threatening the three-D thoughts of Matthew the thug – although, theatrically, it was only the thirteen-thousand thistles and thorns through the underneath of his thigh that the thirty-year-old thug thought of that morning.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Fire and Ice</Title>
+      <Author>Robert Frost</Author>
+      <Level>14</Level>
+      <Phrase>Some say the world will end in fire,\n\n\n\nSome say in ice.\n\n\n\nFrom what I've tasted of desire\n\n\n\nI hold with those who favor fire.\n\n\n\nBut if it had to perish twice,\n\n\n\nI think I know enough of hate\n\n\n\nTo say that for destruction ice\n\n\n\nIs also great\n\n\n\nAnd would suffice.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Baseball Blab</Title>
+      <Author />
+      <Level>15</Level>
+      <Phrase>Bobby Bippy bought a bat. Bobby Bippy bought a ball. With his bat, Bob banged the ball. Banged it bump against the wall. But so boldly Bobby banged it. That he burst his rubber ball. “Boo!” cried Bobby. Bad luck ball. Bad luck Bobby, bad luck ball. Now to drown his many troubles, Bobby Bippy's blowing bubbles.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Do not stand at my grave and weep.</Title>
+      <Author>Mary Elizabeth Frye</Author>
+      <Level>16</Level>
+      <Phrase>Do not stand at my grave and weep\n\n\n\nI am not there. I do not sleep.\n\n\n\nI am a thousand winds that blow.\n\n\n\nI am the diamond glints on snow.\n\n\n\nI am the sunlight on ripened grain.\n\n\n\nI am the gentle autumn rain.\n\n\n\nWhen you awaken in the morning's hush\n\n\n\nI am the swift uplifting rush\n\n\n\nOf quiet birds in circled flight.\n\n\n\nI am the soft stars that shine at night.\n\n\n\nDo not stand at my grave and cry;\n\n\n\nI am not there. I did not die.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Invictus</Title>
+      <Author>William Ernest Henley</Author>
+      <Level>17</Level>
+      <Phrase>Out of the night that covers me,\n\n\n\nBlack as the Pit from pole to pole,\n\n\n\nI thank whatever gods may be\n\n\n\nFor my unconquerable soul.\n\n\n\n\n\n\n\nIn the fell clutch of circumstance\n\n\n\nI have not winced nor cried aloud.\n\n\n\nUnder the bludgeonings of chance\n\n\n\nMy head is bloody, but unbowed.\n\n\n\n\n\n\n\nBeyond this place of wrath and tears\n\n\n\nLooms but the Horror of the shade,\n\n\n\nAnd yet the menace of the years\n\n\n\nFinds, and shall find, me unafraid.\n\n\n\n\n\n\n\nIt matters not how strait the gate,\n\n\n\nHow charged with punishments the scroll.\n\n\n\nI am the master of my fate:\n\n\n\nI am the captain of my soul.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Stopping by Woods on a Snowy Evening</Title>
+      <Author>Robert Frost</Author>
+      <Level>18</Level>
+      <Phrase>Whose woods these are I think I know.\n\n\n\nHis house is in the village, though;\n\n\n\nHe will not see me stopping here\n\n\n\nTo watch his woods fill up with snow.\n\n\n\n\n\n\n\nMy little horse must think it queer\n\n\n\nTo stop without a farmhouse near\n\n\n\nBetween the woods and frozen lake\n\n\n\nThe darkest evening of the year.\n\n\n\n\n\n\n\nHe gives his harness bells a shake\n\n\n\nTo ask if there is some mistake.\n\n\n\nThe only other sound's the sweep\n\n\n\nOf easy wind and downy flake.\n\n\n\n\n\n\n\nThe woods are lovely, dark, and deep,\n\n\n\nBut I have promises to keep,\n\n\n\nAnd miles to go before I sleep,\n\n\n\nAnd miles to go before I sleep.</Phrase>
+      <Life>1</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>Solemn silence in a dull</Title>
+      <Author />
+      <Level>19</Level>
+      <Phrase>To sit in solemn silence in a dull, dark dock,\n\nIn a pestilential prison, with a life-long lock,\n\nAwaiting the sensation of a short, sharp shock,\n\nFrom a cheap and chippy chopper on a big black block!\n\nTo sit in solemn silence in a dull, dark dock,\n\nIn a pestilential prison, with a life-long lock,\n\nAwaiting the sensation of a short, sharp shock,\n\nFrom a cheap and chippy chopper on a big black block!\n\nA dull, dark dock, a life-long lock,\n\nA short, sharp shock, a big black block!\n\nTo sit in solemn silence in a pestilential prison,\n\nAnd awaiting the sensation\n\nFrom a cheap and chippy chopper on a big black block!</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>As I Grew Older</Title>
+      <Author>Langston Hughes</Author>
+      <Level>20</Level>
+      <Phrase>It was a long time ago.\n\n\n\nI have almost forgotten my dream.\n\n\n\nBut it was there then,\n\n\n\nIn front of me,\n\n\n\nBright like a sun-\n\n\n\nMy dream.\n\n\n\nAnd then the wall rose,\n\n\n\nRose slowly,\n\n\n\nSlowly,\n\n\n\nBetween me and my dream.\n\n\n\nRose until it touched the sky-\n\n\n\nThe wall.\n\n\n\nShadow.\n\n\n\nI am black.\n\n\n\nI lie down in the shadow.\n\n\n\nNo longer the light of my dream before me,\n\n\n\nAbove me.\n\n\n\nOnly the thick wall.\n\n\n\nOnly the shadow.\n\n\n\nMy hands!\n\n\n\nMy dark hands!\n\n\n\nBreak through the wall!\n\n\n\nFind my dream!\n\n\n\nHelp me to shatter this darkness,\n\n\n\nTo smash this night,\n\n\n\nTo break this shadow\n\n\n\nInto a thousand lights of sun,\n\n\n\nInto a thousand whirling dreams\n\n\n\nOf sun!</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>I Do Not Love You Except Because I Love You.</Title>
+      <Author>Pablo Neruda</Author>
+      <Level>21</Level>
+      <Phrase>I do not love you except because I love you;\n\n\n\nI go from loving to not loving you,\n\n\n\nFrom waiting to not waiting for you\n\n\n\nMy heart moves from cold to fire.\n\n\n\n\n\n\n\nI love you only because it's you the one I love;\n\n\n\nI hate you deeply, and hating you\n\n\n\nBend to you, and the measure of my changing love for you\n\n\n\nIs that I do not see you but love you blindly.\n\n\n\n\n\n\n\nMaybe January light will consume\n\n\n\nMy heart with its cruel\n\n\n\nRay, stealing my key to true calm.\n\n\n\n\n\n\n\nIn this part of the story I am the one who\n\n\n\nDies, the only one, and I will die of love because I love you,\n\n\n\nBecause I love you, Love, in fire and blood.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>Do not Go Far Off</Title>
+      <Author>Pablo Neruda</Author>
+      <Level>22</Level>
+      <Phrase>Don't go far off, not even for a day, because --\n\n\n\nbecause -- I don't know how to say it: a day is long\n\n\n\nand I will be waiting for you, as in an empty station\n\n\n\nwhen the trains are parked off somewhere else, asleep.\n\n\n\n\n\n\n\nDon't leave me, even for an hour, because\n\n\n\nthen the little drops of anguish will all run together,\n\n\n\nthe smoke that roams looking for a home will drift\n\n\n\ninto me, choking my lost heart.\n\n\n\n\n\n\n\nOh, may your silhouette never dissolve on the beach;\n\n\n\nmay your eyelids never flutter into the empty distance.\n\n\n\nDon't leave me for a second, my dearest,\n\n\n\n\n\n\n\nbecause in that moment you'll have gone so far\n\n\n\nI'll wander mazily over all the earth, asking,\n\n\n\nWill you come back? Will you leave me here, dying?</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>A Dream within A Dream</Title>
+      <Author>Edgar Allan Poe</Author>
+      <Level>23</Level>
+      <Phrase>Take this kiss upon the brow!\n\n\n\nAnd, in parting from you now,\n\n\n\nThus much let me avow-\n\n\n\nYou are not wrong, who deem\n\n\n\nThat my days have been a dream;\n\n\n\nYet if hope has flown away\n\n\n\nIn a night, or in a day,\n\n\n\nIn a vision, or in none,\n\n\n\nIs it therefore the less gone?\n\n\n\nAll that we see or seem\n\n\n\nIs but a dream within a dream.\n\n\n\n\n\n\n\nI stand amid the roar\n\n\n\nOf a surf-tormented shore,\n\n\n\nAnd I hold within my hand\n\n\n\nGrains of the golden sand-\n\n\n\nHow few! yet how they creep\n\n\n\nThrough my fingers to the deep,\n\n\n\nWhile I weep- while I weep!\n\n\n\nO God! can I not grasp\n\n\n\nThem with a tighter clasp?\n\n\n\nO God! can I not save\n\n\n\nOne from the pitiless wave?\n\n\n\nIs all that we see or seem\n\n\n\nBut a dream within a dream?</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>The Road Not Taken</Title>
+      <Author>Frost</Author>
+      <Level>24</Level>
+      <Phrase>Two roads diverged in a yellow wood,\n\n\n\nAnd sorry I could not travel both\n\n\n\nAnd be one traveller, long I stood\n\n\n\nAnd looked down one as far as I could\n\n\n\nTo where it bent in the undergrowth;\n\n\n\n\n\nThen took the other, as just as fair,\n\n\n\nAnd having perhaps the better claim,\n\n\n\nBecause it was grassy and wanted wear;\n\n\n\nThough as for that the passing there\n\n\n\nHad worn them really about the same,\n\n\n\n\n\nAnd both that morning equally lay\n\n\n\nIn leaves no step had trodden black.\n\n\n\nOh, I kept the first for another day!\n\n\n\nYet knowing how way leads on to way,\n\n\n\nI doubted if I should ever come back.\n\n\n\n\n\nI shall be telling this with a sigh\n\n\n\nSomewhere ages and ages hence:\n\n\n\nTwo roads diverged in a wood, and I\n\n\n\nI took the one less travelled by,\n\n\n\nAnd that has made all the difference.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>Alone</Title>
+      <Author>Edgar Allan Poe</Author>
+      <Level>25</Level>
+      <Phrase>From childhood's hour I have not been\n\n\n\nAs others were; I have not seen\n\n\n\nAs others saw; I could not bring\n\n\n\nMy passions from a common spring.\n\n\n\nFrom the same source I have not taken\n\n\n\nMy sorrow; I could not awaken\n\n\n\nMy heart to joy at the same tone;\n\n\n\nAnd all I loved, I loved alone.\n\n\n\nThen- in my childhood, in the dawn\n\n\n\nOf a most stormy life- was drawn\n\n\n\nFrom every depth of good and ill\n\n\n\nThe mystery which binds me still:\n\n\n\nFrom the torrent, or the fountain,\n\n\n\nFrom the red cliff of the mountain,\n\n\n\nFrom the sun that round me rolled\n\n\n\nIn its autumn tint of gold,\n\n\n\nFrom the lightning in the sky\n\n\n\nAs it passed me flying by,\n\n\n\nFrom the thunder and the storm,\n\n\n\nAnd the cloud that took the form\n\n\n\n(When the rest of Heaven was blue)\n\n\n\nOf a demon in my view.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>I wandered lonely as a cloud</Title>
+      <Author>William Wordsworth</Author>
+      <Level>26</Level>
+      <Phrase>I wandered lonely as a cloud\n\n\n\nThat floats on high o'er vales and hills,\n\n\n\nWhen all at once I saw a crowd,\n\n\n\nA host, of golden daffodils;\n\n\n\nBeside the lake, beneath the trees,\n\n\n\nFluttering and dancing in the breeze.\n\n\n\n\n\n\n\nContinuous as the stars that shine\n\n\n\nAnd twinkle on the milky way,\n\n\n\nThey stretched in never-ending line\n\n\n\nAlong the margin of a bay:\n\n\n\nTen thousand saw I at a glance,\n\n\n\nTossing their heads in sprightly dance.\n\n\n\n\n\n\n\nThe waves beside them danced; but they\n\n\n\nOut-did the sparkling waves in glee:\n\n\n\nA poet could not but be gay,\n\n\n\nIn such a jocund company:\n\n\n\nI gazed---and gazed---but little thought\n\n\n\nWhat wealth the show to me had brought:\n\n\n\n\n\n\n\nFor oft, when on my couch I lie\n\n\n\nIn vacant or in pensive mood,\n\n\n\nThey flash upon that inward eye\n\n\n\nWhich is the bliss of solitude;\n\n\n\nAnd then my heart with pleasure fills,\n\n\n\nAnd dances with the daffodils</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>Do Not Go Gentle into That Good Night</Title>
+      <Author>Dylan Thomas</Author>
+      <Level>27</Level>
+      <Phrase>Do not go gentle into that good night,\n\n\n\nOld age should burn and rave at close of day;\n\n\n\nRage, rage against the dying of the light.\n\n\n\n\n\n\n\nThough wise men at their end know dark is right,\n\n\n\nBecause their words had forked no lightning they\n\n\n\nDo not go gentle into that good night.\n\n\n\n\n\n\n\nGood men, the last wave by, crying how bright\n\n\n\nTheir frail deeds might have danced in a green bay,\n\n\n\nRage, rage against the dying of the light.\n\n\n\n\n\n\n\nWild men who caught and sang the sun in flight,\n\n\n\nAnd learn, too late, they grieved it on its way,\n\n\n\nDo not go gentle into that good night.\n\n\n\n\n\n\n\nGrave men, near death, who see with blinding sight\n\n\n\nBlind eyes could blaze like meteors and be gay,\n\n\n\nRage, rage against the dying of the light.\n\n\n\n\n\n\n\nAnd you, my father, there on that sad height,\n\n\n\nCurse, bless, me now with your fierce tears, I pray.\n\n\n\nDo not go gentle into that good night.\n\n\n\nRage, rage against the dying of the light.</Phrase>
+      <Life>2</Life>
       <TimeLimit>300</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>I Know Why The Caged Bird Sings.</Title>
+      <Author>Maya Angelou</Author>
+      <Level>28</Level>
+      <Phrase>The free bird leaps\n\n\n\non the back of the wind\n\n\n\nand floats downstream\n\n\n\ntill the current ends\n\n\n\nand dips his wings\n\n\n\nin the orange sun rays\n\n\n\nand dares to claim the sky.\n\n\n\n\n\n\n\nBut a bird that stalks\n\n\n\ndown his narrow cage\n\n\n\ncan seldom see through\n\n\n\nhis bars of rage\n\n\n\nhis wings are clipped and\n\n\n\nhis feet are tied\n\n\n\nso he opens his throat to sing.\n\n\n\n\n\n\n\nThe caged bird sings\n\n\n\nwith fearful trill\n\n\n\nof the things unknown\n\n\n\nbut longed for still\n\n\n\nand his tune is heard\n\n\n\non the distant hill\n\n\n\nfor the caged bird\n\n\n\nsings of freedom\n\n\n\n\n\n\n\nThe free bird thinks of another breeze\n\n\n\nan the trade winds soft through the sighing trees\n\n\n\nand the fat worms waiting on a dawn-bright lawn\n\n\n\nand he names the sky his own.\n\n\n\n\n\n\n\nBut a caged bird stands on the grave of dreams\n\n\n\nhis shadow shouts on a nightmare scream\n\n\n\nhis wings are clipped and his feet are tied\n\n\n\nso he opens his throat to sing\n\n\n\n\n\n\n\nThe caged bird sings\n\n\n\nwith a fearful trill\n\n\n\nof things unknown\n\n\n\nbut longed for still\n\n\n\nand his tune is heard\n\n\n\non the distant hill\n\n\n\nfor the caged bird\n\n\n\nsings of freedom.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>If You Forget Me</Title>
+      <Author>Pablo Neruda</Author>
+      <Level>29</Level>
+      <Phrase>I want you to know\n\n\n\none thing.\n\n\n\n\n\n\n\nYou know how this is:\n\n\n\nif I look\n\n\n\nat the crystal moon, at the red branch\n\n\n\nof the slow autumn at my window,\n\n\n\nif I touch\n\n\n\nnear the fire\n\n\n\nthe impalpable ash\n\n\n\nor the wrinkled body of the log,\n\n\n\neverything carries me to you,\n\n\n\nas if everything that exists,\n\n\n\naromas, light, metals,\n\n\n\nwere little boats\n\n\n\nthat sail\n\n\n\ntoward those isles of yours that wait for me.\n\n\n\n\n\n\n\nWell, now,\n\n\n\nif little by little you stop loving me\n\n\n\nI shall stop loving you little by little.\n\n\n\n\n\n\n\nIf suddenly\n\n\n\nyou forget me\n\n\n\ndo not look for me,\n\n\n\nfor I shall already have forgotten you.\n\n\n\n\n\n\n\nIf you think it long and mad,\n\n\n\nthe wind of banners\n\n\n\nthat passes through my life,\n\n\n\nand you decide\n\n\n\nto leave me at the shore\n\n\n\nof the heart where I have roots,\n\n\n\nremember\n\n\n\nthat on that day,\n\n\n\nat that hour,\n\n\n\nI shall lift my arms\n\n\n\nand my roots will set off\n\n\n\nto seek another land.\n\n\n\n\n\n\n\nBut\n\n\n\nif each day,\n\n\n\neach hour,\n\n\n\nyou feel that you are destined for me\n\n\n\nwith implacable sweetness,\n\n\n\nif each day a flower\n\n\n\nclimbs up to your lips to seek me,\n\n\n\nah my love, ah my own,\n\n\n\nin me all that fire is repeated,\n\n\n\nin me nothing is extinguished or forgotten,\n\n\n\nmy love feeds on your love, beloved,\n\n\n\nand as long as you live it will be in your arms\n\n\n\nwithout leaving mine.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>360</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>Still I Rise</Title>
+      <Author>MAYA ANGELOU</Author>
+      <Level>30</Level>
+      <Phrase>You may write me down in history\n\n\n\nWith your bitter, twisted lies,\n\n\n\nYou may trod me in the very dirt\n\n\n\nBut still, like dust, I'll rise.\n\n\n\n\n\n\n\nDoes my sassiness upset you?\n\n\n\nWhy are you beset with gloom?\n\n\n\n'Cause I walk like I've got oil wells\n\n\n\nPumping in my living room.\n\n\n\n\n\n\n\nJust like moons and like suns,\n\n\n\nWith the certainty of tides,\n\n\n\nJust like hopes springing high,\n\n\n\nStill I'll rise.\n\n\n\n\n\n\n\nDid you want to see me broken?\n\n\n\nBowed head and lowered eyes?\n\n\n\nShoulders falling down like teardrops.\n\n\n\nWeakened by my soulful cries.\n\n\n\n\n\n\n\nDoes my haughtiness offend you?\n\n\n\nDon't you take it awful hard\n\n\n\n'Cause I laugh like I've got gold mines\n\n\n\nDiggin' in my own back yard.\n\n\n\n\n\n\n\nYou may shoot me with your words,\n\n\n\nYou may cut me with your eyes,\n\n\n\nYou may kill me with your hatefulness,\n\n\n\nBut still, like air, I'll rise.\n\n\n\n\n\n\n\nDoes my sexiness upset you?\n\n\n\nDoes it come as a surprise\n\n\n\nThat I dance like I've got diamonds\n\n\n\nAt the meeting of my thighs?\n\n\n\n\n\n\n\nOut of the huts of history's shame\n\n\n\nI rise\n\n\n\nUp from a past that's rooted in pain\n\n\n\nI rise\n\n\n\nI'm a black ocean, leaping and wide,\n\n\n\nWelling and swelling I bear in the tide.\n\n\n\nLeaving behind nights of terror and fear\n\n\n\nI rise\n\n\n\nInto a daybreak that's wondrously clear\n\n\n\nI rise\n\n\n\nBringing the gifts that my ancestors gave,\n\n\n\nI am the dream and the hope of the slave.\n\n\n\nI rise\n\n\n\nI rise\n\n\n\nI rise.\n\n</Phrase>
+      <Life>3</Life>
+      <TimeLimit>420</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>Phenomenal Woman</Title>
+      <Author>MAYA ANGELOU</Author>
+      <Level>31</Level>
+      <Phrase>Pretty women wonder where my secret lies.\n\nI'm not cute or built to suit a fashion model's size\n\nBut when I start to tell them,\n\nThey think I'm telling lies.\n\nI say,\n\nIt's in the reach of my arms\n\nThe span of my hips,\n\nThe stride of my step,\n\nThe curl of my lips.\n\nI'm a woman\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.\n\n\n\nI walk into a room\n\nJust as cool as you please,\n\nAnd to a man,\n\nThe fellows stand or\n\nFall down on their knees.\n\nThen they swarm around me,\n\nA hive of honey bees.\n\nI say,\n\nIt's the fire in my eyes,\n\nAnd the flash of my teeth,\n\nThe swing in my waist,\n\nAnd the joy in my feet.\n\nI'm a woman\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.\n\n\n\nMen themselves have wondered\n\nWhat they see in me.\n\nThey try so much\n\nBut they can't touch\n\nMy inner mystery.\n\nWhen I try to show them\n\nThey say they still can't see.\n\nI say,\n\nIt's in the arch of my back,\n\nThe sun of my smile,\n\nThe ride of my breasts,\n\nThe grace of my style.\n\nI'm a woman\n\n\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.\n\n\n\nNow you understand\n\nJust why my head's not bowed.\n\nI don't shout or jump about\n\nOr have to talk real loud.\n\nWhen you see me passing\n\nIt ought to make you proud.\n\nI say,\n\nIt's in the click of my heels,\n\nThe bend of my hair,\n\nthe palm of my hand,\n\nThe need of my care,\n\n'Cause I'm a woman\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>420</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>If</Title>
+      <Author>Rudyard Kipling</Author>
+      <Level>32</Level>
+      <Phrase>If you can keep your head when all about you\n\n\n\nAre losing theirs and blaming it on you;\n\n\n\nIf you can trust yourself when all men doubt you,\n\n\n\nBut make allowance for their doubting too:\n\n\n\nIf you can wait and not be tired by waiting,\n\n\n\nOr, being lied about, don't deal in lies,\n\n\n\nOr being hated don't give way to hating,\n\n\n\nAnd yet don't look too good, nor talk too wise;\n\n\n\n\n\n\n\nIf you can dream---and not make dreams your master;\n\n\n\nIf you can think---and not make thoughts your aim,\n\n\n\nIf you can meet with Triumph and Disaster\n\n\n\nAnd treat those two impostors just the same:.\n\n\n\nIf you can bear to hear the truth you've spoken\n\n\n\nTwisted by knaves to make a trap for fools,\n\n\n\nOr watch the things you gave your life to, broken,\n\n\n\nAnd stoop and build'em up with worn-out tools;\n\n\n\n\n\n\n\nIf you can make one heap of all your winnings\n\n\n\nAnd risk it on one turn of pitch-and-toss,\n\n\n\nAnd lose, and start again at your beginnings,\n\n\n\nAnd never breathe a word about your loss:\n\n\n\nIf you can force your heart and nerve and sinew\n\n\n\nTo serve your turn long after they are gone,\n\n\n\nAnd so hold on when there is nothing in you\n\n\n\nExcept the Will which says to them: "Hold on!"\n\n\n\n\n\n\n\nIf you can talk with crowds and keep your virtue,\n\n\n\nOr walk with Kings---nor lose the common touch,\n\n\n\nIf neither foes nor loving friends can hurt you,\n\n\n\nIf all men count with you, but none too much:\n\n\n\nIf you can fill the unforgiving minute\n\n\n\nWith sixty seconds' worth of distance run,\n\n\n\nYours is the Earth and everything that's in it,\n\n\n\nAnd---which is more---you'll be a Man, my son!</Phrase>
+      <Life>3</Life>
+      <TimeLimit>480</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>Annabel Lee</Title>
+      <Author>Edgar Allan Poe</Author>
+      <Level>33</Level>
+      <Phrase>It was many and many a year ago,\n\n\n\nIn a kingdom by the sea,\n\n\n\nThat a maiden there lived whom you may know\n\n\n\nBy the name of ANNABEL LEE;\n\n\n\nAnd this maiden she lived with no other thought\n\n\n\nThan to love and be loved by me.\n\n\n\n\n\n\n\nI was a child and she was a child,\n\n\n\nIn this kingdom by the sea;\n\n\n\nBut we loved with a love that was more than love-\n\n\n\nI and my Annabel Lee;\n\n\n\nWith a love that the winged seraphs of heaven\n\n\n\nCoveted her and me.\n\n\n\n\n\n\n\nAnd this was the reason that, long ago,\n\n\n\nIn this kingdom by the sea,\n\n\n\nA wind blew out of a cloud, chilling\n\n\n\nMy beautiful Annabel Lee;\n\n\n\nSo that her highborn kinsman came\n\n\n\nAnd bore her away from me,\n\n\n\nTo shut her up in a sepulchre\n\n\n\nIn this kingdom by the sea.\n\n\n\n\n\n\n\nThe angels, not half so happy in heaven,\n\n\n\nWent envying her and me-\n\n\n\nYes!- that was the reason (as all men know,\n\n\n\nIn this kingdom by the sea)\n\n\n\nThat the wind came out of the cloud by night,\n\n\n\nChilling and killing my Annabel Lee.\n\n\n\n\n\n\n\nBut our love it was stronger by far than the love\n\n\n\nOf those who were older than we-\n\n\n\nOf many far wiser than we-\n\n\n\nAnd neither the angels in heaven above,\n\n\n\nNor the demons down under the sea,\n\n\n\nCan ever dissever my soul from the soul\n\n\n\nOf the beautiful Annabel Lee.\n\n\n\n\n\n\n\nFor the moon never beams without bringing me dreams\n\n\n\nOf the beautiful Annabel Lee;\n\n\n\nAnd the stars never rise but I feel the bright eyes\n\n\n\nOf the beautiful Annabel Lee;\n\n\n\nAnd so, all the night-tide, I lie down by the side\n\n\n\nOf my darling- my darling- my life and my bride,\n\n\n\nIn the sepulchre there by the sea,\n\n\n\nIn her tomb by the sounding sea.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>480</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>Television</Title>
+      <Author>Roald Dahl</Author>
+      <Level>34</Level>
+      <Phrase>The most important thing we've learned,\n\n\n\nSo far as children are concerned,\n\n\n\nIs never, NEVER, NEVER let\n\n\n\nThem near your television set --\n\n\n\nOr better still, just don't install\n\n\n\nThe idiotic thing at all.\n\n\n\nIn almost every house we've been,\n\n\n\nWe've watched them gaping at the screen.\n\n\n\nThey loll and slop and lounge about,\n\n\n\nAnd stare until their eyes pop out.\n\n\n\n(Last week in someone's place we saw\n\n\n\nA dozen eyeballs on the floor.)\n\n\n\nThey sit and stare and stare and sit\n\n\n\nUntil they're hypnotised by it,\n\n\n\nUntil they're absolutely drunk\n\n\n\nWith all that shocking ghastly junk.\n\n\n\nOh yes, we know it keeps them still,\n\n\n\nThey don't climb out the window sill,\n\n\n\nThey never fight or kick or punch,\n\n\n\nThey leave you free to cook the lunch\n\n\n\nAnd wash the dishes in the sink --\n\n\n\nBut did you ever stop to think,\n\n\n\nTo wonder just exactly what\n\n\n\nThis does to your beloved tot?\n\n\n\nIT ROTS THE SENSE IN THE HEAD!\n\n\n\nIT KILLS IMAGINATION DEAD!\n\n\n\nIT CLOGS AND CLUTTERS UP THE MIND!\n\n\n\nIT MAKES A CHILD SO DULL AND BLIND\n\n\n\nHE CAN NO LONGER UNDERSTAND\n\n\n\nA FANTASY, A FAIRYLAND!\n\n\n\nHIS BRAIN BECOMES AS SOFT AS CHEESE!\n\n\n\nHIS POWERS OF THINKING RUST AND FREEZE!\n\n\n\nHE CANNOT THINK -- HE ONLY SEES!\n\n\n\n'All right!' you'll cry. 'All right!' you'll say,\n\n\n\n'But if we take the set away,\n\n\n\nWhat shall we do to entertain\n\n\n\nOur darling children? Please explain!'\n\n\n\nWe'll answer this by asking you,\n\n\n\n'What used the darling ones to do?\n\n\n\n'How used they keep themselves contented\n\n\n\nBefore this monster was invented?'\n\n\n\nHave you forgotten? Don't you know?\n\n\n\nWe'll say it very loud and slow:\n\n\n\nTHEY ... USED ... TO ... READ! They'd READ and READ,\n\n\n\nAND READ and READ, and then proceed\n\n\n\nTo READ some more. Great Scott! Gadzooks!\n\n\n\nOne half their lives was reading books!\n\n\n\nThe nursery shelves held books galore!\n\n\n\nBooks cluttered up the nursery floor!\n\n\n\nAnd in the bedroom, by the bed,\n\n\n\nMore books were waiting to be read!\n\n\n\nSuch wondrous, fine, fantastic tales\n\n\n\nOf dragons, gypsies, queens, and whales\n\n\n\nAnd treasure isles, and distant shores\n\n\n\nWhere smugglers rowed with muffled oars,\n\n\n\nAnd pirates wearing purple pants,\n\n\n\nAnd sailing ships and elephants,\n\n\n\nAnd cannibals crouching 'round the pot,\n\n\n\nStirring away at something hot.\n\n\n\n(It smells so good, what can it be?\n\n\n\nGood gracious, it's Penelope.)\n\n\n\nThe younger ones had Beatrix Potter\n\n\n\nWith Mr. Tod, the dirty rotter,\n\n\n\nAnd Squirrel Nutkin, Pigling Bland,\n\n\n\nAnd Mrs. Tiggy-Winkle and-\n\n\n\nJust How The Camel Got His Hump,\n\n\n\nAnd How the Monkey Lost His Rump,\n\n\n\nAnd Mr. Toad, and bless my soul,\n\n\n\nThere's Mr. Rat and Mr. Mole-\n\n\n\nOh, books, what books they used to know,\n\n\n\nThose children living long ago!\n\n\n\nSo please, oh please, we beg, we pray,\n\n\n\nGo throw your TV set away,\n\n\n\nAnd in its place you can install\n\n\n\nA lovely bookshelf on the wall.\n\n\n\nThen fill the shelves with lots of books,\n\n\n\nIgnoring all the dirty looks,\n\n\n\nThe screams and yells, the bites and kicks,\n\n\n\nAnd children hitting you with sticks-\n\n\n\nFear not, because we promise you\n\n\n\nThat, in about a week or two\n\n\n\nOf having nothing else to do,\n\n\n\nThey'll now begin to feel the need\n\n\n\nOf having something to read.\n\n\n\nAnd once they start -- oh boy, oh boy!\n\n\n\nYou watch the slowly growing joy\n\n\n\nThat fills their hearts. They'll grow so keen\n\n\n\nThey'll wonder what they'd ever seen\n\n\n\nIn that ridiculous machine,\n\n\n\nThat nauseating, foul, unclean,\n\n\n\nRepulsive television screen!\n\n\n\nAnd later, each and every kid\n\n\n\nWill love you more for what you did.</Phrase>
+      <Life>6</Life>
+      <TimeLimit>900</TimeLimit>
+      <Page>4</Page>
     </Level>
   </LevelList>
   <Version>0</Version>
