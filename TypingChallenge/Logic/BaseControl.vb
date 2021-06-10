@@ -13,7 +13,7 @@ Public Class BaseControl
     Private Shared ea As MouseEventArgs
 
     'Audio
-    Private player As AudioFile
+    Public player As AudioFile
 
     'Keyboard
     Private kbPosX As Integer = (ClientSize.Width / 2) - 800, kbPosY As Integer = (ClientSize.Height / 2) - 225
@@ -58,9 +58,12 @@ Public Class BaseControl
 
         If System.ComponentModel.LicenseManager.UsageMode = System.ComponentModel.LicenseUsageMode.Runtime Then
             bgTimer.Start()
-            player = New AudioFile(".\audio\bgm.mp3")
+            Dim rand As New Random
+            Dim mp3s = IO.Directory.GetFiles(bgmPath)
+            player = New AudioFile($"{mp3s(rand.Next(mp3s.Length))}")
+
             player.Play()
-            player.SetVolume(setting.MusicVolume)
+            player.SetVolume(setting.MusicVolume * 100)
         End If
 
         DoubleBuffered = True
@@ -97,7 +100,7 @@ Public Class BaseControl
                 Array.Resize(Circles, 0)
         End Select
 
-        player.SetVolume(setting.MusicVolume)
+        player.SetVolume(setting.MusicVolume * 100)
 
         Invalidate()
     End Sub
@@ -172,6 +175,8 @@ Public Class BaseControl
                 g.DrawGDIText(currentFrameRate, fpsFont, fps, Color.LimeGreen, TextFormatFlags.Right)
             End Using
         End If
+
+        g.DrawGDIText($"[{player.Status}]", Font, ClientRectangle, Color.White, TextFormatFlags.Left)
 
         If Effect = eEffect.Circles Then
             PaintCircles(g)
@@ -252,6 +257,15 @@ Public Class BaseControl
                 MoveKeyboard()
                 rgbAngle += 2.0F
         End Select
+
+        'If player.IsStopped Then
+        '    Dim rand As New Random
+        '    Dim mp3s = IO.Directory.GetFiles(bgmPath)
+        '    player = New AudioFile($"{mp3s(rand.Next(mp3s.Length))}")
+
+        '    player.Play()
+        '    player.SetVolume(setting.MusicVolume * 100)
+        'End If
 
         Invalidate()
     End Sub

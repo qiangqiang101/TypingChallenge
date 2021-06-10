@@ -30,6 +30,43 @@
             Case "mp3"
                 mciSendString("open """ & _filename & """ type mpegvideo alias audiofile", Nothing, 0, IntPtr.Zero)
 
+                Dim playCommand As String = "play audiofile"
+
+                If _wait = True Then playCommand += " wait"
+
+                mciSendString(playCommand, Nothing, 0, IntPtr.Zero)
+            Case "wav"
+                mciSendString("open """ & _filename & """ type waveaudio alias audiofile", Nothing, 0, IntPtr.Zero)
+                mciSendString("play audiofile", Nothing, 0, IntPtr.Zero)
+            Case "mid", "idi"
+                mciSendString("stop midi", "", 0, 0)
+                mciSendString("close midi", "", 0, 0)
+                mciSendString("open sequencer!" & _filename & " alias midi", "", 0, 0)
+                mciSendString("play midi", "", 0, 0)
+            Case "wmv", "mp4", "avi"
+                mciSendString("open """ & _filename & """ type mpegvideo alias audiofile parent " & _handle & " style child", Nothing, 0, IntPtr.Zero)
+                mciSendString("play audiofile", Nothing, 0, IntPtr.Zero)
+            Case Else
+                Throw New Exception("File type not supported.")
+                Call Close()
+        End Select
+
+        IsPaused = False
+
+    End Sub
+
+    ''' <summary>
+    ''' Plays the file that is specified as the filename.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub PlayLoop()
+
+        If _filename = "" Or Filename.Length <= 4 Then Exit Sub
+
+        Select Case Right(Filename, 3).ToLower
+            Case "mp3"
+                mciSendString("open """ & _filename & """ type mpegvideo alias audiofile", Nothing, 0, IntPtr.Zero)
+
                 Dim playCommand As String = "play audiofile repeat from 0"
 
                 If _wait = True Then playCommand += " wait"
@@ -287,4 +324,11 @@
 
         Return New Size(CInt(parts(2)), CInt(parts(3)))
     End Function
+
+    Public Sub SetPosition(miliseconds As Integer)
+        mciSendString($"play audiofile from {miliseconds.ToString}", Nothing, 0, IntPtr.Zero)
+
+        IsPaused = False
+    End Sub
+
 End Class

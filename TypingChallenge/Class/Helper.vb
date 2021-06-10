@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Drawing.Imaging
 Imports System.IO
+Imports System.Media
 Imports System.Net
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
@@ -8,6 +9,16 @@ Imports System.Text.RegularExpressions
 Imports TypingChallenge
 
 Module Helper
+
+    Public soundBtnClick As String = ".\audio\btn_click.wav"
+    Public soundBtnCancel As String = ".\audio\btn_cancel.wav"
+    Public soundBtnSelect As String = ".\audio\btn_select.wav"
+    Public soundBtnPage As String = ".\audio\btn_nextprev.wav"
+    Public soundLife As String = ".\audio\new_life.wav"
+    Public soundMinusLife As String = ".\audio\minus_life.wav"
+    Public soundLevelComplete As String = ".\audio\level_complete.wav"
+    Public soundLevelFailed As String = ".\audio\level_failed.wav"
+    Public bgmPath As String = ".\audio\bgm\"
 
     Public lvlXmlPath As String = ".\data\level.xml"
     Public setXmlPath As String = ".\data\setting.xml"
@@ -298,6 +309,8 @@ Module Helper
     <Extension>
     Public Sub StartGame(ctrl As Control, level As Level, font As Font)
         If level.Level <> 0 Then
+            soundBtnSelect.PlayWav
+
             Dim newGame As New MyGame(level.Phrase) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .Life = level.Life, .TimeLimit = level.TimeLimit, .LevelSel = ctrl, .Dock = DockStyle.Fill,
             .Font = New Font(font.FontFamily, font.Size * 2, FontStyle.Bold, font.Unit)}
             frmGame.Controls.Add(newGame)
@@ -387,5 +400,17 @@ Module Helper
             Return "error"
         End Try
     End Function
+
+    <Extension>
+    Public Sub PlayWav(waveFile As String)
+        If File.Exists(waveFile) Then
+            Using stream As New WaveStream(File.OpenRead(waveFile))
+                stream.Volume = setting.SoundVolume
+                Using player As New SoundPlayer(stream)
+                    player.Play()
+                End Using
+            End Using
+        End If
+    End Sub
 
 End Module

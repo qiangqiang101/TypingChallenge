@@ -137,13 +137,16 @@ Public Class LevelSelection
         MyBase.OnMouseClick(e)
 
         If btnBackH Then
+            soundBtnCancel.PlayWav
             frmGame.MainMenu.Show()
             frmGame.Controls.Remove(Me)
         End If
         If btnPrevEnabled AndAlso btnPrevH Then
+            soundBtnPage.PlayWav
             GotoPage(Page - 9)
         End If
         If btnNextEnabled AndAlso btnNextH Then
+            soundBtnPage.PlayWav
             GotoPage(Page + 9)
         End If
 

@@ -19,6 +19,12 @@ TypingChallenge
  </summary>
  <remarks></remarks>
 </member>
+<member name="M:TypingChallenge.AudioFile.PlayLoop">
+ <summary>
+ Plays the file that is specified as the filename.
+ </summary>
+ <remarks></remarks>
+</member>
 <member name="M:TypingChallenge.AudioFile.Pause">
  <summary>
  Pause the current play back.

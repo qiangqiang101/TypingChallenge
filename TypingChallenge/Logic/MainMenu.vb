@@ -75,6 +75,7 @@
         MyBase.OnMouseClick(e)
 
         If btnPlayH Then
+            soundBtnClick.PlayWav
             Dim lvlSel As New LevelSelection() With {.Dock = DockStyle.Fill, .Font = New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold, Font.Unit)}
             Parent.Controls.Add(lvlSel)
             lvlSel.GotoPage(1)
@@ -82,6 +83,7 @@
             Me.Hide()
         End If
         If btnSettingH Then
+            soundBtnClick.PlayWav
             Dim opt As New GameOption() With {.Dock = DockStyle.Fill, .Font = New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold, Font.Unit),
                 .MusicVolume = setting.MusicVolume, .SoundVolume = setting.SoundVolume, .GraphicsQuality = setting.Quality, .FullScreen = setting.FullScreen, .ShowFPS = setting.ShowFPS,
                 .KbColor = Color.FromArgb(setting.KeyboardColorA, setting.KeyboardColorR, setting.KeyboardColorG, setting.KeyboardColorB), .RGBKeyboard = setting.KeyboardRGB}
@@ -91,11 +93,16 @@
         End If
         If btnProfileH Then
             'todo
+            player.SetPosition(player.Milleseconds - 1000)
+            soundBtnClick.PlayWav
         End If
         If btnCreditsH Then
             'todo
+            soundBtnClick.PlayWav
         End If
         If btnExitH Then
+            soundBtnCancel.PlayWav
+            Threading.Thread.Sleep(500)
             frmGame.Close()
         End If
     End Sub

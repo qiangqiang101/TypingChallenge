@@ -87,6 +87,8 @@ Public Class NewProfile
         MyBase.OnMouseClick(e)
 
         If btnOKH Then
+            soundBtnClick.PlayWav
+
             Dim newProfile As New ProfileData(prfXmlPath)
             With newProfile
                 .Name = Player

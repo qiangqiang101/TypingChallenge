@@ -170,6 +170,7 @@ Public Class GameOption
         If rgbRH Then RGBKeyboard = Not RGBKeyboard
 
         If saveBtnH Then
+            soundBtnClick.PlayWav
             Dim newSetting As New SettingData(setXmlPath)
             With newSetting
                 .MusicVolume = MusicVolume
@@ -192,6 +193,7 @@ Public Class GameOption
             frmGame.MainMenu.RefreshSettings()
         End If
         If cancelBtnH Then
+            soundBtnCancel.PlayWav
             frmGame.MainMenu.Show()
             frmGame.Controls.Remove(Me)
         End If

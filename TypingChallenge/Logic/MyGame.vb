@@ -282,6 +282,7 @@ Public Class MyGame
                     Try
                         WhiteText = WhiteText.Remove(0, 1)
                     Catch ex As Exception
+                        soundLevelComplete.PlayWav
                         GameStatus = eGameStatus.YouWon
                         timerEnded = Now
                         If elapsedTimer.Enabled Then elapsedTimer.Stop()
@@ -290,12 +291,14 @@ Public Class MyGame
                     CorrectStreak += 1
                     Score += 1
                     If CorrectStreak >= 50 Then
+                        soundLife.PlayWav
                         LifeLeft += 1
                         CorrectStreak = 0
                         Score += 100
                     End If
                     Invalidate()
                 Else
+                    soundMinusLife.PlayWav
                     LifeLeft -= 1
                     WrongCount += 1
                     CorrectStreak = 0
@@ -310,12 +313,15 @@ Public Class MyGame
         MyBase.OnMouseClick(e)
 
         If _mouseButtonBackHovered Then
+            soundBtnCancel.PlayWav
             SaveUserProgress()
 
             LevelSel.Show()
             Parent.Controls.Remove(Me)
         End If
         If _mouseButtonNextHovered Then
+            soundBtnSelect.PlayWav
+
             If GameStatus = eGameStatus.YouWon Then
                 SaveUserProgress()
 
@@ -354,6 +360,12 @@ Public Class MyGame
 
     Private Sub elapsedTimer_Tick(sender As Object, e As EventArgs) Handles elapsedTimer.Tick
         If LifeLeft < 1 Then
+            soundLevelFailed.PlayWav
+            GameStatus = eGameStatus.GameOver
+            timerEnded = Now
+            elapsedTimer.Stop()
+        ElseIf SecondsLeft <= -1 Then
+            soundLevelFailed.PlayWav
             GameStatus = eGameStatus.GameOver
             timerEnded = Now
             elapsedTimer.Stop()

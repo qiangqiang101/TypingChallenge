@@ -100,6 +100,7 @@
     <Compile Include="Class\AudioFile.vb" />
     <Compile Include="Class\FormState.vb" />
     <Compile Include="Class\ListViewItemComparer.vb" />
+    <Compile Include="Class\SoundPlayer.vb" />
     <Compile Include="Controls\ListViewX.vb">
       <SubType>Component</SubType>
     </Compile>
