@@ -95,8 +95,15 @@ Public Class LevelSelection
         Dim rWidth As Single = cr.GetColumnSizef(3).Width
         Dim rHeight As Single = cr.GetRowSizef(5).Height
 
+        Dim optHeight = TextRenderer.MeasureText("LEVEL SELECTION", Font).Height
+        Dim optTitle As New Rectangle(cr.X, cr.Y + rHeight - optHeight, cr.Width, optHeight)
+        Using lbrush As New LinearGradientBrush(optTitle, Color.Goldenrod, Color.Transparent, LinearGradientMode.Horizontal)
+            g.FillRectangle(lbrush, optTitle)
+        End Using
+        g.DrawGDIText("LEVEL SELECTION", Font, optTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
+
         Dim lvlTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
-        g.DrawGDIText("LEVEL SELECTION", Font, lvlTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
+
         Using small As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
             g.DrawGDIText($"Page {A1.Level.GetPagesFromNum} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
 
@@ -116,9 +123,10 @@ Public Class LevelSelection
             If Not C3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), C3)
         End Using
 
-        btnNext = New Rectangle(cr.X + cr.Width - 200, cr.Height - rHeight, 200, 80)
-        btnPrev = New Rectangle(btnNext.X - 205, cr.Height - rHeight, 200, 80)
-        btnBack = New RectangleF(cr.X, cr.Height - rHeight, 200, 80)
+        btnNext = New Rectangle(cr.X + cr.Width - 200, cr.Y + cr.Height - rHeight, 200, 80)
+        btnPrev = New Rectangle(btnNext.X - 205, cr.Y + cr.Height - rHeight, 200, 80)
+        btnBack = New RectangleF(cr.X, cr.Y + cr.Height - rHeight, 200, 80)
+
         Using br As New SolidBrush(If(btnPrevH, Color.White, Color.Gray))
             g.FillRoundedRectangle(btnPrev.ToRectangle, 10, br, New RoundedRectCorners(True))
             g.DrawGDIText("◀ Prev", Font, btnPrev.ToRectangle, If(btnPrevH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)

@@ -6,6 +6,8 @@
     ' Last Updated:  02/04/2009
     '***********************************************************************************************************
 
+    Public Const MM_MCINOTIFY As Integer = &H3B9
+
     ' Windows API Declarations
     Private Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Int32, ByVal hwndCallback As Int32) As Int32
 
@@ -22,7 +24,8 @@
     ''' Plays the file that is specified as the filename.
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub Play()
+    Public Sub Play(Optional notify As IntPtr = Nothing)
+        If notify = Nothing Then notify = IntPtr.Zero
 
         If _filename = "" Or Filename.Length <= 4 Then Exit Sub
 
@@ -30,14 +33,14 @@
             Case "mp3"
                 mciSendString("open """ & _filename & """ type mpegvideo alias audiofile", Nothing, 0, IntPtr.Zero)
 
-                Dim playCommand As String = "play audiofile"
+                Dim playCommand As String = "play audiofile notify"
 
                 If _wait = True Then playCommand += " wait"
 
-                mciSendString(playCommand, Nothing, 0, IntPtr.Zero)
+                mciSendString(playCommand, Nothing, 0, notify)
             Case "wav"
                 mciSendString("open """ & _filename & """ type waveaudio alias audiofile", Nothing, 0, IntPtr.Zero)
-                mciSendString("play audiofile", Nothing, 0, IntPtr.Zero)
+                mciSendString("play audiofile notify", Nothing, 0, notify)
             Case "mid", "idi"
                 mciSendString("stop midi", "", 0, 0)
                 mciSendString("close midi", "", 0, 0)
@@ -45,7 +48,7 @@
                 mciSendString("play midi", "", 0, 0)
             Case "wmv", "mp4", "avi"
                 mciSendString("open """ & _filename & """ type mpegvideo alias audiofile parent " & _handle & " style child", Nothing, 0, IntPtr.Zero)
-                mciSendString("play audiofile", Nothing, 0, IntPtr.Zero)
+                mciSendString("play audiofile notify", Nothing, 0, notify)
             Case Else
                 Throw New Exception("File type not supported.")
                 Call Close()

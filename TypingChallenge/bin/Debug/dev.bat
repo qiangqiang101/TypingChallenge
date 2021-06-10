@@ -1,0 +1,1 @@
+start "" "TypingChallenge.exe" -dev

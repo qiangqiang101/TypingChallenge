@@ -69,6 +69,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -97,9 +100,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\AudioFile.vb" />
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Class\FormState.vb" />
     <Compile Include="Class\ListViewItemComparer.vb" />
+    <Compile Include="Class\Media.vb" />
     <Compile Include="Class\SoundPlayer.vb" />
     <Compile Include="Controls\ListViewX.vb">
       <SubType>Component</SubType>
@@ -131,6 +135,9 @@
     <Compile Include="frmTest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Logic\Credits.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Logic\GameOption.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -138,6 +145,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Logic\MainMenu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logic\MyProfile.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Logic\NewProfile.vb">
@@ -180,6 +190,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

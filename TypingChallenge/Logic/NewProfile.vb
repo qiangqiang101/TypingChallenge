@@ -92,6 +92,7 @@ Public Class NewProfile
             Dim newProfile As New ProfileData(prfXmlPath)
             With newProfile
                 .Name = Player
+                .DateCreated = Now
                 .ClearedLevel = New List(Of UserLevel)
                 .Credits = 0
             End With

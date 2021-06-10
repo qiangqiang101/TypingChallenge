@@ -81,7 +81,11 @@ Public Class GameOption
         'Dim rWidth As Single = (cr.Width / 2) '- 150
         Dim sz As Integer = 75
 
-        Dim optTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
+        Dim optHeight = TextRenderer.MeasureText("OPTIONS", Font).Height
+        Dim optTitle As New Rectangle(cr.X, cr.Y + rHeight - optHeight, cr.Width, optHeight)
+        Using lbrush As New LinearGradientBrush(optTitle, Color.Goldenrod, Color.Transparent, LinearGradientMode.Horizontal)
+            g.FillRectangle(lbrush, optTitle)
+        End Using
         g.DrawGDIText("OPTIONS", Font, optTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
 
         'Music
@@ -145,10 +149,10 @@ Public Class GameOption
     Protected Overrides Sub OnMouseClick(e As MouseEventArgs)
         MyBase.OnMouseClick(e)
 
-        If musicLH Then If Not MusicVolume <= 0 Then MusicVolume -= 10
-        If musicRH Then If Not MusicVolume >= 100 Then MusicVolume += 10
-        If soundLH Then If Not SoundVolume <= 0 Then SoundVolume -= 10
-        If soundRH Then If Not SoundVolume >= 100 Then SoundVolume += 10
+        If musicLH Then If Not MusicVolume <= 0 Then MusicVolume -= 5
+        If musicRH Then If Not MusicVolume >= 100 Then MusicVolume += 5
+        If soundLH Then If Not SoundVolume <= 0 Then SoundVolume -= 5
+        If soundRH Then If Not SoundVolume >= 100 Then SoundVolume += 5
         If graphicLH Then If Not GraphicsQuality <= 0 Then GraphicsQuality -= 1
         If graphicRH Then If Not GraphicsQuality >= 4 Then GraphicsQuality += 1
         If fullscreenLH Then FullScreen = Not FullScreen

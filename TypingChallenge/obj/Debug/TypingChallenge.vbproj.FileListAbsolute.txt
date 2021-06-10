@@ -26,7 +26,6 @@ C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\Typin
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.exe
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.pdb
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Debug\TypingChallenge.xml
-C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.vbprojResolveAssemblyReference.cache
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.frmGame.resources
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.frmLevelEdit.resources
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Debug\TypingChallenge.Resources.resources

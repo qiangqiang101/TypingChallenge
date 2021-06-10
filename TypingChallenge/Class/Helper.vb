@@ -248,10 +248,10 @@ Module Helper
     Public Function GetSafeZone(rect As Rectangle) As Rectangle
         If rect.Width > rect.Height Then
             Dim extraSpace As Integer = (rect.Height - rect.Width) / 2
-            Return New Rectangle(rect.X - extraSpace + (extraSpace / 2), rect.Y, rect.Height - (extraSpace), rect.Height)
+            Return New Rectangle(rect.X - extraSpace + (extraSpace / 2), rect.Y + 50, rect.Height - (extraSpace), rect.Height - 100)
         ElseIf rect.Height > rect.Width Then
             Dim extraSpace As Integer = (rect.Width - rect.Height) / 2
-            Return New Rectangle(rect.X, rect.Y - extraSpace + (extraSpace / 2), rect.Width, rect.Width - (extraSpace))
+            Return New Rectangle(rect.X + 50, rect.Y - extraSpace + (extraSpace / 2), rect.Width - 100, rect.Width - (extraSpace))
         End If
     End Function
 

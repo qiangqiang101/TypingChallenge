@@ -41,7 +41,7 @@ Public Class MyGame
 
     Public Sub New(ph As String)
         DoubleBuffered = True
-        Phrase = ph.Replace(vbCr, "").Replace(vbLf, "").Replace("—", "").Replace("\n\n", " ")
+        Phrase = ph.Replace(vbCr, "").Replace(vbLf, "").Replace("—", "").Replace("\n\n", " ").Replace("  ", " ")
 
         'If Phrase = Nothing Then Phrase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         _PhraseBackup = ph.Replace(vbCr, "").Replace(vbLf, "").Replace("—", "").Replace("\n\n", " ")
@@ -325,11 +325,19 @@ Public Class MyGame
             If GameStatus = eGameStatus.YouWon Then
                 SaveUserProgress()
 
-                Dim nextlevel As Level = levels.LevelList.Find(Function(x) x.Level = Level + 1)
-                Dim newGame As New MyGame(nextlevel.Phrase) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .Life = nextlevel.Life, .TimeLimit = nextlevel.TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
-                Parent.Controls.Add(newGame)
-                newGame.Refresh()
-                Parent.Controls.Remove(Me)
+                Try
+                    Dim nextlevel As Level = levels.LevelList.Find(Function(x) x.Level = Level + 1)
+                    Dim newGame As New MyGame(nextlevel.Phrase) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .Life = nextlevel.Life, .TimeLimit = nextlevel.TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                    Parent.Controls.Add(newGame)
+                    newGame.Refresh()
+                    Parent.Controls.Remove(Me)
+                Catch ex As Exception
+                    Dim credits As New Credits() With {.Dock = DockStyle.Fill, .Font = Font}
+                    Parent.Controls.Add(credits)
+                    credits.Refresh()
+                    credits.Start()
+                    Parent.Controls.Remove(Me)
+                End Try
             Else
                 Dim newGame As New MyGame(Phrase) With {.Title = Title, .Author = Author, .Level = Level, .Life = Life, .TimeLimit = TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                 Parent.Controls.Add(newGame)
@@ -345,6 +353,7 @@ Public Class MyGame
         Dim newProfile As New ProfileData(prfXmlPath)
         With newProfile
             .Name = profile.Name
+            .DateCreated = profile.DateCreated
             .ClearedLevel = profile.ClearedLevel
             .Credits = profile.Credits + (Score / 100)
         End With

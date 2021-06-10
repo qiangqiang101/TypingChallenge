@@ -13,6 +13,7 @@ Public Structure ProfileData
     Public Property FileName() As String
 
     Public Name As String
+    Public DateCreated As Date
     Public Credits As Integer
     Public ClearedLevel As List(Of UserLevel)
 
@@ -29,7 +30,7 @@ Public Structure ProfileData
 
     Public Function ReadFromFile() As ProfileData
         If Not File.Exists(FileName) Then
-            Return New ProfileData(FileName) With {.Name = "Player", .Credits = 0, .ClearedLevel = New List(Of UserLevel)}
+            Return New ProfileData(FileName) With {.Name = "Player", .DateCreated = Now, .Credits = 0, .ClearedLevel = New List(Of UserLevel)}
         End If
 
         Try
@@ -39,7 +40,7 @@ Public Structure ProfileData
             reader.Close()
             Return instance
         Catch ex As Exception
-            Return New ProfileData(FileName) With {.Name = "Player", .Credits = 0, .ClearedLevel = New List(Of UserLevel)}
+            Return New ProfileData(FileName) With {.Name = "Player", .DateCreated = Now, .Credits = 0, .ClearedLevel = New List(Of UserLevel)}
         End Try
     End Function
 
