@@ -8,17 +8,19 @@ Public Class GameOption
 
     'Controls
     Private musicL, musicR, soundL, soundR, graphicL, graphicR, fullscreenL, fullscreenR, fpsL, fpsR, saveBtn, cancelBtn As RectangleF 'fullScreenCb, fpsCb
-    Private kbBtn, rgbL, rgbR As RectangleF
+    Private kbBtn, rgbL, rgbR, musicEL, musicER, diffL, diffR As RectangleF
     Private musicLH, musicRH, soundLH, soundRH, graphicLH, graphicRH, fullscreenLH, fullscreenRH, fpsLH, fpsRH, saveBtnH, cancelBtnH As Boolean 'fullScreenCbH, fpsCbH
-    Private kbBtnH, rgbLH, rgbRH As Boolean
+    Private kbBtnH, rgbLH, rgbRH, musicELH, musicERH, diffLH, diffRH As Boolean
 
     Public Property MusicVolume() As Integer
+    Public Property MusicEnabled() As Boolean
     Public Property SoundVolume() As Integer
     Public Property GraphicsQuality() As Integer
     Public Property FullScreen() As Boolean
     Public Property ShowFPS() As Boolean
     Public Property KbColor() As Color
     Public Property RGBKeyboard() As Boolean
+    Public Property Difficulty() As Integer
 
     Public Sub New()
         DoubleBuffered = True
@@ -43,6 +45,11 @@ Public Class GameOption
         kbBtnH = False
         rgbLH = False
         rgbRH = False
+
+        musicELH = False
+        musicERH = False
+        diffLH = False
+        diffRH = False
     End Sub
 
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
@@ -65,6 +72,11 @@ Public Class GameOption
         kbBtnH = kbBtn.Contains(_mousePos)
         rgbLH = rgbL.Contains(_mousePos)
         rgbRH = rgbR.Contains(_mousePos)
+
+        musicELH = musicEL.Contains(_mousePos)
+        musicERH = musicER.Contains(_mousePos)
+        diffLH = diffL.Contains(_mousePos)
+        diffRH = diffR.Contains(_mousePos)
     End Sub
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
@@ -76,8 +88,8 @@ Public Class GameOption
 
         Dim cr = ClientRectangle.GetSafeZone
         Dim rWidth As Single = cr.GetColumnSizef(2).Width
-        Dim rHeight As Single = cr.GetRowSizef(8).Height
-        Dim rHeight2 As Single = (rHeight * 4) / 6
+        Dim rHeight As Single = cr.GetRowSizef(6).Height
+
         'Dim rWidth As Single = (cr.Width / 2) '- 150
         Dim sz As Integer = 75
 
@@ -88,27 +100,35 @@ Public Class GameOption
         End Using
         g.DrawGDIText("OPTIONS", Font, optTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
 
-        'Music
-        g.DrawSliderControl(Font, musicL, musicR, musicLH, musicRH, New PointF(cr.X, cr.Y + rHeight), New Size(rWidth, rHeight2), "Music Volume", $"{MusicVolume}%")
+        Using smaller As New Font(Font.Name, If(ClientRectangle.Height < 1080, 25.0F, 30.0F), FontStyle.Regular)
+            Dim rHeight2 As Single = TextRenderer.MeasureText("TEXT", smaller).Height '(rHeight * 4) / 6
 
-        'Sound
-        g.DrawSliderControl(Font, soundL, soundR, soundLH, soundRH, New PointF(cr.X, cr.Y + rHeight + rHeight2), New Size(rWidth, rHeight2), "Sound Volume", $"{SoundVolume}%")
+            'Music
+            g.DrawSliderControl(smaller, musicL, musicR, musicLH, musicRH, New PointF(cr.X, cr.Y + rHeight), New Size(rWidth, rHeight2), "Music Volume", $"{MusicVolume}%")
+            g.DrawSliderControl(smaller, musicEL, musicER, musicELH, musicERH, New PointF(cr.X, cr.Y + rHeight + rHeight2), New Size(rWidth, rHeight2), "Music Enable", BoolToString(MusicEnabled))
 
-        'Graphics
-        g.DrawSliderControl(Font, graphicL, graphicR, graphicLH, graphicRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 3)), New SizeF(rWidth, rHeight2), "Graphics Quality", GraphicsQualityText(GraphicsQuality))
+            'Sound
+            g.DrawSliderControl(smaller, soundL, soundR, soundLH, soundRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 2)), New Size(rWidth, rHeight2), "Sound Volume", $"{SoundVolume}%")
 
-        'Keyboard
-        g.DrawButtonControl(Font, kbBtn, kbBtnH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Keyboard Color", KbColor.Name)
-        g.DrawSliderControl(Font, rgbL, rgbR, rgbLH, rgbRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 5)), New SizeF(rWidth, rHeight2), "RGB Keyboard", BoolToString(RGBKeyboard))
+            'Graphics
+            g.DrawSliderControl(smaller, graphicL, graphicR, graphicLH, graphicRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 4)), New SizeF(rWidth, rHeight2), "Graphics Quality", GraphicsQualityText(GraphicsQuality))
 
-        'Fullscreen
-        g.DrawSliderControl(Font, fullscreenL, fullscreenR, fullscreenLH, fullscreenRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 6)), New SizeF(rWidth, rHeight2), "Window Mode", FullscreenToString(FullScreen))
+            'Keyboard
+            g.DrawButtonControl(smaller, kbBtn, kbBtnH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 5)), New SizeF(rWidth, rHeight2), "Keyboard Color", KbColor.Name)
+            g.DrawSliderControl(smaller, rgbL, rgbR, rgbLH, rgbRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 6)), New SizeF(rWidth, rHeight2), "RGB Keyboard", BoolToString(RGBKeyboard))
 
-        'FPS
-        g.DrawSliderControl(Font, fpsL, fpsR, fpsLH, fpsRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 7)), New SizeF(rWidth, rHeight2), "Show FPS", BoolToString(ShowFPS))
+            'Fullscreen
+            g.DrawSliderControl(smaller, fullscreenL, fullscreenR, fullscreenLH, fullscreenRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 7)), New SizeF(rWidth, rHeight2), "Window Mode", FullscreenToString(FullScreen))
 
-        saveBtn = New Rectangle(cr.X + (cr.Width / 2) - 310, cr.Height - 100, 300, 80)
-        cancelBtn = New Rectangle(cr.X + (cr.Width / 2) + 0, cr.Height - 100, 300, 80)
+            'FPS
+            g.DrawSliderControl(smaller, fpsL, fpsR, fpsLH, fpsRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 8)), New SizeF(rWidth, rHeight2), "Show FPS", BoolToString(ShowFPS))
+
+            'difficulty
+            g.DrawSliderControl(smaller, diffL, diffR, diffLH, diffRH, New PointF(cr.X, cr.Y + rHeight + (rHeight2 * 10)), New SizeF(rWidth, rHeight2), "Game Difficulty", DifficultyText(Difficulty))
+        End Using
+
+        saveBtn = New Rectangle(cr.X + (cr.Width / 2) - 310, cr.Y + cr.Height - rHeight, 300, 80)
+        cancelBtn = New Rectangle(cr.X + (cr.Width / 2) + 0, cr.Y + cr.Height - rHeight, 300, 80)
         Using br As New SolidBrush(If(saveBtnH, Color.White, Color.Gray))
             g.FillRoundedRectangle(saveBtn.ToRectangle, 10, br, New RoundedRectCorners(True))
             g.DrawGDIText("Save", Font, saveBtn.ToRectangle, If(saveBtnH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
@@ -118,6 +138,17 @@ Public Class GameOption
             g.DrawGDIText("Cancel", Font, cancelBtn.ToRectangle, If(cancelBtnH, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
         End Using
     End Sub
+
+    Private Function DifficultyText(id As Integer) As String
+        Select Case id
+            Case 0
+                Return "Normal"
+            Case 1
+                Return "Hard"
+            Case Else
+                Return "Very Hard"
+        End Select
+    End Function
 
     Private Function GraphicsQualityText(id As Integer) As String
         Select Case id
@@ -151,6 +182,8 @@ Public Class GameOption
 
         If musicLH Then If Not MusicVolume <= 0 Then MusicVolume -= 5
         If musicRH Then If Not MusicVolume >= 100 Then MusicVolume += 5
+        If musicELH Then MusicEnabled = Not MusicEnabled
+        If musicERH Then MusicEnabled = Not MusicEnabled
         If soundLH Then If Not SoundVolume <= 0 Then SoundVolume -= 5
         If soundRH Then If Not SoundVolume >= 100 Then SoundVolume += 5
         If graphicLH Then If Not GraphicsQuality <= 0 Then GraphicsQuality -= 1
@@ -172,12 +205,15 @@ Public Class GameOption
         End If
         If rgbLH Then RGBKeyboard = Not RGBKeyboard
         If rgbRH Then RGBKeyboard = Not RGBKeyboard
+        If diffLH Then If Not Difficulty <= 0 Then Difficulty -= 1
+        If diffRH Then If Not Difficulty >= 2 Then Difficulty += 1
 
         If saveBtnH Then
             soundBtnClick.PlayWav
             Dim newSetting As New SettingData(setXmlPath)
             With newSetting
                 .MusicVolume = MusicVolume
+                .MusicEnabled = MusicEnabled
                 .SoundVolume = SoundVolume
                 .Quality = GraphicsQuality
                 .FullScreen = FullScreen
@@ -187,6 +223,7 @@ Public Class GameOption
                 .KeyboardColorG = KbColor.G
                 .KeyboardColorB = KbColor.B
                 .KeyboardRGB = RGBKeyboard
+                .Difficulty = Difficulty
                 .Version = setting.Version
             End With
             newSetting.Save()

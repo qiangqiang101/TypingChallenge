@@ -36,28 +36,28 @@ Public Class MyProfile
 
         Dim cr = ClientRectangle.GetSafeZone
         Dim rWidth As Single = cr.GetColumnSizef(2).Width
-        Dim rHeight As Single = cr.GetRowSizef(7).Height
+        Dim rHeight As Single = cr.GetRowSizef(6).Height
 
-        Dim optHeight = TextRenderer.MeasureText("PROFILE", Font).Height
-        Dim optTitle As New Rectangle(cr.X, cr.Y + rHeight - optHeight, cr.Width, optHeight)
+        Dim txtHeight = TextRenderer.MeasureText("PROFILE", Font).Height
+        Dim optTitle As New Rectangle(cr.X, cr.Y + rHeight - txtHeight, cr.Width, txtHeight)
         Using lbrush As New LinearGradientBrush(optTitle, Color.Goldenrod, Color.Transparent, LinearGradientMode.Horizontal)
             g.FillRectangle(lbrush, optTitle)
         End Using
         g.DrawGDIText("PROFILE", Font, optTitle, Color.White, TextFormatFlags.Left Or TextFormatFlags.Bottom)
 
-        Dim nameRect As New RectangleF(cr.X, cr.Y + rHeight, cr.Width, rHeight)
+        Dim nameRect As New RectangleF(cr.X, cr.Y + rHeight, cr.Width, txtHeight)
         g.DrawGDIText($"Name: {profile.Name}", Font, nameRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
-        Dim dateRect As New RectangleF(cr.X, cr.Y + rHeight * 2, cr.Width, rHeight)
-        g.DrawGDIText($"Date Created: {profile.DateCreated.ToLongDateString}", Font, dateRect.ToRectangle, Color.White, TextFormatFlags.Left)
+        Dim dateRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight, cr.Width, txtHeight)
+        g.DrawGDIText($"Date Created: {profile.DateCreated.ToShortDateString} {profile.DateCreated.ToShortTimeString}", Font, dateRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
-        Dim credRect As New RectangleF(cr.X, cr.Y + rHeight * 3, cr.Width, rHeight)
+        Dim credRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 2, cr.Width, txtHeight)
         g.DrawGDIText($"Credits: {profile.Credits}", Font, credRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
-        Dim clearRect As New RectangleF(cr.X, cr.Y + rHeight * 4, cr.Width, rHeight)
+        Dim clearRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 3, cr.Width, txtHeight)
         g.DrawGDIText($"Cleared Level: {profile.ClearedLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
-        Dim scoreRect As New RectangleF(cr.X, cr.Y + rHeight * 5, cr.Width, rHeight)
+        Dim scoreRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 4, cr.Width, txtHeight)
         g.DrawGDIText($"Total Score: {profile.ClearedLevel.Sum(Function(x) x.Score)}", Font, scoreRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
         btnBack = New Rectangle(cr.X + (cr.Width / 2) - 150, cr.Y + cr.Height - 100, 300, 80)

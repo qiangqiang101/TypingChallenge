@@ -37,7 +37,7 @@ Partial Class frmGame
         Me.MainMenu.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu.Name = "MainMenu"
         Me.MainMenu.RGB = True
-        Me.MainMenu.Size = New System.Drawing.Size(1344, 729)
+        Me.MainMenu.Size = New System.Drawing.Size(1424, 861)
         Me.MainMenu.TabIndex = 0
         Me.MainMenu.Text = "MainMenu1"
         '
@@ -46,12 +46,12 @@ Partial Class frmGame
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1344, 729)
+        Me.ClientSize = New System.Drawing.Size(1424, 861)
         Me.Controls.Add(Me.MainMenu)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimumSize = New System.Drawing.Size(1360, 768)
+        Me.MinimumSize = New System.Drawing.Size(1440, 900)
         Me.Name = "frmGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Typing Challenge"

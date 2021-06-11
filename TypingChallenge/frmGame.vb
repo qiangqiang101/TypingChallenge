@@ -3,14 +3,6 @@ Imports System.IO
 
 Public Class frmGame
 
-    'Audio
-    Public player As New Media()
-    Public movie As New Media() With {.MediaName = "audiofile"}
-    Public mp3s As String() = Directory.GetFiles(bgmPath, "*.mp3")
-    Private rand As New Random
-
-    Private fileToPlay As String
-
     Private Sub frmGame_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim cmdline As String = Environment.CommandLine()
         Dim iPos = cmdline.IndexOf("""", 2)
@@ -38,12 +30,6 @@ Public Class frmGame
         If System.ComponentModel.LicenseManager.UsageMode = System.ComponentModel.LicenseUsageMode.Runtime Then
             PlayNextBGM()
         End If
-    End Sub
-
-    Private Sub PlayNextBGM()
-        fileToPlay = mp3s(rand.Next(mp3s.Length))
-        player.Play(fileToPlay, Me)
-        player.SetVolume(setting.MusicVolume)
     End Sub
 
     Protected Overrides Sub WndProc(ByRef m As Message)

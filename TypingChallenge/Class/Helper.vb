@@ -10,6 +10,7 @@ Imports TypingChallenge
 
 Module Helper
 
+    'Sound Path
     Public soundBtnClick As String = ".\audio\btn_click.wav"
     Public soundBtnCancel As String = ".\audio\btn_cancel.wav"
     Public soundBtnSelect As String = ".\audio\btn_select.wav"
@@ -19,8 +20,13 @@ Module Helper
     Public soundLevelComplete As String = ".\audio\level_complete.wav"
     Public soundLevelFailed As String = ".\audio\level_failed.wav"
     Public bgmPath As String = ".\audio\bgm\"
-    Public kbSound As String = ".\audio\keyboard\"
 
+    'Audio
+    Public player As New Media()
+    Public mp3s As String() = Directory.GetFiles(bgmPath, "*.mp3")
+    Public rand As New Random
+
+    'Database
     Public lvlXmlPath As String = ".\data\level.xml"
     Public setXmlPath As String = ".\data\setting.xml"
     Public prfXmlPath As String = ".\data\profile.xml"
@@ -311,9 +317,15 @@ Module Helper
     Public Sub StartGame(ctrl As Control, level As Level, font As Font)
         If level.Level <> 0 Then
             soundBtnSelect.PlayWav
-
-            Dim newGame As New MyGame(level.Phrase) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .Life = level.Life, .TimeLimit = level.TimeLimit, .LevelSel = ctrl, .Dock = DockStyle.Fill,
-            .Font = New Font(font.FontFamily, font.Size * 2, FontStyle.Bold, font.Unit)}
+            Dim newGame As MyGame
+            Select Case setting.Difficulty
+                Case 0
+                    newGame = New MyGame(level.Phrase, level.Life, level.TimeLimit, 0) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
+                Case 1
+                    newGame = New MyGame(level.Phrase, level.Life - 2, (level.TimeLimit / 3) * 2, 1) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
+                Case Else
+                    newGame = New MyGame(level.Phrase, 1, level.TimeLimit / 2, 2) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
+            End Select
             frmGame.Controls.Add(newGame)
             newGame.Refresh()
             ctrl.Hide()
@@ -411,6 +423,15 @@ Module Helper
                     player.Play()
                 End Using
             End Using
+        End If
+    End Sub
+
+    <Extension>
+    Public Sub PlayNextBGM(callback As Form)
+        If setting.MusicEnabled Then
+            Dim fileToPlay = mp3s(rand.Next(mp3s.Length))
+            player.Play(fileToPlay, callback)
+            player.SetVolume(setting.MusicVolume)
         End If
     End Sub
 

@@ -13,6 +13,7 @@ Public Class MyGame
     Public Property Life() As Integer = 5
     Public Property TimeLimit() As Integer = 300
     Public Property LevelSel() As Control
+    Public Property Difficulty() As Integer
 
     'Texts
     Private GrayText As String
@@ -39,7 +40,7 @@ Public Class MyGame
     Private _mouseButtonBack, _mouseButtonNext As Rectangle
     Private _mouseButtonBackHovered As Boolean = False, _mouseButtonNextHovered As Boolean = False
 
-    Public Sub New(ph As String)
+    Public Sub New(ph As String, _life As Integer, _time As Integer, _diff As Integer)
         DoubleBuffered = True
         Phrase = ph.Replace(vbCr, "").Replace(vbLf, "").Replace("—", "").Replace("\n\n", " ").Replace("  ", " ")
 
@@ -51,7 +52,10 @@ Public Class MyGame
         GrayText = ""
         GoldText = Phrase.First
         WhiteText = Phrase.Remove(0, 1)
-        LifeLeft = Life
+
+        LifeLeft = _life
+        TimeLimit = _time
+        Difficulty = _diff
     End Sub
 
     Private Function HeartsLeft(h As Integer) As String
@@ -289,12 +293,12 @@ Public Class MyGame
                     End Try
                     CorrectCount += 1
                     CorrectStreak += 1
-                    Score += 1
+                    Score += 1 * (Difficulty + 1)
                     If CorrectStreak >= 50 Then
                         soundLife.PlayWav
                         LifeLeft += 1
                         CorrectStreak = 0
-                        Score += 100
+                        Score += 100 * (Difficulty + 1)
                     End If
                     Invalidate()
                 Else
@@ -302,7 +306,7 @@ Public Class MyGame
                     LifeLeft -= 1
                     WrongCount += 1
                     CorrectStreak = 0
-                    Score -= 1
+                    Score -= 1 * (Difficulty + 1)
                     Invalidate()
                 End If
             End If
@@ -327,7 +331,17 @@ Public Class MyGame
 
                 Try
                     Dim nextlevel As Level = levels.LevelList.Find(Function(x) x.Level = Level + 1)
-                    Dim newGame As New MyGame(nextlevel.Phrase) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .Life = nextlevel.Life, .TimeLimit = nextlevel.TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                    Dim newGame As MyGame
+
+                    Select Case setting.Difficulty
+                        Case 0
+                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life, nextlevel.TimeLimit, 0) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = New Font(Font.Name, Font.Size * 2, FontStyle.Bold, Font.Unit)}
+                        Case 1
+                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life - 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = New Font(Font.Name, Font.Size * 2, FontStyle.Bold, Font.Unit)}
+                        Case Else
+                            newGame = New MyGame(nextlevel.Phrase, 1, nextlevel.TimeLimit / 2, 2) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = New Font(Font.Name, Font.Size * 2, FontStyle.Bold, Font.Unit)}
+                    End Select
+
                     Parent.Controls.Add(newGame)
                     newGame.Refresh()
                     Parent.Controls.Remove(Me)
@@ -339,7 +353,7 @@ Public Class MyGame
                     Parent.Controls.Remove(Me)
                 End Try
             Else
-                Dim newGame As New MyGame(Phrase) With {.Title = Title, .Author = Author, .Level = Level, .Life = Life, .TimeLimit = TimeLimit, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                Dim newGame As New MyGame(Phrase, Life, TimeLimit, Difficulty) With {.Title = Title, .Author = Author, .Level = Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                 Parent.Controls.Add(newGame)
                 newGame.Refresh()
                 Parent.Controls.Remove(Me)
@@ -348,7 +362,16 @@ Public Class MyGame
     End Sub
 
     Private Sub SaveUserProgress()
-        profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
+        Dim existLevels = profile.ClearedLevel.Where(Function(x) x.Level = Level).Count
+        If existLevels = 0 Then
+            profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
+        Else
+            Dim existLevel = profile.ClearedLevel.Find(Function(x) x.Level = Level)
+            If Score > existLevel.Score Then
+                profile.ClearedLevel.Remove(existLevel)
+                profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
+            End If
+        End If
 
         Dim newProfile As New ProfileData(prfXmlPath)
         With newProfile

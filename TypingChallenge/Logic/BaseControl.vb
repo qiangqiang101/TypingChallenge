@@ -93,7 +93,7 @@ Public Class BaseControl
                 Array.Resize(Circles, 0)
         End Select
 
-        frmGame.player.SetVolume(setting.MusicVolume)
+        player.SetVolume(setting.MusicVolume)
 
         Invalidate()
     End Sub

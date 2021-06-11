@@ -13,6 +13,7 @@ Public Structure SettingData
     Public Property FileName() As String
 
     Public MusicVolume As Integer
+    Public MusicEnabled As Boolean
     Public SoundVolume As Integer
     Public Quality As Integer
     Public KeyboardColorA As Integer
@@ -22,6 +23,7 @@ Public Structure SettingData
     Public KeyboardRGB As Boolean
     Public FullScreen As Boolean
     Public ShowFPS As Boolean
+    Public Difficulty As Integer
     Public Version As Integer
 
     Public Sub New(_filename As String)
@@ -37,7 +39,8 @@ Public Structure SettingData
 
     Public Function ReadFromFile() As SettingData
         If Not File.Exists(FileName) Then
-            Return New SettingData(FileName) With {.MusicVolume = 80, .SoundVolume = 80, .Quality = 2, .FullScreen = True, .ShowFPS = True, .KeyboardColorA = 255, .KeyboardColorR = 255, .KeyboardColorG = 255, .KeyboardColorB = 255, .KeyboardRGB = True, .Version = 0}
+            Return New SettingData(FileName) With {.MusicVolume = 80, .MusicEnabled = True, .SoundVolume = 80, .Quality = 2, .FullScreen = True, .ShowFPS = True,
+                .KeyboardColorA = 255, .KeyboardColorR = 255, .KeyboardColorG = 255, .KeyboardColorB = 255, .KeyboardRGB = True, .Difficulty = 0, .Version = 0}
         End If
 
         Try
@@ -47,7 +50,8 @@ Public Structure SettingData
             reader.Close()
             Return instance
         Catch ex As Exception
-            Return New SettingData(FileName) With {.MusicVolume = 80, .SoundVolume = 80, .Quality = 2, .FullScreen = True, .ShowFPS = True, .KeyboardColorA = 255, .KeyboardColorR = 255, .KeyboardColorG = 255, .KeyboardColorB = 255, .KeyboardRGB = True, .Version = 0}
+            Return New SettingData(FileName) With {.MusicVolume = 80, .MusicEnabled = True, .SoundVolume = 80, .Quality = 2, .FullScreen = True, .ShowFPS = True,
+                .KeyboardColorA = 255, .KeyboardColorR = 255, .KeyboardColorG = 255, .KeyboardColorB = 255, .KeyboardRGB = True, .Difficulty = 0, .Version = 0}
         End Try
     End Function
 

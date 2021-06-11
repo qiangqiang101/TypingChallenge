@@ -93,7 +93,8 @@ Public Class LevelSelection
 
         Dim cr = ClientRectangle.GetSafeZone
         Dim rWidth As Single = cr.GetColumnSizef(3).Width
-        Dim rHeight As Single = cr.GetRowSizef(5).Height
+        Dim rHeight As Single = cr.GetRowSizef(6).Height
+        Dim itemHeight As Single = (rHeight * 4) / 3
 
         Dim optHeight = TextRenderer.MeasureText("LEVEL SELECTION", Font).Height
         Dim optTitle As New Rectangle(cr.X, cr.Y + rHeight - optHeight, cr.Width, optHeight)
@@ -104,23 +105,23 @@ Public Class LevelSelection
 
         Dim lvlTitle As New Rectangle(cr.X, cr.Y, cr.Width, rHeight)
 
-        Using small As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
+        Using small As New Font(Font.Name, Font.Size / 2, FontStyle.Regular)
             g.DrawGDIText($"Page {A1.Level.GetPagesFromNum} of {levels.LevelList.Count.GetPagesFromNum}", small, lvlTitle, Color.White, TextFormatFlags.Right Or TextFormatFlags.Bottom)
 
             'Row1
-            If Not A1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), A1)
-            If Not B1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB1, lvlB1H, New PointF(cr.X + 5 + rWidth, cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), B1)
-            If Not C1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC1, lvlC1H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + rHeight), New SizeF(rWidth - 10, rHeight - 10), C1)
+            If Not A1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA1, lvlA1H, New PointF(cr.X + 5, cr.Y + rHeight + 5), New SizeF(rWidth - 10, itemHeight - 10), A1)
+            If Not B1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB1, lvlB1H, New PointF(cr.X + 5 + rWidth, cr.Y + rHeight + 5), New SizeF(rWidth - 10, itemHeight - 10), B1)
+            If Not C1.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC1, lvlC1H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + rHeight + 5), New SizeF(rWidth - 10, itemHeight - 10), C1)
 
             'Row2
-            If Not A2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA2, lvlA2H, New PointF(cr.X + 5, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), A2)
-            If Not B2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB2, lvlB2H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), B2)
-            If Not C2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC2, lvlC2H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 2)), New SizeF(rWidth - 10, rHeight - 10), C2)
+            If Not A2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA2, lvlA2H, New PointF(cr.X + 5, lvlA1.Y + lvlA1.Height + 10), New SizeF(rWidth - 10, itemHeight - 10), A2)
+            If Not B2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB2, lvlB2H, New PointF(cr.X + 5 + rWidth, lvlB1.Y + lvlB1.Height + 10), New SizeF(rWidth - 10, itemHeight - 10), B2)
+            If Not C2.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC2, lvlC2H, New PointF(cr.X + 5 + (rWidth * 2), lvlC1.Y + lvlC1.Height + 10), New SizeF(rWidth - 10, itemHeight - 10), C2)
 
             'Row3
-            If Not A3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA3, lvlA3H, New PointF(cr.X + 5, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), A3)
-            If Not B3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB3, lvlB3H, New PointF(cr.X + 5 + rWidth, cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), B3)
-            If Not C3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), cr.Y + (rHeight * 3)), New SizeF(rWidth - 10, rHeight - 10), C3)
+            If Not A3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlA3, lvlA3H, New PointF(cr.X + 5, lvlA2.Y + lvlA2.Height + 10), New SizeF(rWidth - 10, itemHeight - 10), A3)
+            If Not B3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlB3, lvlB3H, New PointF(cr.X + 5 + rWidth, lvlB2.Y + lvlB2.Height + 10), New SizeF(rWidth - 10, itemHeight - 10), B3)
+            If Not C3.Title = Nothing Then g.DrawLevelSelectionControl(small, lvlC3, lvlC3H, New PointF(cr.X + 5 + (rWidth * 2), lvlC2.Y + lvlC2.Height + 10), New SizeF(rWidth - 10, itemHeight - 10), C3)
         End Using
 
         btnNext = New Rectangle(cr.X + cr.Width - 200, cr.Y + cr.Height - rHeight, 200, 80)

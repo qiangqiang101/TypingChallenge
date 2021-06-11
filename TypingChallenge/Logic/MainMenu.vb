@@ -36,7 +36,11 @@ Public Class MainMenu
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
         Dim cr = ClientRectangle
 
-        Dim hero As New Rectangle(10, 10, cr.Width - 20, (cr.Height / 2) - 120)
+        Dim safe = ClientRectangle.GetSafeZone
+        Dim rWidth As Single = safe.GetColumnSizef(2).Width
+        Dim rHeight As Single = safe.GetRowSizef(3).Height
+
+        Dim hero As New Rectangle(cr.X, safe.Y, cr.Width, rHeight)
         Dim botLeft As New Rectangle(0, cr.Height - 20, cr.Width / 2, 20)
         Dim botRight As New Rectangle(cr.Width / 2, cr.Height - 20, cr.Width / 2, 20)
         Using heroFont As New Font("Verdana", 80.0F, FontStyle.Bold)
@@ -50,7 +54,7 @@ Public Class MainMenu
 
         Dim plyNameRect As New Rectangle(0, cr.Height - 150, cr.Width / 2, 80)
 
-        btnPlay = New Rectangle((cr.Width / 2) - 150, hero.Y + hero.Height + 100, 300, 80)
+        btnPlay = New Rectangle((cr.Width / 2) - 150, safe.Y + rHeight, 300, 80)
         btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 300, 80)
         btnProfile = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
         btnCredits = New Rectangle((cr.Width / 2) - 150, btnProfile.Y + btnProfile.Height, 300, 80)
@@ -90,7 +94,7 @@ Public Class MainMenu
         If btnSettingH Then
             soundBtnClick.PlayWav
             Dim opt As New GameOption() With {.Dock = DockStyle.Fill, .Font = Font, .MusicVolume = setting.MusicVolume, .SoundVolume = setting.SoundVolume, .GraphicsQuality = setting.Quality, .FullScreen = setting.FullScreen, .ShowFPS = setting.ShowFPS,
-                .KbColor = Color.FromArgb(setting.KeyboardColorA, setting.KeyboardColorR, setting.KeyboardColorG, setting.KeyboardColorB), .RGBKeyboard = setting.KeyboardRGB}
+                .KbColor = Color.FromArgb(setting.KeyboardColorA, setting.KeyboardColorR, setting.KeyboardColorG, setting.KeyboardColorB), .RGBKeyboard = setting.KeyboardRGB, .MusicEnabled = setting.MusicEnabled, .Difficulty = setting.Difficulty}
             Parent.Controls.Add(opt)
             opt.Refresh()
             Me.Hide()

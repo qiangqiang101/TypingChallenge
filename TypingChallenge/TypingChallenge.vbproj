@@ -135,12 +135,6 @@
     </Compile>
     <Compile Include="Class\Helper.vb" />
     <Compile Include="Database\LevelData.vb" />
-    <Compile Include="frmTest.Designer.vb">
-      <DependentUpon>frmTest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmTest.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Logic\Credits.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -184,9 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLevelEdit.resx">
       <DependentUpon>frmLevelEdit.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTest.resx">
-      <DependentUpon>frmTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
