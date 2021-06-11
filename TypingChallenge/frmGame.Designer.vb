@@ -23,6 +23,7 @@ Partial Class frmGame
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGame))
         Me.MainMenu = New TypingChallenge.MainMenu()
         Me.SuspendLayout()
         '
@@ -49,6 +50,7 @@ Partial Class frmGame
         Me.Controls.Add(Me.MainMenu)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1360, 768)
         Me.Name = "frmGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
