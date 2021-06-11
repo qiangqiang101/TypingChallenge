@@ -28,6 +28,7 @@ Partial Class frmGame
         '
         'MainMenu
         '
+        Me.MainMenu.BackColor = System.Drawing.Color.Black
         Me.MainMenu.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainMenu.Effect = TypingChallenge.eEffect.Both
         Me.MainMenu.Font = New System.Drawing.Font("Segoe UI", 40.0!)
@@ -48,7 +49,7 @@ Partial Class frmGame
         Me.Controls.Add(Me.MainMenu)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MinimumSize = New System.Drawing.Size(1024, 768)
+        Me.MinimumSize = New System.Drawing.Size(1360, 768)
         Me.Name = "frmGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Typing Challenge"

@@ -19,6 +19,7 @@ Module Helper
     Public soundLevelComplete As String = ".\audio\level_complete.wav"
     Public soundLevelFailed As String = ".\audio\level_failed.wav"
     Public bgmPath As String = ".\audio\bgm\"
+    Public kbSound As String = ".\audio\keyboard\"
 
     Public lvlXmlPath As String = ".\data\level.xml"
     Public setXmlPath As String = ".\data\setting.xml"

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SettingData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MusicVolume>80</MusicVolume>
-  <SoundVolume>80</SoundVolume>
-  <Quality>0</Quality>
+  <SoundVolume>100</SoundVolume>
+  <Quality>1</Quality>
   <KeyboardColorA>255</KeyboardColorA>
   <KeyboardColorR>255</KeyboardColorR>
   <KeyboardColorG>0</KeyboardColorG>
   <KeyboardColorB>255</KeyboardColorB>
   <KeyboardRGB>true</KeyboardRGB>
-  <FullScreen>false</FullScreen>
+  <FullScreen>true</FullScreen>
   <ShowFPS>true</ShowFPS>
   <Version>0</Version>
 </SettingData>

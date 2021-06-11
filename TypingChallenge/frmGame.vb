@@ -5,6 +5,7 @@ Public Class frmGame
 
     'Audio
     Public player As New Media()
+    Public movie As New Media() With {.MediaName = "audiofile"}
     Public mp3s As String() = Directory.GetFiles(bgmPath, "*.mp3")
     Private rand As New Random
 
@@ -29,7 +30,7 @@ Public Class frmGame
         End If
 
         If Not File.Exists(prfXmlPath) Then
-            Dim newProfile As New NewProfile() With {.Dock = DockStyle.Fill, .Font = New Font(MainMenu.Font.FontFamily, MainMenu.Font.Size / 2, FontStyle.Regular, MainMenu.Font.Unit)}
+            Dim newProfile As New NewProfile() With {.Dock = DockStyle.Fill, .Font = MainMenu.Font}
             Controls.Add(newProfile)
             MainMenu.Hide()
         End If
