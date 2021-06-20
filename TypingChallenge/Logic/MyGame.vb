@@ -10,8 +10,8 @@ Public Class MyGame
     Public Property Author() As String
     Public Property Level() As Integer = 1
     Public Property Phrase() As String
-    Public Property Life() As Integer = 5
-    Public Property TimeLimit() As Integer = 300
+    Public Property LifeLeft() As Integer
+    Public Property TimeLimit() As Integer
     Public Property LevelSel() As Control
     Public Property Difficulty() As Integer
 
@@ -22,7 +22,6 @@ Public Class MyGame
     Private _PhraseBackup As String
 
     'Data
-    Private LifeLeft As Integer
     Private SecondsLeft As Integer
     Private GameStatus As eGameStatus = eGameStatus.Ready
     Private CorrectCount As Integer = 0
@@ -234,7 +233,7 @@ Public Class MyGame
             Dim progressRect As New RectangleF((cr.Width / 2) + 10, cr.Height - 120, (cr.Width / 2) - 10, 100)
 
             Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
-                g.DrawGDIText($"⏲ {SecondsLeft.SecondsToTime}", timeFont, timeElapseRect.ToRectangle, If(SecondsLeft <= 10, Color.Red, Color.White), TextFormatFlags.Left)
+                g.DrawGDIText($"⏲ {SecondsLeft.SecondsToTime}", timeFont, timeElapseRect.ToRectangle, If(SecondsLeft >= -10, Color.Red, Color.White), TextFormatFlags.Left)
                 g.DrawGDIText($"⚔ {Progression()}%", timeFont, progressRect.ToRectangle, Color.White, TextFormatFlags.Right)
                 Dim scoreWidth As Single = g.MeasureString($"★ {Score}", timeFont).Width * 1.5
                 Dim scoreRect As New RectangleF((cr.Width / 2) - (scoreWidth / 2), cr.Height - 120, scoreWidth, 100)
@@ -353,7 +352,7 @@ Public Class MyGame
                     Parent.Controls.Remove(Me)
                 End Try
             Else
-                Dim newGame As New MyGame(Phrase, Life, TimeLimit, Difficulty) With {.Title = Title, .Author = Author, .Level = Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                Dim newGame As New MyGame(Phrase, LifeLeft, TimeLimit, Difficulty) With {.Title = Title, .Author = Author, .Level = Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                 Parent.Controls.Add(newGame)
                 newGame.Refresh()
                 Parent.Controls.Remove(Me)
@@ -396,14 +395,14 @@ Public Class MyGame
             GameStatus = eGameStatus.GameOver
             timerEnded = Now
             elapsedTimer.Stop()
-        ElseIf SecondsLeft <= -1 Then
+        ElseIf SecondsLeft >= 1 Then
             soundLevelFailed.PlayWav
             GameStatus = eGameStatus.GameOver
             timerEnded = Now
             elapsedTimer.Stop()
         Else
             SecondsLeft = CInt(Now.Subtract(timerStart).TotalSeconds)
-            SecondsLeft = CInt(SecondsLeft.ToString.Replace("-", ""))
+            'SecondsLeft = CInt(SecondsLeft.ToString.Replace("-", ""))
         End If
     End Sub
 

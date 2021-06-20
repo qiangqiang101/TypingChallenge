@@ -4,15 +4,6 @@ Imports System.IO
 Public Class frmGame
 
     Private Sub frmGame_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim cmdline As String = Environment.CommandLine()
-        Dim iPos = cmdline.IndexOf("""", 2)
-        Dim sCmdLineArgs = cmdline.Substring(iPos + 1).Trim()
-
-        If sCmdLineArgs = "-dev" Then
-            frmLevelEdit.Show()
-            Me.Hide()
-        End If
-
         levels = New LevelData(lvlXmlPath).Instance
         setting = New SettingData(setXmlPath).Instance
         profile = New ProfileData(prfXmlPath).Instance
@@ -20,6 +11,11 @@ Public Class frmGame
         If setting.FullScreen Then
             gameFormState.Maximize(Me)
         End If
+
+        Dim intro As New Intro(MainMenu) With {.Dock = DockStyle.Fill, .Image = My.Resources.zintro, .SizeMode = PictureBoxSizeMode.Zoom}
+        Controls.Add(intro)
+        MainMenu.Hide()
+        intro.Refresh()
 
         If Not File.Exists(prfXmlPath) Then
             Dim newProfile As New NewProfile() With {.Dock = DockStyle.Fill, .Font = MainMenu.Font}

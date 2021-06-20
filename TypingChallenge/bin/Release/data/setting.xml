@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SettingData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <MusicVolume>80</MusicVolume>
+  <MusicVolume>50</MusicVolume>
+  <MusicEnabled>true</MusicEnabled>
   <SoundVolume>100</SoundVolume>
   <Quality>1</Quality>
   <KeyboardColorA>255</KeyboardColorA>
@@ -10,5 +11,6 @@
   <KeyboardRGB>true</KeyboardRGB>
   <FullScreen>true</FullScreen>
   <ShowFPS>true</ShowFPS>
+  <Difficulty>0</Difficulty>
   <Version>0</Version>
 </SettingData>

@@ -74,6 +74,7 @@ Module Helper
 
     <Extension>
     Public Function SecondsToTime(sec As Integer) As String
+        sec = CInt(sec.ToString.Replace("-", ""))
         Dim ts As TimeSpan = TimeSpan.FromSeconds(sec)
 
         Dim mydate As Date = New Date(ts.Ticks)
