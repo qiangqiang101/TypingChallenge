@@ -2,12 +2,22 @@
 <ProfileData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>I'm Not MentaL</Name>
   <DateCreated>0001-01-01T00:00:00</DateCreated>
-  <Credits>66</Credits>
+  <Credits>157</Credits>
   <ClearedLevel>
     <UserLevel>
       <Title>Woodchuck Cousin</Title>
       <Level>1</Level>
       <Score>1365</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Television Part 1</Title>
+      <Level>70</Level>
+      <Score>9009</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Television Part 2</Title>
+      <Level>71</Level>
+      <Score>72</Score>
     </UserLevel>
   </ClearedLevel>
 </ProfileData>

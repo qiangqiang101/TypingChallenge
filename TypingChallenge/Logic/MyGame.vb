@@ -1,6 +1,4 @@
 ﻿Imports System.Drawing.Drawing2D
-Imports System.Runtime.InteropServices
-Imports System.Text.RegularExpressions
 
 Public Class MyGame
     Inherits BaseControl
@@ -202,14 +200,17 @@ Public Class MyGame
                 g.DrawGDIText("Next Level", resFont, _mouseButtonNext, If(_mouseButtonNextHovered, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
             End Using
         ElseIf GameStatus = eGameStatus.Ready Then
-            Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
-            g.DrawGDIText("Press Enter to Start", Font, textRect.ToRectangle, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+            Dim textRect As New RectangleF(cr.Width / 2, cr.Height / 2, cr.Width, 210)
+            Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
+                g.DrawInstructionalButton(textRect.ToRectangle, "Press ~Enter~ to Start.", timeFont, Color.AliceBlue)
+            End Using
         ElseIf GameStatus = eGameStatus.Paused Then
             Dim textRect As New RectangleF(0, (cr.Height / 2) - 120, cr.Width, 210)
+            Dim textRect2 As New RectangleF(cr.Width / 2, cr.Height / 2, cr.Width, 210)
             g.DrawGDIText($"PAUSED", Font, textRect.ToRectangle, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
             Dim subRect As New Rectangle(textRect.X, textRect.Y + textRect.Height, textRect.Width, textRect.Height)
             Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
-                g.DrawGDIText("Press ESC to resume or Press Enter to Quit.", timeFont, subRect, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+                g.DrawInstructionalButton(textRect2.ToRectangle, "Press ~ESC~ to resume or Press ~Enter~ to Quit.", timeFont, Color.AliceBlue)
             End Using
         Else
             Dim lifeRect As New RectangleF(10, 10, (cr.Width / 2) - 10, 100)

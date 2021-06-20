@@ -21,6 +21,7 @@
         If countdown <= 0 Then
             bgTimer.Stop()
             MainMenu.Show()
+            MainMenu.Focus()
             Parent.Controls.Remove(Me)
         End If
     End Sub

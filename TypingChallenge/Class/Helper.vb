@@ -436,4 +436,27 @@ Module Helper
         End If
     End Sub
 
+    <Extension>
+    Public Sub DrawInstructionalButton(gp As Graphics, bounds As Rectangle, text As String, font As Font, color As Color, Optional center As Boolean = True)
+        Dim flags = TextFormatFlags.Left
+        Dim tm = TextRenderer.MeasureText(text, font)
+        Dim x As Integer = bounds.Left - If(center, (tm.Width / 2), 0)
+        Dim words = text.Split("~")
+
+        For i As Integer = 0 To words.Count - 1
+            Dim pt As New Point(x, bounds.Top)
+            Dim sz = TextRenderer.MeasureText(words(i), font)
+            If (i Mod 2 = 0) Then
+                TextRenderer.DrawText(gp, words(i), font, pt, color, flags)
+            Else
+                TextRenderer.DrawText(gp, words(i), font, pt, color, flags)
+                Using penn As New Pen(color, 3.0F)
+                    Dim rectt As New Rectangle(pt, sz)
+                    gp.DrawRoundedRectangle(rectt, 10, penn)
+                End Using
+            End If
+            x += sz.Width
+        Next
+    End Sub
+
 End Module

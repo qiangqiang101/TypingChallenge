@@ -5,8 +5,8 @@ Public Class MainMenu
 
     'Tracking Mouse
     Private _mousePos As Point = Point.Empty
-    Private btnPlay, btnSetting, btnProfile, btnCredits, btnExit As Rectangle
-    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnCreditsH As Boolean = False, btnExitH As Boolean = False, btnProfileH As Boolean = False
+    Private btnPlay, btnSetting, btnProfile, btnCredits, btnExit, btnMore As Rectangle
+    Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnCreditsH As Boolean = False, btnExitH As Boolean = False, btnProfileH As Boolean = False, btnMoreH As Boolean = False
 
     Protected Overrides Sub OnMouseLeave(e As EventArgs)
         MyBase.OnMouseLeave(e)
@@ -16,6 +16,7 @@ Public Class MainMenu
         btnCreditsH = False
         btnExitH = False
         btnProfileH = False
+        btnMoreH = False
     End Sub
 
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
@@ -27,6 +28,7 @@ Public Class MainMenu
         btnCreditsH = btnCredits.Contains(_mousePos)
         btnExitH = btnExit.Contains(_mousePos)
         btnProfileH = btnProfile.Contains(_mousePos)
+        btnMoreH = btnMore.Contains(_mousePos)
     End Sub
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
@@ -54,11 +56,12 @@ Public Class MainMenu
 
         Dim plyNameRect As New Rectangle(0, cr.Height - 150, cr.Width / 2, 80)
 
-        btnPlay = New Rectangle((cr.Width / 2) - 150, safe.Y + rHeight, 300, 80)
-        btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 300, 80)
-        btnProfile = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 300, 80)
-        btnCredits = New Rectangle((cr.Width / 2) - 150, btnProfile.Y + btnProfile.Height, 300, 80)
-        btnExit = New Rectangle((cr.Width / 2) - 150, btnCredits.Y + btnCredits.Height, 300, 80)
+        btnPlay = New Rectangle((cr.Width / 2) - 150, safe.Y + rHeight, 400, 80)
+        btnSetting = New Rectangle((cr.Width / 2) - 150, btnPlay.Y + btnPlay.Height, 400, 80)
+        btnProfile = New Rectangle((cr.Width / 2) - 150, btnSetting.Y + btnSetting.Height, 400, 80)
+        btnCredits = New Rectangle((cr.Width / 2) - 150, btnProfile.Y + btnProfile.Height, 400, 80)
+        btnMore = New Rectangle((cr.Width / 2) - 150, btnCredits.Y + btnCredits.Height, 400, 80)
+        btnExit = New Rectangle((cr.Width / 2) - 150, btnMore.Y + btnMore.Height, 400, 80)
 
         Using lbrush As New LinearGradientBrush(plyNameRect, Color.Goldenrod, Color.Transparent, LinearGradientMode.Horizontal)
             g.FillRectangle(lbrush, plyNameRect)
@@ -70,6 +73,7 @@ Public Class MainMenu
             If btnSettingH Then g.FillRectangle(lbrush, btnSetting)
             If btnProfileH Then g.FillRectangle(lbrush, btnProfile)
             If btnCreditsH Then g.FillRectangle(lbrush, btnCredits)
+            If btnMoreH Then g.FillRectangle(lbrush, btnMore)
             If btnExitH Then g.FillRectangle(lbrush, btnExit)
         End Using
 
@@ -77,6 +81,7 @@ Public Class MainMenu
         g.DrawGDIText("Options", Font, btnSetting, Color.White, TextFormatFlags.HorizontalCenter)
         g.DrawGDIText("Profile", Font, btnProfile, Color.White, TextFormatFlags.HorizontalCenter)
         g.DrawGDIText("Credits", Font, btnCredits, Color.White, TextFormatFlags.HorizontalCenter)
+        g.DrawGDIText("More Games", Font, btnMore, Color.White, TextFormatFlags.HorizontalCenter)
         g.DrawGDIText("Quit", Font, btnExit, Color.White, TextFormatFlags.HorizontalCenter)
     End Sub
 
@@ -114,6 +119,10 @@ Public Class MainMenu
             credits.Refresh()
             credits.Start()
             Me.Hide()
+        End If
+        If btnMoreH Then
+            soundBtnClick.PlayWav
+            Process.Start("https://www.imnotmental.com/category/game/")
         End If
         If btnExitH Then
             soundBtnCancel.PlayWav
