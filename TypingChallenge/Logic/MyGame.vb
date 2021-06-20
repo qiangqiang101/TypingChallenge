@@ -334,11 +334,11 @@ Public Class MyGame
 
                     Select Case setting.Difficulty
                         Case 0
-                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life, nextlevel.TimeLimit, 0) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = New Font(Font.Name, Font.Size * 2, FontStyle.Bold, Font.Unit)}
+                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life, nextlevel.TimeLimit, 0) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                         Case 1
-                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life - 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = New Font(Font.Name, Font.Size * 2, FontStyle.Bold, Font.Unit)}
+                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life - 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                         Case Else
-                            newGame = New MyGame(nextlevel.Phrase, 1, nextlevel.TimeLimit / 2, 2) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = New Font(Font.Name, Font.Size * 2, FontStyle.Bold, Font.Unit)}
+                            newGame = New MyGame(nextlevel.Phrase, 1, nextlevel.TimeLimit / 2, 2) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                     End Select
 
                     Parent.Controls.Add(newGame)
@@ -352,7 +352,18 @@ Public Class MyGame
                     Parent.Controls.Remove(Me)
                 End Try
             Else
-                Dim newGame As New MyGame(Phrase, LifeLeft, TimeLimit, Difficulty) With {.Title = Title, .Author = Author, .Level = Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                Dim nextlevel As Level = levels.LevelList.Find(Function(x) x.Level = Level)
+                Dim newGame As MyGame
+
+                Select Case setting.Difficulty
+                    Case 0
+                        newGame = New MyGame(nextlevel.Phrase, nextlevel.Life, nextlevel.TimeLimit, 0) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                    Case 1
+                        newGame = New MyGame(nextlevel.Phrase, nextlevel.Life - 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                    Case Else
+                        newGame = New MyGame(nextlevel.Phrase, 1, nextlevel.TimeLimit / 2, 2) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                End Select
+
                 Parent.Controls.Add(newGame)
                 newGame.Refresh()
                 Parent.Controls.Remove(Me)

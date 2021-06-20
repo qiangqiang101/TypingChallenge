@@ -6,7 +6,7 @@
       <Author />
       <Level>1</Level>
       <Phrase>How much ground would a groundhog hog, if a groundhog could hog ground? A groundhog would hog all the ground he could hog, if a groundhog could hog ground.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -15,7 +15,7 @@
       <Author />
       <Level>2</Level>
       <Phrase>She sells seashells on the seashore.\n\nThe shells she sells are seashells, I'm sure.\n\nAnd if she sells seashells on the seashore,\n\nThen I'm sure she sells seashore shells.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -24,7 +24,7 @@
       <Author>Langston Hughes</Author>
       <Level>3</Level>
       <Phrase>Hold fast to dreams\n\n\n\nFor if dreams die\n\n\n\nLife is a broken-winged bird\n\n\n\nThat cannot fly.\n\n\n\nHold fast to dreams\n\n\n\nFor when dreams go\n\n\n\nLife is a barren field\n\n\n\nFrozen with snow.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -33,7 +33,7 @@
       <Author />
       <Level>4</Level>
       <Phrase>Peter Piper picked a peck of pickled peppers\n\nA peck of pickled peppers Peter Piper picked\n\nIf Peter Piper picked a peck of pickled peppers\n\nWhere's the peck of pickled peppers Peter Piper picked?</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -42,7 +42,7 @@
       <Author />
       <Level>5</Level>
       <Phrase>When a doctor doctors a doctor, does the doctor doing the doctoring doctor as the doctor being doctored wants to be doctored or does the doctor doing the doctoring doctor as he wants to doctor?</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -51,7 +51,7 @@
       <Author />
       <Level>6</Level>
       <Phrase>I thought a thought.\n\nBut the thought I thought\n\nWasn't the thought I thought I thought.\n\nIf the thought I thought I thought,\n\nHad been the thought I thought,\n\nI wouldn't have thought I thought.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -60,7 +60,7 @@
       <Author />
       <Level>7</Level>
       <Phrase>Through three cheese trees, three free fleas flew. While these fleas flew, freezy breeze blew. Freezy breeze made these three trees freeze. Freezy trees made these trees' cheese freeze. That's what made these three free fleas sneeze.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -69,7 +69,7 @@
       <Author />
       <Level>8</Level>
       <Phrase>Mary Mac's mother's making Mary Mac marry me. My mother's making me marry Mary Mac. Will I always be so Merry when Mary's taking care of me? Will I always be so merry when I marry Mary Mac?</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -78,7 +78,7 @@
       <Author />
       <Level>9</Level>
       <Phrase>How much wood would a woodchuck chuck if a woodchuck could chuck wood?\n\nHe would chuck, he would, as much as he could, and chuck as much wood\n\nAs a woodchuck would if a woodchuck could chuck wood</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>60</TimeLimit>
       <Page>1</Page>
     </Level>
@@ -87,7 +87,7 @@
       <Author />
       <Level>10</Level>
       <Phrase>Yellow butter, purple jelly, red jam, black bread.\n\nSpread it thick, say it quick!\n\nYellow butter, purple jelly, red jam, black bread.\n\nSpread it thicker, say it quicker!\n\nYellow butter, purple jelly, red jam, black bread.\n\nDon't eat with your mouth full!</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
     </Level>
@@ -96,7 +96,7 @@
       <Author />
       <Level>11</Level>
       <Phrase>Betty Botter bought some butter\n\nBut she said the butter's bitter\n\nIf I put it in my batter, it will make my batter bitter\n\nBut a bit of better butter will make my batter better\n\nSo 'twas better Betty Botter bought a bit of better butter</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
     </Level>
@@ -105,7 +105,7 @@
       <Author />
       <Level>12</Level>
       <Phrase>Something in a thirty-acre thermal thicket of thorns and thistles thumped and thundered threatening the 3-D thoughts of Matthew the thug – although, theatrically, it was only the thirteen-thousand thistles and thorns through the underneath of his thigh that the thirty-year-old thug thought of that morning.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
     </Level>
@@ -114,7 +114,7 @@
       <Author />
       <Level>13</Level>
       <Phrase>Something in a thirty-acre thermal thicket of thorns and thistles thumped and thundered threatening the three-D thoughts of Matthew the thug – although, theatrically, it was only the thirteen-thousand thistles and thorns through the underneath of his thigh that the thirty-year-old thug thought of that morning.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
     </Level>
@@ -123,7 +123,7 @@
       <Author>Robert Frost</Author>
       <Level>14</Level>
       <Phrase>Some say the world will end in fire,\n\n\n\nSome say in ice.\n\n\n\nFrom what I've tasted of desire\n\n\n\nI hold with those who favor fire.\n\n\n\nBut if it had to perish twice,\n\n\n\nI think I know enough of hate\n\n\n\nTo say that for destruction ice\n\n\n\nIs also great\n\n\n\nAnd would suffice.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>120</TimeLimit>
       <Page>2</Page>
     </Level>
@@ -132,41 +132,104 @@
       <Author />
       <Level>15</Level>
       <Phrase>Bobby Bippy bought a bat. Bobby Bippy bought a ball. With his bat, Bob banged the ball. Banged it bump against the wall. But so boldly Bobby banged it. That he burst his rubber ball. “Boo!” cried Bobby. Bad luck ball. Bad luck Bobby, bad luck ball. Now to drown his many troubles, Bobby Bippy's blowing bubbles.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>The Young Crab &amp; His Mother</Title>
+      <Author>Aesop</Author>
+      <Level>16</Level>
+      <Phrase>"Why in the world do you walk sideways like that?" said a Mother Crab to her son. "You should always walk straight forward with your toes turned out."\n\n\n\n"Show me how to walk, mother dear," answered the little Crab obediently, "I want to learn."\n\n\n\nSo the old Crab tried and tried to walk straight forward. But she could walk sideways only, like her son. And when she wanted to turn her toes out she tripped and fell on her nose.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>120</TimeLimit>
+      <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>The Gnat &amp; the Bull</Title>
+      <Author>Aesop</Author>
+      <Level>17</Level>
+      <Phrase>A Gnat flew over the meadow with much buzzing for so small a creature and settled on the tip of one of the horns of a Bull. After he had rested a short time, he made ready to fly away. But before he left he begged the Bull's pardon for having used his horn for a resting place.\n\n\n\n"You must be very glad to have me go now," he said.\n\n\n\n"It's all the same to me," replied the Bull. "I did not even know you were there."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
       <Page>2</Page>
     </Level>
     <Level>
       <Title>Do not stand at my grave and weep.</Title>
       <Author>Mary Elizabeth Frye</Author>
-      <Level>16</Level>
+      <Level>18</Level>
       <Phrase>Do not stand at my grave and weep\n\n\n\nI am not there. I do not sleep.\n\n\n\nI am a thousand winds that blow.\n\n\n\nI am the diamond glints on snow.\n\n\n\nI am the sunlight on ripened grain.\n\n\n\nI am the gentle autumn rain.\n\n\n\nWhen you awaken in the morning's hush\n\n\n\nI am the swift uplifting rush\n\n\n\nOf quiet birds in circled flight.\n\n\n\nI am the soft stars that shine at night.\n\n\n\nDo not stand at my grave and cry;\n\n\n\nI am not there. I did not die.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>180</TimeLimit>
       <Page>2</Page>
+    </Level>
+    <Level>
+      <Title>The Plane Tree</Title>
+      <Author>Aesop</Author>
+      <Level>19</Level>
+      <Phrase>Two Travellers, walking in the noonday sun, sought the shade of a widespreading tree to rest. As they lay looking up among the pleasant leaves, they saw that it was a Plane Tree.\n\n\n\n"How useless is the Plane!" said one of them. "It bears no fruit whatever, and only serves to litter the ground with leaves."\n\n\n\n"Ungrateful creatures!" said a voice from the Plane Tree. "You lie here in my cooling shade, and yet you say I am useless! Thus ungratefully, O Jupiter, do men receive their blessings!"</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>The Ant &amp; the Dove</Title>
+      <Author>Aesop</Author>
+      <Level>20</Level>
+      <Phrase>A Dove saw an Ant fall into a brook. The Ant struggled in vain to reach the bank, and in pity, the Dove dropped a blade of straw close beside it. Clinging to the straw like a shipwrecked sailor to a broken spar, the Ant floated safely to shore.\n\n\n\nSoon after, the Ant saw a man getting ready to kill the Dove with a stone. But just as he cast the stone, the Ant stung him in the heel, so that the pain made him miss his aim, and the startled Dove flew to safety in a distant wood.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>The Crow &amp; the Pitcher</Title>
+      <Author>Aesop</Author>
+      <Level>21</Level>
+      <Phrase>In a spell of dry weather, when the Birds could find very little to drink, a thirsty Crow found a pitcher with a little water in it. But the pitcher was high and had a narrow neck, and no matter how he tried, the Crow could not reach the water. The poor thing felt as if he must die of thirst.\n\n\n\nThen an idea came to him. Picking up some small pebbles, he dropped them into the pitcher one by one. With each pebble the water rose a little higher until at last it was near enough so he could drink.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>The Fisherman &amp; the Little Fish</Title>
+      <Author>Aesop</Author>
+      <Level>22</Level>
+      <Phrase>A poor Fisherman, who lived on the fish he caught, had bad luck one day and caught nothing but a very small fry. The Fisherman was about to put it in his basket when the little Fish said:\n\n\n\n"Please spare me, Mr. Fisherman! I am so small it is not worth while to carry me home. When I am bigger, I shall make you a much better meal."\n\n\n\nBut the Fisherman quickly put the fish into his basket.\n\n\n\n"How foolish I should be," he said, "to throw you back. However small you may be, you are better than nothing at all."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
     </Level>
     <Level>
       <Title>Invictus</Title>
       <Author>William Ernest Henley</Author>
-      <Level>17</Level>
+      <Level>23</Level>
       <Phrase>Out of the night that covers me,\n\n\n\nBlack as the Pit from pole to pole,\n\n\n\nI thank whatever gods may be\n\n\n\nFor my unconquerable soul.\n\n\n\n\n\n\n\nIn the fell clutch of circumstance\n\n\n\nI have not winced nor cried aloud.\n\n\n\nUnder the bludgeonings of chance\n\n\n\nMy head is bloody, but unbowed.\n\n\n\n\n\n\n\nBeyond this place of wrath and tears\n\n\n\nLooms but the Horror of the shade,\n\n\n\nAnd yet the menace of the years\n\n\n\nFinds, and shall find, me unafraid.\n\n\n\n\n\n\n\nIt matters not how strait the gate,\n\n\n\nHow charged with punishments the scroll.\n\n\n\nI am the master of my fate:\n\n\n\nI am the captain of my soul.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>180</TimeLimit>
-      <Page>2</Page>
+      <Page>3</Page>
+    </Level>
+    <Level>
+      <Title>The Wolf in Sheep's Clothing</Title>
+      <Author>Aesop</Author>
+      <Level>24</Level>
+      <Phrase>A certain Wolf could not get enough to eat because of the watchfulness of the Shepherds. But one night he found a sheep skin that had been cast aside and forgotten. The next day, dressed in the skin, the Wolf strolled into the pasture with the Sheep. Soon a little Lamb was following him about and was quickly led away to slaughter.\n\n\n\nThat evening the Wolf entered the fold with the flock. But it happened that the Shepherd took a fancy for mutton broth that very evening, and, picking up a knife, went to the fold. There the first he laid hands on and killed was the Wolf.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>3</Page>
     </Level>
     <Level>
       <Title>Stopping by Woods on a Snowy Evening</Title>
       <Author>Robert Frost</Author>
-      <Level>18</Level>
+      <Level>25</Level>
       <Phrase>Whose woods these are I think I know.\n\n\n\nHis house is in the village, though;\n\n\n\nHe will not see me stopping here\n\n\n\nTo watch his woods fill up with snow.\n\n\n\n\n\n\n\nMy little horse must think it queer\n\n\n\nTo stop without a farmhouse near\n\n\n\nBetween the woods and frozen lake\n\n\n\nThe darkest evening of the year.\n\n\n\n\n\n\n\nHe gives his harness bells a shake\n\n\n\nTo ask if there is some mistake.\n\n\n\nThe only other sound's the sweep\n\n\n\nOf easy wind and downy flake.\n\n\n\n\n\n\n\nThe woods are lovely, dark, and deep,\n\n\n\nBut I have promises to keep,\n\n\n\nAnd miles to go before I sleep,\n\n\n\nAnd miles to go before I sleep.</Phrase>
-      <Life>1</Life>
+      <Life>2</Life>
       <TimeLimit>180</TimeLimit>
-      <Page>2</Page>
+      <Page>3</Page>
     </Level>
     <Level>
       <Title>Solemn silence in a dull</Title>
       <Author />
-      <Level>19</Level>
+      <Level>26</Level>
       <Phrase>To sit in solemn silence in a dull, dark dock,\n\nIn a pestilential prison, with a life-long lock,\n\nAwaiting the sensation of a short, sharp shock,\n\nFrom a cheap and chippy chopper on a big black block!\n\nTo sit in solemn silence in a dull, dark dock,\n\nIn a pestilential prison, with a life-long lock,\n\nAwaiting the sensation of a short, sharp shock,\n\nFrom a cheap and chippy chopper on a big black block!\n\nA dull, dark dock, a life-long lock,\n\nA short, sharp shock, a big black block!\n\nTo sit in solemn silence in a pestilential prison,\n\nAnd awaiting the sensation\n\nFrom a cheap and chippy chopper on a big black block!</Phrase>
       <Life>2</Life>
       <TimeLimit>180</TimeLimit>
@@ -175,137 +238,398 @@
     <Level>
       <Title>As I Grew Older</Title>
       <Author>Langston Hughes</Author>
-      <Level>20</Level>
+      <Level>27</Level>
       <Phrase>It was a long time ago.\n\n\n\nI have almost forgotten my dream.\n\n\n\nBut it was there then,\n\n\n\nIn front of me,\n\n\n\nBright like a sun-\n\n\n\nMy dream.\n\n\n\nAnd then the wall rose,\n\n\n\nRose slowly,\n\n\n\nSlowly,\n\n\n\nBetween me and my dream.\n\n\n\nRose until it touched the sky-\n\n\n\nThe wall.\n\n\n\nShadow.\n\n\n\nI am black.\n\n\n\nI lie down in the shadow.\n\n\n\nNo longer the light of my dream before me,\n\n\n\nAbove me.\n\n\n\nOnly the thick wall.\n\n\n\nOnly the shadow.\n\n\n\nMy hands!\n\n\n\nMy dark hands!\n\n\n\nBreak through the wall!\n\n\n\nFind my dream!\n\n\n\nHelp me to shatter this darkness,\n\n\n\nTo smash this night,\n\n\n\nTo break this shadow\n\n\n\nInto a thousand lights of sun,\n\n\n\nInto a thousand whirling dreams\n\n\n\nOf sun!</Phrase>
       <Life>2</Life>
       <TimeLimit>180</TimeLimit>
       <Page>3</Page>
     </Level>
     <Level>
+      <Title>The Wild Boar &amp; the Fox</Title>
+      <Author>Aesop</Author>
+      <Level>28</Level>
+      <Phrase>A Wild Boar was sharpening his tusks busily against the stump of a tree, when a Fox happened by. Now the Fox was always looking for a chance to make fun of his neighbors. So he made a great show of looking anxiously about, as if in fear of some hidden enemy. But the Boar kept right on with his work.\n\n\n\n"Why are you doing that?" asked the Fox at last with a grin. "There isn't any danger that I can see."\n\n\n\n"True enough," replied the Boar, "but when danger does come there will not be time for such work as this. My weapons will have to be ready for use then, or I shall suffer for it."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>The Stag &amp; His Reflection</Title>
+      <Author>Aesop</Author>
+      <Level>29</Level>
+      <Phrase>A Stag, drinking from a crystal spring, saw himself mirrored in the clear water. He greatly admired the graceful arch of his antlers, but he was very much ashamed of his spindling legs.\n\n\n\n"How can it be," he sighed, "that I should be cursed with such legs when I have so magnificent a crown."\n\n\n\nAt that moment he scented a panther and in an instant was bounding away through the forest. But as he ran his wide-spreading antlers caught in the branches of the trees, and soon the Panther overtook him. Then the Stag perceived that the legs of which he was so ashamed would have saved him had it not been for the useless ornaments on his head.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>The Two Goats</Title>
+      <Author>Aesop</Author>
+      <Level>30</Level>
+      <Phrase>Two Goats, frisking gayly on the rocky steeps of a mountain valley, chanced to meet, one on each side of a deep chasm through which poured a mighty mountain torrent. The trunk of a fallen tree formed the only means of crossing the chasm, and on this not even two squirrels could have passed each other in safety. The narrow path would have made the bravest tremble. Not so our Goats. Their pride would not permit either to stand aside for the other.\n\n\n\nOne set her foot on the log. The other did likewise. In the middle they met horn to horn. Neither would give way, and so they both fell, to be swept away by the roaring torrent below.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>180</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
       <Title>I Do Not Love You Except Because I Love You.</Title>
       <Author>Pablo Neruda</Author>
-      <Level>21</Level>
+      <Level>31</Level>
       <Phrase>I do not love you except because I love you;\n\n\n\nI go from loving to not loving you,\n\n\n\nFrom waiting to not waiting for you\n\n\n\nMy heart moves from cold to fire.\n\n\n\n\n\n\n\nI love you only because it's you the one I love;\n\n\n\nI hate you deeply, and hating you\n\n\n\nBend to you, and the measure of my changing love for you\n\n\n\nIs that I do not see you but love you blindly.\n\n\n\n\n\n\n\nMaybe January light will consume\n\n\n\nMy heart with its cruel\n\n\n\nRay, stealing my key to true calm.\n\n\n\n\n\n\n\nIn this part of the story I am the one who\n\n\n\nDies, the only one, and I will die of love because I love you,\n\n\n\nBecause I love you, Love, in fire and blood.</Phrase>
       <Life>2</Life>
       <TimeLimit>240</TimeLimit>
-      <Page>3</Page>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>The Frogs &amp; the Ox</Title>
+      <Author>Aesop</Author>
+      <Level>32</Level>
+      <Phrase>An Ox came down to a reedy pool to drink. As he splashed heavily into the water, he crushed a young Frog into the mud.\n\n\n\nThe old Frog soon missed the little one and asked his brothers and sisters what had become of him.\n\n\n\n"A great big monster," said one of them, "stepped on little brother with one of his huge feet!"\n\n\n\n"Big, was he!" said the old Frog, puffing herself up. "Was he as big as this?"\n\n\n\n"Oh, much bigger!" they cried.\n\n\n\nThe Frog puffed up still more.\n\n\n\n"He could not have been bigger than this," she said. But the little Frogs all declared that the monster was much, much bigger and the old Frog kept puffing herself out more and more until, all at once, she burst.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>The Heron</Title>
+      <Author>Aesop</Author>
+      <Level>33</Level>
+      <Phrase>A Heron was walking sedately along the bank of a stream, his eyes on the clear water, and his long neck and pointed bill ready to snap up a likely morsel for his breakfast. The clear water swarmed with fish, but Master Heron was hard to please that morning.\n\n\n\n"No small fry for me," he said. "Such scanty fare is not fit for a Heron."\n\n\n\nNow a fine young Perch swam near.\n\n\n\n"No indeed," said the Heron. "I wouldn't even trouble to open my beak for anything like that!"\n\n\n\nAs the sun rose, the fish left the shallow water near the shore and swam below into the cool depths toward the middle. The Heron saw no more fish, and very glad was he at last to breakfast on a tiny Snail.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>The Dog &amp; His Reflection</Title>
+      <Author>Aesop</Author>
+      <Level>34</Level>
+      <Phrase>A Dog, to whom the butcher had thrown a bone, was hurrying home with his prize as fast as he could go. As he crossed a narrow footbridge, he happened to look down and saw himself reflected in the quiet water as if in a mirror. But the greedy Dog thought he saw a real Dog carrying a bone much bigger than his own.\n\n\n\nIf he had stopped to think he would have known better. But instead of thinking, he dropped his bone and sprang at the Dog in the river, only to find himself swimming for dear life to reach the shore. At last he managed to scramble out, and as he stood sadly thinking about the good bone he had lost, he realized what a stupid Dog he had been.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>4</Page>
     </Level>
     <Level>
       <Title>Do not Go Far Off</Title>
       <Author>Pablo Neruda</Author>
-      <Level>22</Level>
+      <Level>35</Level>
       <Phrase>Don't go far off, not even for a day, because --\n\n\n\nbecause -- I don't know how to say it: a day is long\n\n\n\nand I will be waiting for you, as in an empty station\n\n\n\nwhen the trains are parked off somewhere else, asleep.\n\n\n\n\n\n\n\nDon't leave me, even for an hour, because\n\n\n\nthen the little drops of anguish will all run together,\n\n\n\nthe smoke that roams looking for a home will drift\n\n\n\ninto me, choking my lost heart.\n\n\n\n\n\n\n\nOh, may your silhouette never dissolve on the beach;\n\n\n\nmay your eyelids never flutter into the empty distance.\n\n\n\nDon't leave me for a second, my dearest,\n\n\n\n\n\n\n\nbecause in that moment you'll have gone so far\n\n\n\nI'll wander mazily over all the earth, asking,\n\n\n\nWill you come back? Will you leave me here, dying?</Phrase>
       <Life>2</Life>
       <TimeLimit>240</TimeLimit>
-      <Page>3</Page>
+      <Page>4</Page>
+    </Level>
+    <Level>
+      <Title>The Fox &amp; the Grapes</Title>
+      <Author>Aesop</Author>
+      <Level>36</Level>
+      <Phrase>A Fox one day spied a beautiful bunch of ripe grapes hanging from a vine trained along the branches of a tree. The grapes seemed ready to burst with juice, and the Fox's mouth watered as he gazed longingly at them.\n\n\n\nThe bunch hung from a high branch, and the Fox had to jump for it. The first time he jumped he missed it by a long way. So he walked off a short distance and took a running leap at it, only to fall short once more. Again and again he tried, but in vain.\n\n\n\nNow he sat down and looked at the grapes in disgust.\n\n\n\n"What a fool I am," he said. "Here I am wearing myself out to get a bunch of sour grapes that are not worth gaping for."\n\n\n\nAnd off he walked very, very scornfully.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>4</Page>
     </Level>
     <Level>
       <Title>A Dream within A Dream</Title>
       <Author>Edgar Allan Poe</Author>
-      <Level>23</Level>
+      <Level>37</Level>
       <Phrase>Take this kiss upon the brow!\n\n\n\nAnd, in parting from you now,\n\n\n\nThus much let me avow-\n\n\n\nYou are not wrong, who deem\n\n\n\nThat my days have been a dream;\n\n\n\nYet if hope has flown away\n\n\n\nIn a night, or in a day,\n\n\n\nIn a vision, or in none,\n\n\n\nIs it therefore the less gone?\n\n\n\nAll that we see or seem\n\n\n\nIs but a dream within a dream.\n\n\n\n\n\n\n\nI stand amid the roar\n\n\n\nOf a surf-tormented shore,\n\n\n\nAnd I hold within my hand\n\n\n\nGrains of the golden sand-\n\n\n\nHow few! yet how they creep\n\n\n\nThrough my fingers to the deep,\n\n\n\nWhile I weep- while I weep!\n\n\n\nO God! can I not grasp\n\n\n\nThem with a tighter clasp?\n\n\n\nO God! can I not save\n\n\n\nOne from the pitiless wave?\n\n\n\nIs all that we see or seem\n\n\n\nBut a dream within a dream?</Phrase>
       <Life>2</Life>
       <TimeLimit>240</TimeLimit>
-      <Page>3</Page>
+      <Page>5</Page>
     </Level>
     <Level>
       <Title>The Road Not Taken</Title>
       <Author>Frost</Author>
-      <Level>24</Level>
+      <Level>38</Level>
       <Phrase>Two roads diverged in a yellow wood,\n\n\n\nAnd sorry I could not travel both\n\n\n\nAnd be one traveller, long I stood\n\n\n\nAnd looked down one as far as I could\n\n\n\nTo where it bent in the undergrowth;\n\n\n\n\n\nThen took the other, as just as fair,\n\n\n\nAnd having perhaps the better claim,\n\n\n\nBecause it was grassy and wanted wear;\n\n\n\nThough as for that the passing there\n\n\n\nHad worn them really about the same,\n\n\n\n\n\nAnd both that morning equally lay\n\n\n\nIn leaves no step had trodden black.\n\n\n\nOh, I kept the first for another day!\n\n\n\nYet knowing how way leads on to way,\n\n\n\nI doubted if I should ever come back.\n\n\n\n\n\nI shall be telling this with a sigh\n\n\n\nSomewhere ages and ages hence:\n\n\n\nTwo roads diverged in a wood, and I\n\n\n\nI took the one less travelled by,\n\n\n\nAnd that has made all the difference.</Phrase>
       <Life>2</Life>
       <TimeLimit>240</TimeLimit>
-      <Page>3</Page>
+      <Page>5</Page>
     </Level>
     <Level>
       <Title>Alone</Title>
       <Author>Edgar Allan Poe</Author>
-      <Level>25</Level>
+      <Level>39</Level>
       <Phrase>From childhood's hour I have not been\n\n\n\nAs others were; I have not seen\n\n\n\nAs others saw; I could not bring\n\n\n\nMy passions from a common spring.\n\n\n\nFrom the same source I have not taken\n\n\n\nMy sorrow; I could not awaken\n\n\n\nMy heart to joy at the same tone;\n\n\n\nAnd all I loved, I loved alone.\n\n\n\nThen- in my childhood, in the dawn\n\n\n\nOf a most stormy life- was drawn\n\n\n\nFrom every depth of good and ill\n\n\n\nThe mystery which binds me still:\n\n\n\nFrom the torrent, or the fountain,\n\n\n\nFrom the red cliff of the mountain,\n\n\n\nFrom the sun that round me rolled\n\n\n\nIn its autumn tint of gold,\n\n\n\nFrom the lightning in the sky\n\n\n\nAs it passed me flying by,\n\n\n\nFrom the thunder and the storm,\n\n\n\nAnd the cloud that took the form\n\n\n\n(When the rest of Heaven was blue)\n\n\n\nOf a demon in my view.</Phrase>
       <Life>2</Life>
       <TimeLimit>240</TimeLimit>
-      <Page>3</Page>
+      <Page>5</Page>
     </Level>
     <Level>
       <Title>I wandered lonely as a cloud</Title>
       <Author>William Wordsworth</Author>
-      <Level>26</Level>
+      <Level>40</Level>
       <Phrase>I wandered lonely as a cloud\n\n\n\nThat floats on high o'er vales and hills,\n\n\n\nWhen all at once I saw a crowd,\n\n\n\nA host, of golden daffodils;\n\n\n\nBeside the lake, beneath the trees,\n\n\n\nFluttering and dancing in the breeze.\n\n\n\n\n\n\n\nContinuous as the stars that shine\n\n\n\nAnd twinkle on the milky way,\n\n\n\nThey stretched in never-ending line\n\n\n\nAlong the margin of a bay:\n\n\n\nTen thousand saw I at a glance,\n\n\n\nTossing their heads in sprightly dance.\n\n\n\n\n\n\n\nThe waves beside them danced; but they\n\n\n\nOut-did the sparkling waves in glee:\n\n\n\nA poet could not but be gay,\n\n\n\nIn such a jocund company:\n\n\n\nI gazed---and gazed---but little thought\n\n\n\nWhat wealth the show to me had brought:\n\n\n\n\n\n\n\nFor oft, when on my couch I lie\n\n\n\nIn vacant or in pensive mood,\n\n\n\nThey flash upon that inward eye\n\n\n\nWhich is the bliss of solitude;\n\n\n\nAnd then my heart with pleasure fills,\n\n\n\nAnd dances with the daffodils</Phrase>
       <Life>2</Life>
       <TimeLimit>240</TimeLimit>
-      <Page>3</Page>
+      <Page>5</Page>
+    </Level>
+    <Level>
+      <Title>The Fox &amp; the Leopard</Title>
+      <Author>Aesop</Author>
+      <Level>41</Level>
+      <Phrase>A Fox and a Leopard, resting lazily after a generous dinner, amused themselves by disputing about their good looks. The Leopard was very proud of his glossy, spotted coat and made disdainful remarks about the Fox, whose appearance he declared was quite ordinary.\n\n\n\nThe Fox prided himself on his fine bushy tail with its tip of white, but he was wise enough to see that he could not rival the Leopard in looks. Still he kept up a flow of sarcastic talk, just to exercise his wits and to have the fun of disputing. The Leopard was about to lose his temper when the Fox got up, yawning lazily.\n\n\n\n"You may have a very smart coat," he said, "but you would be a great deal better off if you had a little more smartness inside your head and less on your ribs, the way I am. That's what I call real beauty."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>240</TimeLimit>
+      <Page>5</Page>
+    </Level>
+    <Level>
+      <Title>The Man &amp; the Satyr</Title>
+      <Author>Aesop</Author>
+      <Level>42</Level>
+      <Phrase>A long time ago a Man met a Satyr in the forest and succeeded in making friends with him. The two soon became the best of comrades, living together in the Man's hut. But one cold winter evening, as they were walking homeward, the Satyr saw the Man blow on his fingers.\n\n\n\n"Why do you do that?" asked the Satyr.\n\n\n\n"To warm my hands," the Man replied.\n\n\n\nWhen they reached home the Man prepared two bowls of porridge. These he placed steaming hot on the table, and the comrades sat down very cheerfully to enjoy the meal. But much to the Satyr's surprise, the Man began to blow into his bowl of porridge.\n\n\n\n"Why do you do that?" he asked.\n\n\n\n"To cool my porridge," replied the Man.\n\n\n\nThe Satyr sprang hurriedly to his feet and made for the door.\n\n\n\n"Goodby," he said, "I've seen enough. A fellow that blows hot and cold in the same breath cannot be friends with me!"</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>5</Page>
+    </Level>
+    <Level>
+      <Title>The Mother &amp; the Wolf</Title>
+      <Author>Aesop</Author>
+      <Level>43</Level>
+      <Phrase>Early one morning a hungry Wolf was prowling around a cottage at the edge of a village, when he heard a child crying in the house. Then he heard the Mother's voice say:\n\n\n\n"Hush, child, hush! Stop your crying, or I will give you to the Wolf!"\n\n\n\nSurprised but delighted at the prospect of so delicious a meal, the Wolf settled down under an open window, expecting every moment to have the child handed out to him. But though the little one continued to fret, the Wolf waited all day in vain. Then, toward nightfall, he heard the Mother's voice again as she sat down near the window to sing and rock her baby to sleep.\n\n\n\n"There, child, there! The Wolf shall not get you. No, no! Daddy is watching and Daddy will kill him if he should come near!"\n\n\n\nJust then the Father came within sight of the home, and the Wolf was barely able to save himself from the Dogs by a clever bit of running.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>5</Page>
+    </Level>
+    <Level>
+      <Title>The Hare &amp; His Ears</Title>
+      <Author>Aesop</Author>
+      <Level>44</Level>
+      <Phrase>The Lion had been badly hurt by the horns of a Goat, which he was eating. He was very angry to think that any animal that he chose for a meal, should be so brazen as to wear such dangerous things as horns to scratch him while he ate. So he commanded that all animals with horns should leave his domains within twenty-four hours.\n\n\n\nThe command struck terror among the beasts. All those who were so unfortunate as to have horns, began to pack up and move out. Even the Hare, who, as you know, has no horns and so had nothing to fear, passed a very restless night, dreaming awful dreams about the fearful Lion.\n\n\n\nAnd when he came out of the warren in the early morning sunshine, and there saw the shadow cast by his long and pointed ears, a terrible fright seized him.\n\n\n\n"Goodby, neighbor Cricket," he called. "I'm off. He will certainly make out that my ears are horns, no matter what I say."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>5</Page>
     </Level>
     <Level>
       <Title>Do Not Go Gentle into That Good Night</Title>
       <Author>Dylan Thomas</Author>
-      <Level>27</Level>
+      <Level>45</Level>
       <Phrase>Do not go gentle into that good night,\n\n\n\nOld age should burn and rave at close of day;\n\n\n\nRage, rage against the dying of the light.\n\n\n\n\n\n\n\nThough wise men at their end know dark is right,\n\n\n\nBecause their words had forked no lightning they\n\n\n\nDo not go gentle into that good night.\n\n\n\n\n\n\n\nGood men, the last wave by, crying how bright\n\n\n\nTheir frail deeds might have danced in a green bay,\n\n\n\nRage, rage against the dying of the light.\n\n\n\n\n\n\n\nWild men who caught and sang the sun in flight,\n\n\n\nAnd learn, too late, they grieved it on its way,\n\n\n\nDo not go gentle into that good night.\n\n\n\n\n\n\n\nGrave men, near death, who see with blinding sight\n\n\n\nBlind eyes could blaze like meteors and be gay,\n\n\n\nRage, rage against the dying of the light.\n\n\n\n\n\n\n\nAnd you, my father, there on that sad height,\n\n\n\nCurse, bless, me now with your fierce tears, I pray.\n\n\n\nDo not go gentle into that good night.\n\n\n\nRage, rage against the dying of the light.</Phrase>
       <Life>2</Life>
       <TimeLimit>300</TimeLimit>
-      <Page>3</Page>
+      <Page>5</Page>
+    </Level>
+    <Level>
+      <Title>The Oak &amp; the Reeds</Title>
+      <Author>Aesop</Author>
+      <Level>46</Level>
+      <Phrase>A Giant Oak stood near a brook in which grew some slender Reeds. When the wind blew, the great Oak stood proudly upright with its hundred arms uplifted to the sky. But the Reeds bowed low in the wind and sang a sad and mournful song.\n\n\n\n"You have reason to complain," said the Oak. "The slightest breeze that ruffles the surface of the water makes you bow your heads, while I, the mighty Oak, stand upright and firm before the howling tempest."\n\n\n\n"Do not worry about us," replied the Reeds. "The winds do not harm us. We bow before them and so we do not break. You, in all your pride and strength, have so far resisted their blows. But the end is coming."\n\n\n\nAs the Reeds spoke a great hurricane rushed out of the north. The Oak stood proudly and fought against the storm, while the yielding Reeds bowed low. The wind redoubled in fury, and all at once the great tree fell, torn up by the roots, and lay among the pitying Reeds.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>The Wolf &amp; the Crane</Title>
+      <Author>Aesop</Author>
+      <Level>47</Level>
+      <Phrase>A Wolf had been feasting too greedily, and a bone had stuck crosswise in his throat. He could get it neither up nor down, and of course he could not eat a thing. Naturally that was an awful state of affairs for a greedy Wolf.\n\n\n\nSo away he hurried to the Crane. He was sure that she, with her long neck and bill, would easily be able to reach the bone and pull it out.\n\n\n\n"I will reward you very handsomely," said the Wolf, "if you pull that bone out for me."\n\n\n\nThe Crane, as you can imagine, was very uneasy about putting her head in a Wolf's throat. But she was grasping in nature, so she did what the Wolf asked her to do.\n\n\n\nWhen the Wolf felt that the bone was gone, he started to walk away.\n\n\n\n"But what about my reward!" called the Crane anxiously.\n\n\n\n"What!" snarled the Wolf, whirling around. "Haven't you got it? Isn't it enough that I let you take your head out of my mouth without snapping it off?"</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>The Fox &amp; the Goat</Title>
+      <Author>Aesop</Author>
+      <Level>48</Level>
+      <Phrase>A Fox fell into a well, and though it was not very deep, he found that he could not get out again. After he had been in the well a long time, a thirsty Goat came by. The Goat thought the Fox had gone down to drink, and so he asked if the water was good.\n\n\n\n"The finest in the whole country," said the crafty Fox, "jump in and try it. There is more than enough for both of us."\n\n\n\nThe thirsty Goat immediately jumped in and began to drink. The Fox just as quickly jumped on the Goat's back and leaped from the tip of the Goat's horns out of the well\n\n\n\nThe foolish Goat now saw what a plight he had got into, and begged the Fox to help him out. But the Fox was already on his way to the woods\n\n\n\n"If you had as much sense as you have beard, old fellow," he said as he ran, "you would have been more cautious about finding a way to get out again before you jumped in."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>The Lion &amp; the Mouse</Title>
+      <Author>Aesop</Author>
+      <Level>49</Level>
+      <Phrase>A Lion lay asleep in the forest, his great head resting on his paws. A timid little Mouse came upon him unexpectedly, and in her fright and haste to get away, ran across the Lion's nose. Roused from his nap, the Lion laid his huge paw angrily on the tiny creature to kill her.\n\n\n\n"Spare me!" begged the poor Mouse. "Please let me go and some day I will surely repay you."\n\n\n\nThe Lion was much amused to think that a Mouse could ever help him. But he was generous and finally let the Mouse go.\n\n\n\nSome days later, while stalking his prey in the forest, the Lion was caught in the toils of a hunter's net. Unable to free himself, he filled the forest with his angry roaring. The Mouse knew the voice and quickly found the Lion struggling in the net. Running to one of the great ropes that bound him, she gnawed it until it parted, and soon the Lion was free.\n\n\n\n"You laughed when I said I would repay you," said the Mouse. "Now you see that even a Mouse can help a Lion."</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>The Hare &amp; the Tortoise</Title>
+      <Author>Aesop</Author>
+      <Level>50</Level>
+      <Phrase>A Hare was making fun of the Tortoise one day for being so slow.\n\n\n\n"Do you ever get anywhere?" he asked with a mocking laugh.\n\n\n\n"Yes," replied the Tortoise, "and I get there sooner than you think. I'll run you a race and prove it."\n\n\n\nThe Hare was much amused at the idea of running a race with the Tortoise, but for the fun of the thing he agreed. So the Fox, who had consented to act as judge, marked the distance and started the runners off.\n\n\n\nThe Hare was soon far out of sight, and to make the Tortoise feel very deeply how ridiculous it was for him to try a race with a Hare, he lay down beside the course to take a nap until the Tortoise should catch up.\n\n\n\nThe Tortoise meanwhile kept going slowly but steadily, and, after a time, passed the place where the Hare was sleeping. But the Hare slept on very peacefully; and when at last he did wake up, the Tortoise was near the goal. The Hare now ran his swiftest, but he could not overtake the Tortoise in time.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>Belling the Cat</Title>
+      <Author>Aesop</Author>
+      <Level>51</Level>
+      <Phrase>The Mice once called a meeting to decide on a plan to free themselves of their enemy, the Cat. At least they wished to find some way of knowing when she was coming, so they might have time to run away. Indeed, something had to be done, for they lived in such constant fear of her claws that they hardly dared stir from their dens by night or day.\n\n\n\nMany plans were discussed, but none of them was thought good enough. At last a very young Mouse got up and said:\n\n\n\n"I have a plan that seems very simple, but I know it will be successful.\n\n\n\nAll we have to do is to hang a bell about the Cat's neck. When we hear the bell ringing we will know immediately that our enemy is coming."\n\n\n\nAll the Mice were much surprised that they had not thought of such a plan before. But in the midst of the rejoicing over their good fortune, an old Mouse arose and said:\n\n\n\n"I will say that the plan of the young Mouse is very good. But let me ask one question: Who will bell the Cat?"</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
     </Level>
     <Level>
       <Title>I Know Why The Caged Bird Sings.</Title>
       <Author>Maya Angelou</Author>
-      <Level>28</Level>
+      <Level>52</Level>
       <Phrase>The free bird leaps\n\n\n\non the back of the wind\n\n\n\nand floats downstream\n\n\n\ntill the current ends\n\n\n\nand dips his wings\n\n\n\nin the orange sun rays\n\n\n\nand dares to claim the sky.\n\n\n\n\n\n\n\nBut a bird that stalks\n\n\n\ndown his narrow cage\n\n\n\ncan seldom see through\n\n\n\nhis bars of rage\n\n\n\nhis wings are clipped and\n\n\n\nhis feet are tied\n\n\n\nso he opens his throat to sing.\n\n\n\n\n\n\n\nThe caged bird sings\n\n\n\nwith fearful trill\n\n\n\nof the things unknown\n\n\n\nbut longed for still\n\n\n\nand his tune is heard\n\n\n\non the distant hill\n\n\n\nfor the caged bird\n\n\n\nsings of freedom\n\n\n\n\n\n\n\nThe free bird thinks of another breeze\n\n\n\nan the trade winds soft through the sighing trees\n\n\n\nand the fat worms waiting on a dawn-bright lawn\n\n\n\nand he names the sky his own.\n\n\n\n\n\n\n\nBut a caged bird stands on the grave of dreams\n\n\n\nhis shadow shouts on a nightmare scream\n\n\n\nhis wings are clipped and his feet are tied\n\n\n\nso he opens his throat to sing\n\n\n\n\n\n\n\nThe caged bird sings\n\n\n\nwith a fearful trill\n\n\n\nof things unknown\n\n\n\nbut longed for still\n\n\n\nand his tune is heard\n\n\n\non the distant hill\n\n\n\nfor the caged bird\n\n\n\nsings of freedom.</Phrase>
       <Life>2</Life>
       <TimeLimit>300</TimeLimit>
-      <Page>4</Page>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>The Eagle &amp; the Beetle</Title>
+      <Author>Aesop</Author>
+      <Level>53</Level>
+      <Phrase>A Beetle once begged the Eagle to spare a Hare which had run to her for protection. But the Eagle pounced upon her prey, the sweep of her great wings tumbling the Beetle a dozen feet away. Furious at the disrespect shown her, the Beetle flew to the Eagle's nest and rolled out the eggs. Not one did she spare. The Eagle's grief and anger knew no bounds, but who had done the cruel deed she did not know.\n\n\n\nNext year the Eagle built her nest far up on a mountain crag; but the Beetle found it and again destroyed the eggs. In despair the Eagle now implored great Jupiter to let her place her eggs in his lap. There none would dare harm them. But the Beetle buzzed about Jupiter's head, and made him rise to drive her away; and the eggs rolled from his lap.\n\n\n\nNow the Beetle told the reason for her action, and Jupiter had to acknowledge the justice of her cause. And they say that ever after, while the Eagle's eggs lie in the nest in spring, the Beetle still sleeps in the ground. For so Jupiter commanded.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>300</TimeLimit>
+      <Page>6</Page>
+    </Level>
+    <Level>
+      <Title>The Frog &amp; the Mouse</Title>
+      <Author>Aesop</Author>
+      <Level>54</Level>
+      <Phrase>A young Mouse in search of adventure was running along the bank of a pond where lived a Frog. When the Frog saw the Mouse, he swam to the bank and croaked:\n\n\n\n"Won't you pay me a visit? I can promise you a good time if you do."\n\n\n\nThe Mouse did not need much coaxing, for he was very anxious to see the world and everything in it. But though he could swim a little, he did not dare risk going into the pond without some help.\n\n\n\nThe Frog had a plan. He tied the Mouse's leg to his own with a tough reed. Then into the pond he jumped, dragging his foolish companion with him. The Mouse soon had enough of it and wanted to return to shore; but the treacherous Frog had other plans. He pulled the Mouse down under the water and drowned him. But before he could untie the reed that bound him to the dead Mouse, a Hawk came sailing over the pond. Seeing the body of the Mouse floating on the water, the Hawk swooped down, seized the Mouse and carried it off, with the Frog dangling from its leg. Thus at one swoop he had caught both meat and fish for his dinner.</Phrase>
+      <Life>2</Life>
+      <TimeLimit>360</TimeLimit>
+      <Page>6</Page>
     </Level>
     <Level>
       <Title>If You Forget Me</Title>
       <Author>Pablo Neruda</Author>
-      <Level>29</Level>
+      <Level>55</Level>
       <Phrase>I want you to know\n\n\n\none thing.\n\n\n\n\n\n\n\nYou know how this is:\n\n\n\nif I look\n\n\n\nat the crystal moon, at the red branch\n\n\n\nof the slow autumn at my window,\n\n\n\nif I touch\n\n\n\nnear the fire\n\n\n\nthe impalpable ash\n\n\n\nor the wrinkled body of the log,\n\n\n\neverything carries me to you,\n\n\n\nas if everything that exists,\n\n\n\naromas, light, metals,\n\n\n\nwere little boats\n\n\n\nthat sail\n\n\n\ntoward those isles of yours that wait for me.\n\n\n\n\n\n\n\nWell, now,\n\n\n\nif little by little you stop loving me\n\n\n\nI shall stop loving you little by little.\n\n\n\n\n\n\n\nIf suddenly\n\n\n\nyou forget me\n\n\n\ndo not look for me,\n\n\n\nfor I shall already have forgotten you.\n\n\n\n\n\n\n\nIf you think it long and mad,\n\n\n\nthe wind of banners\n\n\n\nthat passes through my life,\n\n\n\nand you decide\n\n\n\nto leave me at the shore\n\n\n\nof the heart where I have roots,\n\n\n\nremember\n\n\n\nthat on that day,\n\n\n\nat that hour,\n\n\n\nI shall lift my arms\n\n\n\nand my roots will set off\n\n\n\nto seek another land.\n\n\n\n\n\n\n\nBut\n\n\n\nif each day,\n\n\n\neach hour,\n\n\n\nyou feel that you are destined for me\n\n\n\nwith implacable sweetness,\n\n\n\nif each day a flower\n\n\n\nclimbs up to your lips to seek me,\n\n\n\nah my love, ah my own,\n\n\n\nin me all that fire is repeated,\n\n\n\nin me nothing is extinguished or forgotten,\n\n\n\nmy love feeds on your love, beloved,\n\n\n\nand as long as you live it will be in your arms\n\n\n\nwithout leaving mine.</Phrase>
       <Life>3</Life>
       <TimeLimit>360</TimeLimit>
-      <Page>4</Page>
+      <Page>7</Page>
     </Level>
     <Level>
       <Title>Still I Rise</Title>
       <Author>MAYA ANGELOU</Author>
-      <Level>30</Level>
+      <Level>56</Level>
       <Phrase>You may write me down in history\n\n\n\nWith your bitter, twisted lies,\n\n\n\nYou may trod me in the very dirt\n\n\n\nBut still, like dust, I'll rise.\n\n\n\n\n\n\n\nDoes my sassiness upset you?\n\n\n\nWhy are you beset with gloom?\n\n\n\n'Cause I walk like I've got oil wells\n\n\n\nPumping in my living room.\n\n\n\n\n\n\n\nJust like moons and like suns,\n\n\n\nWith the certainty of tides,\n\n\n\nJust like hopes springing high,\n\n\n\nStill I'll rise.\n\n\n\n\n\n\n\nDid you want to see me broken?\n\n\n\nBowed head and lowered eyes?\n\n\n\nShoulders falling down like teardrops.\n\n\n\nWeakened by my soulful cries.\n\n\n\n\n\n\n\nDoes my haughtiness offend you?\n\n\n\nDon't you take it awful hard\n\n\n\n'Cause I laugh like I've got gold mines\n\n\n\nDiggin' in my own back yard.\n\n\n\n\n\n\n\nYou may shoot me with your words,\n\n\n\nYou may cut me with your eyes,\n\n\n\nYou may kill me with your hatefulness,\n\n\n\nBut still, like air, I'll rise.\n\n\n\n\n\n\n\nDoes my sexiness upset you?\n\n\n\nDoes it come as a surprise\n\n\n\nThat I dance like I've got diamonds\n\n\n\nAt the meeting of my thighs?\n\n\n\n\n\n\n\nOut of the huts of history's shame\n\n\n\nI rise\n\n\n\nUp from a past that's rooted in pain\n\n\n\nI rise\n\n\n\nI'm a black ocean, leaping and wide,\n\n\n\nWelling and swelling I bear in the tide.\n\n\n\nLeaving behind nights of terror and fear\n\n\n\nI rise\n\n\n\nInto a daybreak that's wondrously clear\n\n\n\nI rise\n\n\n\nBringing the gifts that my ancestors gave,\n\n\n\nI am the dream and the hope of the slave.\n\n\n\nI rise\n\n\n\nI rise\n\n\n\nI rise.\n\n</Phrase>
       <Life>3</Life>
       <TimeLimit>420</TimeLimit>
-      <Page>4</Page>
+      <Page>7</Page>
     </Level>
     <Level>
       <Title>Phenomenal Woman</Title>
       <Author>MAYA ANGELOU</Author>
-      <Level>31</Level>
+      <Level>57</Level>
       <Phrase>Pretty women wonder where my secret lies.\n\nI'm not cute or built to suit a fashion model's size\n\nBut when I start to tell them,\n\nThey think I'm telling lies.\n\nI say,\n\nIt's in the reach of my arms\n\nThe span of my hips,\n\nThe stride of my step,\n\nThe curl of my lips.\n\nI'm a woman\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.\n\n\n\nI walk into a room\n\nJust as cool as you please,\n\nAnd to a man,\n\nThe fellows stand or\n\nFall down on their knees.\n\nThen they swarm around me,\n\nA hive of honey bees.\n\nI say,\n\nIt's the fire in my eyes,\n\nAnd the flash of my teeth,\n\nThe swing in my waist,\n\nAnd the joy in my feet.\n\nI'm a woman\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.\n\n\n\nMen themselves have wondered\n\nWhat they see in me.\n\nThey try so much\n\nBut they can't touch\n\nMy inner mystery.\n\nWhen I try to show them\n\nThey say they still can't see.\n\nI say,\n\nIt's in the arch of my back,\n\nThe sun of my smile,\n\nThe ride of my breasts,\n\nThe grace of my style.\n\nI'm a woman\n\n\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.\n\n\n\nNow you understand\n\nJust why my head's not bowed.\n\nI don't shout or jump about\n\nOr have to talk real loud.\n\nWhen you see me passing\n\nIt ought to make you proud.\n\nI say,\n\nIt's in the click of my heels,\n\nThe bend of my hair,\n\nthe palm of my hand,\n\nThe need of my care,\n\n'Cause I'm a woman\n\nPhenomenally.\n\nPhenomenal woman,\n\nThat's me.</Phrase>
       <Life>3</Life>
       <TimeLimit>420</TimeLimit>
-      <Page>4</Page>
+      <Page>7</Page>
+    </Level>
+    <Level>
+      <Title>The Fox &amp; the Stork</Title>
+      <Author>Aesop</Author>
+      <Level>58</Level>
+      <Phrase>The Fox one day thought of a plan to amuse himself at the expense of the Stork, at whose odd appearance he was always laughing.\n\n\n\n"You must come and dine with me today," he said to the Stork, smiling to himself at the trick he was going to play. The Stork gladly accepted the invitation and arrived in good time and with a very good appetite.\n\n\n\nFor dinner the Fox served soup. But it was set out in a very shallow dish, and all the Stork could do was to wet the very tip of his bill. Not a drop of soup could he get. But the Fox lapped it up easily, and, to increase the disappointment of the Stork, made a great show of enjoyment.\n\n\n\nThe hungry Stork was much displeased at the trick, but he was a calm, even-tempered fellow and saw no good in flying into a rage. Instead, not long afterward, he invited the Fox to dine with him in turn. The Fox arrived promptly at the time that had been set, and the Stork served a fish dinner that had a very appetizing smell. But it was served in a tall jar with a very narrow neck. The Stork could easily get at the food with his long bill, but all the Fox could do was to lick the outside of the jar, and sniff at the delicious odor. And when the Fox lost his temper, the Stork said calmly:\n\n\n\nDo not play tricks on your neighbors unless you can stand the same treatment yourself.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>420</TimeLimit>
+      <Page>7</Page>
+    </Level>
+    <Level>
+      <Title>The Fox &amp; the Crow</Title>
+      <Author>Aesop</Author>
+      <Level>59</Level>
+      <Phrase>One bright morning as the Fox was following his sharp nose through the wood in search of a bite to eat, he saw a Crow on the limb of a tree overhead. This was by no means the first Crow the Fox had ever seen. What caught his attention this time and made him stop for a second look, was that the lucky Crow held a bit of cheese in her beak.\n\n\n\n"No need to search any farther," thought sly Master Fox. "Here is a dainty bite for my breakfast."\n\n\n\nUp he trotted to the foot of the tree in which the Crow was sitting, and looking up admiringly, he cried, "Good-morning, beautiful creature!"\n\n\n\nThe Crow, her head cocked on one side, watched the Fox suspiciously. But she kept her beak tightly closed on the cheese and did not return his greeting.\n\n\n\n"What a charming creature she is!" said the Fox. "How her feathers shine! What a beautiful form and what splendid wings! Such a wonderful Bird should have a very lovely voice, since everything else about her is so perfect. Could she sing just one song, I know I should hail her Queen of Birds."\n\n\n\nListening to these flattering words, the Crow forgot all her suspicion, and also her breakfast. She wanted very much to be called Queen of Birds. So she opened her beak wide to utter her loudest caw, and down fell the cheese straight into the Fox's open mouth.\n\n\n\n"Thank you," said Master Fox sweetly, as he walked off. "Though it is cracked, you have a voice sure enough. But where are your wits?"</Phrase>
+      <Life>3</Life>
+      <TimeLimit>420</TimeLimit>
+      <Page>7</Page>
+    </Level>
+    <Level>
+      <Title>The Wolf &amp; the Kid</Title>
+      <Author>Aesop</Author>
+      <Level>60</Level>
+      <Phrase>There was once a little Kid whose growing horns made him think he was a grown-up Billy Goat and able to take care of himself. So one evening when the flock started home from the pasture and his mother called, the Kid paid no heed and kept right on nibbling the tender grass. A little later when he lifted his head, the flock was gone.\n\n\n\nHe was all alone. The sun was sinking. Long shadows came creeping over the ground. A chilly little wind came creeping with them making scary noises in the grass. The Kid shivered as he thought of the terrible Wolf. Then he started wildly over the field, bleating for his mother. But not half-way, near a clump of trees, there was the Wolf!\n\n\n\nThe Kid knew there was little hope for him.\n\n\n\n"Please, Mr. Wolf," he said trembling, "I know you are going to eat me. But first please pipe me a tune, for I want to dance and be merry as long as I can."\n\n\n\nThe Wolf liked the idea of a little music before eating, so he struck up a merry tune and the Kid leaped and frisked gaily.\n\n\n\nMeanwhile, the flock was moving slowly homeward. In the still evening air the Wolf's piping carried far. The Shepherd Dogs pricked up their ears. They recognized the song the Wolf sings before a feast, and in a moment they were racing back to the pasture. The Wolf's song ended suddenly, and as he ran, with the Dogs at his heels, he called himself a fool for turning piper to please a Kid, when he should have stuck to his butcher's trade.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>420</TimeLimit>
+      <Page>7</Page>
+    </Level>
+    <Level>
+      <Title>The Tortoise &amp; the Ducks</Title>
+      <Author>Aesop</Author>
+      <Level>61</Level>
+      <Phrase>The Tortoise, you know, carries his house on his back. No matter how hard he tries, he cannot leave home. They say that Jupiter punished him so, because he was such a lazy stay-at-home that he would not go to Jupiter's wedding, even when especially invited.\n\n\n\nAfter many years, Tortoise began to wish he had gone to that wedding. When he saw how gaily the birds flew about and how the Hare and the Chipmunk and all the other animals ran nimbly by, always eager to see everything there was to be seen, the Tortoise felt very sad and discontented. He wanted to see the world too, and there he was with a house on his back and little short legs that could hardly drag him along.\n\n\n\nOne day he met a pair of Ducks and told them all his trouble.\n\n\n\n"We can help you to see the world," said the Ducks. "Take hold of this stick with your teeth and we will carry you far up in the air where you can see the whole countryside. But keep quiet or you will be sorry."\n\n\n\nThe Tortoise was very glad indeed. He seized the stick firmly with his teeth, the two Ducks took hold of it one at each end, and away they sailed up toward the clouds.\n\n\n\nJust then a Crow flew by. He was very much astonished at the strange sight and cried:\n\n\n\n"This must surely be the King of Tortoises!"\n\n\n\n"Why certainly—" began the Tortoise.\n\n\n\nBut as he opened his mouth to say these foolish words he lost his hold on the stick, and down he fell to the ground, where he was dashed to pieces on a rock.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>480</TimeLimit>
+      <Page>7</Page>
     </Level>
     <Level>
       <Title>If</Title>
       <Author>Rudyard Kipling</Author>
-      <Level>32</Level>
+      <Level>62</Level>
       <Phrase>If you can keep your head when all about you\n\n\n\nAre losing theirs and blaming it on you;\n\n\n\nIf you can trust yourself when all men doubt you,\n\n\n\nBut make allowance for their doubting too:\n\n\n\nIf you can wait and not be tired by waiting,\n\n\n\nOr, being lied about, don't deal in lies,\n\n\n\nOr being hated don't give way to hating,\n\n\n\nAnd yet don't look too good, nor talk too wise;\n\n\n\n\n\n\n\nIf you can dream---and not make dreams your master;\n\n\n\nIf you can think---and not make thoughts your aim,\n\n\n\nIf you can meet with Triumph and Disaster\n\n\n\nAnd treat those two impostors just the same:.\n\n\n\nIf you can bear to hear the truth you've spoken\n\n\n\nTwisted by knaves to make a trap for fools,\n\n\n\nOr watch the things you gave your life to, broken,\n\n\n\nAnd stoop and build'em up with worn-out tools;\n\n\n\n\n\n\n\nIf you can make one heap of all your winnings\n\n\n\nAnd risk it on one turn of pitch-and-toss,\n\n\n\nAnd lose, and start again at your beginnings,\n\n\n\nAnd never breathe a word about your loss:\n\n\n\nIf you can force your heart and nerve and sinew\n\n\n\nTo serve your turn long after they are gone,\n\n\n\nAnd so hold on when there is nothing in you\n\n\n\nExcept the Will which says to them: "Hold on!"\n\n\n\n\n\n\n\nIf you can talk with crowds and keep your virtue,\n\n\n\nOr walk with Kings---nor lose the common touch,\n\n\n\nIf neither foes nor loving friends can hurt you,\n\n\n\nIf all men count with you, but none too much:\n\n\n\nIf you can fill the unforgiving minute\n\n\n\nWith sixty seconds' worth of distance run,\n\n\n\nYours is the Earth and everything that's in it,\n\n\n\nAnd---which is more---you'll be a Man, my son!</Phrase>
       <Life>3</Life>
       <TimeLimit>480</TimeLimit>
-      <Page>4</Page>
+      <Page>7</Page>
+    </Level>
+    <Level>
+      <Title>The Dog, the Cock, &amp; the Fox</Title>
+      <Author>Aesop</Author>
+      <Level>63</Level>
+      <Phrase>A Dog and a Cock, who were the best of friends, wished very much to see something of the world. So they decided to leave the farmyard and to set out into the world along the road that led to the woods. The two comrades traveled along in the very best of spirits and without meeting any adventure to speak of.\n\n\n\nAt nightfall the Cock, looking for a place to roost, as was his custom, spied nearby a hollow tree that he thought would do very nicely for a night's lodging. The Dog could creep inside and the Cock would fly up on one of the branches. So said, so done, and both slept very comfortably.\n\n\n\nWith the first glimmer of dawn the Cock awoke. For the moment he forgot just where he was. He thought he was still in the farmyard where it had been his duty to arouse the household at daybreak. So standing on tip-toes he flapped his wings and crowed lustily. But instead of awakening the farmer, he awakened a Fox not far off in the wood. The Fox immediately had rosy visions of a very delicious breakfast. Hurrying to the tree where the Cock was roosting, he said very politely:\n\n\n\n"A hearty welcome to our woods, honored sir. I cannot tell you how glad I am to see you here. I am quite sure we shall become the closest of friends."\n\n\n\n"I feel highly flattered, kind sir," replied the Cock slyly. "If you will please go around to the door of my house at the foot of the tree, my porter will let you in."\n\n\n\nThe hungry but unsuspecting Fox, went around the tree as he was told, and in a twinkling the Dog had seized him.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>480</TimeLimit>
+      <Page>7</Page>
     </Level>
     <Level>
       <Title>Annabel Lee</Title>
       <Author>Edgar Allan Poe</Author>
-      <Level>33</Level>
+      <Level>64</Level>
       <Phrase>It was many and many a year ago,\n\n\n\nIn a kingdom by the sea,\n\n\n\nThat a maiden there lived whom you may know\n\n\n\nBy the name of ANNABEL LEE;\n\n\n\nAnd this maiden she lived with no other thought\n\n\n\nThan to love and be loved by me.\n\n\n\n\n\n\n\nI was a child and she was a child,\n\n\n\nIn this kingdom by the sea;\n\n\n\nBut we loved with a love that was more than love-\n\n\n\nI and my Annabel Lee;\n\n\n\nWith a love that the winged seraphs of heaven\n\n\n\nCoveted her and me.\n\n\n\n\n\n\n\nAnd this was the reason that, long ago,\n\n\n\nIn this kingdom by the sea,\n\n\n\nA wind blew out of a cloud, chilling\n\n\n\nMy beautiful Annabel Lee;\n\n\n\nSo that her highborn kinsman came\n\n\n\nAnd bore her away from me,\n\n\n\nTo shut her up in a sepulchre\n\n\n\nIn this kingdom by the sea.\n\n\n\n\n\n\n\nThe angels, not half so happy in heaven,\n\n\n\nWent envying her and me-\n\n\n\nYes!- that was the reason (as all men know,\n\n\n\nIn this kingdom by the sea)\n\n\n\nThat the wind came out of the cloud by night,\n\n\n\nChilling and killing my Annabel Lee.\n\n\n\n\n\n\n\nBut our love it was stronger by far than the love\n\n\n\nOf those who were older than we-\n\n\n\nOf many far wiser than we-\n\n\n\nAnd neither the angels in heaven above,\n\n\n\nNor the demons down under the sea,\n\n\n\nCan ever dissever my soul from the soul\n\n\n\nOf the beautiful Annabel Lee.\n\n\n\n\n\n\n\nFor the moon never beams without bringing me dreams\n\n\n\nOf the beautiful Annabel Lee;\n\n\n\nAnd the stars never rise but I feel the bright eyes\n\n\n\nOf the beautiful Annabel Lee;\n\n\n\nAnd so, all the night-tide, I lie down by the side\n\n\n\nOf my darling- my darling- my life and my bride,\n\n\n\nIn the sepulchre there by the sea,\n\n\n\nIn her tomb by the sounding sea.</Phrase>
       <Life>3</Life>
       <TimeLimit>480</TimeLimit>
-      <Page>4</Page>
+      <Page>8</Page>
+    </Level>
+    <Level>
+      <Title>The Cock &amp; the Fox</Title>
+      <Author>Aesop</Author>
+      <Level>65</Level>
+      <Phrase>One bright evening as the sun was sinking on a glorious world a wise old Cock flew into a tree to roost. Before he composed himself to rest, he flapped his wings three times and crowed loudly. But just as he was about to put his head under his wing, his beady eyes caught a flash of red and a glimpse of a long pointed nose, and there just below him stood Master Fox.\n\n\n\n"Have you heard the wonderful news?" cried the Fox in a very joyful and excited manner.\n\n\n\n"What news?" asked the Cock very calmly. But he had a queer, fluttery feeling inside him, for, you know, he was very much afraid of the Fox.\n\n\n\n"Your family and mine and all other animals have agreed to forget their differences and live in peace and friendship from now on forever. Just think of it! I simply cannot wait to embrace you! Do come down, dear friend, and let us celebrate the joyful event."\n\n\n\n"How grand!" said the Cock. "I certainly am delighted at the news." But he spoke in an absent way, and stretching up on tiptoes, seemed to be looking at something afar off.\n\n\n\n"What is it you see?" asked the Fox a little anxiously.\n\n\n\n"Why, it looks to me like a couple of Dogs coming this way. They must have heard the good news and—"\n\n\n\nBut the Fox did not wait to hear more. Off he started on a run.\n\n\n\n"Wait," cried the Cock. "Why do you run? The Dogs are friends of yours now!"\n\n\n\n"Yes," answered the Fox. "But they might not have heard the news. Besides, I have a very important errand that I had almost forgotten about."\n\n\n\nThe Cock smiled as he buried his head in his feathers and went to sleep, for he had succeeded in outwitting a very crafty enemy.</Phrase>
+      <Life>3</Life>
+      <TimeLimit>480</TimeLimit>
+      <Page>8</Page>
+    </Level>
+    <Level>
+      <Title>The Town Mouse &amp; the Country Mouse</Title>
+      <Author>Aesop</Author>
+      <Level>66</Level>
+      <Phrase>A Town Mouse once visited a relative who lived in the country. For lunch the Country Mouse served wheat stalks, roots, and acorns, with a dash of cold water for drink. The Town Mouse ate very sparingly, nibbling a little of this and a little of that, and by her manner making it very plain that she ate the simple food only to be polite.\n\n\n\nAfter the meal the friends had a long talk, or rather the Town Mouse talked about her life in the city while the Country Mouse listened. They then went to bed in a cozy nest in the hedgerow and slept in quiet and comfort until morning. In her sleep the Country Mouse dreamed she was a Town Mouse with all the luxuries and delights of city life that her friend had described for her. So the next day when the Town Mouse asked the Country Mouse to go home with her to the city, she gladly said yes.\n\n\n\nWhen they reached the mansion in which the Town Mouse lived, they found on the table in the dining room the leavings of a very fine banquet. There were sweetmeats and jellies, pastries, delicious cheeses, indeed, the most tempting foods that a Mouse can imagine. But just as the Country Mouse was about to nibble a dainty bit of pastry, she heard a Cat mew loudly and scratch at the door. In great fear the Mice scurried to a hiding place, where they lay quite still for a long time, hardly daring to breathe. When at last they ventured back to the feast, the door opened suddenly and in came the servants to clear the table, followed by the House Dog.\n\n\n\nThe Country Mouse stopped in the Town Mouse's den only long enough to pick up her carpet bag and umbrella.\n\n\n\n"You may have luxuries and dainties that I have not," she said as she hurried away, "but I prefer my plain food and simple life in the country with the peace and security that go with it."</Phrase>
+      <Life>3</Life>
+      <TimeLimit>540</TimeLimit>
+      <Page>8</Page>
+    </Level>
+    <Level>
+      <Title>The Owl &amp; the Grasshopper</Title>
+      <Author>Aesop</Author>
+      <Level>67</Level>
+      <Phrase>The Owl always takes her sleep during the day. Then after sundown, when the rosy light fades from the sky and the shadows rise slowly through the wood, out she comes ruffling and blinking from the old hollow tree. Now her weird "hoo-hoo-hoo-oo-oo" echoes through the quiet wood, and she begins her hunt for the bugs and beetles, frogs and mice she likes so well to eat.\n\n\n\nNow there was a certain old Owl who had become very cross and hard to please as she grew older, especially if anything disturbed her daily slumbers. One warm summer afternoon as she dozed away in her den in the old oak tree, a Grasshopper nearby began a joyous but very raspy song. Out popped the old Owl's head from the opening in the tree that served her both for door and for window.\n\n\n\n"Get away from here, sir," she said to the Grasshopper. "Have you no manners? You should at least respect my age and leave me to sleep in quiet!"\n\n\n\nBut the Grasshopper answered saucily that he had as much right to his place in the sun as the Owl had to her place in the old oak. Then he struck up a louder and still more rasping tune.\n\n\n\nThe wise old Owl knew quite well that it would do no good to argue with the Grasshopper, nor with anybody else for that matter. Besides, her eyes were not sharp enough by day to permit her to punish the Grasshopper as he deserved. So she laid aside all hard words and spoke very kindly to him.\n\n\n\n"Well sir," she said, "if I must stay awake, I am going to settle right down to enjoy your singing. Now that I think of it, I have a wonderful wine here, sent me from Olympus, of which I am told Apollo drinks before he sings to the high gods. Please come up and taste this delicious drink with me. I know it will make you sing like Apollo himself."\n\n\n\nThe foolish Grasshopper was taken in by the Owl's flattering words. Up he jumped to the Owl's den, but as soon as he was near enough so the old Owl could see him clearly, she pounced upon him and ate him up.</Phrase>
+      <Life>4</Life>
+      <TimeLimit>600</TimeLimit>
+      <Page>8</Page>
+    </Level>
+    <Level>
+      <Title>The Bogey-Beast Part 1</Title>
+      <Author>Flora Annie Steel</Author>
+      <Level>68</Level>
+      <Phrase>There was once a woman who was very, very cheerful, though she had little to make her so; for she was old, and poor, and lonely. She lived in a little bit of a cottage and earned a scant living by running errands for her neighbours, getting a bite here, a sup there, as reward for her services. So she made shift to get on, and always looked as spry and cheery as if she had not a want in the world.\n\n\n\nNow one summer evening, as she was trotting, full of smiles as ever, along the high road to her hovel, what should she see but a big black pot lying in the ditch!\n\n\n\n"Goodness me!" she cried, "that would be just the very thing for me if I only had something to put in it! But I haven't! Now who could have left it in the ditch?"\n\n\n\nAnd she looked about her expecting the owner would not be far off; but she could see nobody.\n\n\n\n"Maybe there is a hole in it," she went on, "and that's why it has been cast away. But it would do fine to put a flower in for my window; so I'll just take it home with me."\n\n\n\nAnd with that she lifted the lid and looked inside. "Mercy me!" she cried, fair amazed. "If it isn't full of gold pieces. Here's luck!"\n\n\n\nAnd so it was, brimful of great gold coins. Well, at first she simply stood stock-still, wondering if she was standing on her head or her heels. Then she began saying:\n\n\n\n"Lawks! But I do feel rich. I feel awful rich!"\n\n\n\nAfter she had said this many times, she began to wonder how she was to get her treasure home. It was too heavy for her to carry, and she could see no better way than to tie the end of her shawl to it and drag it behind her like a go-cart.\n\n\n\n"It will soon be dark," she said to herself as she trotted along. "So much the better! The neighbours will not see what I'm bringing home, and I shall have all the night to myself, and be able to think what I'll do! Mayhap I'll buy a grand house and just sit by the fire with a cup o' tea and do no work at all like a queen. Or maybe I'll bury it at the garden foot and just keep a bit in the old china teapot on the chimney-piece. Or maybe—Goody! Goody! I feel that grand I don't know myself."\n\n\n\nBy this time she was a bit tired of dragging such a heavy weight, and, stopping to rest a while, turned to look at her treasure.</Phrase>
+      <Life>4</Life>
+      <TimeLimit>720</TimeLimit>
+      <Page>8</Page>
+    </Level>
+    <Level>
+      <Title>The Bogey-Beast Part 2</Title>
+      <Author>Flora Annie Steel</Author>
+      <Level>69</Level>
+      <Phrase>And lo! it wasn't a pot of gold at all! It was nothing but a lump of silver.\n\n\n\nShe stared at it, and rubbed her eyes, and stared at it again.\n\n\n\n"Well! I never!" she said at last. "And me thinking it was a pot of gold! I must have been dreaming. But this is luck! Silver is far less trouble—easier to mind, and not so easy stolen. Them gold pieces would have been the death o' me, and with this great lump of silver—"\n\n\n\nSo she went off again planning what she would do, and feeling as rich as rich, until becoming a bit tired again she stopped to rest and gave a look round to see if her treasure was safe; and she saw nothing but a great lump of iron!\n\n\n\n"Well! I never!" says she again. "And I mistaking it for silver! I must have been dreaming. But this is luck! It's real convenient. I can get penny pieces for old iron, and penny pieces are a deal handier for me than your gold and silver. Why! I should never have slept a wink for fear of being robbed. But a penny piece comes in useful, and I shall sell that iron for a lot and be real rich—rolling rich."\n\n\n\nSo on she trotted full of plans as to how she would spend her penny pieces, till once more she stopped to rest and looked round to see her treasure was safe. And this time she saw nothing but a big stone.\n\n\n\n"Well! I never!" she cried, full of smiles. "And to think I mistook it for iron. I must have been dreaming. But here's luck indeed, and me wanting a stone terrible bad to stick open the gate. Eh my! but it's a change for the better! It's a fine thing to have good luck."\n\n\n\nSo, all in a hurry to see how the stone would keep the gate open, she trotted off down the hill till she came to her own cottage. She unlatched the gate and then turned to unfasten her shawl from the stone which lay on the path behind her. Aye! It was a stone sure enough. There was plenty light to see it lying there, douce and peaceable as a stone should.\n\n\n\nSo she bent over it to unfasten the shawl end, when—"Oh my!" All of a sudden it gave a jump, a squeal, and in one moment was as big as a haystack. Then it let down four great lanky legs and threw out two long ears, nourished a great long tail and romped off, kicking and squealing and whinnying and laughing like a naughty, mischievous boy!\n\n\n\nThe old woman stared after it till it was fairly out of sight, then she burst out laughing too.\n\n\n\n"Well!" she chuckled, "I am in luck! Quite the luckiest body hereabouts. Fancy my seeing the Bogey-Beast all to myself; and making myself so free with it too! My goodness! I do feel that uplifted—that GRAND!"—\n\n\n\nSo she went into her cottage and spent the evening chuckling over her good luck.</Phrase>
+      <Life>5</Life>
+      <TimeLimit>780</TimeLimit>
+      <Page>8</Page>
     </Level>
     <Level>
       <Title>Television</Title>
       <Author>Roald Dahl</Author>
-      <Level>34</Level>
-      <Phrase>The most important thing we've learned,\n\n\n\nSo far as children are concerned,\n\n\n\nIs never, NEVER, NEVER let\n\n\n\nThem near your television set --\n\n\n\nOr better still, just don't install\n\n\n\nThe idiotic thing at all.\n\n\n\nIn almost every house we've been,\n\n\n\nWe've watched them gaping at the screen.\n\n\n\nThey loll and slop and lounge about,\n\n\n\nAnd stare until their eyes pop out.\n\n\n\n(Last week in someone's place we saw\n\n\n\nA dozen eyeballs on the floor.)\n\n\n\nThey sit and stare and stare and sit\n\n\n\nUntil they're hypnotised by it,\n\n\n\nUntil they're absolutely drunk\n\n\n\nWith all that shocking ghastly junk.\n\n\n\nOh yes, we know it keeps them still,\n\n\n\nThey don't climb out the window sill,\n\n\n\nThey never fight or kick or punch,\n\n\n\nThey leave you free to cook the lunch\n\n\n\nAnd wash the dishes in the sink --\n\n\n\nBut did you ever stop to think,\n\n\n\nTo wonder just exactly what\n\n\n\nThis does to your beloved tot?\n\n\n\nIT ROTS THE SENSE IN THE HEAD!\n\n\n\nIT KILLS IMAGINATION DEAD!\n\n\n\nIT CLOGS AND CLUTTERS UP THE MIND!\n\n\n\nIT MAKES A CHILD SO DULL AND BLIND\n\n\n\nHE CAN NO LONGER UNDERSTAND\n\n\n\nA FANTASY, A FAIRYLAND!\n\n\n\nHIS BRAIN BECOMES AS SOFT AS CHEESE!\n\n\n\nHIS POWERS OF THINKING RUST AND FREEZE!\n\n\n\nHE CANNOT THINK -- HE ONLY SEES!\n\n\n\n'All right!' you'll cry. 'All right!' you'll say,\n\n\n\n'But if we take the set away,\n\n\n\nWhat shall we do to entertain\n\n\n\nOur darling children? Please explain!'\n\n\n\nWe'll answer this by asking you,\n\n\n\n'What used the darling ones to do?\n\n\n\n'How used they keep themselves contented\n\n\n\nBefore this monster was invented?'\n\n\n\nHave you forgotten? Don't you know?\n\n\n\nWe'll say it very loud and slow:\n\n\n\nTHEY ... USED ... TO ... READ! They'd READ and READ,\n\n\n\nAND READ and READ, and then proceed\n\n\n\nTo READ some more. Great Scott! Gadzooks!\n\n\n\nOne half their lives was reading books!\n\n\n\nThe nursery shelves held books galore!\n\n\n\nBooks cluttered up the nursery floor!\n\n\n\nAnd in the bedroom, by the bed,\n\n\n\nMore books were waiting to be read!\n\n\n\nSuch wondrous, fine, fantastic tales\n\n\n\nOf dragons, gypsies, queens, and whales\n\n\n\nAnd treasure isles, and distant shores\n\n\n\nWhere smugglers rowed with muffled oars,\n\n\n\nAnd pirates wearing purple pants,\n\n\n\nAnd sailing ships and elephants,\n\n\n\nAnd cannibals crouching 'round the pot,\n\n\n\nStirring away at something hot.\n\n\n\n(It smells so good, what can it be?\n\n\n\nGood gracious, it's Penelope.)\n\n\n\nThe younger ones had Beatrix Potter\n\n\n\nWith Mr. Tod, the dirty rotter,\n\n\n\nAnd Squirrel Nutkin, Pigling Bland,\n\n\n\nAnd Mrs. Tiggy-Winkle and-\n\n\n\nJust How The Camel Got His Hump,\n\n\n\nAnd How the Monkey Lost His Rump,\n\n\n\nAnd Mr. Toad, and bless my soul,\n\n\n\nThere's Mr. Rat and Mr. Mole-\n\n\n\nOh, books, what books they used to know,\n\n\n\nThose children living long ago!\n\n\n\nSo please, oh please, we beg, we pray,\n\n\n\nGo throw your TV set away,\n\n\n\nAnd in its place you can install\n\n\n\nA lovely bookshelf on the wall.\n\n\n\nThen fill the shelves with lots of books,\n\n\n\nIgnoring all the dirty looks,\n\n\n\nThe screams and yells, the bites and kicks,\n\n\n\nAnd children hitting you with sticks-\n\n\n\nFear not, because we promise you\n\n\n\nThat, in about a week or two\n\n\n\nOf having nothing else to do,\n\n\n\nThey'll now begin to feel the need\n\n\n\nOf having something to read.\n\n\n\nAnd once they start -- oh boy, oh boy!\n\n\n\nYou watch the slowly growing joy\n\n\n\nThat fills their hearts. They'll grow so keen\n\n\n\nThey'll wonder what they'd ever seen\n\n\n\nIn that ridiculous machine,\n\n\n\nThat nauseating, foul, unclean,\n\n\n\nRepulsive television screen!\n\n\n\nAnd later, each and every kid\n\n\n\nWill love you more for what you did.</Phrase>
+      <Level>70</Level>
+      <Phrase>The most important thing we've learned, so far as children are concerned,\n\nis never, NEVER, NEVER let them near your television set -- or better still, just don't install the idiotic thing at all. In almost every house we've been, we've watched them gaping at the screen. They loll and slop and lounge about, and stare until their eyes pop out. (Last week in someone's place we saw a dozen eyeballs on the floor.) They sit and stare and stare and sit until they're hypnotised by it, until they're absolutely drunk with all that shocking ghastly junk. Oh yes, we know it keeps them still, they don't climb out the window sill, they never fight or kick or punch, they leave you free to cook the lunch and wash the dishes in the sink -- But did you ever stop to think, to wonder just exactly what this does to your beloved tot?\n\nIT ROTS THE SENSE IN THE HEAD!\n\nIT KILLS IMAGINATION DEAD!\n\nIT CLOGS AND CLUTTERS UP THE MIND!\n\nIT MAKES A CHILD SO DULL AND BLIND\n\nHE CAN NO LONGER UNDERSTAND\n\nA FANTASY, A FAIRYLAND!\n\nHIS BRAIN BECOMES AS SOFT AS CHEESE!\n\nHIS POWERS OF THINKING RUST AND FREEZE!\n\nHE CANNOT THINK -- HE ONLY SEES!\n\n'All right!' you'll cry. 'All right!' you'll say, 'But if we take the set away, what shall we do to entertain our darling children? Please explain!' We'll answer this by asking you, 'What used the darling ones to do? 'How used they keep themselves contented before this monster was invented?' Have you forgotten? Don't you know? We'll say it very loud and slow:\n\nTHEY ... USED ... TO ... READ! They'd READ and READ,\n\nAND READ and READ, and then proceed to READ some more. Great Scott! Gadzooks! One half their lives was reading books! The nursery shelves held books galore! Books cluttered up the nursery floor! And in the bedroom, by the bed, more books were waiting to be read! Such wondrous, fine, fantastic tales of dragons, gypsies, queens, and whales and treasure isles, and distant shores where smugglers rowed with muffled oars, and pirates wearing purple pants, and sailing ships and elephants, and cannibals crouching 'round the pot, stirring away at something hot.\n\n(It smells so good, what can it be? good gracious, it's Penelope.)\n\nThe younger ones had Beatrix Potter with Mr. Tod, the dirty rotter, and Squirrel Nutkin, Pigling Bland, and Mrs. Tiggy-Winkle and just How The Camel Got His Hump, and How the Monkey Lost His Rump, and Mr. Toad, and bless my soul, there's Mr. Rat and Mr. Mole- Oh, books, what books they used to know, those children living long ago! So please, oh please, we beg, we pray, go throw your TV set away, and in its place you can install a lovely bookshelf on the wall. Then fill the shelves with lots of books, ignoring all the dirty looks, the screams and yells, the bites and kicks, and children hitting you with sticks. Fear not, because we promise you that, in about a week or two of having nothing else to do, they'll now begin to feel the need of having something to read. And once they start -- oh boy, oh boy! You watch the slowly growing joy that fills their hearts. They'll grow so keen they'll wonder what they'd ever seen in that ridiculous machine, that nauseating, foul, unclean, repulsive television screen! And later, each and every kid will love you more for what you did.</Phrase>
       <Life>6</Life>
       <TimeLimit>900</TimeLimit>
-      <Page>4</Page>
+      <Page>8</Page>
     </Level>
   </LevelList>
   <Version>0</Version>

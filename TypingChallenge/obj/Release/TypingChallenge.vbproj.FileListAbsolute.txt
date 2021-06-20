@@ -22,5 +22,5 @@ C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\Typ
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.Resources.resources
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbproj.GenerateResource.Cache
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmLevelEdit.resources
-E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmTest.resources
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmStart.resources
+E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmStart.resources

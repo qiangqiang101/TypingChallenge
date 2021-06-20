@@ -2,6 +2,37 @@
 <ProfileData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Player</Name>
   <DateCreated>2021-06-20T06:01:07.9709937+08:00</DateCreated>
-  <Credits>0</Credits>
-  <ClearedLevel />
+  <Credits>67</Credits>
+  <ClearedLevel>
+    <UserLevel>
+      <Title>Woodchuck Cousin</Title>
+      <Level>1</Level>
+      <Score>1032</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Sea Speak</Title>
+      <Level>2</Level>
+      <Score>365</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Dreams</Title>
+      <Level>3</Level>
+      <Score>462</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Pete's Pick</Title>
+      <Level>4</Level>
+      <Score>493</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Medical Mayhem</Title>
+      <Level>5</Level>
+      <Score>491</Score>
+    </UserLevel>
+    <UserLevel>
+      <Title>Television</Title>
+      <Level>70</Level>
+      <Score>2352</Score>
+    </UserLevel>
+  </ClearedLevel>
 </ProfileData>
