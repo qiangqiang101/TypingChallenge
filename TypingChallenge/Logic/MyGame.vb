@@ -201,6 +201,12 @@ Public Class MyGame
                 g.DrawGDIText("Next Level", resFont, _mouseButtonNext, If(_mouseButtonNextHovered, Color.Red, Color.White), TextFormatFlags.HorizontalCenter)
             End Using
         ElseIf GameStatus = eGameStatus.Ready Then
+            Dim lvlRect As New RectangleF(0, (cr.Height / 2) - 300, cr.Width, 120)
+            Dim titleRect As New RectangleF(0, (cr.Height / 2) - 300 + lvlRect.Height, cr.Width, 80)
+            g.DrawGDIText($"LEVEL {Level}", Font, lvlRect.ToRectangle, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+            Using titleFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
+                g.DrawGDIText(Title.Replace("&", "&&").Replace("&&&", "&&"), titleFont, titleRect.ToRectangle, Color.AliceBlue, TextFormatFlags.HorizontalCenter)
+            End Using
             Dim textRect As New RectangleF(cr.Width / 2, cr.Height / 2, cr.Width, 210)
             Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Regular)
                 g.DrawInstructionalButton(textRect.ToRectangle, "Press ~Enter~ to Start.", timeFont, Color.AliceBlue)
