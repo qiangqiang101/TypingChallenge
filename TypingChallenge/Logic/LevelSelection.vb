@@ -49,23 +49,6 @@ Public Class LevelSelection
         End Try
     End Sub
 
-    Protected Overrides Sub OnMouseLeave(e As EventArgs)
-        MyBase.OnMouseLeave(e)
-
-        lvlA1H = False
-        lvlA2H = False
-        lvlA3H = False
-        lvlB1H = False
-        lvlB2H = False
-        lvlB3H = False
-        lvlC1H = False
-        lvlC2H = False
-        lvlC3H = False
-        btnPrevH = False
-        btnNextH = False
-        btnBackH = False
-    End Sub
-
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 

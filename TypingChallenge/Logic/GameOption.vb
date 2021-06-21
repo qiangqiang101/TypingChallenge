@@ -26,32 +26,6 @@ Public Class GameOption
         DoubleBuffered = True
     End Sub
 
-    Protected Overrides Sub OnMouseLeave(e As EventArgs)
-        MyBase.OnMouseLeave(e)
-
-        musicLH = False
-        musicRH = False
-        soundLH = False
-        soundRH = False
-        graphicLH = False
-        graphicRH = False
-        fullscreenLH = False
-        fullscreenRH = False
-        fpsLH = False
-        fpsRH = False
-        saveBtnH = False
-        cancelBtnH = False
-
-        kbBtnH = False
-        rgbLH = False
-        rgbRH = False
-
-        musicELH = False
-        musicERH = False
-        diffLH = False
-        diffRH = False
-    End Sub
-
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 

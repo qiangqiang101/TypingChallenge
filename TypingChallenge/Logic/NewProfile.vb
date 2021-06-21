@@ -10,13 +10,6 @@ Public Class NewProfile
 
     Public Property Player() As String = "Player"
 
-    Protected Overrides Sub OnMouseLeave(e As EventArgs)
-        MyBase.OnMouseLeave(e)
-
-        txtNameH = False
-        btnOKH = False
-    End Sub
-
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 

@@ -122,13 +122,6 @@ Public Class MyGame
         graphics.ResetTransform()
     End Sub
 
-    Protected Overrides Sub OnMouseLeave(e As EventArgs)
-        MyBase.OnMouseLeave(e)
-
-        _mouseButtonBackHovered = False
-        _mouseButtonNextHovered = False
-    End Sub
-
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 
@@ -149,19 +142,23 @@ Public Class MyGame
         If GameStatus = eGameStatus.GameOver Then
             Dim textRect As New RectangleF(0, 100, cr.Width, 210)
             g.DrawGDIText("GAME OVER", Font, textRect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
-            Dim res0Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
-            Dim res1Rect As New RectangleF(0, res0Rect.Y + res0Rect.Height, cr.Width, 80)
-            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 80)
-            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 80)
-            Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 80)
-            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 80)
-            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 80)
-            Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
+            Dim res0Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 65)
+            Dim res1Rect As New RectangleF(0, res0Rect.Y + res0Rect.Height, cr.Width, 65)
+            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 65)
+            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 65)
+            Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 65)
+            Dim res5Rect As New RectangleF(0, res4Rect.Y + res4Rect.Height, cr.Width, 65)
+            Dim res6Rect As New RectangleF(0, res5Rect.Y + res5Rect.Height, cr.Width, 65)
+            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 65)
+            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 65)
+            Using resFont As New Font(Font.FontFamily, CSng(Font.Size / 2.5), FontStyle.Regular)
                 g.DrawGDIText($"{Score} Score", resFont, res0Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"{CorrectCount} Correct letters", resFont, res1Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"{WrongCount} Wrong letters", resFont, res2Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"Time Elapsed {timerEnded.Subtract(timerStart.AddSeconds(CInt($"-{TimeLimit}"))).ToString("mm\:ss")}", resFont, res3Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"{GrayText.WordCount} words typed", resFont, res4Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
+                g.DrawGDIText($"{CalculateAccuracy(CorrectCount, Phrase)} Accuracy", resFont, res5Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
+                g.DrawGDIText($"Typing Speed {WPM(GrayText.WordCount, timerEnded.Second)} WPM", resFont, res6Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
 
                 Using br As New SolidBrush(If(_mouseButtonBackHovered, Color.White, Color.Gray))
                     g.FillRoundedRectangle(_mouseButtonBack, 10, br, New RoundedRectCorners(True))
@@ -176,19 +173,23 @@ Public Class MyGame
         ElseIf GameStatus = eGameStatus.YouWon Then
             Dim textRect As New RectangleF(0, 100, cr.Width, 210)
             g.DrawGDIText("LEVEL COMPLETED", Font, textRect.ToRectangle, Color.Gold, TextFormatFlags.HorizontalCenter)
-            Dim res0Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 80)
-            Dim res1Rect As New RectangleF(0, res0Rect.Y + res0Rect.Height, cr.Width, 80)
-            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 80)
-            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 80)
-            Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 80)
-            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 80)
-            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 80)
-            Using resFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
+            Dim res0Rect As New RectangleF(0, textRect.Y + textRect.Height, cr.Width, 65)
+            Dim res1Rect As New RectangleF(0, res0Rect.Y + res0Rect.Height, cr.Width, 65)
+            Dim res2Rect As New RectangleF(0, res1Rect.Y + res1Rect.Height, cr.Width, 65)
+            Dim res3Rect As New RectangleF(0, res2Rect.Y + res2Rect.Height, cr.Width, 65)
+            Dim res4Rect As New RectangleF(0, res3Rect.Y + res3Rect.Height, cr.Width, 65)
+            Dim res5Rect As New RectangleF(0, res4Rect.Y + res4Rect.Height, cr.Width, 65)
+            Dim res6Rect As New RectangleF(0, res5Rect.Y + res5Rect.Height, cr.Width, 65)
+            _mouseButtonBack = New Rectangle((cr.Width / 2) - 310, cr.Height - 100, 300, 65)
+            _mouseButtonNext = New Rectangle((cr.Width / 2) + 0, cr.Height - 100, 300, 65)
+            Using resFont As New Font(Font.FontFamily, CSng(Font.Size / 2.5), FontStyle.Regular)
                 g.DrawGDIText($"{Score} Score", resFont, res0Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"{CorrectCount} Correct letters", resFont, res1Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"{WrongCount} Wrong letters", resFont, res2Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"Time Elapsed {timerEnded.Subtract(timerStart.AddSeconds(CInt($"-{TimeLimit}"))).ToString("mm\:ss")}", resFont, res3Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
                 g.DrawGDIText($"{GrayText.WordCount} words typed", resFont, res4Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
+                g.DrawGDIText($"{CalculateAccuracy(CorrectCount, Phrase)} Accuracy", resFont, res5Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
+                g.DrawGDIText($"Typing Speed {WPM(GrayText.WordCount, timerEnded.Second)} WPM", resFont, res6Rect.ToRectangle, Color.White, TextFormatFlags.HorizontalCenter)
 
                 Using br As New SolidBrush(If(_mouseButtonBackHovered, Color.White, Color.Gray))
                     g.FillRoundedRectangle(_mouseButtonBack, 10, br, New RoundedRectCorners(True))
@@ -294,12 +295,30 @@ Public Class MyGame
                     CorrectCount += 1
                     CorrectStreak += 1
                     Score += 1 * (Difficulty + 1)
-                    If CorrectStreak >= 50 Then
-                        soundLife.PlayWav
-                        LifeLeft += 1
-                        CorrectStreak = 0
-                        Score += 100 * (Difficulty + 1)
-                    End If
+                    Select Case Difficulty
+                        Case 0
+                            If CorrectStreak >= 20 Then
+                                soundLife.PlayWav
+                                LifeLeft += 1
+                                CorrectStreak = 0
+                                Score += 100 * (Difficulty + 1)
+                            End If
+                        Case 1
+                            If CorrectStreak >= 30 Then
+                                soundLife.PlayWav
+                                LifeLeft += 1
+                                CorrectStreak = 0
+                                Score += 200 * (Difficulty + 1)
+                            End If
+                        Case 2
+                            If CorrectStreak >= 50 Then
+                                soundLife.PlayWav
+                                LifeLeft += 1
+                                CorrectStreak = 0
+                                Score += 300 * (Difficulty + 1)
+                            End If
+                    End Select
+
                     Invalidate()
                 Else
                     soundMinusLife.PlayWav
@@ -318,7 +337,10 @@ Public Class MyGame
 
         If _mouseButtonBackHovered Then
             soundBtnCancel.PlayWav
-            SaveUserProgress()
+
+            If GameStatus = eGameStatus.YouWon Then
+                SaveUserProgress()
+            End If
 
             LevelSel.Show()
             Parent.Controls.Remove(Me)
@@ -337,7 +359,7 @@ Public Class MyGame
                         Case 0
                             newGame = New MyGame(nextlevel.Phrase, nextlevel.Life, nextlevel.TimeLimit, 0) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                         Case 1
-                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life - 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                            newGame = New MyGame(nextlevel.Phrase, nextlevel.Life / 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                         Case Else
                             newGame = New MyGame(nextlevel.Phrase, 1, nextlevel.TimeLimit / 2, 2) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                     End Select
@@ -360,7 +382,7 @@ Public Class MyGame
                     Case 0
                         newGame = New MyGame(nextlevel.Phrase, nextlevel.Life, nextlevel.TimeLimit, 0) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                     Case 1
-                        newGame = New MyGame(nextlevel.Phrase, nextlevel.Life - 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
+                        newGame = New MyGame(nextlevel.Phrase, nextlevel.Life / 2, (nextlevel.TimeLimit / 3) * 2, 1) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                     Case Else
                         newGame = New MyGame(nextlevel.Phrase, 1, nextlevel.TimeLimit / 2, 2) With {.Title = nextlevel.Title, .Author = nextlevel.Author, .Level = nextlevel.Level, .LevelSel = LevelSel, .Dock = DockStyle.Fill, .Font = Font}
                 End Select
@@ -414,7 +436,6 @@ Public Class MyGame
             elapsedTimer.Stop()
         Else
             SecondsLeft = CInt(Now.Subtract(timerStart).TotalSeconds)
-            'SecondsLeft = CInt(SecondsLeft.ToString.Replace("-", ""))
         End If
     End Sub
 

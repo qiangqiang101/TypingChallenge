@@ -1,4 +1,6 @@
-﻿Public Class Intro
+﻿Imports System.IO
+
+Public Class Intro
     Inherits PictureBox
 
     Public WithEvents bgTimer As New Timer() With {.Interval = 1, .Enabled = True}
@@ -20,8 +22,17 @@
 
         If countdown <= 0 Then
             bgTimer.Stop()
-            MainMenu.Show()
-            MainMenu.Focus()
+
+            If Not File.Exists(prfXmlPath) Then
+                Dim newProfile As New NewProfile() With {.Dock = DockStyle.Fill, .Font = MainMenu.Font}
+                Parent.Controls.Add(newProfile)
+                newProfile.Focus()
+                MainMenu.Hide()
+            Else
+                MainMenu.Show()
+                MainMenu.Focus()
+            End If
+
             Parent.Controls.Remove(Me)
         End If
     End Sub

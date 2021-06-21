@@ -53,6 +53,7 @@ Partial Class frmGame
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1440, 900)
         Me.Name = "frmGame"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Typing Challenge"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

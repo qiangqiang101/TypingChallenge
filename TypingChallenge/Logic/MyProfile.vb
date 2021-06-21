@@ -14,12 +14,6 @@ Public Class MyProfile
         DoubleBuffered = True
     End Sub
 
-    Protected Overrides Sub OnMouseLeave(e As EventArgs)
-        MyBase.OnMouseLeave(e)
-
-        btnBackH = False
-    End Sub
-
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 
@@ -55,7 +49,7 @@ Public Class MyProfile
         g.DrawGDIText($"Credits: {profile.Credits}", Font, credRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
         Dim clearRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 3, cr.Width, txtHeight)
-        g.DrawGDIText($"Cleared Level: {profile.ClearedLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
+        g.DrawGDIText($"Cleared Levels: {profile.ClearedLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
         Dim scoreRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 4, cr.Width, txtHeight)
         g.DrawGDIText($"Total Score: {profile.ClearedLevel.Sum(Function(x) x.Score)}", Font, scoreRect.ToRectangle, Color.White, TextFormatFlags.Left)

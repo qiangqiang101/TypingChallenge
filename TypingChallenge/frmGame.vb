@@ -17,12 +17,6 @@ Public Class frmGame
         MainMenu.Hide()
         intro.Refresh()
 
-        If Not File.Exists(prfXmlPath) Then
-            Dim newProfile As New NewProfile() With {.Dock = DockStyle.Fill, .Font = MainMenu.Font}
-            Controls.Add(newProfile)
-            MainMenu.Hide()
-        End If
-
         If System.ComponentModel.LicenseManager.UsageMode = System.ComponentModel.LicenseUsageMode.Runtime Then
             PlayNextBGM()
         End If

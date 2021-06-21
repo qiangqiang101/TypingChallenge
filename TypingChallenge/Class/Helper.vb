@@ -204,6 +204,8 @@ Module Helper
         If color2 = Nothing Then color2 = Color.Red
         If color = Nothing Then color = Color.White
 
+        Dim title As String = level.Title.Replace("&", "&&").Replace("&&&", "&&")
+
         Using brush As New SolidBrush(color)
             refRect = New RectangleF(location, size)
             If refBool Then
@@ -219,7 +221,7 @@ Module Helper
 
             Dim textSize As SizeF = graphics.MeasureString(level.Title, font)
             Dim rect2 As New RectangleF(location.X + 10, location.Y + 10, refRect.Width - 20, refRect.Height - textSize.Height)
-            graphics.DrawGDIText(level.Title, font, rect2.ToRectangle, color, TextFormatFlags.Left)
+            graphics.DrawGDIText(title, font, rect2.ToRectangle, color, TextFormatFlags.Left)
             Dim rect3 As New RectangleF(location.X, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
             graphics.DrawGDIText($"Level {level.Level}", font, rect3.ToRectangle, color, TextFormatFlags.Right)
             Dim rect4 As New RectangleF(location.X + 10, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
@@ -323,7 +325,7 @@ Module Helper
                 Case 0
                     newGame = New MyGame(level.Phrase, level.Life, level.TimeLimit, 0) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
                 Case 1
-                    newGame = New MyGame(level.Phrase, level.Life - 2, (level.TimeLimit / 3) * 2, 1) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
+                    newGame = New MyGame(level.Phrase, level.Life / 2, (level.TimeLimit / 3) * 2, 1) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
                 Case Else
                     newGame = New MyGame(level.Phrase, 1, level.TimeLimit / 2, 2) With {.Title = level.Title, .Author = level.Author, .Level = level.Level, .LevelSel = ctrl, .Dock = DockStyle.Fill, .Font = New Font(font.Name, font.Size * 2, FontStyle.Bold, font.Unit)}
             End Select
@@ -430,9 +432,13 @@ Module Helper
     <Extension>
     Public Sub PlayNextBGM(callback As Form)
         If setting.MusicEnabled Then
-            Dim fileToPlay = mp3s(rand.Next(mp3s.Length))
-            player.Play(fileToPlay, callback)
-            player.SetVolume(setting.MusicVolume)
+            Try
+                Dim fileToPlay = mp3s(rand.Next(mp3s.Length))
+                player.Play(fileToPlay, callback)
+                player.SetVolume(setting.MusicVolume)
+            Catch ex As Exception
+                PlayNextBGM(callback)
+            End Try
         End If
     End Sub
 
@@ -458,5 +464,14 @@ Module Helper
             x += sz.Width
         Next
     End Sub
+
+    Public Function CalculateAccuracy(correct As Integer, phrase As String) As String
+        Dim accuracy As Single = (correct * 100 / phrase.Length)
+        Return $"{accuracy.ToString("N")}%"
+    End Function
+
+    Public Function WPM(wordCount As Integer, noOfSecs As Integer) As String
+        Return (wordCount / noOfSecs * 60).ToString("N0")
+    End Function
 
 End Module

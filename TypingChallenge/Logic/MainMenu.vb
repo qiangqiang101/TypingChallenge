@@ -8,17 +8,6 @@ Public Class MainMenu
     Private btnPlay, btnSetting, btnProfile, btnCredits, btnExit, btnMore As Rectangle
     Private btnPlayH As Boolean = False, btnSettingH As Boolean = False, btnCreditsH As Boolean = False, btnExitH As Boolean = False, btnProfileH As Boolean = False, btnMoreH As Boolean = False
 
-    Protected Overrides Sub OnMouseLeave(e As EventArgs)
-        MyBase.OnMouseLeave(e)
-
-        btnPlayH = False
-        btnSettingH = False
-        btnCreditsH = False
-        btnExitH = False
-        btnProfileH = False
-        btnMoreH = False
-    End Sub
-
     Protected Overrides Sub OnMouseMove(e As MouseEventArgs)
         MyBase.OnMouseMove(e)
 
@@ -123,6 +112,7 @@ Public Class MainMenu
         If btnMoreH Then
             soundBtnClick.PlayWav
             Process.Start("https://www.imnotmental.com/category/game/")
+            frmGame.WindowState = FormWindowState.Minimized
         End If
         If btnExitH Then
             soundBtnCancel.PlayWav
