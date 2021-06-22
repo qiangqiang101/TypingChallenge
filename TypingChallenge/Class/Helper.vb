@@ -208,6 +208,10 @@ Module Helper
 
         Using brush As New SolidBrush(color)
             refRect = New RectangleF(location, size)
+            Using toneBrush As New SolidBrush(Color.FromArgb(200, Color.Black))
+                graphics.FillRoundedRectangle(refRect.ToRectangle, 10, toneBrush, New RoundedRectCorners(True))
+            End Using
+
             If refBool Then
                 'graphics.FillRoundedRectangle(refRect.ToRectangle, 10, brush, New RoundedRectCorners(True))
                 Using pen As New Pen(color2, 5.0F)
@@ -224,10 +228,20 @@ Module Helper
             graphics.DrawGDIText(title, font, rect2.ToRectangle, color, TextFormatFlags.Left)
             Dim rect3 As New RectangleF(location.X, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
             graphics.DrawGDIText($"Level {level.Level}", font, rect3.ToRectangle, color, TextFormatFlags.Right)
-            Dim rect4 As New RectangleF(location.X + 10, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
+            Dim rect4 As New RectangleF(location.X + 10, location.Y + size.Height - (textSize.Height * 3), refRect.Width - 20, textSize.Height + 10)
+            Dim rect5 As New RectangleF(location.X + 10, location.Y + size.Height - (textSize.Height * 2) - 10, refRect.Width - 20, textSize.Height + 10)
+            Dim rect6 As New RectangleF(location.X + 10, location.Y + size.Height - textSize.Height - 20, refRect.Width - 20, textSize.Height + 10)
             If profile.ClearedLevel.Where(Function(x) x.Level = level.Level).Count <> 0 Then
                 Dim score = profile.ClearedLevel.Find(Function(x) x.Level = level.Level).Score
-                graphics.DrawGDIText($"{score.ToString("N0")} score", font, rect4.ToRectangle, Color.Gold, TextFormatFlags.Left)
+                graphics.DrawGDIText($"Normal: {score.ToString("N0")} score", font, rect4.ToRectangle, Color.FromArgb(176, 87, 41), TextFormatFlags.Left)
+            End If
+            If profile.ClearedHardLevel.Where(Function(x) x.Level = level.Level).Count <> 0 Then
+                Dim score = profile.ClearedHardLevel.Find(Function(x) x.Level = level.Level).Score
+                graphics.DrawGDIText($"Hard: {score.ToString("N0")} score", font, rect5.ToRectangle, Color.Silver, TextFormatFlags.Left)
+            End If
+            If profile.ClearedVHardLevel.Where(Function(x) x.Level = level.Level).Count <> 0 Then
+                Dim score = profile.ClearedVHardLevel.Find(Function(x) x.Level = level.Level).Score
+                graphics.DrawGDIText($"Very Hard: {score.ToString("N0")} score", font, rect6.ToRectangle, Color.Gold, TextFormatFlags.Left)
             End If
         End Using
     End Sub

@@ -16,6 +16,8 @@ Public Structure ProfileData
     Public DateCreated As Date
     Public Credits As Integer
     Public ClearedLevel As List(Of UserLevel)
+    Public ClearedHardLevel As List(Of UserLevel)
+    Public ClearedVHardLevel As List(Of UserLevel)
 
     Public Sub New(_filename As String)
         FileName = _filename
@@ -30,7 +32,7 @@ Public Structure ProfileData
 
     Public Function ReadFromFile() As ProfileData
         If Not File.Exists(FileName) Then
-            Return New ProfileData(FileName) With {.Name = "Player", .DateCreated = Now, .Credits = 0, .ClearedLevel = New List(Of UserLevel)}
+            Return New ProfileData(FileName) With {.Name = "Player", .DateCreated = Now, .Credits = 0, .ClearedLevel = New List(Of UserLevel), .ClearedHardLevel = New List(Of UserLevel), .ClearedVHardLevel = New List(Of UserLevel)}
         End If
 
         Try
@@ -40,7 +42,7 @@ Public Structure ProfileData
             reader.Close()
             Return instance
         Catch ex As Exception
-            Return New ProfileData(FileName) With {.Name = "Player", .DateCreated = Now, .Credits = 0, .ClearedLevel = New List(Of UserLevel)}
+            Return New ProfileData(FileName) With {.Name = "Player", .DateCreated = Now, .Credits = 0, .ClearedLevel = New List(Of UserLevel), .ClearedHardLevel = New List(Of UserLevel), .ClearedVHardLevel = New List(Of UserLevel)}
         End Try
     End Function
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SettingData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MusicVolume>10</MusicVolume>
-  <MusicEnabled>false</MusicEnabled>
+  <MusicEnabled>true</MusicEnabled>
   <SoundVolume>10</SoundVolume>
   <Quality>1</Quality>
   <KeyboardColorA>255</KeyboardColorA>

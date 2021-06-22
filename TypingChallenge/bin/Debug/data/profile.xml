@@ -2,7 +2,7 @@
 <ProfileData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>I'm Not MentaL</Name>
   <DateCreated>0001-01-01T00:00:00</DateCreated>
-  <Credits>157</Credits>
+  <Credits>199</Credits>
   <ClearedLevel>
     <UserLevel>
       <Title>Woodchuck Cousin</Title>
@@ -19,5 +19,24 @@
       <Level>71</Level>
       <Score>72</Score>
     </UserLevel>
+    <UserLevel>
+      <Title>Sea Speak</Title>
+      <Level>2</Level>
+      <Score>1928</Score>
+    </UserLevel>
   </ClearedLevel>
+  <ClearedHardLevel>
+    <UserLevel>
+      <Title>Woodchuck Cousin</Title>
+      <Level>1</Level>
+      <Score>2310</Score>
+    </UserLevel>
+  </ClearedHardLevel>
+  <ClearedVHardLevel>
+	<UserLevel>
+      <Title>Woodchuck Cousin</Title>
+      <Level>1</Level>
+      <Score>3310</Score>
+    </UserLevel>
+  </ClearedVHardLevel>
 </ProfileData>

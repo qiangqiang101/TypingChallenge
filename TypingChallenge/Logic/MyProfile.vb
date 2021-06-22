@@ -48,10 +48,10 @@ Public Class MyProfile
         Dim credRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 2, cr.Width, txtHeight)
         g.DrawGDIText($"Credits: {profile.Credits}", Font, credRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
-        Dim clearRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 3, cr.Width, txtHeight)
-        g.DrawGDIText($"Cleared Levels: {profile.ClearedLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
+        Dim clearRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 3, cr.Width, txtHeight * 3)
+        g.DrawGDIText($"Cleared Normal Levels: {profile.ClearedLevel.Count}{vbNewLine}Cleared Hard Levels: {profile.ClearedHardLevel.Count}{vbNewLine}Cleared Very Hard Levels: {profile.ClearedVHardLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
-        Dim scoreRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 4, cr.Width, txtHeight)
+        Dim scoreRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 6, cr.Width, txtHeight)
         g.DrawGDIText($"Total Score: {profile.ClearedLevel.Sum(Function(x) x.Score)}", Font, scoreRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
         btnBack = New Rectangle(cr.X + (cr.Width / 2) - 150, cr.Y + cr.Height - 100, 300, 80)

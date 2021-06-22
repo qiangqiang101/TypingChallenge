@@ -220,8 +220,9 @@ Public Class MyGame
                 g.DrawInstructionalButton(textRect2.ToRectangle, "Press ~ESC~ to resume or Press ~Enter~ to Quit.", timeFont, Color.AliceBlue)
             End Using
         Else
-            Dim lifeRect As New RectangleF(10, 10, (cr.Width / 2) - 10, 100)
-            Dim lvlRect As New RectangleF((cr.Width / 2) + 10, 10, (cr.Width / 2) - 10, 100)
+            Dim sf = cr.GetSafeZone
+            Dim lifeRect As New RectangleF(sf.X, sf.Y, (sf.Width / 2), 100)
+            Dim lvlRect As New RectangleF(sf.X + (sf.Width / 2), sf.Y, (sf.Width / 2), 100)
             Using heartFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
                 g.DrawGDIText(HeartsLeft(LifeLeft), heartFont, lifeRect.ToRectangle, Color.Red, TextFormatFlags.Left)
                 g.DrawGDIText($"Level {Level}", heartFont, lvlRect.ToRectangle, Color.White, TextFormatFlags.Right)
@@ -237,14 +238,14 @@ Public Class MyGame
                     DrawGameText(g, GrayText.Substring(GrayText.Length - 10), GoldText, WhiteText, Font, textRect, Brushes.Gray, Brushes.Gold, Brushes.White)
             End Select
 
-            Dim timeElapseRect As New RectangleF(10, cr.Height - 120, (cr.Width / 2) - 10, 100)
-            Dim progressRect As New RectangleF((cr.Width / 2) + 10, cr.Height - 120, (cr.Width / 2) - 10, 100)
+            Dim timeElapseRect As New RectangleF(sf.X, sf.Height - 120, (sf.Width / 2), 100)
+            Dim progressRect As New RectangleF(sf.X + (sf.Width / 2), sf.Height - 120, (sf.Width / 2), 100)
 
             Using timeFont As New Font(Font.FontFamily, Font.Size / 2, FontStyle.Bold)
                 g.DrawGDIText($"⏲ {SecondsLeft.SecondsToTime}", timeFont, timeElapseRect.ToRectangle, If(SecondsLeft >= -10, Color.Red, Color.White), TextFormatFlags.Left)
                 g.DrawGDIText($"⚔ {Progression()}%", timeFont, progressRect.ToRectangle, Color.White, TextFormatFlags.Right)
                 Dim scoreWidth As Single = g.MeasureString($"★ {Score}", timeFont).Width * 1.5
-                Dim scoreRect As New RectangleF((cr.Width / 2) - (scoreWidth / 2), cr.Height - 120, scoreWidth, 100)
+                Dim scoreRect As New RectangleF(sf.X + (sf.Width / 2) - (scoreWidth / 2), sf.Height - 120, scoreWidth, 100)
                 g.DrawGDIText($"★ {Score}", timeFont, scoreRect.ToRectangle, Color.Gold, TextFormatFlags.HorizontalCenter)
             End Using
         End If
@@ -401,26 +402,77 @@ Public Class MyGame
     End Sub
 
     Private Sub SaveUserProgress()
-        Dim existLevels = profile.ClearedLevel.Where(Function(x) x.Level = Level).Count
-        If existLevels = 0 Then
-            profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
-        Else
-            Dim existLevel = profile.ClearedLevel.Find(Function(x) x.Level = Level)
-            If Score > existLevel.Score Then
-                profile.ClearedLevel.Remove(existLevel)
-                profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
-            End If
-        End If
+        Select Case setting.Difficulty
+            Case 0
+                Dim existLevels = profile.ClearedLevel.Where(Function(x) x.Level = Level).Count
+                If existLevels = 0 Then
+                    profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
+                Else
+                    Dim existLevel = profile.ClearedLevel.Find(Function(x) x.Level = Level)
+                    If Score > existLevel.Score Then
+                        profile.ClearedLevel.Remove(existLevel)
+                        profile.ClearedLevel.Add(New UserLevel(Title, Level, Score))
+                    End If
+                End If
 
-        Dim newProfile As New ProfileData(prfXmlPath)
-        With newProfile
-            .Name = profile.Name
-            .DateCreated = profile.DateCreated
-            .ClearedLevel = profile.ClearedLevel
-            .Credits = profile.Credits + (Score / 100)
-        End With
-        newProfile.Save()
-        profile = newProfile
+                Dim newProfile As New ProfileData(prfXmlPath)
+                With newProfile
+                    .Name = profile.Name
+                    .DateCreated = profile.DateCreated
+                    .ClearedLevel = profile.ClearedLevel
+                    .ClearedHardLevel = profile.ClearedHardLevel
+                    .ClearedVHardLevel = profile.ClearedVHardLevel
+                    .Credits = profile.Credits + (Score / 100)
+                End With
+                newProfile.Save()
+                profile = newProfile
+            Case 1
+                Dim existLevels = profile.ClearedHardLevel.Where(Function(x) x.Level = Level).Count
+                If existLevels = 0 Then
+                    profile.ClearedHardLevel.Add(New UserLevel(Title, Level, Score))
+                Else
+                    Dim existLevel = profile.ClearedHardLevel.Find(Function(x) x.Level = Level)
+                    If Score > existLevel.Score Then
+                        profile.ClearedHardLevel.Remove(existLevel)
+                        profile.ClearedHardLevel.Add(New UserLevel(Title, Level, Score))
+                    End If
+                End If
+
+                Dim newProfile As New ProfileData(prfXmlPath)
+                With newProfile
+                    .Name = profile.Name
+                    .DateCreated = profile.DateCreated
+                    .ClearedLevel = profile.ClearedLevel
+                    .ClearedHardLevel = profile.ClearedHardLevel
+                    .ClearedVHardLevel = profile.ClearedVHardLevel
+                    .Credits = profile.Credits + (Score / 100)
+                End With
+                newProfile.Save()
+                profile = newProfile
+            Case 2
+                Dim existLevels = profile.ClearedVHardLevel.Where(Function(x) x.Level = Level).Count
+                If existLevels = 0 Then
+                    profile.ClearedVHardLevel.Add(New UserLevel(Title, Level, Score))
+                Else
+                    Dim existLevel = profile.ClearedVHardLevel.Find(Function(x) x.Level = Level)
+                    If Score > existLevel.Score Then
+                        profile.ClearedVHardLevel.Remove(existLevel)
+                        profile.ClearedVHardLevel.Add(New UserLevel(Title, Level, Score))
+                    End If
+                End If
+
+                Dim newProfile As New ProfileData(prfXmlPath)
+                With newProfile
+                    .Name = profile.Name
+                    .DateCreated = profile.DateCreated
+                    .ClearedLevel = profile.ClearedLevel
+                    .ClearedHardLevel = profile.ClearedHardLevel
+                    .ClearedVHardLevel = profile.ClearedVHardLevel
+                    .Credits = profile.Credits + (Score / 100)
+                End With
+                newProfile.Save()
+                profile = newProfile
+        End Select
     End Sub
 
     Protected Overrides Sub OnResize(e As EventArgs)
