@@ -158,8 +158,8 @@ Public Class BaseControl
         g.SmoothingMode = SmoothingMode.HighQuality
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAliasGridFit
 
-        cBlend.Colors = New Color(3) {Color.Red, Color.Green, Color.Blue, Color.Red}
-        cBlend.Positions = New Single(3) {0F, 0.33F, 0.66F, 1.0F}
+        cBlend.Colors = New Color() {Color.Purple, Color.Red, Color.Yellow, Color.Lime, Color.Cyan, Color.Blue, Color.Purple}
+        cBlend.Positions = New Single() {0F, 0.1666F, 0.3333F, 0.5F, 0.6666F, 0.8333F, 1.0F}
 
         If setting.ShowFPS Then
             Dim fps As New Rectangle(ClientRectangle.Width - 200, 0, 200, 50)

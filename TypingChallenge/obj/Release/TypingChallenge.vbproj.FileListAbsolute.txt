@@ -24,3 +24,15 @@ C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\Typ
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmLevelEdit.resources
 C:\Users\Lenovo\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmStart.resources
 E:\Users\Bartholomew\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmStart.resources
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.exe.config
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.exe
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.xml
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.pdb
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmGame.resources
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmLevelEdit.resources
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.frmStart.resources
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.Resources.resources
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\obj\Release\TypingChallenge.vbproj.GenerateResource.Cache
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.exe
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.pdb
+C:\Users\WePro\Documents\GitHub\TypingChallenge\TypingChallenge\bin\Release\TypingChallenge.xml

@@ -49,7 +49,11 @@ Public Class MyProfile
         g.DrawGDIText($"Credits: {profile.Credits}", Font, credRect.ToRectangle, Color.White, TextFormatFlags.Left)
 
         Dim clearRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 3, cr.Width, txtHeight * 3)
-        g.DrawGDIText($"Cleared Normal Levels: {profile.ClearedLevel.Count}{vbNewLine}Cleared Hard Levels: {profile.ClearedHardLevel.Count}{vbNewLine}Cleared Very Hard Levels: {profile.ClearedVHardLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
+        Try
+            g.DrawGDIText($"Cleared Normal Levels: {profile.ClearedLevel.Count}{vbNewLine}Cleared Hard Levels: {profile.ClearedHardLevel.Count}{vbNewLine}Cleared Very Hard Levels: {profile.ClearedVHardLevel.Count}", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
+        Catch ex As Exception
+            g.DrawGDIText($"Cleared Normal Levels: 0{vbNewLine}Cleared Hard Levels: 0{vbNewLine}Cleared Very Hard Levels: 0", Font, clearRect.ToRectangle, Color.White, TextFormatFlags.Left)
+        End Try
 
         Dim scoreRect As New RectangleF(cr.X, cr.Y + rHeight + txtHeight * 6, cr.Width, txtHeight)
         g.DrawGDIText($"Total Score: {profile.ClearedLevel.Sum(Function(x) x.Score)}", Font, scoreRect.ToRectangle, Color.White, TextFormatFlags.Left)
